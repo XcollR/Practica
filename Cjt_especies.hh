@@ -31,9 +31,11 @@ private:
 			
 	map<string, map<string,double> > taula_distancies; // map multidimensional on hi ha les distancies entre especies;
 	
-	void recalcular_tabla_dist(); // per recalcular les distancies després de afegir una especie;
+	void elimina_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'elimina un element.
 
+	void afegeix_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'afegeix un element.
 	
+	map<string, Especie>::const_iterator it;
 public:
 
 
@@ -152,7 +154,15 @@ public:
 */
 	void imprime_cjt_especies() const;
 	
-	void calcular_taula_distancies();
+int size()const;
+
+bool final();
+
+void inicio();
+
+void actual(string& act);
+
+void avanza();
 	
 
 };

@@ -27,11 +27,8 @@ private:
 	
 	map<string,int> return_k_meros() const; // retorn el map de k-meros.
 
-	map<string, int> kmer(const string& gen, const int& k_num); //funció kmer
+	void kmer(); //funció kmer
 	
-	double cardinal(const map<string, int>& map1); // Retorna el cardinal d'un conjunt
-
-
 public: 
 	
 		// Constructores
@@ -91,7 +88,7 @@ public:
 	@return double
 */	
 
-	double distancia(const Especie& esp);
+	double distancia(const Especie& esp) const;
 
 		// Lectura i Escriptura
 
