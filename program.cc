@@ -6,9 +6,9 @@
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <map>
-#include <vector>
 #endif
 #include "Cjt_clusters.hh"
+#include "Cjt_especies.hh"
 using namespace std;
 
 /** @brief El main del programa */
@@ -31,14 +31,20 @@ int main() {
 		if (opcio == "crea_especie") {
 			cin >> id >> gen;
 			cout << "# " << opcio << " " << id << " " << gen << endl;
+			if (conjunt.existeix_especie(id)) cout << "ERROR: La especie " << id << " ya existe." << endl;
+			else {
 			conjunt.crea_especie(id,gen);
+			}
 			cout << endl;
 		}
 		
 		else if (opcio == "obtener_gen") {
 			cin >> id;
 			cout << "# " << opcio << " " << id << endl;
-			conjunt.obtener_gen(id);
+			if (conjunt.existeix_especie(id)) conjunt.obtener_gen(id);
+			else cout << "ERROR: La especie " << id << " no existe." << endl;
+			cout << endl;
+
 		}
 		else if (opcio == "distancia") {
 			cin >> id >> id2;
@@ -53,7 +59,9 @@ int main() {
 		else if (opcio == "elimina_especie") {
 			cin >> id;
 			cout << "# " << opcio << " " << id << endl;
-			conjunt.elimina_especie(id);
+			if (not conjunt.existeix_especie(id)) cout << "ERROR: La especie " << id << " no existe." << endl;
+			else conjunt.elimina_especie(id);
+			cout << endl;
 		}
 		else if (opcio == "existe_especie") {
 			cin >> id;
@@ -65,10 +73,12 @@ int main() {
 		else if (opcio == "lee_cjt_especies") {
 			cout << "# " << opcio <<  endl;
 			conjunt.lee_cjt_especies();
+			cout << endl;
 		}
 		else if (opcio == "imprime_cjt_especies") {
 			cout << "# " << opcio << endl;
 			conjunt.imprime_cjt_especies();
+		cout << endl;
 		}
 		else if (opcio == "tabla_distancias") {
 			cout << "# " << opcio << endl;
@@ -76,17 +86,25 @@ int main() {
 			cout << endl;
 		}
 		else if (opcio == "inicializa_clusters") {
-			//cjt_clusters.inicialitza_clusters(conjunt);
+			cout << "# " << opcio << endl;
+			cjt_clusters.inicialitza_clusters(conjunt);
+			cout << endl;
 		}
 		else if (opcio == "ejecuta_paso_wpgma") {
-			//cjt_clusters.ejecuta_paso_wpgm();
+			cout << "# " << opcio << endl;
+			cjt_clusters.ejecuta_paso_wpgm();
 		}
 		else if (opcio == "imprime_cluster") {
+
 			cin >> id;
-			//cjt_clusters.imprime_cluster(id);
+			cout << "# " << opcio << " " << id << endl;
+			cjt_clusters.imprime_cluster(id);
+			cout << endl;
 		}
 		else if (opcio == "imprime_arbol_filogenetico") {
-			//cjt_clusters.imprime_arbol_filogenetico();
+			cout << "# " << opcio << endl;
+			cjt_clusters.imprime_arbol_filogenetico();
+			cout << endl;
 		}
 	cin >> opcio;
 	}

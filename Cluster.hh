@@ -19,9 +19,12 @@ class Cluster {
 
 private:
 
-	BinTree< pair<string, double> >cluster; // 
+	BinTree< pair<string, double> > cluster; // 
+
+	string identificador;
 	
 	void distancia_entre_clusters(const Cluster& clus1, const Cluster& clus2);
+
 		
 public:
 		// Constructores
@@ -51,7 +54,7 @@ public:
 	@brief <b>Postcondició: </b>El resultat és un cluster amb la fusió dels dos altres.
 */	
 	
-	Cluster(Cluster clus1, Cluster Clus2);
+	Cluster(const Cluster clus1, const Cluster Clus2, const double& dist);
 	
 		// Consultores
 
@@ -75,6 +78,9 @@ public:
 */	
 		
 	void escriure() const;
+
+  	void inm_escriure(const BinTree<pair<string,double>>& a) const;
+
 
 
 	

@@ -28,6 +28,12 @@ private:
 	void actualizar_tabla_clusters(); // actualiza la tabla despues de cada paso wpgma
 
 	void imprime_tabla_distancias() const;
+
+	double min_dist();
+
+
+
+
 	
 public:
 
@@ -65,6 +71,12 @@ public:
  * 	@brief <b>Postcondició: </b>S'ha imprès l'arbre filogenètic pel canal standart de sortida.
  */
 	void imprime_arbol_filogenetico() const;
+
+	void elimina_especie_clusters(const string& id);
+
+	void afegeix_especie_clusters(const string& c1, const string& c2, const double& dist); // Recalcular taula distancies si s'afegeix un element.
+
+
 	
 };
 
