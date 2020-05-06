@@ -21,7 +21,6 @@ private:
 
 	BinTree< pair<string, double> > cluster; // 
 
-	string identificador;
 	
 	void distancia_entre_clusters(const Cluster& clus1, const Cluster& clus2);
 

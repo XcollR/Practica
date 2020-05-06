@@ -11,7 +11,7 @@ void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt) {
              string x;
              conjunt.actual(x);
              Cluster clust(x);
-              map_clusters.insert(make_pair(x, clust));
+             map_clusters.insert(make_pair(x, clust));
              conjunt.avanza();
 
         }
@@ -23,7 +23,8 @@ void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt) {
 
 void Cjt_clusters::imprime_arbol_filogenetico() const {
     for (auto it = map_clusters.begin(); it != map_clusters.end(); ++it) {
-        cout << it->first << endl;
+        cout << it->first << " ";
+        it->second.escriure();
     }
 
 }
@@ -71,6 +72,9 @@ void Cjt_clusters::imprime_cluster(string id) const {
 
 
 void Cjt_clusters::ejecuta_paso_wpgm() {
+    if (map_clusters.size() <= 1) cout << "Error" << endl;
+    else {
+
     double distancia = 100;
     string x1,x2;
         for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
@@ -88,12 +92,12 @@ void Cjt_clusters::ejecuta_paso_wpgm() {
         }
     }
     afegeix_especie_clusters(x1,x2,distancia);
-    elimina_especie_clusters(x1);
 
 
     
-    cout << "La distancia minima es troba entre les especies " << x1 << " i " << x2 << endl;
+    //cout << "La distancia minima es troba entre les especies " << x1 << " i " << x2 << endl;
     imprime_tabla_distancias();
+    }
  }
 
 
@@ -116,6 +120,20 @@ void Cjt_clusters::afegeix_especie_clusters(const string& c1, const string& c2, 
     string id = it->first+it2->first;
     Cluster clust(it->second,it2->second,dist);
     map_clusters.insert(make_pair(id, clust));
-    cout << id << dist << endl;
+
+    auto esp = map_clusters.find(id);
+	map<string, double> aux;
+	for (auto it = map_clusters.begin(); it != map_clusters.end(); ++it) {
+		auto itt = tabla_distancias_cluster.find(it->first);
+		if (id > it->first) {
+			itt->second.insert(make_pair(id, dist/2));
+		}
+		else if (id < it->first) {
+			aux.insert(make_pair(it->first, dist/2));
+		}
+			
+	}
+	tabla_distancias_cluster.insert(make_pair(id, aux));
+    elimina_especie_clusters(x1);
 
 }
