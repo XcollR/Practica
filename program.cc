@@ -93,6 +93,7 @@ int main() {
 		else if (opcio == "ejecuta_paso_wpgma") {
 			cout << "# " << opcio << endl;
 			cjt_clusters.ejecuta_paso_wpgm();
+			cout << endl;
 		}
 		else if (opcio == "imprime_cluster") {
 
@@ -103,7 +104,7 @@ int main() {
 		}
 		else if (opcio == "imprime_arbol_filogenetico") {
 			cout << "# " << opcio << endl;
-			cjt_clusters.imprime_arbol_filogenetico();
+			cjt_clusters.imprime_arbol_filogenetico(conjunt);
 			cout << endl;
 		}
 	cin >> opcio;

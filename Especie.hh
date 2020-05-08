@@ -18,16 +18,28 @@ using namespace std;
 class Especie {
 	
 private: 
-		
-	string gen; // gen de la espècie.
 
-	static int k_num; //k per fer els k-meros.
-
-	map<string, int> k_meros; // k-meros de la especie.
+/**
+ * 	@param String. És el gen de la espècie.
+*/
+	string gen; 
+/**
+ * 	@param Static @param int. El tamany de la k per separar els gens en els k-meros.
+*/
+	static int k_num; 
+/**
+ * 	@param Mapa. Mapa on es guarden els k-meros de la espècie.
+*/
+	map<string, int> k_meros; 
 	
-	map<string,int> return_k_meros() const; // retorn el map de k-meros.
-
-	void kmer(); //funció kmer
+/**
+ * 	@brief Calcula els kmeros d'una espècie a partir del seu gen. 
+ * 
+ * 	@brief <b>Precondició: </b>El paràmetre implícit és un string amb longitud >= k.
+ * 
+ * 	@brief <b>Postcondició: </b>S'ha calculat els k-meros i s'han guardat.
+*/
+	void kmer(); 
 	
 public: 
 	
@@ -52,6 +64,7 @@ public:
 	
 */
 	Especie(string gen1);
+
 /**
  * 	@brief Introdueix el paràmetre k com a static per calcular els kmeros.
  * 
@@ -61,6 +74,9 @@ public:
 */
 
 	static void set_parametro(const int& k_dato);
+
+
+
 	
 	
 		// Consultores

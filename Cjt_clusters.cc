@@ -2,8 +2,7 @@
 
 
 
-
-void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt) {
+void Cjt_clusters::inicialitza_cluster_sense_imprimir(Cjt_especies& conjunt) {
     map_clusters.clear();
     tabla_distancias_cluster.clear();
     conjunt.inicio();
@@ -16,16 +15,27 @@ void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt) {
 
         }
     tabla_dist_clust(conjunt);
+
+}
+
+void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt) {
+    inicialitza_cluster_sense_imprimir(conjunt);
     imprime_tabla_distancias();
 
 }
 
 
-void Cjt_clusters::imprime_arbol_filogenetico() const {
-    for (auto it = map_clusters.begin(); it != map_clusters.end(); ++it) {
-        cout << it->first << " ";
-        it->second.escriure();
+void Cjt_clusters::imprime_arbol_filogenetico(Cjt_especies& conjunt) {
+    inicialitza_cluster_sense_imprimir(conjunt);
+    if (map_clusters.size() != 0) {
+    while (map_clusters.size() > 1) {
+        ejecuta_paso_wpgm_sense_imprimir();
     }
+    auto it = map_clusters.begin();
+    it->second.escriure();
+    }
+    else cout << "ERROR: El conjunto de clusters es vacio." << endl;
+
 
 }
 
@@ -63,23 +73,20 @@ void Cjt_clusters::imprime_tabla_distancias() const {
 
 void Cjt_clusters::imprime_cluster(string id) const {
     auto it = map_clusters.find(id);
-    if (it == map_clusters.end()) cout << "Error, el cluster no existeix" << endl;
+    if (it == map_clusters.end()) cout << "ERROR: El cluster "<< id << " no existe." << endl;
     else {
         it->second.escriure();
     }
 }
 
 
-
-void Cjt_clusters::ejecuta_paso_wpgm() {
-    if (map_clusters.size() <= 1) cout << "Error" << endl;
-    else {
-
+void Cjt_clusters::ejecuta_paso_wpgm_sense_imprimir() {
     double distancia = 100;
     string x1,x2;
-        for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
-        for (auto it2 = it; it2 != tabla_distancias_cluster.end(); ++it2) {
-		if (it->first != it2->first) {
+    auto it = tabla_distancias_cluster.begin(), it2 = it;
+    ++it2;
+    while (it != tabla_distancias_cluster.end()) {
+        while (it2 != tabla_distancias_cluster.end()) {
 			const auto a = tabla_distancias_cluster.find(it->first);
 			const auto ti = it->second.find(it2->first);
                 if (ti->second < distancia) {
@@ -87,19 +94,28 @@ void Cjt_clusters::ejecuta_paso_wpgm() {
                 x1 = a->first;
                 x2= ti->first;
                 }
-            }
-
+            ++it2;
         }
+        ++it;
     }
+
+    string x = x1+x2;
+    auto a = map_clusters.find(x1);
+    auto b = map_clusters.find(x2);
+
+    Cluster c(a->second,b->second,distancia);
+    map_clusters.insert(make_pair(x,c));
     afegeix_especie_clusters(x1,x2,distancia);
+}
 
-
-    
-    //cout << "La distancia minima es troba entre les especies " << x1 << " i " << x2 << endl;
+void Cjt_clusters::ejecuta_paso_wpgm() {
+    if (map_clusters.size() > 1) {
+    ejecuta_paso_wpgm_sense_imprimir();   
     imprime_tabla_distancias();
     }
- }
-
+    else cout << "ERROR: num_clusters <= 1";
+}
+ 
 
 
 
@@ -115,13 +131,7 @@ void Cjt_clusters::elimina_especie_clusters(const string& id) {
 }
 
 void Cjt_clusters::afegeix_especie_clusters(const string& c1, const string& c2, const double& dist) {
-    auto it = map_clusters.find(c1);
-    auto it2 = map_clusters.find(c2);
-    string id = it->first+it2->first;
-    Cluster clust(it->second,it2->second,dist);
-    map_clusters.insert(make_pair(id, clust));
-
-    auto esp = map_clusters.find(id);
+    string id = c1+c2;
 	map<string, double> aux;
 	for (auto it = map_clusters.begin(); it != map_clusters.end(); ++it) {
 		auto itt = tabla_distancias_cluster.find(it->first);
@@ -134,6 +144,6 @@ void Cjt_clusters::afegeix_especie_clusters(const string& c1, const string& c2, 
 			
 	}
 	tabla_distancias_cluster.insert(make_pair(id, aux));
-    elimina_especie_clusters(x1);
-
+    elimina_especie_clusters(c1);
+    elimina_especie_clusters(c2);
 }

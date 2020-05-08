@@ -19,10 +19,16 @@ void Cluster::escriure() const {
 
 void Cluster::inm_escriure(const BinTree<pair<string,double>>& a) const {
     	if (not a.empty()) {
+        if (not a.left().empty() and not a.right().empty()) {
 		cout <<"["<< "(" << a.value().first << ", " << a.value().second<< ")";
+        }
+        else {
+            cout <<"["<< a.value().first;
+        }
 		inm_escriure(a.left());
 		inm_escriure(a.right());
         cout << "]";
 	}
 }
+
 

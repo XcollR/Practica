@@ -24,18 +24,39 @@ private:
 	// Tipus de mòdul: dades
 	// Descripció del tipus: representa un conjunt d'especies ordenades per ordre alfabètic.
 	
+/** 
+ * 	@param Mapa. Mapa on guardem les espècies del conjunt d'espècies.
+*/
+	map<string,Especie> cjt_especies; 
+/** 
+ * 	@param Mapa. Nested map. Mapa on guardem les distancies entre les espècies.
+*/			
+	map<string, map<string,double> > taula_distancies; 
 
-	map<string,Especie> cjt_especies; //vector on es guarda les espècies;
-		
-	int num_especies; // el num d'especies que tenim
-			
-	map<string, map<string,double> > taula_distancies; // map multidimensional on hi ha les distancies entre especies;
+/**	
+ * 	@brief Actualitza la taula de distàncies si s'elimina una espècie.
+ * 
+	@brief <b>Precondició: </b>La espècie la qual es vol eliminar existeix dins la taula de distàncies.
 	
+	@brief <b>Postcondició: </b>S'ha actualitzat la taula.
+*/
 	void elimina_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'elimina un element.
 
+/**	
+ * 	@brief Actualitza la taula de distàncies si s'afegeix una espècie.
+ * 
+	@brief <b>Precondició: </b>La espècie la qual es vol afegir existeix no existeix dins la taula de distàncies.
+	
+	@brief <b>Postcondició: </b>S'ha actualitzat la taula.
+*/
 	void afegeix_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'afegeix un element.
 	
+/**
+ * 	@param Iterator. Iterador del mapa d'especies.
+*/
 	map<string, Especie>::const_iterator it;
+
+	
 public:
 
 
@@ -154,14 +175,40 @@ public:
 */
 	void imprime_cjt_especies() const;
 	
-int size()const;
+/** @brief Consulta si l'iterador del mapa del conjunt d'especies apunta al final d'ell o no.
+ * 
+ * 	@brief <b>Precondició: </b>Cert.
+ * 
+ * 	@brief <b>Postcondició: </b>El booleà retorna cert si apunta al final del mapa.
+ * 
+ */
 
 bool final();
 
+/** @brief Posiciona l'iterador del mapa del conjunt d'especies apuntant al primer element.
+ * 
+ * 	@brief <b>Precondició: </b>Cert.
+ * 
+ * 	@brief <b>Postcondició: </b>El iterador apunta al primer element del mapa.
+ */
 void inicio();
 
+/** @brief El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual.
+ * 
+ * 	@brief <b>Precondició: </b>Cert.
+ * 
+ * 	@brief <b>Postcondició: </b>El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual
+ * 
+ */
 void actual(string& act);
 
+/** @brief Avança la posició del iterador en una posició;
+ * 
+ * 	@brief <b>Precondició: </b>Cert.
+ * 
+ * 	@brief <b>Postcondició: </b>El iterador del mapa d'especies apunta una posició endavant.
+ * 
+ */
 void avanza();
 	
 

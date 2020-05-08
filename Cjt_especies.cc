@@ -1,8 +1,11 @@
+/** @file Cjt_especies.cc
+ * 	@brief Còdig de la classe Cjt_especies
+ */
+
 #include "Cjt_especies.hh"
 #include "Especie.hh"
 
 Cjt_especies::Cjt_especies() {
-	num_especies = 0;
 	cjt_especies = map<string, Especie> ();
 }
 
@@ -40,7 +43,6 @@ void Cjt_especies::lee_cjt_especies() {
 void Cjt_especies::crea_especie(string id,string gen) {
 			Especie e(gen);
 			cjt_especies.insert(make_pair(id,e));
-			++num_especies;
 			afegeix_especie_tabla_dist(id);
 }
 void Cjt_especies::imprime_cjt_especies() const {
@@ -113,10 +115,6 @@ void Cjt_especies::afegeix_especie_tabla_dist(const string& id) {
 
 }
 
-	
-int Cjt_especies::size()const {
-	return cjt_especies.size();
-}
 
 void Cjt_especies::inicio() {
 	it = cjt_especies.begin();

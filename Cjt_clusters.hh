@@ -18,10 +18,14 @@ using namespace std;
 class Cjt_clusters {
 
 private: 
-	
-	map<string, Cluster> map_clusters; // mapa amb id de cluster i el cluster;
-	
-	map<string, map<string, double> > tabla_distancias_cluster; // tabla distancias entre clusters
+/**	
+ * 	@param Mapa on es guarden els clusters resultants. La clau es un string i la dada un Cluster
+*/
+	map<string, Cluster> map_clusters;
+/**	
+ * 	@param Mapa on es guarden les distancies entre clusters. És un nested map.
+*/	
+	map<string, map<string, double> > tabla_distancias_cluster; 
 	
 	void tabla_dist_clust(const Cjt_especies& conjunt); // funcion para calcular las distancias entre clusters
 	
@@ -70,12 +74,15 @@ public:
  * 
  * 	@brief <b>Postcondició: </b>S'ha imprès l'arbre filogenètic pel canal standart de sortida.
  */
-	void imprime_arbol_filogenetico() const;
+	void imprime_arbol_filogenetico(Cjt_especies& conjunt);
 
 	void elimina_especie_clusters(const string& id);
 
 	void afegeix_especie_clusters(const string& c1, const string& c2, const double& dist); // Recalcular taula distancies si s'afegeix un element.
 
+	void ejecuta_paso_wpgm_sense_imprimir();
+
+	void inicialitza_cluster_sense_imprimir(Cjt_especies& conjunt);
 
 	
 };
