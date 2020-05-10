@@ -24,6 +24,9 @@ private:
 	
 	void distancia_entre_clusters(const Cluster& clus1, const Cluster& clus2);
 
+	bool inm_cerca(const BinTree<pair<string,double>>& cluster, const string& id) const;
+
+
 		
 public:
 		// Constructores
@@ -80,6 +83,7 @@ public:
 
   	void inm_escriure(const BinTree<pair<string,double>>& a) const;
 
+	bool cerca(const string& id) const;
 
 
 	

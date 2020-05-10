@@ -53,9 +53,9 @@ public:
 	
 /** @brief Inicialitza els clusters del conjunt.
  * 
- * 	@brief <b>Precondició: </b>Existeix un conjunt d'especies.
+ * 	\pre Existeix un conjunt d'especies.
  * 
- * 	@brief <b>Postcondició: </b>Els clusters s'han inicialitzat.
+ * 	\post Els clusters s'han inicialitzat.
  * 
  */
 	void inicialitza_clusters(Cjt_especies& conjunt);
@@ -78,11 +78,13 @@ public:
 
 	void elimina_especie_clusters(const string& id);
 
-	void afegeix_especie_clusters(const string& c1, const string& c2, const double& dist); // Recalcular taula distancies si s'afegeix un element.
+	void afegeix_especie_clusters(const string& c1, const string& c2); // Recalcular taula distancies si s'afegeix un element.
 
 	void ejecuta_paso_wpgm_sense_imprimir();
 
 	void inicialitza_cluster_sense_imprimir(Cjt_especies& conjunt);
+
+
 
 	
 };

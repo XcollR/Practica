@@ -106,6 +106,7 @@ int main() {
 			cout << "# " << opcio << endl;
 			cjt_clusters.imprime_arbol_filogenetico(conjunt);
 			cout << endl;
+			
 		}
 	cin >> opcio;
 	}

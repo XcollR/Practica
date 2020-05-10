@@ -28,4 +28,4 @@ practica_final.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.
 	tar -cvf practica.tar *.cc *.hh Makefile 
 	
 clean: 
-	del -f *.o *.gch *.exe *.tar *.txt
+	del -f *.o *.gch *.exe *.txt
