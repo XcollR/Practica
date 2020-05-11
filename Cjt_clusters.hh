@@ -33,7 +33,9 @@ private:
 
 	void imprime_tabla_distancias() const;
 
-	double min_dist();
+	pair<string,string> min_dist();
+
+	double dist_clust(const string& id, const string& id2) const;
 
 
 
@@ -78,7 +80,7 @@ public:
 
 	void elimina_especie_clusters(const string& id);
 
-	void afegeix_especie_clusters(const string& c1, const string& c2); // Recalcular taula distancies si s'afegeix un element.
+	void afegeix_especie_clusters(const pair<string,string>& dist); // Recalcular taula distancies si s'afegeix un element.
 
 	void ejecuta_paso_wpgm_sense_imprimir();
 

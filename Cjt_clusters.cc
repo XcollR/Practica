@@ -5,7 +5,7 @@
 void Cjt_clusters::inicialitza_cluster_sense_imprimir(Cjt_especies& conjunt) {
     map_clusters.clear();
     tabla_distancias_cluster.clear();
-    conjunt.inicio(); // iterador de conjunt es fica a la primera posició
+    conjunt.inicio(); // iterador de conjunt es fica a la primera posiciรณ
          while (not conjunt.final()) {
              string x;
              conjunt.actual(x); // 
@@ -72,42 +72,19 @@ void Cjt_clusters::imprime_tabla_distancias() const {
 
 
 void Cjt_clusters::imprime_cluster(string id) const {
-    auto it = map_clusters.begin(), it2 = map_clusters.end();
-    bool b = false;
-    while (not b and it != it2) {
-        b = it->second.cerca(id);
-        ++it;
-    }
-    if (not b or map_clusters.size() == 0) cout << "ERROR: El cluster " << id << " no existe.";
-    cout << endl;
+    auto it = map_clusters.find(id);
+    if (it == map_clusters.end()) cout << "ERROR: El cluster " << id << " no existe." << endl;
+    else{
+        it->second.escriure();
+    }    
 }
 
 void Cjt_clusters::ejecuta_paso_wpgm_sense_imprimir() {
-    double distancia = 100;
-    string x1,x2;
-    for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
-        for (auto it2 = it; it2 != tabla_distancias_cluster.end(); ++it2) {
-		if (it->first != it2->first) {
-			const auto a = tabla_distancias_cluster.find(it->first);
-			const auto ti = it->second.find(it2->first);
-                if (ti->second < distancia) {
-                distancia = ti->second;
-                x1 = a->first;
-                x2= ti->first;
-                }
-            }
-
-        }
-    }
-
-    afegeix_especie_clusters(x1,x2);
-    string x = x1+x2;
-    auto a = map_clusters.find(x1);
-    auto b = map_clusters.find(x2);
-    Cluster c(a->second,b->second,distancia);
-    map_clusters.insert(make_pair(x,c));
-    elimina_especie_clusters(x1);
-    elimina_especie_clusters(x2);
+    pair<string,string> pair_dist = min_dist(); //pair amb els dos clusters a menor distancia.
+    afegeix_especie_clusters(pair_dist);
+    elimina_especie_clusters(pair_dist.first);
+    elimina_especie_clusters(pair_dist.second);
+   
 
 }
 
@@ -133,40 +110,50 @@ void Cjt_clusters::elimina_especie_clusters(const string& id) {
 
 }
 
-void Cjt_clusters::afegeix_especie_clusters(const string& c1, const string& c2) {
-    string fus = c1+c2;
+void Cjt_clusters::afegeix_especie_clusters(const pair<string,string>& dist) {
+    string fus = dist.first + dist.second;
     map<string, double> aux;
     tabla_distancias_cluster.insert(make_pair(fus, aux));
     auto it = tabla_distancias_cluster.begin();
     while (it != tabla_distancias_cluster.end() and it->first < fus) {
-        tabla_distancias_cluster[it->first][fus] = (tabla_distancias_cluster[it->first][c1] + tabla_distancias_cluster[min(it->first,c2)][max(it->first,c2)])/2;
+        tabla_distancias_cluster[it->first][fus] = (tabla_distancias_cluster[it->first][dist.first] + tabla_distancias_cluster[min(it->first,dist.second)][max(it->first,dist.second)])/2;
         ++it;
     }
     while (it != tabla_distancias_cluster.end()) {
-        tabla_distancias_cluster[fus][it->first] = (tabla_distancias_cluster[c1][it->first] + tabla_distancias_cluster[min(it->first,c2)][max(it->first,c2)])/2;
+        tabla_distancias_cluster[fus][it->first] = (tabla_distancias_cluster[dist.first][it->first] + tabla_distancias_cluster[min(it->first,dist.second)][max(it->first,dist.second)])/2;
         ++it;
     }
+    auto a = map_clusters.find(dist.first);
+    auto b = map_clusters.find(dist.second);
+    Cluster c(a->second,b->second,dist_clust(dist.first,dist.second));
+     map_clusters.insert(make_pair(fus,c));
+
 
 }
 
+pair<string,string> Cjt_clusters::min_dist() {
+    double distancia = 100;
+    pair<string,string> dists;
+    for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
+        for (auto it2 = it; it2 != tabla_distancias_cluster.end(); ++it2) {
+		if (it->first != it2->first) {
+			const auto a = tabla_distancias_cluster.find(it->first);
+			const auto ti = it->second.find(it2->first);
+                if (ti->second < distancia) {
+                distancia = ti->second;
+                dists.first = a->first;
+                dists.second = ti->first;
+                }
+            }
 
+        }
+    }
+    return dists;
 
-
-
- /*   string id = c1+c2;
-	map<string, double> aux;
-	for (auto it = map_clusters.begin(); it != map_clusters.end(); ++it) {
-		auto itt = tabla_distancias_cluster.find(it->first);
-		if (id > it->first) {
-			itt->second.insert(make_pair(id, dist/2));
-		}
-		else if (id < it->first) {
-			aux.insert(make_pair(it->first, dist/2));
-		}
-			
-	}
-	tabla_distancias_cluster.insert(make_pair(id, aux));
-    elimina_especie_clusters(c1);
-    elimina_especie_clusters(c2);
 }
-*/
+
+double Cjt_clusters::dist_clust(const string& id, const string& id2) const{
+    		auto it = tabla_distancias_cluster.find(id);
+			auto it2 = it->second.find(id2);
+			return it2->second;
+}

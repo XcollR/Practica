@@ -19,13 +19,10 @@ Cjt_especies.o: Cjt_especies.hh Cjt_especies.cc
 Especie.o: Especie.cc Especie.hh 
 	g++ $(OPCIONS) -c Especie.cc 
 	
+
 	
-practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc program.cc 
-	tar -cvf practica.tar Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc program.cc Makefile 
-	
-	
-practica_final.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_especies.hh Cjt_especies.cc BinTree.hh program.cc 
-	tar -cvf practica.tar *.cc *.hh Makefile 
+practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc BinTree.hh program.cc 
+	tar -cvf practica.tar Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc BinTree.hh program.cc
 	
 clean: 
-	del -f *.o *.gch *.exe *.txt
+	rm -f *.o *.gch *.exe *.txt
