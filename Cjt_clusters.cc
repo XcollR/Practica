@@ -124,13 +124,13 @@ void Cjt_clusters::afegeix_especie_clusters(const pair<string,string>& dist) {
 }
 
 pair<string,string> Cjt_clusters::min_dist() {
-    double distancia = 100;
+    double distancia = 101;
     pair<string,string> dists;
     for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
         for (auto it2 = it; it2 != tabla_distancias_cluster.end(); ++it2) {
 		if (it->first != it2->first) {
 
-                if (tabla_distancias_cluster[it->first][it2->first] < distancia) {
+                if (tabla_distancias_cluster[it->first][it2->first] < distancia ){
                 distancia = tabla_distancias_cluster[it->first][it2->first];
                 dists.first = it->first;
                 dists.second = it2->first;
