@@ -37,6 +37,7 @@ private:
 
 	double dist_clust(const string& id, const string& id2) const;
 
+	bool ja_fet;
 
 
 
@@ -60,7 +61,7 @@ public:
  * 	\post Els clusters s'han inicialitzat.
  * 
  */
-	void inicialitza_clusters(Cjt_especies& conjunt);
+	void inicialitza_clusters(Cjt_especies& conjunt, const bool ve_de_func);
 
 /** @brief Fusiona els clusters que estan a menor distància
  * 
@@ -68,7 +69,7 @@ public:
  * 
  * 	@brief <b>Postcondició: </b>S'ha fusionat els clusters i s'imprimeix la taula de distàncies.
  */
-	void ejecuta_paso_wpgm();
+	void ejecuta_paso_wpgma(const bool& a);
 	
 /** @brief Imprimeix l'arbre filogenètic.
  * 
@@ -84,7 +85,6 @@ public:
 
 	void ejecuta_paso_wpgm_sense_imprimir();
 
-	void inicialitza_cluster_sense_imprimir(Cjt_especies& conjunt);
 
 
 

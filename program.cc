@@ -11,9 +11,9 @@
 #include "Cjt_especies.hh"
 using namespace std;
 
+
 /** @brief El main del programa */
 int main() {
-	
 	int k; // k del kmer;
 	cin >> k;
 	
@@ -87,12 +87,14 @@ int main() {
 		}
 		else if (opcio == "inicializa_clusters") {
 			cout << "# " << opcio << endl;
-			cjt_clusters.inicialitza_clusters(conjunt);
+			bool a = true;
+			cjt_clusters.inicialitza_clusters(conjunt, a);
 			cout << endl;
 		}
 		else if (opcio == "ejecuta_paso_wpgma") {
 			cout << "# " << opcio << endl;
-			cjt_clusters.ejecuta_paso_wpgm();
+			bool a = true;
+			cjt_clusters.ejecuta_paso_wpgma(a);
 			cout << endl;
 		}
 		else if (opcio == "imprime_cluster") {
@@ -110,4 +112,5 @@ int main() {
 		}
 	cin >> opcio;
 	}
+
 }
