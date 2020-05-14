@@ -1,3 +1,6 @@
+/** @file Especie.cc
+ * 	@brief Còdig de la classe Especie.
+ */
 #include "Especie.hh"
 
 

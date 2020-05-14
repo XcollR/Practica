@@ -1,3 +1,7 @@
+/** @file Cluster.cc
+ * 	@brief Còdig de la classe Cluster.
+ */
+
 #include "Cluster.hh"
 
 Cluster::Cluster(const string& id){

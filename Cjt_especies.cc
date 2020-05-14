@@ -1,5 +1,5 @@
 /** @file Cjt_especies.cc
- * 	@brief Còdig de la classe Cjt_especies
+ * 	@brief Còdig de la classe Cjt_especies.
  */
 
 #include "Cjt_especies.hh"

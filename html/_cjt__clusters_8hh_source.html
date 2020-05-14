@@ -5,13 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Creació d&#39;un arbre filogenètic.: Fichero Fuente Cjt_clusters.hh</title>
+<title>Creació d&#39;un arbre filogenètic.: Fitxer de Codi Cjt_clusters.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,22 +35,41 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Generado por Doxygen 1.8.18 -->
+<!-- Generat per Doxygen 1.8.18 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(function() {
-  initMenu('',true,false,'search.php','Buscar');
-  $(document).ready(function() { init_search(); });
-});
-/* @license-end */</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pàgina&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fitxers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Llista&#160;dels&#160;Fitxers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;Fitxers</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -66,7 +90,7 @@ $(function() {
 <div class="title">Cjt_clusters.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_cjt__clusters_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="_cjt__clusters_8hh.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef CJT_CLUSTERS_HH</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define CJT_CLUSTER_HH</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_cjt__clusters_8hh.html#af283c7c3076dbf48e48e3af57118520f">    8</a></span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
@@ -78,72 +102,72 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cluster_8hh.html">Cluster.hh</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_cjt__clusters.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cjt__clusters.html">Cjt_clusters</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>: </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">   25</a></span>&#160;  map&lt;string, Cluster&gt; <a class="code" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">map_clusters</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">   29</a></span>&#160;  map&lt;string, map&lt;string, double&gt; &gt; <a class="code" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">tabla_distancias_cluster</a>; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> tabla_dist_clust(<span class="keyword">const</span> <a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt); <span class="comment">// funcion para calcular las distancias entre clusters</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_cjt__clusters.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cjt__clusters.html">Cjt_clusters</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>: </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">   34</a></span>&#160;  map&lt;string, Cluster&gt; <a class="code" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">map_clusters</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">   38</a></span>&#160;  map&lt;string, map&lt;string, double&gt; &gt; <a class="code" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">tabla_distancias_cluster</a>; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> afegeix_especie_clusters(<span class="keyword">const</span> pair&lt;string,string&gt;&amp; dist);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> elimina_especie_clusters(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Constructores</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="class_cjt__clusters.html">Cjt_clusters</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> tabla_dist_clust(<span class="keyword">const</span> <a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt); <span class="comment">// funcion para calcular las distancias entre clusters</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> afegeix_especie_clusters(<span class="keyword">const</span> pair&lt;string,string&gt;&amp; dist);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> elimina_especie_clusters(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Consultores</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Constructores</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">double</span> dist_clust(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; id2) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  pair&lt;string,string&gt; min_dist() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="class_cjt__clusters.html">Cjt_clusters</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// Consultores</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">double</span> dist_clust(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; id2) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Modificadores</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> ejecuta_paso_wpgma(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; a);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  pair&lt;string,string&gt; min_dist() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">// Modificadores</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">// Lectura i escriptura</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">void</span> imprime_cluster(<span class="keywordtype">string</span> <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> inicialitza_clusters(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt, <span class="keyword">const</span> <span class="keywordtype">bool</span> ve_de_func);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> imprime_tabla_distancias() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">void</span> imprime_arbol_filogenetico(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">void</span> ejecuta_paso_wpgma(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; a);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">// Lectura i escriptura</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">void</span> imprime_cluster(<span class="keywordtype">string</span> <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">void</span> inicialitza_clusters(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt, <span class="keyword">const</span> <span class="keywordtype">bool</span> ve_de_func);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">void</span> imprime_tabla_distancias() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> imprime_arbol_filogenetico(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_cjt__clusters_html"><div class="ttname"><a href="class_cjt__clusters.html">Cjt_clusters</a></div><div class="ttdoc">Crea un conjunt de clusters</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00019">Cjt_clusters.hh:19</a></div></div>
-<div class="ttc" id="aclass_cjt__clusters_html_aa8d53231821f38f1867001be195d8d63"><div class="ttname"><a href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">Cjt_clusters::tabla_distancias_cluster</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; tabla_distancias_cluster</div><div class="ttdoc">Mapa on es guarden les distancies entre clusters. És un nested map.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00029">Cjt_clusters.hh:29</a></div></div>
-<div class="ttc" id="a_cluster_8hh_html"><div class="ttname"><a href="_cluster_8hh.html">Cluster.hh</a></div><div class="ttdoc">Especificació de la classe Cluster</div></div>
-<div class="ttc" id="aclass_cjt__especies_html"><div class="ttname"><a href="class_cjt__especies.html">Cjt_especies</a></div><div class="ttdoc">Crea un conjunt d'especies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00022">Cjt_especies.hh:22</a></div></div>
-<div class="ttc" id="aclass_cjt__clusters_html_aee8b5f7c1021b21308fb657529c2ae0b"><div class="ttname"><a href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">Cjt_clusters::map_clusters</a></div><div class="ttdeci">map&lt; string, Cluster &gt; map_clusters</div><div class="ttdoc">Mapa on es guarden els clusters resultants. La clau es un string i la dada un Cluster.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00025">Cjt_clusters.hh:25</a></div></div>
+<div class="ttc" id="aclass_cjt__clusters_html"><div class="ttname"><a href="class_cjt__clusters.html">Cjt_clusters</a></div><div class="ttdoc">Representa un conjunt de clusters.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00028">Cjt_clusters.hh:28</a></div></div>
+<div class="ttc" id="aclass_cjt__clusters_html_aa8d53231821f38f1867001be195d8d63"><div class="ttname"><a href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">Cjt_clusters::tabla_distancias_cluster</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; tabla_distancias_cluster</div><div class="ttdoc">Nested map on es guarden les distancies entre clusters. És un nested map.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00038">Cjt_clusters.hh:38</a></div></div>
+<div class="ttc" id="a_cluster_8hh_html"><div class="ttname"><a href="_cluster_8hh.html">Cluster.hh</a></div><div class="ttdoc">Especificació de la classe Cluster.</div></div>
+<div class="ttc" id="aclass_cjt__especies_html"><div class="ttname"><a href="class_cjt__especies.html">Cjt_especies</a></div><div class="ttdoc">Representa un conjunt d'espècies ordenades alfabèticament.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00027">Cjt_especies.hh:27</a></div></div>
+<div class="ttc" id="aclass_cjt__clusters_html_aee8b5f7c1021b21308fb657529c2ae0b"><div class="ttname"><a href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">Cjt_clusters::map_clusters</a></div><div class="ttdeci">map&lt; string, Cluster &gt; map_clusters</div><div class="ttdoc">Mapa on es guarden els clusters resultants. La clau es un string i la dada un Cluster.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00034">Cjt_clusters.hh:34</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generado por &#160;<a href="http://www.doxygen.org/index.html">
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

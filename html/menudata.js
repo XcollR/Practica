@@ -23,11 +23,11 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Página principal",url:"index.html"},
-{text:"Clases",url:"annotated.html",children:[
-{text:"Lista de clases",url:"annotated.html"},
-{text:"Miembros de las clases",url:"functions.html",children:[
-{text:"Todo",url:"functions.html",children:[
+{text:"Pàgina principal",url:"index.html"},
+{text:"Classes",url:"annotated.html",children:[
+{text:"Llista de Classes",url:"annotated.html"},
+{text:"Membres de Classes",url:"functions.html",children:[
+{text:"Tot",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
 {text:"c",url:"functions.html#index_c"},
 {text:"d",url:"functions.html#index_d"},
@@ -41,7 +41,7 @@ var menudata={children:[
 {text:"o",url:"functions.html#index_o"},
 {text:"s",url:"functions.html#index_s"},
 {text:"t",url:"functions.html#index_t"}]},
-{text:"Funciones",url:"functions_func.html",children:[
+{text:"Funcions",url:"functions_func.html",children:[
 {text:"a",url:"functions_func.html#index_a"},
 {text:"c",url:"functions_func.html#index_c"},
 {text:"d",url:"functions_func.html#index_d"},
@@ -55,9 +55,9 @@ var menudata={children:[
 {text:"s",url:"functions_func.html#index_s"},
 {text:"t",url:"functions_func.html#index_t"}]},
 {text:"Variables",url:"functions_vars.html"}]}]},
-{text:"Archivos",url:"files.html",children:[
-{text:"Lista de archivos",url:"files.html"},
-{text:"Miembros de los ficheros",url:"globals.html",children:[
-{text:"Todo",url:"globals.html"},
-{text:"Funciones",url:"globals_func.html"},
-{text:"defines",url:"globals_defs.html"}]}]}]}
+{text:"Fitxers",url:"files.html",children:[
+{text:"Llista dels Fitxers",url:"files.html"},
+{text:"Membres de Fitxers",url:"globals.html",children:[
+{text:"Tot",url:"globals.html"},
+{text:"Funcions",url:"globals_func.html"},
+{text:"Definicions",url:"globals_defs.html"}]}]}]}

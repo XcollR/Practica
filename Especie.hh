@@ -1,6 +1,6 @@
 /** @file Especie.hh
 	@author Xavier Coll Ribas
-	@brief Especificació de la classe <em>Especie</em>
+	@brief Especificació de la classe Especie.
 */
 
 #ifndef ESPECIE_HH
@@ -17,10 +17,8 @@ using namespace std;
     @brief Representa el conjunt de característiques
 	y operacions de les especies.
 
-	Ofereix la posibilitat de calcular els k-meros d'una especie.
-	A partir de dues especies podem calcular la distància que
-	les separa genèticament.
-
+	Ofereix la posibilitat de calcular la distancie entre
+	dues especies, consultar el gen, i escriure el gen.
 	Donat que hem d'establir un paramètre k, tenim la necessitat
 	de crear una constructora d'especie buida per poder introduir la k.
 */

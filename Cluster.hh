@@ -1,6 +1,6 @@
 /** @file Cluster.hh
  * 	@author Xavier Coll Ribas
- * 	@brief Especificació de la classe <em>Cluster</em>
+ * 	@brief Especificació de la classe Cluster.
  */
 #ifndef CLUSTER_HH
 #define CLUSTER_HH
@@ -14,8 +14,12 @@
 using namespace std;
 
 /** @class Cluster
-    @brief Representa un cluster d'un arbre binari, un node
-	aquest pot tenir "fills".
+    @brief Representa un cluster d'un arbre binari
+
+	Ofereix les opcions d'imprimir l'arbre del cluster amb les
+	distancies respecte als seus fills.
+	També l'opció de crear un cluster a partir de la fusió
+	de dos altres.
 */
 
 class Cluster {

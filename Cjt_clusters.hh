@@ -1,6 +1,6 @@
 /** @file Cjt_clusters.hh
 	@author Xavier Coll Ribas
-	@brief Especificació de la classe <em>Cjt_clusters</em>
+	@brief Especificació de la classe Cjt_clusters.
 */
 
 #ifndef CJT_CLUSTERS_HH
@@ -15,7 +15,16 @@
 using namespace std;
 
 /**	@class Cjt_clusters
- *	@brief <em>Crea un conjunt de clusters</em> */
+ *	@brief Representa un conjunt de clusters.
+
+ * 	Ofereix la possibilitat d'ajuntar clusters per tal d'anar 
+ * 	creant l'arbre filogenètic. També pots demanar imprimir un 
+ * 	cluster determinat si existeix i imprimir l'arbre resultant.
+ * 	També ofereix una taula de distancies entre clusters. Els clusters
+ * 	es generen mitjançant la sincronització amb un conjunt d'especies 
+ * 	i es compleix amb la funció inicializa_clusters.
+ */
+
 class Cjt_clusters {
 
 private: 

@@ -1,6 +1,6 @@
 /** @file Cjt_especies.hh
  * 	@author Xavier Coll Ribas
- * 	@brief Especificació de la classe <em>Cjt_especies</em>
+ * 	@brief Especificació de la classe Cjt_especies.
 */
 
 
@@ -17,8 +17,10 @@ using namespace std;
 
 /** @class Cjt_especies
  *  @brief Representa un conjunt d'espècies ordenades alfabèticament.
+ * 
  * 	Ofereix la possibilitat de calcular distàncies entre diferents especies
- * 	i modificar el conjunt, ja sigui creant noves especies o eliminant. També
+ * 	i modificar el conjunt, ja sigui creant noves especies o eliminant. Es pot 
+ * 	consultar el gen d'una especie i si una especie existeix.També
  * 	inclou la possibilitat d'imprimir una taula de distancies entre especies.
  */
  

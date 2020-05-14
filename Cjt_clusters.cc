@@ -1,4 +1,7 @@
-  
+/** @file Cjt_clusters.cc
+ * 	@brief Còdig de la classe Cjt_clusters.
+ */
+
 #include "Cjt_clusters.hh"
 
 
