@@ -27,13 +27,34 @@ private:
  * 	@brief Mapa on es guarden les distancies entre clusters. És un nested map.
 */	
 	map<string, map<string, double> > tabla_distancias_cluster; 
-	
+
+/**	@brief Imprimeix el cluster indicat.
+ * 	\pre Cert.
+ * 	\post S'ha passat totes les distancies entre especies al conjunt de clusters.
+ * 	\param Cjt_especies Entra un objecte del tipus conjunt especies.
+ */	
 	void tabla_dist_clust(const Cjt_especies& conjunt); // funcion para calcular las distancias entre clusters
-	
+
+/**	@brief Imprimeix la taula de distàncies entre clusters.
+ * 	\pre Cert.
+ * 	\post S'ha imprès totes les distàncies entre clusters.
+ */		
 	void imprime_tabla_distancias() const;
 
-	pair<string,string> min_dist();
-
+/**	@brief Funció per calcula la distancia minima entre Clusters.
+ * 	\pre Cert.
+ * 	\post S'ha calculat la distancia entre dos clusters.
+ * 	\return Retorna un pair. Els dos elements són de tipu string, retorna els
+ * 	identificadors de clusters a menor distancia.
+ */	
+	pair<string,string> min_dist() const;
+	
+/**	@brief Funció per calcula la distancia minima entre Clusters.
+ * 	\pre Cert.
+ * 	\post S'ha calculat la distancia entre dos clusters.
+ * 	\return Retorna un pair. Els dos elements són de tipu string, retorna els
+ * 	identificadors de clusters a menor distancia.
+ */
 	double dist_clust(const string& id, const string& id2) const;
 
 
