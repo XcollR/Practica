@@ -29,15 +29,12 @@ private:
 	
 	void tabla_dist_clust(const Cjt_especies& conjunt); // funcion para calcular las distancias entre clusters
 	
-	void actualizar_tabla_clusters(); // actualiza la tabla despues de cada paso wpgma
-
 	void imprime_tabla_distancias() const;
 
 	pair<string,string> min_dist();
 
 	double dist_clust(const string& id, const string& id2) const;
 
-	bool ja_fet;
 
 
 
@@ -46,9 +43,9 @@ public:
 
 /**	@brief Imprimeix el cluster indicat.
  * 
- * 	@brief <b>Precondició: </b>Existeix el cluster indicat.
+ * 	\pre Existeix el cluster indicat.
  * 
- * 	@brief <b>Postcondició: </b>S'ha imprès el cluster indicat.
+ * 	\post S'ha imprès el cluster indicat.
  * 
  * 	@param string id
  */
@@ -65,17 +62,17 @@ public:
 
 /** @brief Fusiona els clusters que estan a menor distància
  * 
- * 	@brief <b>Precondició: </b>Cert.	
+ * 	\pre Cert.	
  * 
- * 	@brief <b>Postcondició: </b>S'ha fusionat els clusters i s'imprimeix la taula de distàncies.
+ * 	\post S'ha fusionat els clusters i s'imprimeix la taula de distàncies.
  */
 	void ejecuta_paso_wpgma(const bool& a);
 	
 /** @brief Imprimeix l'arbre filogenètic.
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>S'ha imprès l'arbre filogenètic pel canal standart de sortida.
+ * 	\post S'ha imprès l'arbre filogenètic pel canal standart de sortida.
  */
 	void imprime_arbol_filogenetico(Cjt_especies& conjunt);
 

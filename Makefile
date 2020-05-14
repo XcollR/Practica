@@ -1,5 +1,4 @@
 OPCIONS = -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare -std=c++11
-# OPCIONS = -D_GLIBCXX_DEBUG -O2 -Wall -std=c++11
 
 program.exe: Cjt_especies.o program.o Especie.o Cjt_clusters.o Cluster.o
 	g++ $(OPCIONS) -o program.exe Cjt_especies.o program.o Especie.o Cjt_clusters.o Cluster.o
@@ -19,10 +18,9 @@ Cjt_especies.o: Cjt_especies.hh Cjt_especies.cc
 Especie.o: Especie.cc Especie.hh 
 	g++ $(OPCIONS) -c Especie.cc 
 	
-
 	
-practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc BinTree.hh program.cc 
-	tar -cvf practica.tar Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc BinTree.hh program.cc
+practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc 
+	tar -cvf practica.tar Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc
 	
 clean: 
-	rm -f *.o *.gch *.exe *.txt
+	del -f *.o *.gch *.exe *.txt

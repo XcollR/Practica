@@ -29,54 +29,56 @@ private:
 
 		
 public:
-		// Constructores
+
+
+	// Constructores
 /**
  * 	@brief Crea un cluster buit. 
  * 
- *	@brief <b>Precondició: </b>Cert.
+ *	\pre Cert.
  * 
-	@brief <b>Postcondició: </b>El resultat és un cluster buit.
+	\post El resultat és un cluster buit.
 */	
 	Cluster();
 
 /**
  * 	@brief Crea un cluster a partir d'una espècie. 
  * 
- *	@brief <b>Precondició: </b>Cert.
+ *	\pre Cert.
  * 
-	@brief <b>Postcondició: </b>El resultat és un cluster de la especie demanada.
+	\post El resultat és un cluster de la especie demanada.
 */	
 	
 	Cluster(const string& id);
 /**
  * 	@brief Crea un cluster a partir de la fusió de dos altres. 
  * 
- *	@brief <b>Precondició: </b>Els dos clusters existeixen i no són buits.
+ *	\pre Els dos clusters existeixen i no són buits.
  * 
-	@brief <b>Postcondició: </b>El resultat és un cluster amb la fusió dels dos altres.
+	\post El resultat és un cluster amb la fusió dels dos altres.
 */	
 	
 	Cluster(const Cluster clus1, const Cluster Clus2, const double& dist);
 	
-		// Consultores
+	// Consultores
 
 /**
  * 	@brief Consulta el subarbre del cluster, amb els fills dret i esquerra. 
  * 
- *	@brief <b>Precondició: </b>Cert.
+ *	\pre Cert.
  * 
-	@brief <b>Postcondició: </b>S'ha consultat el subarbre.
+	\post S'ha consultat el subarbre.
 */	
 	void sub_arbre_cluster(const Cluster& clus1);
 	
-		// Lectura i Escriptura
+	// Lectura i Escriptura
 		
 /**
  * 	@brief Escriu un cluster. 
  * 
- *	@brief <b>Precondició: </b>Cert.
+ *	\pre Cert.
  * 
-	@brief <b>Postcondició: </b>S'ha escrit el cluster.
+	\post S'ha escrit el cluster.
 */	
 		
 	void escriure() const;

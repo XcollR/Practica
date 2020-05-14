@@ -36,18 +36,18 @@ private:
 /**	
  * 	@brief Actualitza la taula de distàncies si s'elimina una espècie.
  * 
-	@brief <b>Precondició: </b>La espècie la qual es vol eliminar existeix dins la taula de distàncies.
+	\pre La espècie la qual es vol eliminar existeix dins la taula de distàncies.
 	
-	@brief <b>Postcondició: </b>S'ha actualitzat la taula.
+	\post S'ha actualitzat la taula.
 */
 	void elimina_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'elimina un element.
 
 /**	
  * 	@brief Actualitza la taula de distàncies si s'afegeix una espècie.
  * 
-	@brief <b>Precondició: </b>La espècie la qual es vol afegir existeix no existeix dins la taula de distàncies.
+	\pre La espècie la qual es vol afegir existeix no existeix dins la taula de distàncies.
 	
-	@brief <b>Postcondició: </b>S'ha actualitzat la taula.
+	\post S'ha actualitzat la taula.
 */
 	void afegeix_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'afegeix un element.
 	
@@ -66,9 +66,9 @@ public:
 /**
  * 	@brief Crea un conjunt d'espècies buit. 
  * 
- *	@brief <b>Precondició: </b>Cert.
+ *	\pre Cert.
  * 
-	@brief <b>Postcondició: </b>El resultat és un conjunt d'especies buit.
+	\post El resultat és un conjunt d'especies buit.
 */
 	
 	Cjt_especies();
@@ -79,9 +79,9 @@ public:
 /**	
  * 	@brief Crea una espècie i la introdueix al conjunt.
  * 
-	@brief <b>Precondició: </b>No existeix cap espècie amb el mateix identificador.
+	\pre No existeix cap espècie amb el mateix identificador.
 	
-	@brief <b>Postcondició: </b>S'ha creat una espècie.
+	\post S'ha creat una espècie.
 */
 	
 
@@ -91,9 +91,9 @@ public:
 
 /** @brief Elimina la espècie indicada del conjunt d'espècies.
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>La espècie s'ha eliminat del paràmetre implícit.
+ * 	\post La espècie s'ha eliminat del paràmetre implícit.
  * 
  * 	@param string id
  */
@@ -107,9 +107,9 @@ public:
 	
 /**	@brief Consulta si existeix la espècie indicada.
  * 
- * 	@brief <b>Precondició </b>El id és un string vàlid.
+ * 	\pre El id és un string vàlid.
  * 
- * 	@brief <b>Postcondició: </b>El resultat indica si existèix la espècie dins el conjunt d'espècies.
+ * 	\post El resultat indica si existèix la espècie dins el conjunt d'espècies.
  * 
  * 	@param string id
  * 
@@ -120,9 +120,9 @@ public:
 
 /** @brief Consulta la distàncie entre dues espècies.
  * 
- * 	@brief <b>Precondició: </b>Les dues espècies existeixen al conjunt.
+ * 	\pre Les dues espècies existeixen al conjunt.
  * 
- * 	@brief <b>Postcondició: </b>Et retorna la distància entre dues espècies
+ * 	\post Et retorna la distància entre dues espècies
  * 
  * 	@param string id1
  * 
@@ -135,9 +135,9 @@ public:
 /** 
  * @brief Consulta el gen de la espècie demanada
  * 
- * @brief <b>Precondició: </b>La espècie existeix al conjunt d'espècies.
+ * \pre La espècie existeix al conjunt d'espècies.
 
-   @brief <b>Postcondició: </b>S'ha mostrat el gen de la espècie.
+   \post S'ha mostrat el gen de la espècie.
    
    @param string
    
@@ -149,9 +149,9 @@ public:
 
 /** @brief Escriu una taula de les distàncies entre espècies.
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>S'ha imprès la taula de distàncies.
+ * 	\post S'ha imprès la taula de distàncies.
  * 
  */
 
@@ -159,27 +159,27 @@ public:
 	
 /** @brief Lectura d'un conjunt d'espècies.
  * 
- 	@brief <b>Precondició: </b>Estan preparats al canal estandar d'entrada
+ 	\pre Estan preparats al canal estandar d'entrada
 	 * un enter i les dades dels elements que llegirem.
 	 * 
-	@brief <b>Postcondició: </b>El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar.	
+	\post El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar.	
  */
 	void lee_cjt_especies();
 	
 /** @brief Escriptura del conjunt d'espècies.
  * 	
-  	@brief <b>Precondició: </b>Cert.
+  	\pre Cert.
  *  
-	@brief <b>Postcondició: </b>S'ha escrit pel canal estàndar de sortida les espècies
+	\post S'ha escrit pel canal estàndar de sortida les espècies
 	 * del paràmetre implícit.
 */
 	void imprime_cjt_especies() const;
 	
 /** @brief Consulta si l'iterador del mapa del conjunt d'especies apunta al final d'ell o no.
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>El booleà retorna cert si apunta al final del mapa.
+ * 	\post El booleà retorna cert si apunta al final del mapa.
  * 
  */
 
@@ -187,26 +187,26 @@ bool final();
 
 /** @brief Posiciona l'iterador del mapa del conjunt d'especies apuntant al primer element.
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>El iterador apunta al primer element del mapa.
+ * 	\post El iterador apunta al primer element del mapa.
  */
 void inicio();
 
 /** @brief El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual.
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual
+ * 	\post El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual
  * 
  */
 void actual(string& act);
 
 /** @brief Avança la posició del iterador en una posició;
  * 
- * 	@brief <b>Precondició: </b>Cert.
+ * 	\pre Cert.
  * 
- * 	@brief <b>Postcondició: </b>El iterador del mapa d'especies apunta una posició endavant.
+ * 	\post El iterador del mapa d'especies apunta una posició endavant.
  * 
  */
 void avanza();

@@ -73,17 +73,10 @@ void Cjt_especies::elimina_especie(string id) {
 
 		
 void Cjt_especies::tabla_distancias() const {
-	for (auto it2 = taula_distancies.begin(); it2 != taula_distancies.end(); ++it2) {
-		cout << it2->first << ":";
-		for (auto it3 = it2; it3 != taula_distancies.end(); ++it3) {
-			bool espai = true;
-		if (it2->first != it3->first) {
-			const auto it = taula_distancies.find(it2->first);
-			const auto ti = it->second.find(it3->first);
-			if (not espai) cout << " ";
-			else espai = true;
-			cout << " " << it3->first << " (" << ti->second << ")";			
-			}
+	for(map<string,map<string,double>>::const_iterator it = taula_distancies.begin(); it != taula_distancies.end(); ++it) {
+		cout << it->first << ":";
+		for (map<string,double>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+				cout << " " << it2->first << " (" << it2->second << ")"; 
 		}
 		cout << endl;
 	}

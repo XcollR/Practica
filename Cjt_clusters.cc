@@ -1,3 +1,4 @@
+  
 #include "Cjt_clusters.hh"
 
 
@@ -52,22 +53,14 @@ void Cjt_clusters::tabla_dist_clust(const Cjt_especies& conjunt) {
 
 
 void Cjt_clusters::imprime_tabla_distancias() const {
-	for (auto it2 = tabla_distancias_cluster.begin(); it2 != tabla_distancias_cluster.end(); ++it2) {
-		cout << it2->first << ":";
-		for (auto it3 = it2; it3 != tabla_distancias_cluster.end(); ++it3) {
-			bool espai = true;
-		if (it2->first != it3->first) {
-			const auto it = tabla_distancias_cluster.find(it2->first);
-			const auto ti = it->second.find(it3->first);
-			if (not espai) cout << " ";
-			else espai = true;
-			cout << " " << it3->first << " (" << ti->second << ")";			
-			}
+	for(map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
+		cout << it->first << ":";
+		for (map<string,double>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+				cout << " " << it2->first << " (" << it2->second << ")"; 
 		}
 		cout << endl;
 	}
 }
-
 
 void Cjt_clusters::imprime_cluster(string id) const {
     auto it = map_clusters.find(id);
@@ -92,20 +85,18 @@ void Cjt_clusters::ejecuta_paso_wpgma(const bool& a) {
 
 
 void Cjt_clusters::elimina_especie_clusters(const string& id) {
+    map<string, Cluster>::const_iterator peix = map_clusters.find(id);
+	map_clusters.erase(peix);
 	auto it = tabla_distancias_cluster.find(id);
 	for (auto it2 = tabla_distancias_cluster.begin(); it2 != it; ++it2) {
 			it2->second.erase(it2->second.find(id));
 		}
 	tabla_distancias_cluster.erase(it);
-    auto it2 = map_clusters.find(id);
-    map_clusters.erase(it2);
 
 }
 
 void Cjt_clusters::afegeix_especie_clusters(const pair<string,string>& dist) {
     string fus = dist.first + dist.second;
-    map<string, double> aux;
-    tabla_distancias_cluster.insert(make_pair(fus, aux));
     auto it = tabla_distancias_cluster.begin();
     while (it != tabla_distancias_cluster.end() and it->first < fus) {
         tabla_distancias_cluster[it->first][fus] = (tabla_distancias_cluster[it->first][dist.first] + tabla_distancias_cluster[min(it->first,dist.second)][max(it->first,dist.second)])/2;
@@ -127,18 +118,16 @@ pair<string,string> Cjt_clusters::min_dist() {
     double distancia = 101;
     pair<string,string> dists;
     for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
-        for (auto it2 = it; it2 != tabla_distancias_cluster.end(); ++it2) {
-		if (it->first != it2->first) {
-
-                if (tabla_distancias_cluster[it->first][it2->first] < distancia ){
-                distancia = tabla_distancias_cluster[it->first][it2->first];
+        for (auto it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+                if (it2->second < distancia ){
+                distancia = it2->second;
                 dists.first = it->first;
                 dists.second = it2->first;
                 }
             }
 
         }
-    }
+
     return dists;
 
 }
