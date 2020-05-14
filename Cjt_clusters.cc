@@ -35,7 +35,7 @@ void Cjt_clusters::imprime_arbol_filogenetico(Cjt_especies& conjunt) {
     while (map_clusters.size() > 1) {
         ejecuta_paso_wpgma(fals);
     }
-    auto it = map_clusters.begin();
+    map<string,Cluster>::const_iterator it = map_clusters.begin();
     it->second.escriure();
     }
     else cout << "ERROR: El conjunto de clusters es vacio." << endl;
@@ -44,10 +44,10 @@ void Cjt_clusters::imprime_arbol_filogenetico(Cjt_especies& conjunt) {
 }
 
 void Cjt_clusters::tabla_dist_clust(const Cjt_especies& conjunt) {
-    for (auto it = map_clusters.begin(); it != map_clusters.end(); ++it) {
+    for (map<string,Cluster>::const_iterator it = map_clusters.begin(); it != map_clusters.end(); ++it) {
         map<string, double> aux;
-        for (auto it2 = it; it2 != map_clusters.end(); ++it2) {
-            if (it->first != it2->first) {
+        for (map<string,Cluster>::const_iterator it2 = it; it2 != map_clusters.end(); ++it2) {
+            if (it->first != it2->first) { // fem aquest if ja que els iterador començen a la mateixa posició.
             double x = conjunt.calcular_distancia(it->first, it2->first);
             aux.insert(make_pair(it2->first, x));
             }
@@ -68,7 +68,7 @@ void Cjt_clusters::imprime_tabla_distancias() const {
 }
 
 void Cjt_clusters::imprime_cluster(string id) const {
-    auto it = map_clusters.find(id);
+    map<string,Cluster>::const_iterator it = map_clusters.find(id);
     if (it == map_clusters.end()) cout << "ERROR: El cluster " << id << " no existe." << endl;
     else{
         it->second.escriure();
@@ -92,8 +92,8 @@ void Cjt_clusters::ejecuta_paso_wpgma(const bool& a) {
 void Cjt_clusters::elimina_especie_clusters(const string& id) {
     map<string, Cluster>::const_iterator peix = map_clusters.find(id);
 	map_clusters.erase(peix);
-	auto it = tabla_distancias_cluster.find(id);
-	for (auto it2 = tabla_distancias_cluster.begin(); it2 != it; ++it2) {
+	map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.find(id);
+	for (map<string,map<string,double>>::const_iterator it2 = tabla_distancias_cluster.begin(); it2 != it; ++it2) {
 			it2->second.erase(it2->second.find(id));
 		}
 	tabla_distancias_cluster.erase(it);
@@ -102,7 +102,7 @@ void Cjt_clusters::elimina_especie_clusters(const string& id) {
 
 void Cjt_clusters::afegeix_especie_clusters(const pair<string,string>& dist) {
     string fus = dist.first + dist.second;
-    auto it = tabla_distancias_cluster.begin();
+    map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.begin();
     while (it != tabla_distancias_cluster.end() and it->first < fus) {
         tabla_distancias_cluster[it->first][fus] = (tabla_distancias_cluster[it->first][dist.first] + tabla_distancias_cluster[min(it->first,dist.second)][max(it->first,dist.second)])/2;
         ++it;
@@ -111,8 +111,8 @@ void Cjt_clusters::afegeix_especie_clusters(const pair<string,string>& dist) {
         tabla_distancias_cluster[fus][it->first] = (tabla_distancias_cluster[dist.first][it->first] + tabla_distancias_cluster[min(it->first,dist.second)][max(it->first,dist.second)])/2;
         ++it;
     }
-    auto a = map_clusters.find(dist.first);
-    auto b = map_clusters.find(dist.second);
+    map<string,Cluster>::const_iterator a = map_clusters.find(dist.first);
+    map<string,Cluster>::const_iterator b = map_clusters.find(dist.second);
     Cluster c(a->second,b->second,dist_clust(dist.first,dist.second));
     map_clusters.insert(make_pair(fus,c));
 
@@ -122,8 +122,8 @@ void Cjt_clusters::afegeix_especie_clusters(const pair<string,string>& dist) {
 pair<string,string> Cjt_clusters::min_dist() const {
     double distancia = 101;
     pair<string,string> dists;
-    for (auto it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
-        for (auto it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+    for (map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
+        for (map<string,map<string,double>>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
                 if (it2->second < distancia ){
                 distancia = it2->second;
                 dists.first = it->first;

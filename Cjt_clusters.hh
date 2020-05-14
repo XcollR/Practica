@@ -24,7 +24,7 @@ private:
 */
 	map<string, Cluster> map_clusters;
 /**	
- * 	@brief Mapa on es guarden les distancies entre clusters. És un nested map.
+ * 	@brief Nested map on es guarden les distancies entre clusters. És un nested map.
 */	
 	map<string, map<string, double> > tabla_distancias_cluster; 
 

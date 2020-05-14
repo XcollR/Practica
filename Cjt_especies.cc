@@ -16,8 +16,8 @@ double Cjt_especies::calcular_distancia(const string& id, const string& id2) con
 	else if (not existeix_especie(id)) return -2;
 	else if (not existeix_especie(id2)) return -3;
 	else {
-			auto it = taula_distancies.find(id);
-			auto it2 = it->second.find(id2);
+			map<string,map<string,double>>::const_iterator it = taula_distancies.find(id);
+			map<string,double>::const_iterator it2 = it->second.find(id2);
 			if (it2 == it->second.end()) {
 				it = taula_distancies.find(id2);
 				it2 = it->second.find(id);
@@ -83,18 +83,18 @@ void Cjt_especies::tabla_distancias() const {
 }
 
 void Cjt_especies::elimina_especie_tabla_dist(const string& id) {
-	auto it = taula_distancies.find(id);
-	for (auto it2 = taula_distancies.begin(); it2 != it; ++it2) {
+	map<string,map<string,double>>::const_iterator it = taula_distancies.find(id);
+	for (map<string,map<string,double>>::iterator it2 = taula_distancies.begin(); it2 != it; ++it2) {
 			it2->second.erase(it2->second.find(id));
 		}
-			taula_distancies.erase(it);
+		taula_distancies.erase(it);
 }
 
 void Cjt_especies::afegeix_especie_tabla_dist(const string& id) {
-	auto esp = cjt_especies.find(id);
+	map<string,Especie>::const_iterator esp = cjt_especies.find(id);
 	map<string, double> aux;
-	for (auto it = cjt_especies.begin(); it != cjt_especies.end(); ++it) {
-		auto itt = taula_distancies.find(it->first);
+	for (map<string,Especie>::const_iterator it = cjt_especies.begin(); it != cjt_especies.end(); ++it) {
+		map<string,map<string,double>>::iterator itt = taula_distancies.find(it->first);
 		double x = it->second.distancia(esp->second);
 		if (id > it->first) {
 			itt->second.insert(make_pair(id, x));

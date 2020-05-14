@@ -77,8 +77,6 @@ public:
 
 	// Consultores
 
-
-	
 /** 
  * 	@brief Retorna el gen de la espècie.
  * 	\pre El parametre implicit te gen.
@@ -89,9 +87,9 @@ public:
 
 /** 
  * 	@brief Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció.
- * 	\pre Cert.
+ * 	\pre Les dues espècies existeixen.
 	\post El resultat és la distancia entre les dues espècies.
-	\return double
+	\return double. Distancia entre especies
 */	
 
 	double distancia(const Especie& esp) const;

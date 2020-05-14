@@ -14,83 +14,65 @@
 using namespace std;
 
 /** @class Cluster
-    @brief Representa la información y las operaciones asociadas a un organismo.
+    @brief Representa un cluster d'un arbre binari, un node
+	aquest pot tenir "fills".
 */
+
 class Cluster {
 
 private:
 
 
+/** @brief Arbre binari format per pairs */
+	BinTree< pair<string, double> > cluster; 
 
-	BinTree< pair<string, double> > cluster; // 
+/** @brief Funció recursiva cridada per la funcio escriure() per tal de 
+ * 	poder fer la escriptura recursiva de l'arbre del cluster.
+ * 	\pre L'arbre el qual es vol escriure no té el node principal buit. Aquesta funció escriura
+ * 	fins que és trobi un node buit. En cas que els nodes esquerre i dreta siguin buits, no escriurà la
+ * 	distancià respecte als seus fills degut a no en té.
+ * 	\post S'ha escrit l'arbre binàri amb les condicions indicades abans.
+ * 	\param BinTree. Arbre binàri del cluster.
+ */
+  	void inm_escriure(const BinTree<pair<string,double>>& a) const;
 
-	void distancia_entre_clusters(const Cluster& clus1, const Cluster& clus2);
 
-	bool inm_cerca(const BinTree<pair<string,double>>& cluster, const string& id) const;
-
-
-		
 public:
 
 
 	// Constructores
-/**
- * 	@brief Crea un cluster buit. 
- * 
- *	\pre Cert.
- * 
-	\post El resultat és un cluster buit.
-*/	
-	Cluster();
 
 /**
  * 	@brief Crea un cluster a partir d'una espècie. 
- * 
  *	\pre Cert.
- * 
 	\post El resultat és un cluster de la especie demanada.
+	\param String. Un identificador pel cluster.
 */	
 	
 	Cluster(const string& id);
+
 /**
  * 	@brief Crea un cluster a partir de la fusió de dos altres. 
- * 
  *	\pre Els dos clusters existeixen i no són buits.
- * 
 	\post El resultat és un cluster amb la fusió dels dos altres.
+	\param Cluster. Dos objectes de tipus Cluster.
 */	
 	
 	Cluster(const Cluster clus1, const Cluster Clus2, const double& dist);
 	
 	// Consultores
 
-/**
- * 	@brief Consulta el subarbre del cluster, amb els fills dret i esquerra. 
- * 
- *	\pre Cert.
- * 
-	\post S'ha consultat el subarbre.
-*/	
-	void sub_arbre_cluster(const Cluster& clus1);
 	
 	// Lectura i Escriptura
 		
 /**
- * 	@brief Escriu un cluster. 
- * 
+ * 	@brief Escriu l'arbre binari del cluster del parametre implícit. 
  *	\pre Cert.
- * 
-	\post S'ha escrit el cluster.
+	\post S'ha escrit l'arbre binàri.
 */	
 		
 	void escriure() const;
 
-  	void inm_escriure(const BinTree<pair<string,double>>& a) const;
-
-	bool cerca(const string& id) const;
-
-
-	
 
 };
 

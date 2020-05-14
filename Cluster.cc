@@ -33,26 +33,6 @@ void Cluster::inm_escriure(const BinTree<pair<string,double>>& a) const {
 }
 
 
-bool Cluster::inm_cerca(const BinTree<pair<string,double>>& cluster, const string& id) const {
-    bool b;
-    if (cluster.empty()) {
-        b=false;
-    } 
-    else if (cluster.value().first == id) {
-        BinTree<pair<string, double>> cluster2(cluster.value(),cluster.left(), cluster.right());
-        inm_escriure(cluster2);
-        b=true;
-    }
-    else {
-    b = inm_cerca(cluster.left(), id);
-    if (not b) b = inm_cerca(cluster.right(), id);
 
-    }
-    return b;
-}
-
-bool Cluster::cerca(const string& id) const {
-    return inm_cerca(cluster, id);
-}
 
 
