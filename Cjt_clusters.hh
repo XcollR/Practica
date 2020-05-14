@@ -14,7 +14,8 @@
 #include "Cluster.hh"
 using namespace std;
 
-/** @brief <em>Crea un conjunt de clusters</em> */
+/**	@class Cjt_clusters
+ *	@brief <em>Crea un conjunt de clusters</em> */
 class Cjt_clusters {
 
 private: 

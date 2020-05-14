@@ -13,15 +13,17 @@
 #include "Cjt_especies.hh"
 using namespace std;
 
-
-/** @brief <em>Crea un cluster</em> */
+/** @class Cluster
+    @brief Representa la información y las operaciones asociadas a un organismo.
+*/
 class Cluster {
 
 private:
 
+/** 
+
 	BinTree< pair<string, double> > cluster; // 
 
-	
 	void distancia_entre_clusters(const Cluster& clus1, const Cluster& clus2);
 
 	bool inm_cerca(const BinTree<pair<string,double>>& cluster, const string& id) const;

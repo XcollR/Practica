@@ -15,7 +15,8 @@
 using namespace std;
 
 
-/** @brief <em>Crea un conjunt d'especies. </em>
+/** @class Cjt_especies
+ *  @brief <em>Crea un conjunt d'especies. </em>
  */
  
 class Cjt_especies {
