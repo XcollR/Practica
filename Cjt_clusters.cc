@@ -12,7 +12,7 @@ void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt,const bool ve_de_f
 
     map_clusters.clear();
     tabla_distancias_cluster.clear();
-    conjunt.inicio(); // iterador de conjunt es fica a la primera posiciรณ
+    conjunt.inicio(); // Iterador del conjunt d'especies que apunta a la primera posició
          while (not conjunt.final()) {
              string x;
              conjunt.actual(x); // 
@@ -47,7 +47,7 @@ void Cjt_clusters::tabla_dist_clust(const Cjt_especies& conjunt) {
     for (map<string,Cluster>::const_iterator it = map_clusters.begin(); it != map_clusters.end(); ++it) {
         map<string, double> aux;
         for (map<string,Cluster>::const_iterator it2 = it; it2 != map_clusters.end(); ++it2) {
-            if (it->first != it2->first) { // fem aquest if ja que els iterador començen a la mateixa posició.
+            if (it->first != it2->first) {
             double x = conjunt.calcular_distancia(it->first, it2->first);
             aux.insert(make_pair(it2->first, x));
             }
@@ -93,7 +93,7 @@ void Cjt_clusters::elimina_especie_clusters(const string& id) {
     map<string, Cluster>::const_iterator peix = map_clusters.find(id);
 	map_clusters.erase(peix);
 	map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.find(id);
-	for (map<string,map<string,double>>::const_iterator it2 = tabla_distancias_cluster.begin(); it2 != it; ++it2) {
+	for (map<string,map<string,double>>::iterator it2 = tabla_distancias_cluster.begin(); it2 != it; ++it2) {
 			it2->second.erase(it2->second.find(id));
 		}
 	tabla_distancias_cluster.erase(it);
@@ -123,7 +123,7 @@ pair<string,string> Cjt_clusters::min_dist() const {
     double distancia = 101;
     pair<string,string> dists;
     for (map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.begin(); it != tabla_distancias_cluster.end(); ++it) {
-        for (map<string,map<string,double>>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+        for (map<string,double>::const_iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
                 if (it2->second < distancia ){
                 distancia = it2->second;
                 dists.first = it->first;
@@ -132,14 +132,12 @@ pair<string,string> Cjt_clusters::min_dist() const {
             }
 
         }
-
     return dists;
 
 }
 
-double Cjt_clusters::dist_clust(const string& id, const string& id2) const {
-    map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.find(id);
-    map<string,double>::const_iterator it2 = it->second.find(id2);
-    if (it == tabla_distancias_cluster.end() or it2 == it->second.end()) return -1;
-    return it2->second;
+double Cjt_clusters::dist_clust(const string& id, const string& id2) const{
+    		map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.find(id);
+			map<string,double>::const_iterator it2 = it->second.find(id2);
+			return it2->second;
 }
