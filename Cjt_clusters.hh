@@ -20,11 +20,11 @@ class Cjt_clusters {
 
 private: 
 /**	
- * 	@param Mapa on es guarden els clusters resultants. La clau es un string i la dada un Cluster
+ * 	@brief Mapa on es guarden els clusters resultants. La clau es un string i la dada un Cluster
 */
 	map<string, Cluster> map_clusters;
 /**	
- * 	@param Mapa on es guarden les distancies entre clusters. És un nested map.
+ * 	@brief Mapa on es guarden les distancies entre clusters. És un nested map.
 */	
 	map<string, map<string, double> > tabla_distancias_cluster; 
 	
