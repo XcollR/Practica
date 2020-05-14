@@ -31,8 +31,7 @@ string Especie::consultar_gen() const{
 }
 
 double Especie::distancia(const Especie& esp) const {
-	auto i = k_meros.begin();
-	auto k = esp.k_meros.begin();
+	map<string,int>::const_iterator i = k_meros.begin(), k = esp.k_meros.begin();
 	double unio = 0, interseccio = 0;
 	while (i != k_meros.end() and k != esp.k_meros.end()) {
 		if (i->first == k->first) {
@@ -70,7 +69,7 @@ void Especie::kmer() {
 		for (int j = i; j < k_num + i; ++j) {
 			aux += gen[j];
 		}
-		auto it = k_meros.find(aux);
+		map<string,int>::const_iterator it = k_meros.find(aux);
 		if (it == k_meros.end()) k_meros.insert(make_pair(aux, 1));
 		else k_meros[aux] = it-> second +1;
 	}

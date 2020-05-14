@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ejecuta_5fpaso_5fwpgm_5fsense_5fimprimir_20',['ejecuta_paso_wpgm_sense_imprimir',['../class_cjt__clusters.html#adbe6fcbee6a22aaeb751b0df0ab16921',1,'Cjt_clusters']]],
   ['ejecuta_5fpaso_5fwpgma_21',['ejecuta_paso_wpgma',['../class_cjt__clusters.html#a1804b08a854e11aefae84298c16bf9c8',1,'Cjt_clusters']]],
   ['elimina_5fespecie_22',['elimina_especie',['../class_cjt__especies.html#a869c218f09aa589d21f497196bb79e67',1,'Cjt_especies']]],
   ['elimina_5fespecie_5fclusters_23',['elimina_especie_clusters',['../class_cjt__clusters.html#ae81267c7b82d60b212c02f9ff040eca5',1,'Cjt_clusters']]],

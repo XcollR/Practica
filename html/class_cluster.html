@@ -9,13 +9,9 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Creació d&#39;un arbre filogenètic.
-   &#160;<span id="projectnumber">v7.0 13-11-2017</span>
+   &#160;<span id="projectnumber">14/05/2020</span>
    </div>
   </td>
  </tr>
@@ -35,19 +31,41 @@
 </div>
 <!-- end header part -->
 <!-- Generado por Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',false,true,'search.html','Buscar');
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
 <a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
 <a href="class_cluster-members.html">Lista de todos los miembros</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia de la Clase Cluster</div>  </div>
@@ -57,8 +75,8 @@ $(function() {
 <p>Representa la información y las operaciones asociadas a un organismo.  
  <a href="class_cluster.html#details">Más...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Métodos privados</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
 <tr class="memitem:aee7feb1d599d4c8fda6c3ee83e86ba81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81">Cluster</a> ()</td></tr>
 <tr class="memdesc:aee7feb1d599d4c8fda6c3ee83e86ba81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un cluster buit.  <a href="class_cluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81">Más...</a><br /></td></tr>
 <tr class="separator:aee7feb1d599d4c8fda6c3ee83e86ba81"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -78,6 +96,18 @@ Métodos privados</h2></td></tr>
 <tr class="separator:a1856b0f1ca9243208451c965313af753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1014524cf8fca2165ee6ec5ed0eac743"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a1014524cf8fca2165ee6ec5ed0eac743">cerca</a> (const string &amp;id) const</td></tr>
 <tr class="separator:a1014524cf8fca2165ee6ec5ed0eac743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:acbbc9ff43bed57b501a56c6ef8efec64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#acbbc9ff43bed57b501a56c6ef8efec64">distancia_entre_clusters</a> (const <a class="el" href="class_cluster.html">Cluster</a> &amp;clus1, const <a class="el" href="class_cluster.html">Cluster</a> &amp;clus2)</td></tr>
+<tr class="separator:acbbc9ff43bed57b501a56c6ef8efec64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35a3d120da53dbbee7d2167b161503d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#ab35a3d120da53dbbee7d2167b161503d">inm_cerca</a> (const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;<a class="el" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>, const string &amp;id) const</td></tr>
+<tr class="separator:ab35a3d120da53dbbee7d2167b161503d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a34b4dbc09bb7d69a7f2fb8ce390d6174"><td class="memItemLeft" align="right" valign="top">BinTree&lt; pair&lt; string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a></td></tr>
+<tr class="separator:a34b4dbc09bb7d69a7f2fb8ce390d6174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Representa la información y las operaciones asociadas a un organismo. </p>
@@ -89,9 +119,6 @@ Métodos privados</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Cluster::Cluster </td>
@@ -100,19 +127,10 @@ Métodos privados</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Crea un cluster buit. </p>
-<p>BinTree&lt; pair&lt;string, double&gt; &gt; cluster; //</p>
-<p>void distancia_entre_clusters(const Cluster&amp; clus1, const Cluster&amp; clus2);</p>
-<p>bool inm_cerca(const BinTree&lt;pair&lt;string,double&gt;&gt;&amp; cluster, const string&amp; id) const;</p>
-<p>public:</p>
-<p>Constructores /** </p><dl class="section pre"><dt>Precondición</dt><dd>Cert.</dd></dl>
+<dl class="section pre"><dt>Precondición</dt><dd>Cert.</dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>El resultat és un cluster buit. </dd></dl>
 
 </div>
@@ -122,9 +140,6 @@ Métodos privados</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Cluster::Cluster </td>
@@ -134,11 +149,6 @@ Métodos privados</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Crea un cluster a partir d'una espècie. </p>
@@ -150,7 +160,7 @@ Métodos privados</h2></td></tr>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    pair&lt;string, double&gt; clust;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    clust.first = id;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    clust.second = 0;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    cluster = BinTree&lt;pair&lt;string, double&gt;&gt; (clust);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a> = BinTree&lt;pair&lt;string, double&gt;&gt; (clust);</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -160,9 +170,6 @@ Métodos privados</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Cluster::Cluster </td>
@@ -188,11 +195,6 @@ Métodos privados</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Crea un cluster a partir de la fusió de dos altres. </p>
@@ -202,22 +204,110 @@ Métodos privados</h2></td></tr>
 <p class="definition">Definición en la línea <a class="el" href="_cluster_8cc_source.html#l00009">9</a> del archivo <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                                                             {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    pair&lt;string, double&gt; clust;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    clust.first = clus1.cluster.value().first + clus2.cluster.value().first;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    clust.first = clus1.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value().first + clus2.cluster.value().first;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    clust.second = dist/2;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    cluster = BinTree&lt;pair&lt;string,double&gt;&gt; (clust,clus1.cluster,clus2.cluster);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a> = BinTree&lt;pair&lt;string,double&gt;&gt; (clust,clus1.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>,clus2.cluster);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Documentación de las funciones miembro</h2>
-<a id="ace44d06aa5b728ebe1245905cabbf943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace44d06aa5b728ebe1245905cabbf943">&#9670;&nbsp;</a></span>sub_arbre_cluster()</h2>
+<a id="acbbc9ff43bed57b501a56c6ef8efec64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbbc9ff43bed57b501a56c6ef8efec64">&#9670;&nbsp;</a></span>distancia_entre_clusters()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cluster::distancia_entre_clusters </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_cluster.html">Cluster</a> &amp;&#160;</td>
+          <td class="paramname"><em>clus1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_cluster.html">Cluster</a> &amp;&#160;</td>
+          <td class="paramname"><em>clus2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab35a3d120da53dbbee7d2167b161503d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35a3d120da53dbbee7d2167b161503d">&#9670;&nbsp;</a></span>inm_cerca()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Cluster::inm_cerca </td>
+          <td>(</td>
+          <td class="paramtype">const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_cluster_8cc_source.html#l00036">36</a> del archivo <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                                                           {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> b;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.empty()) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        b=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    } </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value().first == <span class="keywordtype">id</span>) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        BinTree&lt;pair&lt;string, double&gt;&gt; cluster2(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value(),<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.left(), <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.right());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(cluster2);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        b=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    b = <a class="code" href="class_cluster.html#ab35a3d120da53dbbee7d2167b161503d">inm_cerca</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.left(), <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (not b) b = <a class="code" href="class_cluster.html#ab35a3d120da53dbbee7d2167b161503d">inm_cerca</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.right(), <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> b;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace44d06aa5b728ebe1245905cabbf943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace44d06aa5b728ebe1245905cabbf943">&#9670;&nbsp;</a></span>sub_arbre_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Cluster::sub_arbre_cluster </td>
@@ -227,11 +317,6 @@ Métodos privados</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Consulta el subarbre del cluster, amb els fills dret i esquerra. </p>
@@ -245,9 +330,6 @@ Métodos privados</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Cluster::escriure </td>
@@ -256,11 +338,6 @@ Métodos privados</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Escriu un cluster. </p>
@@ -269,7 +346,7 @@ Métodos privados</h2></td></tr>
 
 <p class="definition">Definición en la línea <a class="el" href="_cluster_8cc_source.html#l00016">16</a> del archivo <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                             {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(cluster);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    cout &lt;&lt; endl;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
@@ -280,9 +357,6 @@ Métodos privados</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Cluster::inm_escriure </td>
@@ -292,11 +366,6 @@ Métodos privados</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p class="definition">Definición en la línea <a class="el" href="_cluster_8cc_source.html#l00021">21</a> del archivo <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
@@ -321,9 +390,6 @@ Métodos privados</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Cluster::cerca </td>
@@ -333,6 +399,29 @@ Métodos privados</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_cluster_8cc_source.html#l00054">54</a> del archivo <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                          {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_cluster.html#ab35a3d120da53dbbee7d2167b161503d">inm_cerca</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>, <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a34b4dbc09bb7d69a7f2fb8ce390d6174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b4dbc09bb7d69a7f2fb8ce390d6174">&#9670;&nbsp;</a></span>cluster</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BinTree&lt; pair&lt;string, double&gt; &gt; Cluster::cluster</td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
@@ -340,11 +429,8 @@ Métodos privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="_cluster_8cc_source.html#l00054">54</a> del archivo <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                          {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> inm_cerca(cluster, <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="_cluster_8hh_source.html#l00025">25</a> del archivo <a class="el" href="_cluster_8hh_source.html">Cluster.hh</a>.</p>
+
 </div>
 </div>
 <hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
@@ -352,10 +438,12 @@ Métodos privados</h2></td></tr>
 <li><a class="el" href="_cluster_8cc_source.html">Cluster.cc</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclass_cluster_html_ab35a3d120da53dbbee7d2167b161503d"><div class="ttname"><a href="class_cluster.html#ab35a3d120da53dbbee7d2167b161503d">Cluster::inm_cerca</a></div><div class="ttdeci">bool inm_cerca(const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;cluster, const string &amp;id) const</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00036">Cluster.cc:36</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a34b4dbc09bb7d69a7f2fb8ce390d6174"><div class="ttname"><a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; pair&lt; string, double &gt; &gt; cluster</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00025">Cluster.hh:25</a></div></div>
 <div class="ttc" id="aclass_cluster_html_a1856b0f1ca9243208451c965313af753"><div class="ttname"><a href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Cluster::inm_escriure</a></div><div class="ttdeci">void inm_escriure(const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a) const</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00021">Cluster.cc:21</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 14 de Mayo de 2020 17:41:51 para Creació d&#39;un arbre filogenètic. por &#160;<a href="http://www.doxygen.org/index.html">
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>

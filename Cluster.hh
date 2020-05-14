@@ -20,7 +20,7 @@ class Cluster {
 
 private:
 
-/** 
+
 
 	BinTree< pair<string, double> > cluster; // 
 

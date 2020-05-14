@@ -131,21 +131,21 @@ S\textquotesingle{}ha calculat els k-\/meros i s\textquotesingle{}han guardat.
 \end{DoxyPostcond}
 
 
-Definición en la línea 67 del archivo Especie.\+cc.
+Definición en la línea 66 del archivo Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{67                    \{}
-\DoxyCodeLine{68   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}.size() -\/ \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + 1; ++i) \{}
-\DoxyCodeLine{69     \textcolor{keywordtype}{string} aux;}
-\DoxyCodeLine{70     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + i; ++j) \{}
-\DoxyCodeLine{71       aux += \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}[j];}
-\DoxyCodeLine{72     \}}
-\DoxyCodeLine{73     \textcolor{keyword}{auto} it = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.find(aux);}
-\DoxyCodeLine{74     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.insert(make\_pair(aux, 1));}
-\DoxyCodeLine{75     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}[aux] = it-\/> second +1;}
-\DoxyCodeLine{76   \}}
-\DoxyCodeLine{77 \} }
+\DoxyCodeLine{66                    \{}
+\DoxyCodeLine{67   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}.size() -\/ \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + 1; ++i) \{}
+\DoxyCodeLine{68     \textcolor{keywordtype}{string} aux;}
+\DoxyCodeLine{69     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + i; ++j) \{}
+\DoxyCodeLine{70       aux += \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}[j];}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72     map<string,int>::const\_iterator it = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.find(aux);}
+\DoxyCodeLine{73     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.insert(make\_pair(aux, 1));}
+\DoxyCodeLine{74     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}[aux] = it-\/> second +1;}
+\DoxyCodeLine{75   \}}
+\DoxyCodeLine{76 \} }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a1d513b21daca76fa150dd1d62c590093}\label{class_especie_a1d513b21daca76fa150dd1d62c590093}} 
@@ -231,35 +231,34 @@ Definición en la línea 33 del archivo Especie.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{33                                                   \{}
-\DoxyCodeLine{34   \textcolor{keyword}{auto} i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
-\DoxyCodeLine{35   \textcolor{keyword}{auto} k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
-\DoxyCodeLine{36   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
-\DoxyCodeLine{37   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
-\DoxyCodeLine{38     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
-\DoxyCodeLine{39       interseccio += min(i-\/>second,k-\/>second);}
-\DoxyCodeLine{40       unio +=  max(i-\/>second, k-\/>second);}
-\DoxyCodeLine{41       ++i;}
-\DoxyCodeLine{42       ++k;      }
-\DoxyCodeLine{43     \}}
-\DoxyCodeLine{44     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i-\/>first < k-\/>first) \{}
-\DoxyCodeLine{45       unio += i-\/>second;}
-\DoxyCodeLine{46       ++i;}
-\DoxyCodeLine{47     \}}
-\DoxyCodeLine{48     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{49       unio += k-\/>second;}
-\DoxyCodeLine{50       ++k;}
-\DoxyCodeLine{51     \}}
-\DoxyCodeLine{52   \}}
-\DoxyCodeLine{53   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
-\DoxyCodeLine{54     unio += i-\/>second;}
-\DoxyCodeLine{55     ++i;}
-\DoxyCodeLine{56   \}}
-\DoxyCodeLine{57   \textcolor{keywordflow}{while} (k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
-\DoxyCodeLine{58     unio += k-\/>second;}
-\DoxyCodeLine{59     ++k;}
-\DoxyCodeLine{60   \}}
-\DoxyCodeLine{61   \textcolor{keywordflow}{return} (((1-\/(interseccio/unio))*100));  }
-\DoxyCodeLine{62 \}}
+\DoxyCodeLine{34   map<string,int>::const\_iterator i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin(), k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
+\DoxyCodeLine{35   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
+\DoxyCodeLine{36   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
+\DoxyCodeLine{38       interseccio += min(i-\/>second,k-\/>second);}
+\DoxyCodeLine{39       unio +=  max(i-\/>second, k-\/>second);}
+\DoxyCodeLine{40       ++i;}
+\DoxyCodeLine{41       ++k;      }
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i-\/>first < k-\/>first) \{}
+\DoxyCodeLine{44       unio += i-\/>second;}
+\DoxyCodeLine{45       ++i;}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{48       unio += k-\/>second;}
+\DoxyCodeLine{49       ++k;}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51   \}}
+\DoxyCodeLine{52   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
+\DoxyCodeLine{53     unio += i-\/>second;}
+\DoxyCodeLine{54     ++i;}
+\DoxyCodeLine{55   \}}
+\DoxyCodeLine{56   \textcolor{keywordflow}{while} (k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
+\DoxyCodeLine{57     unio += k-\/>second;}
+\DoxyCodeLine{58     ++k;}
+\DoxyCodeLine{59   \}}
+\DoxyCodeLine{60   \textcolor{keywordflow}{return} (((1-\/(interseccio/unio))*100));  }
+\DoxyCodeLine{61 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_ae24802ae0746b2560a48eea40f64760e}\label{class_especie_ae24802ae0746b2560a48eea40f64760e}} 
@@ -280,13 +279,13 @@ S\textquotesingle{}han escrit els atributs del parametre implicit al canal estan
 \end{DoxyPostcond}
 
 
-Definición en la línea 82 del archivo Especie.\+cc.
+Definición en la línea 81 del archivo Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{82                              \{}
-\DoxyCodeLine{83   cout << \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} << endl;}
-\DoxyCodeLine{84 \}}
+\DoxyCodeLine{81                              \{}
+\DoxyCodeLine{82   cout << \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} << endl;}
+\DoxyCodeLine{83 \}}
 
 \end{DoxyCode}
 

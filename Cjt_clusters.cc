@@ -2,6 +2,11 @@
 #include "Cjt_clusters.hh"
 
 
+Cjt_clusters::Cjt_clusters() {
+    map_clusters = map<string,Cluster>();
+    tabla_distancias_cluster = map<string,map<string,double>>();
+}
+
 
 void Cjt_clusters::inicialitza_clusters(Cjt_especies& conjunt,const bool ve_de_func) {
 
@@ -133,7 +138,8 @@ pair<string,string> Cjt_clusters::min_dist() const {
 }
 
 double Cjt_clusters::dist_clust(const string& id, const string& id2) const {
-    		auto it = tabla_distancias_cluster.find(id);
-			auto it2 = it->second.find(id2);
-			return it2->second;
+    map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster.find(id);
+    map<string,double>::const_iterator it2 = it->second.find(id2);
+    if (it == tabla_distancias_cluster.end() or it2 == it->second.end()) return -1;
+    return it2->second;
 }

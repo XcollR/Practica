@@ -6,6 +6,7 @@ var searchData=
   ['imprime_5ftabla_5fdistancias_35',['imprime_tabla_distancias',['../class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327',1,'Cjt_clusters']]],
   ['inicialitza_5fclusters_36',['inicialitza_clusters',['../class_cjt__clusters.html#ac309c781b06d06ec9a2b4bc839c01f40',1,'Cjt_clusters']]],
   ['inicio_37',['inicio',['../class_cjt__especies.html#aedcfb0e423c5c02653c8a5d362cfa784',1,'Cjt_especies']]],
-  ['inm_5fescriure_38',['inm_escriure',['../class_cluster.html#a1856b0f1ca9243208451c965313af753',1,'Cluster']]],
-  ['it_39',['it',['../class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0',1,'Cjt_especies']]]
+  ['inm_5fcerca_38',['inm_cerca',['../class_cluster.html#ab35a3d120da53dbbee7d2167b161503d',1,'Cluster']]],
+  ['inm_5fescriure_39',['inm_escriure',['../class_cluster.html#a1856b0f1ca9243208451c965313af753',1,'Cluster']]],
+  ['it_40',['it',['../class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0',1,'Cjt_especies']]]
 ];

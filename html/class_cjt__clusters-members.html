@@ -9,13 +9,9 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX","output/HTML-CSS"],
-});
-</script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Creació d&#39;un arbre filogenètic.
-   &#160;<span id="projectnumber">v7.0 13-11-2017</span>
+   &#160;<span id="projectnumber">14/05/2020</span>
    </div>
   </td>
  </tr>
@@ -35,15 +31,35 @@
 </div>
 <!-- end header part -->
 <!-- Generado por Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',false,true,'search.html','Buscar');
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
@@ -53,23 +69,23 @@ $(function() {
 
 <p>Lista completa de los miembros de <a class="el" href="class_cjt__clusters.html">Cjt_clusters</a>, incluyendo todos los heredados:</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#aa032b0cd8fc22d549d986739b7e10b31">afegeix_especie_clusters</a>(const pair&lt; string, string &gt; &amp;dist)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a85f675adbd2142e12825c9bf84c53521">dist_clust</a>(const string &amp;id, const string &amp;id2) const</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#adbe6fcbee6a22aaeb751b0df0ab16921">ejecuta_paso_wpgm_sense_imprimir</a>()</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#aa032b0cd8fc22d549d986739b7e10b31">afegeix_especie_clusters</a>(const pair&lt; string, string &gt; &amp;dist)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a10dd63eab0e8ea5b1ed13e81412d47a9">Cjt_clusters</a>()</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#a85f675adbd2142e12825c9bf84c53521">dist_clust</a>(const string &amp;id, const string &amp;id2) const</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a1804b08a854e11aefae84298c16bf9c8">ejecuta_paso_wpgma</a>(const bool &amp;a)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#ae81267c7b82d60b212c02f9ff040eca5">elimina_especie_clusters</a>(const string &amp;id)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#ae81267c7b82d60b212c02f9ff040eca5">elimina_especie_clusters</a>(const string &amp;id)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a8a92eefe19f7eafc403690a30d87b99e">imprime_arbol_filogenetico</a>(Cjt_especies &amp;conjunt)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#aeead6f73476c1d0a814403b801141741">imprime_cluster</a>(string id) const</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327">imprime_tabla_distancias</a>() const</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327">imprime_tabla_distancias</a>() const</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#ac309c781b06d06ec9a2b4bc839c01f40">inicialitza_clusters</a>(Cjt_especies &amp;conjunt, const bool ve_de_func)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b">map_clusters</a></td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#a16a83a28b826a223d908689622e2d1ac">min_dist</a>()</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#ae3cbe4679bcb64bb3308ad1d68cd1b24">min_dist</a>() const</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_cjt__clusters.html#a8298bacd14980c99c9558c72702174e8">tabla_dist_clust</a>(const Cjt_especies &amp;conjunt)</td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">tabla_distancias_cluster</a></td><td class="entry"><a class="el" href="class_cjt__clusters.html">Cjt_clusters</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 14 de Mayo de 2020 17:41:51 para Creació d&#39;un arbre filogenètic. por &#160;<a href="http://www.doxygen.org/index.html">
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.18
 </small></address>
