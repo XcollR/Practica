@@ -33,7 +33,7 @@ string Especie::consultar_gen() const{
 double Especie::distancia(const Especie& esp) const {
 	map<string,int>::const_iterator i = k_meros.begin(), k = esp.k_meros.begin();
 	double unio = 0, interseccio = 0;
-	while (i != k_meros.end() and k != esp.k_meros.end()) {
+	while (i != k_meros.end() and k != esp.k_meros.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.
 		if (i->first == k->first) {
 			interseccio += min(i->second,k->second);
 			unio +=  max(i->second, k->second);
@@ -49,11 +49,11 @@ double Especie::distancia(const Especie& esp) const {
 			++k;
 		}
 	}
-	while (i != k_meros.end()) {
+	while (i != k_meros.end()) { // Segon bucle while per si el primer ha acabat i no hem fet el recorregut sencer.
 		unio += i->second;
 		++i;
-	}
-	while (k != esp.k_meros.end()) {
+	} 
+	while (k != esp.k_meros.end()) { //Segon bucle while per si el primer ha acabat i no hem fet el recorregut sencer.
 		unio += k->second;
 		++k;
 	}
