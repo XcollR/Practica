@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Creació d&#39;un arbre filogenètic.: Fichero Fuente Especie.cc</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Creació d&#39;un arbre filogenètic.
+   &#160;<span id="projectnumber">v7.0 13-11-2017</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.18 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,true,'search.html','Buscar');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Especie.cc</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_especie_8cc.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_especie_8hh.html">Especie.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Constructores</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">Especie::k_num</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_especie.html#a272c2488719cc9874b2f174906675b3d">    9</a></span>&#160;<a class="code" href="class_especie.html#a272c2488719cc9874b2f174906675b3d">Especie::Especie</a>() {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a> = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a> = map&lt;string, int&gt; ();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_especie.html#a9cd047acfec0dbd335b5801b0ade53d3">   15</a></span>&#160;<a class="code" href="class_especie.html#a272c2488719cc9874b2f174906675b3d">Especie::Especie</a>(<span class="keywordtype">string</span> gen1) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a> = gen1;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="class_especie.html#a2bd896f271d0983f609735df8809cccc">kmer</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_especie.html#a1d513b21daca76fa150dd1d62c590093">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_especie.html#a1d513b21daca76fa150dd1d62c590093">Especie::set_parametro</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k_dato) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">Especie::k_num</a> = k_dato;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Consultores</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_especie.html#a850af2b59a21e2d801c59d76ba5c1a98">   29</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="class_especie.html#a850af2b59a21e2d801c59d76ba5c1a98">Especie::consultar_gen</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_especie.html#a2037b4bf2d55d8c6ffb90811ad1c4a1b">   33</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="class_especie.html#a2037b4bf2d55d8c6ffb90811ad1c4a1b">Especie::distancia</a>(<span class="keyword">const</span> <a class="code" href="class_especie.html">Especie</a>&amp; esp)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">auto</span> i = <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.begin();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">auto</span> k = esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.begin();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">double</span> unio = 0, interseccio = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">while</span> (i != <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end() and k != esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (i-&gt;first == k-&gt;first) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      interseccio += min(i-&gt;second,k-&gt;second);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      unio +=  max(i-&gt;second, k-&gt;second);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      ++i;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      ++k;      </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-&gt;first &lt; k-&gt;first) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      unio += i-&gt;second;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      ++i;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      unio += k-&gt;second;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      ++k;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">while</span> (i != <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    unio += i-&gt;second;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ++i;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">while</span> (k != esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    unio += k-&gt;second;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ++k;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> (((1-(interseccio/unio))*100));  </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Modificadores</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_especie.html#a2bd896f271d0983f609735df8809cccc">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_especie.html#a2bd896f271d0983f609735df8809cccc">Especie::kmer</a>() {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>.size() - <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">k_num</a> + 1; ++i) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">string</span> aux;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">k_num</a> + i; ++j) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      aux += <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>[j];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.find(aux);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (it == <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.insert(make_pair(aux, 1));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>[aux] = it-&gt; second +1;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// Lectura i escriptura</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_especie.html#ae24802ae0746b2560a48eea40f64760e">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_especie.html#ae24802ae0746b2560a48eea40f64760e">Especie::escriure</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  cout &lt;&lt; <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_especie_html_a8cea60787f2ca85fd94a2d96f853f93f"><div class="ttname"><a href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">Especie::k_num</a></div><div class="ttdeci">static int k_num</div><div class="ttdoc">Tamany que indica el tamany dels paquets per separar el gen de la especie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00036">Especie.hh:36</a></div></div>
+<div class="ttc" id="aclass_especie_html_a1d513b21daca76fa150dd1d62c590093"><div class="ttname"><a href="class_especie.html#a1d513b21daca76fa150dd1d62c590093">Especie::set_parametro</a></div><div class="ttdeci">static void set_parametro(const int &amp;k_dato)</div><div class="ttdoc">Introdueix el paràmetre k com a static per calcular els k-meros.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00021">Especie.cc:21</a></div></div>
+<div class="ttc" id="aclass_especie_html"><div class="ttname"><a href="class_especie.html">Especie</a></div><div class="ttdoc">Representa el conjunt de característiques y operacions de les especies.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00028">Especie.hh:28</a></div></div>
+<div class="ttc" id="aclass_especie_html_a850af2b59a21e2d801c59d76ba5c1a98"><div class="ttname"><a href="class_especie.html#a850af2b59a21e2d801c59d76ba5c1a98">Especie::consultar_gen</a></div><div class="ttdeci">string consultar_gen() const</div><div class="ttdoc">Retorna el gen de la espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00029">Especie.cc:29</a></div></div>
+<div class="ttc" id="a_especie_8hh_html"><div class="ttname"><a href="_especie_8hh.html">Especie.hh</a></div><div class="ttdoc">Especificació de la classe Especie</div></div>
+<div class="ttc" id="aclass_especie_html_ae24802ae0746b2560a48eea40f64760e"><div class="ttname"><a href="class_especie.html#ae24802ae0746b2560a48eea40f64760e">Especie::escriure</a></div><div class="ttdeci">void escriure() const</div><div class="ttdoc">Escriu la espècie del paràmetre implícit.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00082">Especie.cc:82</a></div></div>
+<div class="ttc" id="aclass_especie_html_ac35bb565f7346cd6317b3a8c849456d1"><div class="ttname"><a href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a></div><div class="ttdeci">string gen</div><div class="ttdoc">És el gen de la espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00033">Especie.hh:33</a></div></div>
+<div class="ttc" id="aclass_especie_html_a272c2488719cc9874b2f174906675b3d"><div class="ttname"><a href="class_especie.html#a272c2488719cc9874b2f174906675b3d">Especie::Especie</a></div><div class="ttdeci">Especie()</div><div class="ttdoc">Crea una especie sense identificador ni gen.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00009">Especie.cc:9</a></div></div>
+<div class="ttc" id="aclass_especie_html_a2037b4bf2d55d8c6ffb90811ad1c4a1b"><div class="ttname"><a href="class_especie.html#a2037b4bf2d55d8c6ffb90811ad1c4a1b">Especie::distancia</a></div><div class="ttdeci">double distancia(const Especie &amp;esp) const</div><div class="ttdoc">Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la ...</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00033">Especie.cc:33</a></div></div>
+<div class="ttc" id="aclass_especie_html_a0c42a37fe5502ebbe9e91e364c90bd3e"><div class="ttname"><a href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a></div><div class="ttdeci">map&lt; string, int &gt; k_meros</div><div class="ttdoc">Map on guardem els k-meros de la especie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00039">Especie.hh:39</a></div></div>
+<div class="ttc" id="aclass_especie_html_a2bd896f271d0983f609735df8809cccc"><div class="ttname"><a href="class_especie.html#a2bd896f271d0983f609735df8809cccc">Especie::kmer</a></div><div class="ttdeci">void kmer()</div><div class="ttdoc">Calcula els kmeros d'una espècie a partir del seu gen.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00067">Especie.cc:67</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 14 de Mayo de 2020 17:41:51 para Creació d&#39;un arbre filogenètic. por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

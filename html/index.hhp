@@ -1,0 +1,83 @@
+[OPTIONS]
+Compatibility=1.1
+Full-text search=Yes
+Contents file=index.hhc
+Default Window=main
+Default topic=index.html
+Index file=index.hhk
+Language=0x40A Spanish(Traditional Sort)
+Binary TOC=YES
+Create CHI file=YES
+Title=Creació d'un arbre filogenètic.
+
+[WINDOWS]
+main="Creació d'un arbre filogenètic.","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x70387e,,,,,,,,0
+
+[FILES]
+_cjt__clusters_8cc_source.html
+_cjt__clusters_8hh_source.html
+_cjt__especies_8cc_source.html
+_cjt__especies_8hh_source.html
+_cluster_8cc_source.html
+_cluster_8hh_source.html
+_especie_8cc_source.html
+_especie_8hh_source.html
+program_8cc_source.html
+_cjt__clusters_8cc.html
+_cjt__clusters_8hh.html
+_cjt__especies_8cc.html
+_cjt__especies_8hh.html
+_cluster_8cc.html
+_cluster_8hh.html
+_especie_8cc.html
+_especie_8hh.html
+program_8cc.html
+class_cjt__clusters.html
+class_cjt__clusters-members.html
+class_cjt__especies.html
+class_cjt__especies-members.html
+class_cluster.html
+class_cluster-members.html
+class_especie.html
+class_especie-members.html
+graph_legend.html
+index.html
+annotated.html
+classes.html
+functions.html
+functions_func.html
+functions_vars.html
+files.html
+globals.html
+globals_func.html
+globals_defs.html
+tab_a.png
+tab_b.png
+tab_h.png
+tab_s.png
+nav_h.png
+nav_f.png
+bc_s.png
+doxygen.png
+closed.png
+open.png
+bdwn.png
+sync_on.png
+sync_off.png
+_cjt__clusters_8cc__incl.png
+_cjt__clusters_8cc__incl.pdf
+_cjt__clusters_8hh__incl.png
+_cjt__clusters_8hh__incl.pdf
+_cjt__especies_8cc__incl.png
+_cjt__especies_8cc__incl.pdf
+_cjt__especies_8hh__incl.png
+_cjt__especies_8hh__incl.pdf
+_cluster_8cc__incl.png
+_cluster_8cc__incl.pdf
+_cluster_8hh__incl.png
+_cluster_8hh__incl.pdf
+_especie_8cc__incl.png
+_especie_8cc__incl.pdf
+program_8cc__incl.png
+program_8cc__incl.pdf
+graph_legend.png

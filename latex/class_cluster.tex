@@ -1,0 +1,215 @@
+\hypertarget{class_cluster}{}\doxysection{Referencia de la Clase Cluster}
+\label{class_cluster}\index{Cluster@{Cluster}}
+
+
+Representa la información y las operaciones asociadas a un organismo.  
+
+
+\doxysubsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cluster_aee7feb1d599d4c8fda6c3ee83e86ba81}{Cluster}} ()
+\begin{DoxyCompactList}\small\item\em Crea un cluster buit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cluster_a4702942c6848ae6fbb7de215b49797d5}{Cluster}} (const string \&id)
+\begin{DoxyCompactList}\small\item\em Crea un cluster a partir d\textquotesingle{}una espècie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cluster_aaf336dfa4bfb02c0fd71395615636fb4}{Cluster}} (const \mbox{\hyperlink{class_cluster}{Cluster}} clus1, const \mbox{\hyperlink{class_cluster}{Cluster}} Clus2, const double \&dist)
+\begin{DoxyCompactList}\small\item\em Crea un cluster a partir de la fusió de dos altres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cluster_ace44d06aa5b728ebe1245905cabbf943}{sub\+\_\+arbre\+\_\+cluster}} (const \mbox{\hyperlink{class_cluster}{Cluster}} \&clus1)
+\begin{DoxyCompactList}\small\item\em Consulta el subarbre del cluster, amb els fills dret i esquerra. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cluster_aae67c144fc543eace946dc8a651b5b7a}{escriure}} () const
+\begin{DoxyCompactList}\small\item\em Escriu un cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\+\_\+escriure}} (const Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&a) const
+\item 
+bool \mbox{\hyperlink{class_cluster_a1014524cf8fca2165ee6ec5ed0eac743}{cerca}} (const string \&id) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa la información y las operaciones asociadas a un organismo. 
+
+Definición en la línea 19 del archivo Cluster.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_cluster_aee7feb1d599d4c8fda6c3ee83e86ba81}\label{class_cluster_aee7feb1d599d4c8fda6c3ee83e86ba81}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{Cluster()}{Cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Crea un cluster buit. 
+
+Bin\+Tree$<$ pair$<$string, double$>$ $>$ cluster; //
+
+void distancia\+\_\+entre\+\_\+clusters(const Cluster\& clus1, const Cluster\& clus2);
+
+bool inm\+\_\+cerca(const Bin\+Tree$<$pair$<$string,double$>$$>$\& cluster, const string\& id) const;
+
+public\+:
+
+Constructores /$\ast$$\ast$ \begin{DoxyPrecond}{Precondición}
+Cert.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat és un cluster buit. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cluster_a4702942c6848ae6fbb7de215b49797d5}\label{class_cluster_a4702942c6848ae6fbb7de215b49797d5}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{Cluster()}{Cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Crea un cluster a partir d\textquotesingle{}una espècie. 
+
+\begin{DoxyPrecond}{Precondición}
+Cert.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat és un cluster de la especie demanada. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 3 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                 \{}
+\DoxyCodeLine{4     pair<string, double> clust;}
+\DoxyCodeLine{5     clust.first = id;}
+\DoxyCodeLine{6     clust.second = 0;}
+\DoxyCodeLine{7     cluster = BinTree<pair<string, double>> (clust);}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cluster_aaf336dfa4bfb02c0fd71395615636fb4}\label{class_cluster_aaf336dfa4bfb02c0fd71395615636fb4}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{Cluster()}{Cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cluster}{Cluster}}}]{clus1,  }\item[{const \mbox{\hyperlink{class_cluster}{Cluster}}}]{Clus2,  }\item[{const double \&}]{dist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Crea un cluster a partir de la fusió de dos altres. 
+
+\begin{DoxyPrecond}{Precondición}
+Els dos clusters existeixen i no són buits.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultat és un cluster amb la fusió dels dos altres. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                                              \{}
+\DoxyCodeLine{10     pair<string, double> clust;}
+\DoxyCodeLine{11     clust.first = clus1.cluster.value().first + clus2.cluster.value().first;}
+\DoxyCodeLine{12     clust.second = dist/2;}
+\DoxyCodeLine{13     cluster = BinTree<pair<string,double>> (clust,clus1.cluster,clus2.cluster);}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_cluster_ace44d06aa5b728ebe1245905cabbf943}\label{class_cluster_ace44d06aa5b728ebe1245905cabbf943}} 
+\index{Cluster@{Cluster}!sub\_arbre\_cluster@{sub\_arbre\_cluster}}
+\index{sub\_arbre\_cluster@{sub\_arbre\_cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{sub\_arbre\_cluster()}{sub\_arbre\_cluster()}}
+{\footnotesize\ttfamily void Cluster\+::sub\+\_\+arbre\+\_\+cluster (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cluster}{Cluster}} \&}]{clus1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Consulta el subarbre del cluster, amb els fills dret i esquerra. 
+
+\begin{DoxyPrecond}{Precondición}
+Cert.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha consultat el subarbre. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cluster_aae67c144fc543eace946dc8a651b5b7a}\label{class_cluster_aae67c144fc543eace946dc8a651b5b7a}} 
+\index{Cluster@{Cluster}!escriure@{escriure}}
+\index{escriure@{escriure}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{escriure()}{escriure()}}
+{\footnotesize\ttfamily void Cluster\+::escriure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Escriu un cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+Cert.
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+S\textquotesingle{}ha escrit el cluster. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 16 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                              \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(cluster);}
+\DoxyCodeLine{18     cout << endl;}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cluster_a1856b0f1ca9243208451c965313af753}\label{class_cluster_a1856b0f1ca9243208451c965313af753}} 
+\index{Cluster@{Cluster}!inm\_escriure@{inm\_escriure}}
+\index{inm\_escriure@{inm\_escriure}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{inm\_escriure()}{inm\_escriure()}}
+{\footnotesize\ttfamily void Cluster\+::inm\+\_\+escriure (\begin{DoxyParamCaption}\item[{const Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&}]{a }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 21 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                                                                       \{}
+\DoxyCodeLine{22       \textcolor{keywordflow}{if} (not a.empty()) \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{if} (not a.left().empty() and not a.right().empty()) \{}
+\DoxyCodeLine{24     cout <<\textcolor{stringliteral}{"["}<< \textcolor{stringliteral}{"("} << a.value().first << \textcolor{stringliteral}{", "} << a.value().second<< \textcolor{stringliteral}{") "};}
+\DoxyCodeLine{25         \}}
+\DoxyCodeLine{26         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{27             cout <<\textcolor{stringliteral}{"["}<< a.value().first;}
+\DoxyCodeLine{28         \}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(a.left());}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(a.right());}
+\DoxyCodeLine{31         cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{32   \}}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cluster_a1014524cf8fca2165ee6ec5ed0eac743}\label{class_cluster_a1014524cf8fca2165ee6ec5ed0eac743}} 
+\index{Cluster@{Cluster}!cerca@{cerca}}
+\index{cerca@{cerca}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{cerca()}{cerca()}}
+{\footnotesize\ttfamily bool Cluster\+::cerca (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 54 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                                           \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} inm\_cerca(cluster, \textcolor{keywordtype}{id});}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_cluster_8hh}{Cluster.\+hh}}\item 
+\mbox{\hyperlink{_cluster_8cc}{Cluster.\+cc}}\end{DoxyCompactItemize}

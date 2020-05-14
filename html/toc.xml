@@ -1,0 +1,144 @@
+<toc label="Creació d&apos;un arbre filogenètic." topic="index.html">
+  <topic label="Clases" href="annotated.html">
+    <topic label="Lista de clases" href="annotated.html">
+      <topic label="Cjt_clusters" href="class_cjt__clusters.html">
+        <topic label="tabla_dist_clust" href="class_cjt__clusters.html#a8298bacd14980c99c9558c72702174e8"/>
+        <topic label="imprime_tabla_distancias" href="class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327"/>
+        <topic label="min_dist" href="class_cjt__clusters.html#a16a83a28b826a223d908689622e2d1ac"/>
+        <topic label="dist_clust" href="class_cjt__clusters.html#a85f675adbd2142e12825c9bf84c53521"/>
+        <topic label="imprime_cluster" href="class_cjt__clusters.html#aeead6f73476c1d0a814403b801141741"/>
+        <topic label="inicialitza_clusters" href="class_cjt__clusters.html#ac309c781b06d06ec9a2b4bc839c01f40"/>
+        <topic label="ejecuta_paso_wpgma" href="class_cjt__clusters.html#a1804b08a854e11aefae84298c16bf9c8"/>
+        <topic label="imprime_arbol_filogenetico" href="class_cjt__clusters.html#a8a92eefe19f7eafc403690a30d87b99e"/>
+        <topic label="elimina_especie_clusters" href="class_cjt__clusters.html#ae81267c7b82d60b212c02f9ff040eca5"/>
+        <topic label="afegeix_especie_clusters" href="class_cjt__clusters.html#aa032b0cd8fc22d549d986739b7e10b31"/>
+        <topic label="ejecuta_paso_wpgm_sense_imprimir" href="class_cjt__clusters.html#adbe6fcbee6a22aaeb751b0df0ab16921"/>
+        <topic label="map_clusters" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b"/>
+        <topic label="tabla_distancias_cluster" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63"/>
+      </topic>
+      <topic label="Cjt_especies" href="class_cjt__especies.html">
+        <topic label="Cjt_especies" href="class_cjt__especies.html#ab297567c73ccd8caefbd8760d90294a1"/>
+        <topic label="elimina_especie_tabla_dist" href="class_cjt__especies.html#aa9f562fc745558783a3634c38df07ad5"/>
+        <topic label="afegeix_especie_tabla_dist" href="class_cjt__especies.html#a90a082e134d49bc8cee834b4ff5d0e8b"/>
+        <topic label="crea_especie" href="class_cjt__especies.html#a96c09a2e9fb27a4bf48aba20dfa86bd8"/>
+        <topic label="elimina_especie" href="class_cjt__especies.html#a869c218f09aa589d21f497196bb79e67"/>
+        <topic label="existeix_especie" href="class_cjt__especies.html#a86bd41f60448306f12ec55e6fc054659"/>
+        <topic label="calcular_distancia" href="class_cjt__especies.html#aa4191c64a5008de2272e0e3489aeb778"/>
+        <topic label="obtener_gen" href="class_cjt__especies.html#a3a1dc5f705c2271ee9c1dfd14ac6822d"/>
+        <topic label="tabla_distancias" href="class_cjt__especies.html#a653d6b120928015ad38a5dc30ebeec8e"/>
+        <topic label="lee_cjt_especies" href="class_cjt__especies.html#a1f554d3f098484c20372c43b844752db"/>
+        <topic label="imprime_cjt_especies" href="class_cjt__especies.html#aba7f0f935b6e0b8eb38337ad8675fead"/>
+        <topic label="final" href="class_cjt__especies.html#a44c59750dd9223ea12f954247fd11504"/>
+        <topic label="inicio" href="class_cjt__especies.html#aedcfb0e423c5c02653c8a5d362cfa784"/>
+        <topic label="actual" href="class_cjt__especies.html#a2cd05fceb53ec9604eb4dcb6abea1c4d"/>
+        <topic label="avanza" href="class_cjt__especies.html#acc3beaf9ea5a96f33296f5cc15b8b5a2"/>
+        <topic label="cjt_especies" href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f"/>
+        <topic label="taula_distancies" href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae"/>
+        <topic label="it" href="class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0"/>
+      </topic>
+      <topic label="Cluster" href="class_cluster.html">
+        <topic label="Cluster" href="class_cluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81"/>
+        <topic label="Cluster" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5"/>
+        <topic label="Cluster" href="class_cluster.html#aaf336dfa4bfb02c0fd71395615636fb4"/>
+        <topic label="sub_arbre_cluster" href="class_cluster.html#ace44d06aa5b728ebe1245905cabbf943"/>
+        <topic label="escriure" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a"/>
+        <topic label="inm_escriure" href="class_cluster.html#a1856b0f1ca9243208451c965313af753"/>
+        <topic label="cerca" href="class_cluster.html#a1014524cf8fca2165ee6ec5ed0eac743"/>
+      </topic>
+      <topic label="Especie" href="class_especie.html">
+        <topic label="Especie" href="class_especie.html#a272c2488719cc9874b2f174906675b3d"/>
+        <topic label="Especie" href="class_especie.html#a9cd047acfec0dbd335b5801b0ade53d3"/>
+        <topic label="kmer" href="class_especie.html#a2bd896f271d0983f609735df8809cccc"/>
+        <topic label="consultar_gen" href="class_especie.html#a850af2b59a21e2d801c59d76ba5c1a98"/>
+        <topic label="distancia" href="class_especie.html#a2037b4bf2d55d8c6ffb90811ad1c4a1b"/>
+        <topic label="escriure" href="class_especie.html#ae24802ae0746b2560a48eea40f64760e"/>
+        <topic label="gen" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1"/>
+        <topic label="k_meros" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e"/>
+      </topic>
+    </topic>
+    <topic label="Miembros de las clases" href="functions.html">
+      <topic label="Todo" href="functions.html"/>
+      <topic label="Funciones" href="functions_func.html"/>
+      <topic label="Variables" href="functions_vars.html"/>
+    </topic>
+  </topic>
+  <topic label="Archivos" href="files.html">
+    <topic label="Lista de archivos" href="files.html">
+      <topic label="Cjt_clusters.cc" href="_cjt__clusters_8cc.html"/>
+      <topic label="Cjt_clusters.hh" href="_cjt__clusters_8hh.html">
+        <topic label="Cjt_clusters" href="class_cjt__clusters.html">
+          <topic label="tabla_dist_clust" href="class_cjt__clusters.html#a8298bacd14980c99c9558c72702174e8"/>
+          <topic label="imprime_tabla_distancias" href="class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327"/>
+          <topic label="min_dist" href="class_cjt__clusters.html#a16a83a28b826a223d908689622e2d1ac"/>
+          <topic label="dist_clust" href="class_cjt__clusters.html#a85f675adbd2142e12825c9bf84c53521"/>
+          <topic label="imprime_cluster" href="class_cjt__clusters.html#aeead6f73476c1d0a814403b801141741"/>
+          <topic label="inicialitza_clusters" href="class_cjt__clusters.html#ac309c781b06d06ec9a2b4bc839c01f40"/>
+          <topic label="ejecuta_paso_wpgma" href="class_cjt__clusters.html#a1804b08a854e11aefae84298c16bf9c8"/>
+          <topic label="imprime_arbol_filogenetico" href="class_cjt__clusters.html#a8a92eefe19f7eafc403690a30d87b99e"/>
+          <topic label="elimina_especie_clusters" href="class_cjt__clusters.html#ae81267c7b82d60b212c02f9ff040eca5"/>
+          <topic label="afegeix_especie_clusters" href="class_cjt__clusters.html#aa032b0cd8fc22d549d986739b7e10b31"/>
+          <topic label="ejecuta_paso_wpgm_sense_imprimir" href="class_cjt__clusters.html#adbe6fcbee6a22aaeb751b0df0ab16921"/>
+          <topic label="map_clusters" href="class_cjt__clusters.html#aee8b5f7c1021b21308fb657529c2ae0b"/>
+          <topic label="tabla_distancias_cluster" href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63"/>
+        </topic>
+        <topic label="CJT_CLUSTER_HH" href="_cjt__clusters_8hh.html#af283c7c3076dbf48e48e3af57118520f"/>
+      </topic>
+      <topic label="Cjt_especies.cc" href="_cjt__especies_8cc.html"/>
+      <topic label="Cjt_especies.hh" href="_cjt__especies_8hh.html">
+        <topic label="Cjt_especies" href="class_cjt__especies.html">
+          <topic label="Cjt_especies" href="class_cjt__especies.html#ab297567c73ccd8caefbd8760d90294a1"/>
+          <topic label="elimina_especie_tabla_dist" href="class_cjt__especies.html#aa9f562fc745558783a3634c38df07ad5"/>
+          <topic label="afegeix_especie_tabla_dist" href="class_cjt__especies.html#a90a082e134d49bc8cee834b4ff5d0e8b"/>
+          <topic label="crea_especie" href="class_cjt__especies.html#a96c09a2e9fb27a4bf48aba20dfa86bd8"/>
+          <topic label="elimina_especie" href="class_cjt__especies.html#a869c218f09aa589d21f497196bb79e67"/>
+          <topic label="existeix_especie" href="class_cjt__especies.html#a86bd41f60448306f12ec55e6fc054659"/>
+          <topic label="calcular_distancia" href="class_cjt__especies.html#aa4191c64a5008de2272e0e3489aeb778"/>
+          <topic label="obtener_gen" href="class_cjt__especies.html#a3a1dc5f705c2271ee9c1dfd14ac6822d"/>
+          <topic label="tabla_distancias" href="class_cjt__especies.html#a653d6b120928015ad38a5dc30ebeec8e"/>
+          <topic label="lee_cjt_especies" href="class_cjt__especies.html#a1f554d3f098484c20372c43b844752db"/>
+          <topic label="imprime_cjt_especies" href="class_cjt__especies.html#aba7f0f935b6e0b8eb38337ad8675fead"/>
+          <topic label="final" href="class_cjt__especies.html#a44c59750dd9223ea12f954247fd11504"/>
+          <topic label="inicio" href="class_cjt__especies.html#aedcfb0e423c5c02653c8a5d362cfa784"/>
+          <topic label="actual" href="class_cjt__especies.html#a2cd05fceb53ec9604eb4dcb6abea1c4d"/>
+          <topic label="avanza" href="class_cjt__especies.html#acc3beaf9ea5a96f33296f5cc15b8b5a2"/>
+          <topic label="cjt_especies" href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f"/>
+          <topic label="taula_distancies" href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae"/>
+          <topic label="it" href="class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0"/>
+        </topic>
+      </topic>
+      <topic label="Cluster.cc" href="_cluster_8cc.html"/>
+      <topic label="Cluster.hh" href="_cluster_8hh.html">
+        <topic label="Cluster" href="class_cluster.html">
+          <topic label="Cluster" href="class_cluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81"/>
+          <topic label="Cluster" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5"/>
+          <topic label="Cluster" href="class_cluster.html#aaf336dfa4bfb02c0fd71395615636fb4"/>
+          <topic label="sub_arbre_cluster" href="class_cluster.html#ace44d06aa5b728ebe1245905cabbf943"/>
+          <topic label="escriure" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a"/>
+          <topic label="inm_escriure" href="class_cluster.html#a1856b0f1ca9243208451c965313af753"/>
+          <topic label="cerca" href="class_cluster.html#a1014524cf8fca2165ee6ec5ed0eac743"/>
+        </topic>
+      </topic>
+      <topic label="Especie.cc" href="_especie_8cc.html"/>
+      <topic label="Especie.hh" href="_especie_8hh.html">
+        <topic label="Especie" href="class_especie.html">
+          <topic label="Especie" href="class_especie.html#a272c2488719cc9874b2f174906675b3d"/>
+          <topic label="Especie" href="class_especie.html#a9cd047acfec0dbd335b5801b0ade53d3"/>
+          <topic label="kmer" href="class_especie.html#a2bd896f271d0983f609735df8809cccc"/>
+          <topic label="consultar_gen" href="class_especie.html#a850af2b59a21e2d801c59d76ba5c1a98"/>
+          <topic label="distancia" href="class_especie.html#a2037b4bf2d55d8c6ffb90811ad1c4a1b"/>
+          <topic label="escriure" href="class_especie.html#ae24802ae0746b2560a48eea40f64760e"/>
+          <topic label="gen" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1"/>
+          <topic label="k_meros" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e"/>
+        </topic>
+      </topic>
+      <topic label="program.cc" href="program_8cc.html">
+        <topic label="main" href="program_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4"/>
+      </topic>
+    </topic>
+    <topic label="Miembros de los ficheros" href="globals.html">
+      <topic label="Todo" href="globals.html"/>
+      <topic label="Funciones" href="globals_func.html"/>
+      <topic label="defines" href="globals_defs.html"/>
+    </topic>
+  </topic>
+</toc>
