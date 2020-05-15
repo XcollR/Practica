@@ -1,0 +1,498 @@
+.TH "Cjt_clusters" 3 "Dj Mai 14 2020" "Version 14/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Cjt_clusters \- Representa un conjunt de clusters\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Mètodes públics"
+
+.in +1c
+.ti -1c
+.RI "\fBCjt_clusters\fP ()"
+.br
+.RI "Crea un conjunt de clusters buit\&. "
+.ti -1c
+.RI "double \fBdist_clust\fP (const string &id, const string &id2) const"
+.br
+.RI "Busca la distància entre els clusters demanats\&. "
+.ti -1c
+.RI "pair< string, string > \fBmin_dist\fP () const"
+.br
+.RI "Calcula la distancia mínima entre Clusters\&. "
+.ti -1c
+.RI "void \fBejecuta_paso_wpgma\fP (const bool &a)"
+.br
+.RI "Fusiona els clusters que estan a menor distància\&. "
+.ti -1c
+.RI "void \fBimprime_cluster\fP (string id) const"
+.br
+.RI "Imprimeix el cluster indicat\&. "
+.ti -1c
+.RI "void \fBinicialitza_clusters\fP (\fBCjt_especies\fP &conjunt, const bool ve_de_func)"
+.br
+.RI "Inicialitza els clusters del conjunt\&. "
+.ti -1c
+.RI "void \fBimprime_tabla_distancias\fP () const"
+.br
+.RI "Imprimeix la taula de distàncies entre clusters\&. "
+.ti -1c
+.RI "void \fBimprime_arbol_filogenetico\fP (\fBCjt_especies\fP &conjunt)"
+.br
+.RI "Imprimeix l'arbre filogenètic\&. "
+.in -1c
+.SS "Mètodes Privats"
+
+.in +1c
+.ti -1c
+.RI "void \fBtabla_dist_clust\fP (const \fBCjt_especies\fP &conjunt)"
+.br
+.RI "Imprimeix el cluster indicat\&. "
+.ti -1c
+.RI "void \fBafegeix_especie_clusters\fP (const pair< string, string > &dist)"
+.br
+.RI "Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies\&. "
+.ti -1c
+.RI "void \fBelimina_especie_clusters\fP (const string &id)"
+.br
+.RI "Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies\&. "
+.in -1c
+.SS "Atributs Privats"
+
+.in +1c
+.ti -1c
+.RI "map< string, \fBCluster\fP > \fBmap_clusters\fP"
+.br
+.RI "Mapa on es guarden els clusters resultants\&. La clau es un string i la dada un \fBCluster\fP\&. "
+.ti -1c
+.RI "map< string, map< string, double > > \fBtabla_distancias_cluster\fP"
+.br
+.RI "Nested map on es guarden les distancies entre clusters\&. És un nested map\&. "
+.in -1c
+.SH "Descripció Detallada"
+.PP 
+Representa un conjunt de clusters\&. 
+
+Ofereix la possibilitat d'ajuntar clusters per tal d'anar creant l'arbre filogenètic\&. També pots demanar imprimir un cluster determinat si existeix i imprimir l'arbre resultant\&. També ofereix una taula de distancies entre clusters\&. Els clusters es generen mitjançant la sincronització amb un conjunt d'especies i es compleix amb la funció inicializa_clusters\&. 
+.PP
+Definició a la línia 28 del fitxer Cjt_clusters\&.hh\&.
+.SH "Documentació del Constructor i el Destructor"
+.PP 
+.SS "Cjt_clusters::Cjt_clusters ()"
+
+.PP
+Crea un conjunt de clusters buit\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat és un conjunt de clusters buit\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 8 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+8                            {
+9     map_clusters = map<string,Cluster>();
+10     tabla_distancias_cluster = map<string,map<string,double>>();
+11 }
+.fi
+.SH "Documentació de les Funcions Membre"
+.PP 
+.SS "void Cjt_clusters::tabla_dist_clust (const \fBCjt_especies\fP & conjunt)\fC [private]\fP"
+
+.PP
+Imprimeix el cluster indicat\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha passat totes les distancies entre especies al conjunt de clusters\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fI\fBCjt_especies\fP\fP Entra un objecte del tipus conjunt especies\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 49 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+49                                                                {
+50     for (map<string,Cluster>::const_iterator it = map_clusters\&.begin(); it != map_clusters\&.end(); ++it) {
+51         map<string, double> aux;
+52         for (map<string,Cluster>::const_iterator it2 = it; it2 != map_clusters\&.end(); ++it2) {
+53             if (it->first != it2->first) {
+54             double x = conjunt\&.calcular_distancia(it->first, it2->first);
+55             aux\&.insert(make_pair(it2->first, x));
+56             }
+57         }
+58         tabla_distancias_cluster\&.insert(make_pair(it->first, aux));
+59     }
+60 }
+.fi
+.SS "void Cjt_clusters::afegeix_especie_clusters (const pair< string, string > & dist)\fC [private]\fP"
+
+.PP
+Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+El pair no és buit\&. 
+.br
+ 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha fusionat els clusters\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 106 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+106                                                                            {
+107     string fus = dist\&.first + dist\&.second;
+108     map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster\&.begin();
+109     while (it != tabla_distancias_cluster\&.end() and it->first < fus) {
+110         tabla_distancias_cluster[it->first][fus] = (tabla_distancias_cluster[it->first][dist\&.first] + tabla_distancias_cluster[min(it->first,dist\&.second)][max(it->first,dist\&.second)])/2;
+111         ++it;
+112     }
+113     while (it != tabla_distancias_cluster\&.end()) {
+114         tabla_distancias_cluster[fus][it->first] = (tabla_distancias_cluster[dist\&.first][it->first] + tabla_distancias_cluster[min(it->first,dist\&.second)][max(it->first,dist\&.second)])/2;
+115         ++it;
+116     }
+117     map<string,Cluster>::const_iterator a = map_clusters\&.find(dist\&.first);
+118     map<string,Cluster>::const_iterator b = map_clusters\&.find(dist\&.second);
+119     Cluster c(a->second,b->second,dist_clust(dist\&.first,dist\&.second));
+120     map_clusters\&.insert(make_pair(fus,c));
+121 
+122 
+123 }
+.fi
+.SS "void Cjt_clusters::elimina_especie_clusters (const string & id)\fC [private]\fP"
+
+.PP
+Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+La especie a eliminar existeix\&. 
+.br
+ 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha eliminat la especie del mapa de clusters i la taula de distancies\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 95 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+95                                                             {
+96     map<string, Cluster>::const_iterator peix = map_clusters\&.find(id);
+97   map_clusters\&.erase(peix);
+98   map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster\&.find(id);
+99   for (map<string,map<string,double>>::iterator it2 = tabla_distancias_cluster\&.begin(); it2 != it; ++it2) {
+100       it2->second\&.erase(it2->second\&.find(id));
+101     }
+102   tabla_distancias_cluster\&.erase(it);
+103 
+104 }
+.fi
+.SS "double Cjt_clusters::dist_clust (const string & id, const string & id2) const"
+
+.PP
+Busca la distància entre els clusters demanats\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Els dos clusters demanats existeixen\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha retornat la distància entre els clusters\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fIstring\fP Entren per referència constant dos string amb els identificadors dels clusters\&. 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Retorna un double amb la distància que els separa genèticament\&. Retorna -1 si algun dels dos clusters no existeix\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 142 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+142                                                                         {
+143         map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster\&.find(id);
+144       map<string,double>::const_iterator it2 = it->second\&.find(id2);
+145       return it2->second;
+146 }
+.fi
+.SS "pair< string, string > Cjt_clusters::min_dist () const"
+
+.PP
+Calcula la distancia mínima entre Clusters\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha calculat la distancia entre dos clusters\&. 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+Retorna un pair\&. Els dos elements són de tipu string, retorna els identificadors de clusters a menor distancia\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 125 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+125                                                  {
+126     double distancia = 101;
+127     pair<string,string> dists;
+128     for (map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster\&.begin(); it != tabla_distancias_cluster\&.end(); ++it) {
+129         for (map<string,double>::const_iterator it2 = it->second\&.begin(); it2 != it->second\&.end(); ++it2) {
+130                 if (it2->second < distancia ){
+131                 distancia = it2->second;
+132                 dists\&.first = it->first;
+133                 dists\&.second = it2->first;
+134                 }
+135             }
+136 
+137         }
+138     return dists;
+139 
+140 }
+.fi
+.SS "void Cjt_clusters::ejecuta_paso_wpgma (const bool & a)"
+
+.PP
+Fusiona els clusters que estan a menor distància\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.br
+ 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha fusionat els clusters\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fIbool\&.\fP Si el bool = true, s'imprimeix la taula de distancies entre clusters resultant\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 81 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+81                                                    {
+82     if (map_clusters\&.size() > 1) {
+83     pair<string,string> pair_dist = min_dist(); //pair amb els dos clusters a menor distancia\&.
+84     afegeix_especie_clusters(pair_dist);
+85     elimina_especie_clusters(pair_dist\&.first);
+86     elimina_especie_clusters(pair_dist\&.second);    
+87     if (a) imprime_tabla_distancias();
+88     }
+89     else cout << "ERROR: num_clusters <= 1" << endl;
+90 }
+.fi
+.SS "void Cjt_clusters::imprime_cluster (string id) const"
+
+.PP
+Imprimeix el cluster indicat\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Existeix el cluster indicat\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha imprès el cluster indicat\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fIstring\fP id 
+.RE
+.PP
+
+.PP
+Definició a la línia 73 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+73                                                   {
+74     map<string,Cluster>::const_iterator it = map_clusters\&.find(id);
+75     if (it == map_clusters\&.end()) cout << "ERROR: El cluster " << id << " no existe\&." << endl;
+76     else{
+77         it->second\&.escriure();
+78     }    
+79 }
+.fi
+.SS "void Cjt_clusters::inicialitza_clusters (\fBCjt_especies\fP & conjunt, const bool ve_de_func)"
+
+.PP
+Inicialitza els clusters del conjunt\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Existeix un conjunt d'especies\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+Els clusters s'han inicialitzat\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fI\fBCjt_especies\fP\fP Entra un conjunt d'especies per referència\&. 
+.br
+\fIBool\fP El booleà té una gran importància, si bool = true imprimirà la taula de distàncies entre clusters, en cas que bool = fals, la funció no imprimirà res\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 14 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+14                                                                                    {
+15 
+16     map_clusters\&.clear();
+17     tabla_distancias_cluster\&.clear();
+18     conjunt\&.inicio(); // Iterador del conjunt d'especies que apunta a la primera posició
+19          while (not conjunt\&.final()) {
+20              string x;
+21              conjunt\&.actual(x); // 
+22              Cluster clust(x);
+23              map_clusters\&.insert(make_pair(x, clust));
+24              conjunt\&.avanza();
+25 
+26         }
+27     tabla_dist_clust(conjunt);
+28     if (ve_de_func) imprime_tabla_distancias();
+29 }
+.fi
+.SS "void Cjt_clusters::imprime_tabla_distancias () const"
+
+.PP
+Imprimeix la taula de distàncies entre clusters\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha imprès totes les distàncies entre clusters\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 63 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+63                                                   {
+64   for(map<string,map<string,double>>::const_iterator it = tabla_distancias_cluster\&.begin(); it != tabla_distancias_cluster\&.end(); ++it) {
+65     cout << it->first << ":";
+66     for (map<string,double>::const_iterator it2 = it->second\&.begin(); it2 != it->second\&.end(); ++it2) {
+67         cout << " " << it2->first << " (" << it2->second << ")"; 
+68     }
+69     cout << endl;
+70   }
+71 }
+.fi
+.SS "void Cjt_clusters::imprime_arbol_filogenetico (\fBCjt_especies\fP & conjunt)"
+
+.PP
+Imprimeix l'arbre filogenètic\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha imprès l'arbre filogenètic pel canal standart de sortida\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 33 del fitxer Cjt_clusters\&.cc\&.
+.PP
+.nf
+33                                                                    {
+34     bool fals = false;
+35     inicialitza_clusters(conjunt,fals);
+36 
+37     if (map_clusters\&.size() != 0) {
+38     while (map_clusters\&.size() > 1) {
+39         ejecuta_paso_wpgma(fals);
+40     }
+41     map<string,Cluster>::const_iterator it = map_clusters\&.begin();
+42     it->second\&.escriure();
+43     }
+44     else cout << "ERROR: El conjunto de clusters es vacio\&." << endl;
+45 
+46 
+47 }
+.fi
+.SH "Documentació de les Dades Membre"
+.PP 
+.SS "map<string, \fBCluster\fP> Cjt_clusters::map_clusters\fC [private]\fP"
+
+.PP
+Mapa on es guarden els clusters resultants\&. La clau es un string i la dada un \fBCluster\fP\&. 
+.PP
+Definició a la línia 34 del fitxer Cjt_clusters\&.hh\&.
+.SS "map<string, map<string, double> > Cjt_clusters::tabla_distancias_cluster\fC [private]\fP"
+
+.PP
+Nested map on es guarden les distancies entre clusters\&. És un nested map\&. 
+.PP
+Definició a la línia 38 del fitxer Cjt_clusters\&.hh\&.
+
+.SH "Autor"
+.PP 
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.

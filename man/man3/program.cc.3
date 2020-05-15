@@ -1,0 +1,146 @@
+.TH "program.cc" 3 "Dj Mai 14 2020" "Version 14/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+program.cc \- El main del programa\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Funcions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.RI "El main del programa\&. "
+.in -1c
+.SH "Descripció Detallada"
+.PP 
+El main del programa\&. 
+
+
+.PP
+\fBAutor\fP
+.RS 4
+Xavier Coll Ribas 
+.RE
+.PP
+
+.PP
+Definició al fitxer \fBprogram\&.cc\fP\&.
+.SH "Documentació de les Funcions"
+.PP 
+.SS "int main ()"
+
+.PP
+El main del programa\&. 
+.PP
+Definició a la línia 15 del fitxer program\&.cc\&.
+.PP
+.nf
+15            {
+16   int k; // k del kmer;
+17   cin >> k;
+18   
+19   Cjt_especies conjunt;
+20   Cjt_clusters cjt_clusters;
+21   Especie especie;
+22   especie\&.set_parametro(k);
+23   
+24   string opcio;
+25   cin >> opcio;
+26 
+27   while (opcio != "fin") {
+28     string id, id2, gen;
+29   
+30     if (opcio == "crea_especie") {
+31       cin >> id >> gen;
+32       cout << "# " << opcio << " " << id << " " << gen << endl;
+33       if (conjunt\&.existeix_especie(id)) cout << "ERROR: La especie " << id << " ya existe\&." << endl;
+34       else {
+35       conjunt\&.crea_especie(id,gen);
+36       }
+37       cout << endl;
+38     }
+39     
+40     else if (opcio == "obtener_gen") {
+41       cin >> id;
+42       cout << "# " << opcio << " " << id << endl;
+43       if (conjunt\&.existeix_especie(id)) conjunt\&.obtener_gen(id);
+44       else cout << "ERROR: La especie " << id << " no existe\&." << endl;
+45       cout << endl;
+46 
+47     }
+48     else if (opcio == "distancia") {
+49       cin >> id >> id2;
+50       cout << "# " << opcio << " " << id << " " << id2 << endl;
+51       if (conjunt\&.calcular_distancia(id,id2) == -1)  cout << "ERROR: La especie " << id << " y la especie " << id2 << " no existen\&." << endl;
+52       else if (conjunt\&.calcular_distancia(id,id2) == -2)   cout << "ERROR: La especie " << id << " no existe\&." << endl;
+53       else if (conjunt\&.calcular_distancia(id,id2) == -3) cout << "ERROR: La especie " << id2 << " no existe\&." << endl;
+54       else cout << conjunt\&.calcular_distancia(id,id2) << endl;
+55       
+56       cout << endl;
+57     }
+58     else if (opcio == "elimina_especie") {
+59       cin >> id;
+60       cout << "# " << opcio << " " << id << endl;
+61       if (not conjunt\&.existeix_especie(id)) cout << "ERROR: La especie " << id << " no existe\&." << endl;
+62       else conjunt\&.elimina_especie(id);
+63       cout << endl;
+64     }
+65     else if (opcio == "existe_especie") {
+66       cin >> id;
+67       cout << "# " << opcio << " " << id <<endl;
+68       if (conjunt\&.existeix_especie(id)) cout << "SI" << endl;
+69       else cout << "NO" << endl;
+70       cout << endl;
+71     }
+72     else if (opcio == "lee_cjt_especies") {
+73       cout << "# " << opcio <<  endl;
+74       conjunt\&.lee_cjt_especies();
+75       cout << endl;
+76     }
+77     else if (opcio == "imprime_cjt_especies") {
+78       cout << "# " << opcio << endl;
+79       conjunt\&.imprime_cjt_especies();
+80     cout << endl;
+81     }
+82     else if (opcio == "tabla_distancias") {
+83       cout << "# " << opcio << endl;
+84       conjunt\&.tabla_distancias();
+85       cout << endl;
+86     }
+87     else if (opcio == "inicializa_clusters") {
+88       cout << "# " << opcio << endl;
+89       bool a = true;
+90       cjt_clusters\&.inicialitza_clusters(conjunt, a);
+91       cout << endl;
+92     }
+93     else if (opcio == "ejecuta_paso_wpgma") {
+94       cout << "# " << opcio << endl;
+95       bool a = true;
+96       cjt_clusters\&.ejecuta_paso_wpgma(a);
+97       cout << endl;
+98     }
+99     else if (opcio == "imprime_cluster") {
+100 
+101       cin >> id;
+102       cout << "# " << opcio << " " << id << endl;
+103       cjt_clusters\&.imprime_cluster(id);
+104       cout << endl;
+105     }
+106     else if (opcio == "imprime_arbol_filogenetico") {
+107       cout << "# " << opcio << endl;
+108       cjt_clusters\&.imprime_arbol_filogenetico(conjunt);
+109       cout << endl;
+110       
+111     }
+112   cin >> opcio;
+113   }
+114 
+115 }
+.fi
+.SH "Autor"
+.PP 
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.

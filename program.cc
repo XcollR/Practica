@@ -16,7 +16,7 @@ int main() {
 	int k; // k del kmer;
 	cin >> k;
 	
-	Cjt_especies conjunt;
+	Cjt_especies conjunt; // Iniciem un conjunt d'especies buit.
 	Cjt_clusters cjt_clusters;
 	Especie especie;
 	especie.set_parametro(k);

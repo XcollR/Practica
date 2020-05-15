@@ -1,11 +1,11 @@
-\hypertarget{class_especie}{}\doxysection{Referencia de la Clase Especie}
+\hypertarget{class_especie}{}\doxysection{Referència de la Classe Especie}
 \label{class_especie}\index{Especie@{Especie}}
 
 
 Representa el conjunt de característiques y operacions de les especies.  
 
 
-\doxysubsection*{Métodos públicos}
+\doxysubsection*{Mètodes públics}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_especie_a272c2488719cc9874b2f174906675b3d}{Especie}} ()
@@ -18,42 +18,40 @@ double \mbox{\hyperlink{class_especie_a2037b4bf2d55d8c6ffb90811ad1c4a1b}{distanc
 \begin{DoxyCompactList}\small\item\em Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_especie_ae24802ae0746b2560a48eea40f64760e}{escriure}} () const
 \begin{DoxyCompactList}\small\item\em Escriu la espècie del paràmetre implícit. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Métodos públicos estáticos}
+\doxysubsection*{Mètodes Públics Estàtics}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_especie_a1d513b21daca76fa150dd1d62c590093}{set\+\_\+parametro}} (const int \&k\+\_\+dato)
 \begin{DoxyCompactList}\small\item\em Introdueix el paràmetre k com a static per calcular els k-\/meros. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Métodos privados}
+\doxysubsection*{Mètodes Privats}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_especie_a2bd896f271d0983f609735df8809cccc}{kmer}} ()
 \begin{DoxyCompactList}\small\item\em Calcula els kmeros d\textquotesingle{}una espècie a partir del seu gen. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Atributos privados}
+\doxysubsection*{Atributs Privats}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}
 \begin{DoxyCompactList}\small\item\em És el gen de la espècie. \end{DoxyCompactList}\item 
 map$<$ string, int $>$ \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\+\_\+meros}}
 \begin{DoxyCompactList}\small\item\em Map on guardem els k-\/meros de la especie. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Atributos privados estáticos}
+\doxysubsection*{Atributs Privats Estàtics}
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\+\_\+num}}
 \begin{DoxyCompactList}\small\item\em Tamany que indica el tamany dels paquets per separar el gen de la especie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Descripción detallada}
+\doxysubsection{Descripció Detallada}
 Representa el conjunt de característiques y operacions de les especies. 
 
-Ofereix la posibilitat de calcular els k-\/meros d\textquotesingle{}una especie. A partir de dues especies podem calcular la distància que les separa genèticament.
+Ofereix la posibilitat de calcular la distancie entre dues especies, consultar el gen, i escriure el gen. Donat que hem d\textquotesingle{}establir un paramètre k, tenim la necessitat de crear una constructora d\textquotesingle{}especie buida per poder introduir la k. 
 
-Donat que hem d\textquotesingle{}establir un paramètre k, tenim la necessitat de crear una constructora d\textquotesingle{}especie buida per poder introduir la k. 
-
-Definición en la línea 28 del archivo Especie.\+hh.
+Definició a la línia 26 del fitxer Especie.\+hh.
 
 
 
-\doxysubsection{Documentación del constructor y destructor}
+\doxysubsection{Documentació del Constructor i el Destructor}
 \mbox{\Hypertarget{class_especie_a272c2488719cc9874b2f174906675b3d}\label{class_especie_a272c2488719cc9874b2f174906675b3d}} 
 \index{Especie@{Especie}!Especie@{Especie}}
 \index{Especie@{Especie}!Especie@{Especie}}
@@ -64,22 +62,22 @@ Definición en la línea 28 del archivo Especie.\+hh.
 
 Crea una especie sense identificador ni gen. 
 
-\begin{DoxyPrecond}{Precondición}
+\begin{DoxyPrecond}{Precondició}
 Cert. 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 El resultat es una especie sense identificador, gen i kmeros. 
 \end{DoxyPostcond}
 
 
-Definición en la línea 9 del archivo Especie.\+cc.
+Definició a la línia 12 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{9                  \{}
-\DoxyCodeLine{10   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} = \textcolor{charliteral}{' '};}
-\DoxyCodeLine{11   \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}} = map<string, int> ();}
-\DoxyCodeLine{12 \}}
+\DoxyCodeLine{12                  \{}
+\DoxyCodeLine{13   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{14   \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}} = map<string, int> ();}
+\DoxyCodeLine{15 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a9cd047acfec0dbd335b5801b0ade53d3}\label{class_especie_a9cd047acfec0dbd335b5801b0ade53d3}} 
@@ -92,27 +90,27 @@ Definición en la línea 9 del archivo Especie.\+cc.
 
 Crea una especie amb el gen i l\textquotesingle{}identificador indicat. 
 
-\begin{DoxyPrecond}{Precondición}
+\begin{DoxyPrecond}{Precondició}
 Cert. 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 El resultat es una especie amb identificador, gen i kmeros. 
 \end{DoxyPostcond}
 
 
-Definición en la línea 15 del archivo Especie.\+cc.
+Definició a la línia 18 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{15                             \{}
-\DoxyCodeLine{16   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} = gen1;}
-\DoxyCodeLine{17   \mbox{\hyperlink{class_especie_a2bd896f271d0983f609735df8809cccc}{kmer}}();}
-\DoxyCodeLine{18 \}}
+\DoxyCodeLine{18                             \{}
+\DoxyCodeLine{19   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} = gen1;}
+\DoxyCodeLine{20   \mbox{\hyperlink{class_especie_a2bd896f271d0983f609735df8809cccc}{kmer}}();}
+\DoxyCodeLine{21 \}}
 
 \end{DoxyCode}
 
 
-\doxysubsection{Documentación de las funciones miembro}
+\doxysubsection{Documentació de les Funcions Membre}
 \mbox{\Hypertarget{class_especie_a2bd896f271d0983f609735df8809cccc}\label{class_especie_a2bd896f271d0983f609735df8809cccc}} 
 \index{Especie@{Especie}!kmer@{kmer}}
 \index{kmer@{kmer}!Especie@{Especie}}
@@ -123,29 +121,40 @@ Definición en la línea 15 del archivo Especie.\+cc.
 
 Calcula els kmeros d\textquotesingle{}una espècie a partir del seu gen. 
 
-\begin{DoxyPrecond}{Precondición}
+\begin{DoxyPrecond}{Precondició}
 El paràmetre implícit és un string amb longitud $>$= k. 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 S\textquotesingle{}ha calculat els k-\/meros i s\textquotesingle{}han guardat. 
 \end{DoxyPostcond}
 
 
-Definición en la línea 66 del archivo Especie.\+cc.
+Definició a la línia 28 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{66                    \{}
-\DoxyCodeLine{67   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}.size() -\/ \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + 1; ++i) \{}
-\DoxyCodeLine{68     \textcolor{keywordtype}{string} aux;}
-\DoxyCodeLine{69     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + i; ++j) \{}
-\DoxyCodeLine{70       aux += \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}[j];}
-\DoxyCodeLine{71     \}}
-\DoxyCodeLine{72     map<string,int>::const\_iterator it = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.find(aux);}
-\DoxyCodeLine{73     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.insert(make\_pair(aux, 1));}
-\DoxyCodeLine{74     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}[aux] = it-\/> second +1;}
-\DoxyCodeLine{75   \}}
-\DoxyCodeLine{76 \} }
+\DoxyCodeLine{28                    \{}
+\DoxyCodeLine{29   \textcolor{comment}{// Inv: El recorregut que fa aquest bucle for mai}}
+\DoxyCodeLine{30   \textcolor{comment}{// farà més iteracions que el tamany del gen -\/ k + 1.}}
+\DoxyCodeLine{31   \textcolor{comment}{// A cada iteració es crea un string auxiliar on s'aniran actualitzan els caracters un per un.}}
+\DoxyCodeLine{32   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}.size() -\/ \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + 1; ++i) \{}
+\DoxyCodeLine{33     \textcolor{keywordtype}{string} aux;}
+\DoxyCodeLine{34   \textcolor{comment}{// Inv: El recorregut que fa aquest segon bucle mai superarà}}
+\DoxyCodeLine{35   \textcolor{comment}{// les k iteracions. Hem igualat la j a la i, per anar avançant cada}}
+\DoxyCodeLine{36   \textcolor{comment}{// cop una posició i el bucle farà menys de k\_num + i iteracions.}}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{k\_num}} + i; ++j) \{ }
+\DoxyCodeLine{38       aux += \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}[j];}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     \textcolor{comment}{// En el mapa de k-\/meros busquem el kmero que acabem de crear}}
+\DoxyCodeLine{41     \textcolor{comment}{// en la anterior interació. Si aquest no existia s'afegeix al mapa.}}
+\DoxyCodeLine{42     \textcolor{comment}{// La clau del mapa és el kmer generat i el valor que se l'assigna és el número}}
+\DoxyCodeLine{43     \textcolor{comment}{// de vegades que es repeteix, al ser el primer cop, es posa un 1. En cas que el }}
+\DoxyCodeLine{44     \textcolor{comment}{// kmer ja existis anteriorment, es busca la clau i s'incrementa en 1 el valor.}}
+\DoxyCodeLine{45     map<string,int>::const\_iterator it = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.find(aux);}
+\DoxyCodeLine{46     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.insert(make\_pair(aux, 1));}
+\DoxyCodeLine{47     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}[aux] = it-\/> second +1;}
+\DoxyCodeLine{48   \}}
+\DoxyCodeLine{49 \} }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a1d513b21daca76fa150dd1d62c590093}\label{class_especie_a1d513b21daca76fa150dd1d62c590093}} 
@@ -158,21 +167,21 @@ Definición en la línea 66 del archivo Especie.\+cc.
 
 Introdueix el paràmetre k com a static per calcular els k-\/meros. 
 
-\begin{DoxyPrecond}{Precondición}
+\begin{DoxyPrecond}{Precondició}
 Hi ha una k al canal d\textquotesingle{}entrada. 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 S\textquotesingle{}ha establert la k per calcular els kmeros. 
 \end{DoxyPostcond}
 
 
-Definición en la línea 21 del archivo Especie.\+cc.
+Definició a la línia 24 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{21                                              \{}
-\DoxyCodeLine{22   \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} = k\_dato;}
-\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24                                              \{}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} = k\_dato;}
+\DoxyCodeLine{26 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a850af2b59a21e2d801c59d76ba5c1a98}\label{class_especie_a850af2b59a21e2d801c59d76ba5c1a98}} 
@@ -185,24 +194,24 @@ Definición en la línea 21 del archivo Especie.\+cc.
 
 Retorna el gen de la espècie. 
 
-\begin{DoxyPrecond}{Precondición}
+\begin{DoxyPrecond}{Precondició}
 El parametre implicit te gen. 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 El resultat es el gen del parametre implicit. 
 \end{DoxyPostcond}
-\begin{DoxyReturn}{Devuelve}
+\begin{DoxyReturn}{Retorna}
 string 
 \end{DoxyReturn}
 
 
-Definición en la línea 29 del archivo Especie.\+cc.
+Definició a la línia 55 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{29                                    \{}
-\DoxyCodeLine{30   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}};}
-\DoxyCodeLine{31 \}}
+\DoxyCodeLine{55                                    \{}
+\DoxyCodeLine{56   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}};}
+\DoxyCodeLine{57 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a2037b4bf2d55d8c6ffb90811ad1c4a1b}\label{class_especie_a2037b4bf2d55d8c6ffb90811ad1c4a1b}} 
@@ -215,50 +224,62 @@ Definición en la línea 29 del archivo Especie.\+cc.
 
 Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció. 
 
-\begin{DoxyPrecond}{Precondición}
-Cert. 
+\begin{DoxyPrecond}{Precondició}
+Les dues espècies existeixen. 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 El resultat és la distancia entre les dues espècies. 
 \end{DoxyPostcond}
-\begin{DoxyReturn}{Devuelve}
-double 
+\begin{DoxyReturn}{Retorna}
+double. Distancia entre especies 
 \end{DoxyReturn}
 
 
-Definición en la línea 33 del archivo Especie.\+cc.
+Definició a la línia 59 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{33                                                   \{}
-\DoxyCodeLine{34   map<string,int>::const\_iterator i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin(), k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
-\DoxyCodeLine{35   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
-\DoxyCodeLine{36   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
-\DoxyCodeLine{37     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
-\DoxyCodeLine{38       interseccio += min(i-\/>second,k-\/>second);}
-\DoxyCodeLine{39       unio +=  max(i-\/>second, k-\/>second);}
-\DoxyCodeLine{40       ++i;}
-\DoxyCodeLine{41       ++k;      }
-\DoxyCodeLine{42     \}}
-\DoxyCodeLine{43     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i-\/>first < k-\/>first) \{}
-\DoxyCodeLine{44       unio += i-\/>second;}
-\DoxyCodeLine{45       ++i;}
-\DoxyCodeLine{46     \}}
-\DoxyCodeLine{47     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{48       unio += k-\/>second;}
-\DoxyCodeLine{49       ++k;}
-\DoxyCodeLine{50     \}}
-\DoxyCodeLine{51   \}}
-\DoxyCodeLine{52   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
-\DoxyCodeLine{53     unio += i-\/>second;}
-\DoxyCodeLine{54     ++i;}
-\DoxyCodeLine{55   \}}
-\DoxyCodeLine{56   \textcolor{keywordflow}{while} (k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
-\DoxyCodeLine{57     unio += k-\/>second;}
-\DoxyCodeLine{58     ++k;}
-\DoxyCodeLine{59   \}}
-\DoxyCodeLine{60   \textcolor{keywordflow}{return} (((1-\/(interseccio/unio))*100));  }
-\DoxyCodeLine{61 \}}
+\DoxyCodeLine{59                                                   \{}
+\DoxyCodeLine{60   \textcolor{comment}{// Invariant: Situem dos iterador constants al inici dels dos maps de k\_meros}}
+\DoxyCodeLine{61   \textcolor{comment}{// Unio i Intersecció és la cuantitat de elements que compleixen la }}
+\DoxyCodeLine{62   \textcolor{comment}{// condició de que siguin unió o intersecció.}}
+\DoxyCodeLine{63   \textcolor{comment}{// Els elements visitats tenen la clau més petita que els altres.}}
+\DoxyCodeLine{64   \textcolor{comment}{// El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora.}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   map<string,int>::const\_iterator i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin(), k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
+\DoxyCodeLine{67   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
+\DoxyCodeLine{68   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ \textcolor{comment}{// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
+\DoxyCodeLine{70       interseccio += min(i-\/>second,k-\/>second);}
+\DoxyCodeLine{71       unio +=  max(i-\/>second, k-\/>second);}
+\DoxyCodeLine{72       ++i;}
+\DoxyCodeLine{73       ++k;      }
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i-\/>first < k-\/>first) \{}
+\DoxyCodeLine{76       unio += i-\/>second;}
+\DoxyCodeLine{77       ++i;}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{79     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{80       unio += k-\/>second;}
+\DoxyCodeLine{81       ++k;}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83   \}}
+\DoxyCodeLine{84   \textcolor{comment}{// Si el iterador i, el del primer mapa de k-\/meros no ha acabat el recorregut}}
+\DoxyCodeLine{85   \textcolor{comment}{// entra en aquest bucle.}}
+\DoxyCodeLine{86   \textcolor{comment}{// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.}}
+\DoxyCodeLine{87   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
+\DoxyCodeLine{88     unio += i-\/>second;}
+\DoxyCodeLine{89     ++i;}
+\DoxyCodeLine{90   \} }
+\DoxyCodeLine{91   \textcolor{comment}{// Si el iterador k, el del segon mapa de k-\/meros no ha acabat el recorregut}}
+\DoxyCodeLine{92   \textcolor{comment}{// entra en aquest bucle.}}
+\DoxyCodeLine{93   \textcolor{comment}{// Inv: Els elements de k estan ordenats segons la clau en ordre ascendent.}}
+\DoxyCodeLine{94   \textcolor{keywordflow}{while} (k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ }
+\DoxyCodeLine{95     unio += k-\/>second;}
+\DoxyCodeLine{96     ++k;}
+\DoxyCodeLine{97   \}}
+\DoxyCodeLine{98   \textcolor{keywordflow}{return} (((1-\/(interseccio/unio))*100));  }
+\DoxyCodeLine{99 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_ae24802ae0746b2560a48eea40f64760e}\label{class_especie_ae24802ae0746b2560a48eea40f64760e}} 
@@ -271,26 +292,26 @@ Definición en la línea 33 del archivo Especie.\+cc.
 
 Escriu la espècie del paràmetre implícit. 
 
-\begin{DoxyPrecond}{Precondición}
+\begin{DoxyPrecond}{Precondició}
 Cert 
 \end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
+\begin{DoxyPostcond}{Postcondició}
 S\textquotesingle{}han escrit els atributs del parametre implicit al canal estandard de sortida. 
 \end{DoxyPostcond}
 
 
-Definición en la línea 81 del archivo Especie.\+cc.
+Definició a la línia 108 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{81                              \{}
-\DoxyCodeLine{82   cout << \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} << endl;}
-\DoxyCodeLine{83 \}}
+\DoxyCodeLine{108                              \{}
+\DoxyCodeLine{109   cout << \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}} << endl;}
+\DoxyCodeLine{110 \}}
 
 \end{DoxyCode}
 
 
-\doxysubsection{Documentación de los datos miembro}
+\doxysubsection{Documentació de les Dades Membre}
 \mbox{\Hypertarget{class_especie_ac35bb565f7346cd6317b3a8c849456d1}\label{class_especie_ac35bb565f7346cd6317b3a8c849456d1}} 
 \index{Especie@{Especie}!gen@{gen}}
 \index{gen@{gen}!Especie@{Especie}}
@@ -303,7 +324,7 @@ Definición en la línea 81 del archivo Especie.\+cc.
 
 
 
-Definición en la línea 33 del archivo Especie.\+hh.
+Definició a la línia 31 del fitxer Especie.\+hh.
 
 \mbox{\Hypertarget{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}\label{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}} 
 \index{Especie@{Especie}!k\_num@{k\_num}}
@@ -317,7 +338,7 @@ Tamany que indica el tamany dels paquets per separar el gen de la especie.
 
 
 
-Definición en la línea 36 del archivo Especie.\+hh.
+Definició a la línia 34 del fitxer Especie.\+hh.
 
 \mbox{\Hypertarget{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}\label{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}} 
 \index{Especie@{Especie}!k\_meros@{k\_meros}}
@@ -331,11 +352,11 @@ Map on guardem els k-\/meros de la especie.
 
 
 
-Definición en la línea 39 del archivo Especie.\+hh.
+Definició a la línia 37 del fitxer Especie.\+hh.
 
 
 
-La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+La documentació d\textquotesingle{}aquesta classe es va generar a partir dels següents fitxers\+:\begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{_especie_8hh}{Especie.\+hh}}\item 
 \mbox{\hyperlink{_especie_8cc}{Especie.\+cc}}\end{DoxyCompactItemize}

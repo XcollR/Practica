@@ -1,0 +1,192 @@
+.TH "Cluster" 3 "Dj Mai 14 2020" "Version 14/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Cluster \- Representa un cluster d'un arbre binari\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Mètodes públics"
+
+.in +1c
+.ti -1c
+.RI "\fBCluster\fP (const string &id)"
+.br
+.RI "Crea un cluster a partir d'una espècie\&. "
+.ti -1c
+.RI "\fBCluster\fP (const \fBCluster\fP clus1, const \fBCluster\fP Clus2, const double &dist)"
+.br
+.RI "Crea un cluster a partir de la fusió de dos altres\&. "
+.ti -1c
+.RI "void \fBescriure\fP () const"
+.br
+.RI "Escriu l'arbre binari del cluster del parametre implícit\&. "
+.in -1c
+.SS "Mètodes Privats"
+
+.in +1c
+.ti -1c
+.RI "void \fBinm_escriure\fP (const BinTree< pair< string, double >> &a) const"
+.br
+.RI "Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva de l'arbre del cluster\&. "
+.in -1c
+.SS "Atributs Privats"
+
+.in +1c
+.ti -1c
+.RI "BinTree< pair< string, double > > \fBcluster\fP"
+.br
+.RI "Arbre binari format per pairs\&. "
+.in -1c
+.SH "Descripció Detallada"
+.PP 
+Representa un cluster d'un arbre binari\&. 
+
+Ofereix les opcions d'imprimir l'arbre del cluster amb les distancies respecte als seus fills\&. També l'opció de crear un cluster a partir de la fusió de dos altres\&. 
+.PP
+Definició a la línia 25 del fitxer Cluster\&.hh\&.
+.SH "Documentació del Constructor i el Destructor"
+.PP 
+.SS "Cluster::Cluster (const string & id)"
+
+.PP
+Crea un cluster a partir d'una espècie\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat és un cluster de la especie demanada\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fIString\&.\fP Un identificador pel cluster\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 7 del fitxer Cluster\&.cc\&.
+.PP
+.nf
+7                                 {
+8     pair<string, double> clust;
+9     clust\&.first = id;
+10     clust\&.second = 0;
+11     cluster = BinTree<pair<string, double>> (clust);
+12 }
+.fi
+.SS "Cluster::Cluster (const \fBCluster\fP clus1, const \fBCluster\fP Clus2, const double & dist)"
+
+.PP
+Crea un cluster a partir de la fusió de dos altres\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Els dos clusters existeixen i no són buits\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat és un cluster amb la fusió dels dos altres\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fICluster\&.\fP Dos objectes de tipus \fBCluster\fP\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 13 del fitxer Cluster\&.cc\&.
+.PP
+.nf
+13                                                                              {
+14     pair<string, double> clust;
+15     clust\&.first = clus1\&.cluster\&.value()\&.first + clus2\&.cluster\&.value()\&.first;
+16     clust\&.second = dist/2;
+17     cluster = BinTree<pair<string,double>> (clust,clus1\&.cluster,clus2\&.cluster);
+18 }
+.fi
+.SH "Documentació de les Funcions Membre"
+.PP 
+.SS "void Cluster::inm_escriure (const BinTree< pair< string, double >> & a) const\fC [private]\fP"
+
+.PP
+Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva de l'arbre del cluster\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+L'arbre el qual es vol escriure no té el node principal buit\&. Aquesta funció escriura fins que és trobi un node buit\&. En cas que els nodes esquerre i dreta siguin buits, no escriurà la distancià respecte als seus fills degut a no en té\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha escrit l'arbre binàri amb les condicions indicades abans\&. 
+.RE
+.PP
+\fBParàmetres\fP
+.RS 4
+\fIBinTree\&.\fP Arbre binàri del cluster\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 25 del fitxer Cluster\&.cc\&.
+.PP
+.nf
+25                                                                       {
+26       if (not a\&.empty()) {
+27         if (not a\&.left()\&.empty() and not a\&.right()\&.empty()) {
+28     cout <<"["<< "(" << a\&.value()\&.first << ", " << a\&.value()\&.second<< ") ";
+29         }
+30         else {
+31             cout <<"["<< a\&.value()\&.first;
+32         }
+33     inm_escriure(a\&.left());
+34     inm_escriure(a\&.right());
+35         cout << "]";
+36   }
+37 }
+.fi
+.SS "void Cluster::escriure () const"
+
+.PP
+Escriu l'arbre binari del cluster del parametre implícit\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha escrit l'arbre binàri\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 20 del fitxer Cluster\&.cc\&.
+.PP
+.nf
+20                              {
+21     inm_escriure(cluster);
+22     cout << endl;
+23 }
+.fi
+.SH "Documentació de les Dades Membre"
+.PP 
+.SS "BinTree< pair<string, double> > Cluster::cluster\fC [private]\fP"
+
+.PP
+Arbre binari format per pairs\&. 
+.PP
+Definició a la línia 31 del fitxer Cluster\&.hh\&.
+
+.SH "Autor"
+.PP 
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.

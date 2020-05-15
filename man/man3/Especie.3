@@ -1,0 +1,341 @@
+.TH "Especie" 3 "Dj Mai 14 2020" "Version 14/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Especie \- Representa el conjunt de característiques y operacions de les especies\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Mètodes públics"
+
+.in +1c
+.ti -1c
+.RI "\fBEspecie\fP ()"
+.br
+.RI "Crea una especie sense identificador ni gen\&. "
+.ti -1c
+.RI "\fBEspecie\fP (string gen1)"
+.br
+.RI "Crea una especie amb el gen i l'identificador indicat\&. "
+.ti -1c
+.RI "string \fBconsultar_gen\fP () const"
+.br
+.RI "Retorna el gen de la espècie\&. "
+.ti -1c
+.RI "double \fBdistancia\fP (const \fBEspecie\fP &esp) const"
+.br
+.RI "Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció\&. "
+.ti -1c
+.RI "void \fBescriure\fP () const"
+.br
+.RI "Escriu la espècie del paràmetre implícit\&. "
+.in -1c
+.SS "Mètodes Públics Estàtics"
+
+.in +1c
+.ti -1c
+.RI "static void \fBset_parametro\fP (const int &k_dato)"
+.br
+.RI "Introdueix el paràmetre k com a static per calcular els k-meros\&. "
+.in -1c
+.SS "Mètodes Privats"
+
+.in +1c
+.ti -1c
+.RI "void \fBkmer\fP ()"
+.br
+.RI "Calcula els kmeros d'una espècie a partir del seu gen\&. "
+.in -1c
+.SS "Atributs Privats"
+
+.in +1c
+.ti -1c
+.RI "string \fBgen\fP"
+.br
+.RI "És el gen de la espècie\&. "
+.ti -1c
+.RI "map< string, int > \fBk_meros\fP"
+.br
+.RI "Map on guardem els k-meros de la especie\&. "
+.in -1c
+.SS "Atributs Privats Estàtics"
+
+.in +1c
+.ti -1c
+.RI "static int \fBk_num\fP"
+.br
+.RI "Tamany que indica el tamany dels paquets per separar el gen de la especie\&. "
+.in -1c
+.SH "Descripció Detallada"
+.PP 
+Representa el conjunt de característiques y operacions de les especies\&. 
+
+Ofereix la posibilitat de calcular la distancie entre dues especies, consultar el gen, i escriure el gen\&. Donat que hem d'establir un paramètre k, tenim la necessitat de crear una constructora d'especie buida per poder introduir la k\&. 
+.PP
+Definició a la línia 26 del fitxer Especie\&.hh\&.
+.SH "Documentació del Constructor i el Destructor"
+.PP 
+.SS "Especie::Especie ()"
+
+.PP
+Crea una especie sense identificador ni gen\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat es una especie sense identificador, gen i kmeros\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 12 del fitxer Especie\&.cc\&.
+.PP
+.nf
+12                  {
+13   gen = ' ';
+14   k_meros = map<string, int> ();
+15 }
+.fi
+.SS "Especie::Especie (string gen1)"
+
+.PP
+Crea una especie amb el gen i l'identificador indicat\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat es una especie amb identificador, gen i kmeros\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 18 del fitxer Especie\&.cc\&.
+.PP
+.nf
+18                             {
+19   gen = gen1;
+20   kmer();
+21 }
+.fi
+.SH "Documentació de les Funcions Membre"
+.PP 
+.SS "void Especie::kmer ()\fC [private]\fP"
+
+.PP
+Calcula els kmeros d'una espècie a partir del seu gen\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+El paràmetre implícit és un string amb longitud >= k\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha calculat els k-meros i s'han guardat\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 28 del fitxer Especie\&.cc\&.
+.PP
+.nf
+28                    {
+29   // Inv: El recorregut que fa aquest bucle for mai
+30   // farà més iteracions que el tamany del gen - k + 1\&.
+31   // A cada iteració es crea un string auxiliar on s'aniran actualitzan els caracters un per un\&.
+32   for (int i = 0; i < gen\&.size() - k_num + 1; ++i) {
+33     string aux;
+34   // Inv: El recorregut que fa aquest segon bucle mai superarà
+35   // les k iteracions\&. Hem igualat la j a la i, per anar avançant cada
+36   // cop una posició i el bucle farà menys de k_num + i iteracions\&.
+37     for (int j = i; j < k_num + i; ++j) { 
+38       aux += gen[j];
+39     }
+40     // En el mapa de k-meros busquem el kmero que acabem de crear
+41     // en la anterior interació\&. Si aquest no existia s'afegeix al mapa\&.
+42     // La clau del mapa és el kmer generat i el valor que se l'assigna és el número
+43     // de vegades que es repeteix, al ser el primer cop, es posa un 1\&. En cas que el 
+44     // kmer ja existis anteriorment, es busca la clau i s'incrementa en 1 el valor\&.
+45     map<string,int>::const_iterator it = k_meros\&.find(aux);
+46     if (it == k_meros\&.end()) k_meros\&.insert(make_pair(aux, 1));
+47     else k_meros[aux] = it-> second +1;
+48   }
+49 } 
+.fi
+.SS "void Especie::set_parametro (const int & k_dato)\fC [static]\fP"
+
+.PP
+Introdueix el paràmetre k com a static per calcular els k-meros\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Hi ha una k al canal d'entrada\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'ha establert la k per calcular els kmeros\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 24 del fitxer Especie\&.cc\&.
+.PP
+.nf
+24                                              {
+25   Especie::k_num = k_dato;
+26 }
+.fi
+.SS "string Especie::consultar_gen () const"
+
+.PP
+Retorna el gen de la espècie\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+El parametre implicit te gen\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat es el gen del parametre implicit\&. 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+string 
+.RE
+.PP
+
+.PP
+Definició a la línia 55 del fitxer Especie\&.cc\&.
+.PP
+.nf
+55                                    {
+56   return gen;
+57 }
+.fi
+.SS "double Especie::distancia (const \fBEspecie\fP & esp) const"
+
+.PP
+Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Les dues espècies existeixen\&. 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+El resultat és la distancia entre les dues espècies\&. 
+.RE
+.PP
+\fBRetorna\fP
+.RS 4
+double\&. Distancia entre especies 
+.RE
+.PP
+
+.PP
+Definició a la línia 59 del fitxer Especie\&.cc\&.
+.PP
+.nf
+59                                                   {
+60   // Invariant: Situem dos iterador constants al inici dels dos maps de k_meros
+61   // Unio i Intersecció és la cuantitat de elements que compleixen la 
+62   // condició de que siguin unió o intersecció\&.
+63   // Els elements visitats tenen la clau més petita que els altres\&.
+64   // El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora\&.
+65 
+66   map<string,int>::const_iterator i = k_meros\&.begin(), k = esp\&.k_meros\&.begin();
+67   double unio = 0, interseccio = 0;
+68   while (i != k_meros\&.end() and k != esp\&.k_meros\&.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros\&.
+69     if (i->first == k->first) {
+70       interseccio += min(i->second,k->second);
+71       unio +=  max(i->second, k->second);
+72       ++i;
+73       ++k;      
+74     }
+75     else if (i->first < k->first) {
+76       unio += i->second;
+77       ++i;
+78     }
+79     else {
+80       unio += k->second;
+81       ++k;
+82     }
+83   }
+84   // Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut
+85   // entra en aquest bucle\&.
+86   // Inv: Els elements de i estan ordenats segons la clau en ordre ascendent\&.
+87   while (i != k_meros\&.end()) {
+88     unio += i->second;
+89     ++i;
+90   } 
+91   // Si el iterador k, el del segon mapa de k-meros no ha acabat el recorregut
+92   // entra en aquest bucle\&.
+93   // Inv: Els elements de k estan ordenats segons la clau en ordre ascendent\&.
+94   while (k != esp\&.k_meros\&.end()) { 
+95     unio += k->second;
+96     ++k;
+97   }
+98   return (((1-(interseccio/unio))*100));  
+99 }
+.fi
+.SS "void Especie::escriure () const"
+
+.PP
+Escriu la espècie del paràmetre implícit\&. 
+.PP
+\fBPrecondició\fP
+.RS 4
+Cert 
+.RE
+.PP
+\fBPostcondició\fP
+.RS 4
+S'han escrit els atributs del parametre implicit al canal estandard de sortida\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 108 del fitxer Especie\&.cc\&.
+.PP
+.nf
+108                              {
+109   cout << gen << endl;
+110 }
+.fi
+.SH "Documentació de les Dades Membre"
+.PP 
+.SS "string Especie::gen\fC [private]\fP"
+
+.PP
+És el gen de la espècie\&. 
+.PP
+Definició a la línia 31 del fitxer Especie\&.hh\&.
+.SS "int Especie::k_num\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Tamany que indica el tamany dels paquets per separar el gen de la especie\&. 
+.PP
+Definició a la línia 34 del fitxer Especie\&.hh\&.
+.SS "map<string, int> Especie::k_meros\fC [private]\fP"
+
+.PP
+Map on guardem els k-meros de la especie\&. 
+.PP
+Definició a la línia 37 del fitxer Especie\&.hh\&.
+
+.SH "Autor"
+.PP 
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.
