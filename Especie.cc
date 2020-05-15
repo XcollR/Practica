@@ -32,7 +32,6 @@ void Especie::set_parametro(const int& k_dato) {
 }
 
 
-
 // Consultores
 
 

@@ -187,12 +187,6 @@ public:
  */
 	void imprime_arbol_filogenetico(Cjt_especies& conjunt);
 
-
-
-
-
-
-
 	
 };
 

@@ -195,6 +195,7 @@ void Cjt_especies::tabla_distancias() const {
 	}
 }
 
+
 // Mètodes privats
 
 

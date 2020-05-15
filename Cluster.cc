@@ -71,4 +71,3 @@ void Cluster::inm_escriure(const BinTree<pair<string,double>>& a) const {
 
 
 
-

@@ -135,7 +135,6 @@ void Cjt_clusters::imprime_arbol_filogenetico(Cjt_especies& conjunt) {
     }
     else cout << "ERROR: El conjunto de clusters es vacio." << endl;
 
-
 }
 
 // Mètodes privats
