@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Creació d&#39;un arbre filogenètic.: Fitxer de Codi Cjt_clusters.hh</title>
+<title>Creació d&#39;un arbre filogenètic. Xavier Coll Ribas: Fitxer de Codi Cjt_clusters.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Creació d&#39;un arbre filogenètic.
+   <div id="projectname">Creació d&#39;un arbre filogenètic. Xavier Coll Ribas
    &#160;<span id="projectnumber">15/05/2020</span>
    </div>
   </td>
@@ -135,30 +135,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// Modificadores</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span> ejecuta_paso_wpgma(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; a);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span> inicialitza_clusters(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt, <span class="keyword">const</span> <span class="keywordtype">bool</span> ve_de_func);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">// Lectura i escriptura</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordtype">void</span> imprime_cluster(<span class="keywordtype">string</span> <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">void</span> inicialitza_clusters(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt, <span class="keyword">const</span> <span class="keywordtype">bool</span> ve_de_func);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordtype">void</span> imprime_tabla_distancias() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordtype">void</span> imprime_arbol_filogenetico(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">void</span> ejecuta_paso_wpgma(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; a);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">// Lectura i escriptura</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">void</span> imprime_cluster(<span class="keywordtype">string</span> <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keywordtype">void</span> imprime_tabla_distancias() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">void</span> imprime_arbol_filogenetico(<a class="code" href="class_cjt__especies.html">Cjt_especies</a>&amp; conjunt);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_cjt__clusters_html"><div class="ttname"><a href="class_cjt__clusters.html">Cjt_clusters</a></div><div class="ttdoc">Representa un conjunt de clusters.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00077">Cjt_clusters.hh:77</a></div></div>
 <div class="ttc" id="aclass_cjt__clusters_html_aa8d53231821f38f1867001be195d8d63"><div class="ttname"><a href="class_cjt__clusters.html#aa8d53231821f38f1867001be195d8d63">Cjt_clusters::tabla_distancias_cluster</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; tabla_distancias_cluster</div><div class="ttdoc">Nested map on es guarden les distancies entre clusters. És un nested map.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__clusters_8hh_source.html#l00087">Cjt_clusters.hh:87</a></div></div>

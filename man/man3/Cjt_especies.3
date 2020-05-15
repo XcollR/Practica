@@ -1,4 +1,4 @@
-.TH "Cjt_especies" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.TH "Cjt_especies" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -117,15 +117,15 @@ El resultat és un conjunt d'especies buit\&.
 .PP
 
 .PP
-Definició a la línia 11 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 15 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-11                            {
-12 // Mètode constructor d'especie\&. Posem el mapa d'especies i el nested map de la taula
-13 // de distàncies com a dos mapes buits\&.
-14   Cjt_especies::cjt_especies = map<string, Especie> ();
-15   Cjt_especies::taula_distancies = map<string,map<string,double>>();
-16 }
+15                            {
+16 // Mètode constructor d'especie\&. Posem el mapa d'especies i el nested map de la taula
+17 // de distàncies com a dos mapes buits\&.
+18   Cjt_especies::cjt_especies = map<string, Especie> ();
+19   Cjt_especies::taula_distancies = map<string,map<string,double>>();
+20 }
 .fi
 .SH "Documentació de les Funcions Membre"
 .PP 
@@ -146,21 +146,21 @@ S'ha actualitzat la taula\&.
 .PP
 
 .PP
-Definició a la línia 196 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 202 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-196                                                               {
-197   //Es posiciona un iterador apuntant a la posició de l'id demanat\&.
-198   map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.find(id);
-199   //Es posiciona un iterador apuntant a la primera posició del mapa de distancies\&.
-200   //Inv: Farà tantes iteracions fins que l'iterador sigui igual al primer que hem buscat\&. Així ens
-201   //estalviem bucles innecessaris\&. Aquest bucle elimina la especie demanada del map interior\&.
-202   for (map<string,map<string,double>>::iterator it2 = Cjt_especies::taula_distancies\&.begin(); it2 != it; ++it2) {
-203       it2->second\&.erase(it2->second\&.find(id));
-204     }
-205   //Eliminem la especie del mapa gran de la taula de distancies\&.
-206   Cjt_especies::taula_distancies\&.erase(it);
-207 }
+202                                                               {
+203   //Es posiciona un iterador apuntant a la posició de l'id demanat\&.
+204   map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.find(id);
+205   //Es posiciona un iterador apuntant a la primera posició del mapa de distancies\&.
+206   //Inv: Farà tantes iteracions fins que l'iterador sigui igual al primer que hem buscat\&. Així ens
+207   //estalviem bucles innecessaris\&. Aquest bucle elimina la especie demanada del map interior\&.
+208   for (map<string,map<string,double>>::iterator it2 = Cjt_especies::taula_distancies\&.begin(); it2 != it; ++it2) {
+209       it2->second\&.erase(it2->second\&.find(id));
+210     }
+211   //Eliminem la especie del mapa gran de la taula de distancies\&.
+212   Cjt_especies::taula_distancies\&.erase(it);
+213 }
 .fi
 .SS "void Cjt_especies::afegeix_especie_tabla_dist (const string & id)\fC [private]\fP"
 
@@ -179,36 +179,36 @@ S'ha actualitzat la taula\&.
 .PP
 
 .PP
-Definició a la línia 211 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 217 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-211                                                               {
-212   //Es posiciona un iterador apuntant a la taula d'especies, a la posició on esta el id demanat\&.
-213   map<string,Especie>::const_iterator esp = Cjt_especies::cjt_especies\&.find(id);
-214   //Es crea un map auxiliar on s'aniran ficant les distancies\&.
-215   map<string, double> aux;
-216   //Inv: Recorregut del mapa, de principi a final\&. 
-217   for (map<string,Especie>::const_iterator it = Cjt_especies::cjt_especies\&.begin(); it != Cjt_especies::cjt_especies\&.end(); ++it) {
-218     map<string,map<string,double>>::iterator itt = Cjt_especies::taula_distancies\&.find(it->first);
-219     //Calcula la distancia entre dues especies, la que entra pel parametre explícit
-220     //i la que apunta el iterador\&.
-221     double x = it->second\&.distancia(esp->second);
-222     //If per fer les operacions si el identificador està a la part baixa
-223     // i per tant només es fica una distancia al map interior\&.
-224     if (id > it->first) {
-225       itt->second\&.insert(make_pair(id, x));
-226     }
-227     //If per fer les operacions si l'identificador està a la part alta i s'ha
-228     //de crear un nou map amb totes les altres especies\&.
-229     else if (id < it->first) {
-230       aux\&.insert(make_pair(it->first, x));
-231     }
-232       
-233   }
-234   //Finalment insertem el mapa a la taula de distancies\&.
-235   Cjt_especies::taula_distancies\&.insert(make_pair(id, aux));
-236 
-237 }
+217                                                               {
+218   //Es posiciona un iterador apuntant a la taula d'especies, a la posició on esta el id demanat\&.
+219   map<string,Especie>::const_iterator esp = Cjt_especies::cjt_especies\&.find(id);
+220   //Es crea un map auxiliar on s'aniran ficant les distancies\&.
+221   map<string, double> aux;
+222   //Inv: Recorregut del mapa, de principi a final\&. 
+223   for (map<string,Especie>::const_iterator it = Cjt_especies::cjt_especies\&.begin(); it != Cjt_especies::cjt_especies\&.end(); ++it) {
+224     map<string,map<string,double>>::iterator itt = Cjt_especies::taula_distancies\&.find(it->first);
+225     //Calcula la distancia entre dues especies, la que entra pel parametre explícit
+226     //i la que apunta el iterador\&.
+227     double x = it->second\&.distancia(esp->second);
+228     //If per fer les operacions si el identificador està a la part baixa
+229     // i per tant només es fica una distancia al map interior\&.
+230     if (id > it->first) {
+231       itt->second\&.insert(make_pair(id, x));
+232     }
+233     //If per fer les operacions si l'identificador està a la part alta i s'ha
+234     //de crear un nou map amb totes les altres especies\&.
+235     else if (id < it->first) {
+236       aux\&.insert(make_pair(it->first, x));
+237     }
+238       
+239   }
+240   //Finalment insertem el mapa a la taula de distancies\&.
+241   Cjt_especies::taula_distancies\&.insert(make_pair(id, aux));
+242 
+243 }
 .fi
 .SS "void Cjt_especies::crea_especie (const string & id, const string & gen)"
 
@@ -227,19 +227,19 @@ S'ha creat una espècie\&.
 .PP
 
 .PP
-Definició a la línia 23 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 27 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-23                                                                   {
-24 // Entren dos paràmetres explícits\&. El primer paràmetre és la clau
-25 // del mapa\&. El valor d'aquesta clau serà una especie la qual es genera
-26 // amb la constructora d'especie mitjançant un gen\&. A més, aquesta especie
-27 // s'introdueix a la taula de distancies mitjançant el mètode afegeix
-28 // especie tabla dist\&.
-29       Especie e(gen);
-30       Cjt_especies::cjt_especies\&.insert(make_pair(id,e));
-31       afegeix_especie_tabla_dist(id);
-32 }
+27                                                                   {
+28 // Entren dos paràmetres explícits\&. El primer paràmetre és la clau
+29 // del mapa\&. El valor d'aquesta clau serà una especie la qual es genera
+30 // amb la constructora d'especie mitjançant un gen\&. A més, aquesta especie
+31 // s'introdueix a la taula de distancies mitjançant el mètode afegeix
+32 // especie tabla dist\&.
+33       Especie e(gen);
+34       Cjt_especies::cjt_especies\&.insert(make_pair(id,e));
+35       afegeix_especie_tabla_dist(id);
+36 }
 .fi
 .SS "void Cjt_especies::elimina_especie (const string & id)"
 
@@ -263,20 +263,20 @@ La espècie s'ha eliminat del paràmetre implícit\&.
 .PP
 
 .PP
-Definició a la línia 38 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 42 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-38                                                    {
-39 // S'elimina la espècie indicada pel paràmetre explícit\&.
-40 // Es busca la espècie mitjaçant un iterador del mapa d'especies
-41 // i s'elimina la espècie indicada\&.
-42 // Observació: Aquesta funció no comprova si existeix una espècie 
-43 // o no, per tant, s'ha de fer compravació prèvia amb la funció
-44 // Cjt_especie::existe_especie(id)\&.
-45     map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
-46     Cjt_especies::cjt_especies\&.erase(it);
-47     Cjt_especies::elimina_especie_tabla_dist(id);     
-48 }
+42                                                    {
+43 // S'elimina la espècie indicada pel paràmetre explícit\&.
+44 // Es busca la espècie mitjaçant un iterador del mapa d'especies
+45 // i s'elimina la espècie indicada\&.
+46 // Observació: Aquesta funció no comprova si existeix una espècie 
+47 // o no, per tant, s'ha de fer compravació prèvia amb la funció
+48 // Cjt_especie::existe_especie(id)\&.
+49     map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
+50     Cjt_especies::cjt_especies\&.erase(it);
+51     Cjt_especies::elimina_especie_tabla_dist(id);     
+52 }
 .fi
 .SS "bool Cjt_especies::existeix_especie (const string & id) const"
 
@@ -305,18 +305,18 @@ bool
 .PP
 
 .PP
-Definició a la línia 51 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 55 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-51                                                           {
-52 // Es consulta si existeix la espècie dins el map d'especies\&.
-53 // Es busca la especie mitjançant un iterador\&. En el cas que
-54 // l'iterador apuntes al final de mapa, la especie no existeix 
-55 // i es retorna false, en cas contrari retorna true\&.
-56   map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
-57   if (it != Cjt_especies::cjt_especies\&.end()) return true;
-58   return false;
-59 }
+55                                                           {
+56 // Es consulta si existeix la espècie dins el map d'especies\&.
+57 // Es busca la especie mitjançant un iterador\&. En el cas que
+58 // l'iterador apuntes al final de mapa, la especie no existeix 
+59 // i es retorna false, en cas contrari retorna true\&.
+60   map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
+61   if (it != Cjt_especies::cjt_especies\&.end()) return true;
+62   return false;
+63 }
 .fi
 .SS "double Cjt_especies::calcular_distancia (const string & id, const string & id2) const"
 
@@ -347,39 +347,39 @@ double
 .PP
 
 .PP
-Definició a la línia 62 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 66 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-62                                                                                  {
-63 // Retorna la distància entre dues especies\&.
-64 // Es fan comprovación abans de consultar-les\&. En el cas
-65 // que no existeixin les dues espècies es retorna un -1\&.
-66 // Si no existeix només la primera espècie retorna un -2\&.
-67 // Si no existeix només la segona espècie retorna un -3\&.
-68 // En cas que les dues especies existeixin, és fan unes comprovacions:
-69 //    Com el map només calcula les distàncies necessaries ja que 
-70 //    Distancia (a,b) = Distancia (b,a), el map ordena les distancies
-71 //    per ordre alfabètic amb la seva clau\&. Per tant hem de tenir en 
-72 //    compte que si es consulta distancia c a\&. No podem consultar de 
-73 //    primeres\&. Per tant, amb dos iteradors mirem si apuntent al final,
-74 //    En el cas que passés, cambien d'ordre els iteradors i aquests
-75 //    accedeixen a la posició on hi ha la distància demanada\&.
-76 // Observació: Aquesta funció no calcula les distàncies, sinó consulta
-77 // el mapa de distàncies\&.  
-78   if (not Cjt_especies::existeix_especie(id) and not Cjt_especies::existeix_especie(id2)) return -1; 
-79   else if (not Cjt_especies::existeix_especie(id)) return -2;
-80   else if (not Cjt_especies::existeix_especie(id2)) return -3;
-81   else {
-82       map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.find(id);
-83       map<string,double>::const_iterator it2 = it->second\&.find(id2);
-84       if (it2 == it->second\&.end()) {
-85         it = Cjt_especies::taula_distancies\&.find(id2);
-86         it2 = it->second\&.find(id);
-87         return it2->second;
-88       }
-89       return it2->second;
-90     }
-91 }
+66                                                                                  {
+67 // Retorna la distància entre dues especies\&.
+68 // Es fan comprovación abans de consultar-les\&. En el cas
+69 // que no existeixin les dues espècies es retorna un -1\&.
+70 // Si no existeix només la primera espècie retorna un -2\&.
+71 // Si no existeix només la segona espècie retorna un -3\&.
+72 // En cas que les dues especies existeixin, és fan unes comprovacions:
+73 //    Com el map només calcula les distàncies necessaries ja que 
+74 //    Distancia (a,b) = Distancia (b,a), el map ordena les distancies
+75 //    per ordre alfabètic amb la seva clau\&. Per tant hem de tenir en 
+76 //    compte que si es consulta distancia c a\&. No podem consultar de 
+77 //    primeres\&. Per tant, amb dos iteradors mirem si apuntent al final,
+78 //    En el cas que passés, cambien d'ordre els iteradors i aquests
+79 //    accedeixen a la posició on hi ha la distància demanada\&.
+80 // Observació: Aquesta funció no calcula les distàncies, sinó consulta
+81 // el mapa de distàncies\&.  
+82   if (not Cjt_especies::existeix_especie(id) and not Cjt_especies::existeix_especie(id2)) return -1; 
+83   else if (not Cjt_especies::existeix_especie(id)) return -2;
+84   else if (not Cjt_especies::existeix_especie(id2)) return -3;
+85   else {
+86       map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.find(id);
+87       map<string,double>::const_iterator it2 = it->second\&.find(id2);
+88       if (it2 == it->second\&.end()) {
+89         it = Cjt_especies::taula_distancies\&.find(id2);
+90         it2 = it->second\&.find(id);
+91         return it2->second;
+92       }
+93       return it2->second;
+94     }
+95 }
 .fi
 .SS "void Cjt_especies::obtener_gen (const string & id) const"
 
@@ -408,17 +408,17 @@ string
 .PP
 
 .PP
-Definició a la línia 95 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 99 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-95                                                      {
-96 // Es consulta el gen d'una especie mitjançant una 
-97 // funció de la classe Especie i un iterador\&.
-98 // Observació: S'ha de comprovar prèviament que aquesta especie existeix\&.
-99   map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
-100   cout << it->second\&.consultar_gen() << endl;
-101   
-102 }
+99                                                      {
+100 // Es consulta el gen d'una especie mitjançant una 
+101 // funció de la classe Especie i un iterador\&.
+102 // Observació: S'ha de comprovar prèviament que aquesta especie existeix\&.
+103   map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
+104   cout << it->second\&.consultar_gen() << endl;
+105   
+106 }
 .fi
 .SS "bool Cjt_especies::final ()"
 
@@ -437,17 +437,17 @@ El booleà retorna cert si apunta al final del mapa\&.
 .PP
 
 .PP
-Definició a la línia 105 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 109 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-105                          {
-106 // Es fa comprovacions si l'iterador de l'àmbit
-107 // privat apunta al final del conjunt d'especies\&.
-108 // Retorna cert si apunta al final, en cas contrari
-109 // retorna fals\&.
-110   return it == Cjt_especies::cjt_especies\&.end();
-111 
-112 }
+109                          {
+110 // Es fa comprovacions si l'iterador de l'àmbit
+111 // privat apunta al final del conjunt d'especies\&.
+112 // Retorna cert si apunta al final, en cas contrari
+113 // retorna fals\&.
+114   return it == Cjt_especies::cjt_especies\&.end();
+115 
+116 }
 .fi
 .SS "void Cjt_especies::inicio ()"
 
@@ -466,15 +466,15 @@ El iterador apunta al primer element del mapa\&.
 .PP
 
 .PP
-Definició a la línia 115 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 119 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-115                           {
-116 // Es posiciona l'iterador de l'ambit
-117 // privat apuntant a la primera posició 
-118 // del mapa d'especies\&.
-119   it = Cjt_especies::cjt_especies\&.begin();
-120 }
+119                           {
+120 // Es posiciona l'iterador de l'ambit
+121 // privat apuntant a la primera posició 
+122 // del mapa d'especies\&.
+123   it = Cjt_especies::cjt_especies\&.begin();
+124 }
 .fi
 .SS "void Cjt_especies::actual (string & act)"
 
@@ -493,15 +493,15 @@ El paràmetre explícit passa a tenir la informació del element apuntat pel ite
 .PP
 
 .PP
-Definició a la línia 123 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 127 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-123                                      {
-124 // Es modifica el string del paràmetre 
-125 // explícit i se li adjudica el string
-126 // al qual apunta el iterador\&.
-127   act = it->first;
-128 }
+127                                      {
+128 // Es modifica el string del paràmetre 
+129 // explícit i se li adjudica el string
+130 // al qual apunta el iterador\&.
+131   act = it->first;
+132 }
 .fi
 .SS "void Cjt_especies::avanza ()"
 
@@ -520,20 +520,20 @@ El iterador del mapa d'especies apunta una posició endavant\&.
 .PP
 
 .PP
-Definició a la línia 132 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 136 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-132                           {
-133 // Es posiciona l'iterador de l'ambit
-134 // privat apuntant a una posició més endavant 
-135 // de la qua apuntava l'iterador abans\&.
-136 // Observació: S'avançarà l'iterador sempre
-137 // i quan l'iterador no estigui apuntant al final\&.
-138   if (not final()){
-139         ++Cjt_especies::it;
-140 
-141   }
-142 }
+136                           {
+137 // Es posiciona l'iterador de l'ambit
+138 // privat apuntant a una posició més endavant 
+139 // de la qua apuntava l'iterador abans\&.
+140 // Observació: S'avançarà l'iterador sempre
+141 // i quan l'iterador no estigui apuntant al final\&.
+142   if (not final()){
+143         ++Cjt_especies::it;
+144 
+145   }
+146 }
 .fi
 .SS "void Cjt_especies::lee_cjt_especies ()"
 
@@ -552,26 +552,26 @@ El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar
 .PP
 
 .PP
-Definició a la línia 148 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 152 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-148                                     {
-149   //La condició de si es llegeix un nou conjunt
-150   //d'especies es que es descarta el contingut previ\&.
-151   //Per tant fem clear dels dos mapes\&.
-152   Cjt_especies::taula_distancies\&.clear();
-153   Cjt_especies::cjt_especies\&.clear();
-154   //int que indica el nombre d'especies que es volen afegir\&.
-155   int n;
-156   cin >> n;
-157   //Inv: el bucle for mai farà més de n iteracions\&. 
-158   //A cada iteració farà una crida a la funció crea especie\&.
-159   for (int i = 0; i < n; ++i) {
-160     string id, gen;
-161     cin >> id >> gen;
-162     Cjt_especies::crea_especie(id,gen);
-163   }
-164 }
+152                                     {
+153   //La condició de si es llegeix un nou conjunt
+154   //d'especies es que es descarta el contingut previ\&.
+155   //Per tant fem clear dels dos mapes\&.
+156   Cjt_especies::taula_distancies\&.clear();
+157   Cjt_especies::cjt_especies\&.clear();
+158   //int que indica el nombre d'especies que es volen afegir\&.
+159   int n;
+160   cin >> n;
+161   //Inv: el bucle for mai farà més de n iteracions\&. 
+162   //A cada iteració farà una crida a la funció crea especie\&.
+163   for (int i = 0; i < n; ++i) {
+164     string id, gen;
+165     cin >> id >> gen;
+166     Cjt_especies::crea_especie(id,gen);
+167   }
+168 }
 .fi
 .SS "void Cjt_especies::imprime_cjt_especies () const"
 
@@ -590,18 +590,18 @@ S'ha escrit pel canal estàndar de sortida les espècies del paràmetre implíci
 .PP
 
 .PP
-Definició a la línia 167 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 171 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-167                                               {
-168   //Inv: És situa un iterador apuntant a la primera posició del
-169   //mapa d'especies\&. Avançarà una iteració fins que el punter apunti al final\&.
-170   //A cada iteració s'impreix una especie\&.
-171   for (map<string,Especie>::const_iterator it = Cjt_especies::cjt_especies\&.begin(); it != Cjt_especies::cjt_especies\&.end(); ++it) {
-172     cout << it->first << " ";
-173     it->second\&.escriure();
-174   }
-175 }
+171                                               {
+172   //Inv: És situa un iterador apuntant a la primera posició del
+173   //mapa d'especies\&. Avançarà una iteració fins que el punter apunti al final\&.
+174   //A cada iteració s'impreix una especie\&.
+175   for (map<string,Especie>::const_iterator it = Cjt_especies::cjt_especies\&.begin(); it != Cjt_especies::cjt_especies\&.end(); ++it) {
+176     cout << it->first << " ";
+177     it->second\&.escriure();
+178   }
+179 }
 .fi
 .SS "void Cjt_especies::tabla_distancias () const"
 
@@ -620,24 +620,24 @@ S'ha imprès la taula de distàncies\&.
 .PP
 
 .PP
-Definició a la línia 178 del fitxer Cjt_especies\&.cc\&.
+Definició a la línia 182 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
-178                                           {
-179   //Inv: És situa un iterador apuntant a la primera posició del
-180   //mapa de distancies\&. Avançarà una posició fins que el punter apunti al final\&.
-181   //A cada iteració s'impreix un identificador de especie i s'executa un segon bucle\&.
-182   for(map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.begin(); it != Cjt_especies::taula_distancies\&.end(); ++it) {
-183     cout << it->first << ":";
-184     //Inv: És situa un iterador apuntant a la primera posició del
-185     //map interior del map de distancies d'especies\&. Avançarà una posició fins que el punter apunti al final\&.
-186     //A cada iteració s'impreix un identificador d'especie del map interior i la distancia respecte les dues especies\&.
-187     for (map<string,double>::const_iterator it2 = it->second\&.begin(); it2 != it->second\&.end(); ++it2) {
-188         cout << " " << it2->first << " (" << it2->second << ")"; 
-189     }
-190     cout << endl;
-191   }
-192 }
+182                                           {
+183   //Inv: És situa un iterador apuntant a la primera posició del
+184   //mapa de distancies\&. Avançarà una posició fins que el punter apunti al final\&.
+185   //A cada iteració s'impreix un identificador de especie i s'executa un segon bucle\&.
+186   for(map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.begin(); it != Cjt_especies::taula_distancies\&.end(); ++it) {
+187     cout << it->first << ":";
+188     //Inv: És situa un iterador apuntant a la primera posició del
+189     //map interior del map de distancies d'especies\&. Avançarà una posició fins que el punter apunti al final\&.
+190     //A cada iteració s'impreix un identificador d'especie del map interior i la distancia respecte les dues especies\&.
+191     for (map<string,double>::const_iterator it2 = it->second\&.begin(); it2 != it->second\&.end(); ++it2) {
+192         cout << " " << it2->first << " (" << it2->second << ")"; 
+193     }
+194     cout << endl;
+195   }
+196 }
 .fi
 .SH "Documentació de les Dades Membre"
 .PP 
@@ -662,4 +662,4 @@ Definició a la línia 58 del fitxer Cjt_especies\&.hh\&.
 
 .SH "Autor"
 .PP 
-Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. Xavier Coll Ribas a partir del codi font\&.

@@ -70,14 +70,14 @@ El resultat es una especie sense identificador, gen i kmeros.
 \end{DoxyPostcond}
 
 
-Definició a la línia 12 del fitxer Especie.\+cc.
+Definició a la línia 18 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{12                  \{}
-\DoxyCodeLine{13   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} = \textcolor{charliteral}{' '};}
-\DoxyCodeLine{14   \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}} = map<string, int> ();}
-\DoxyCodeLine{15 \}}
+\DoxyCodeLine{18                  \{}
+\DoxyCodeLine{19   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{20   \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}} = map<string, int> ();}
+\DoxyCodeLine{21 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a07bc78385f51aff88a16e24575a6756f}\label{class_especie_a07bc78385f51aff88a16e24575a6756f}} 
@@ -98,14 +98,14 @@ El resultat es una especie amb identificador, gen i kmeros.
 \end{DoxyPostcond}
 
 
-Definició a la línia 18 del fitxer Especie.\+cc.
+Definició a la línia 24 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{18                                    \{}
-\DoxyCodeLine{19   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} = gen1;}
-\DoxyCodeLine{20   \mbox{\hyperlink{class_especie_a2bd896f271d0983f609735df8809cccc}{Especie::kmer}}();}
-\DoxyCodeLine{21 \}}
+\DoxyCodeLine{24                                    \{}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} = gen1;}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_especie_a2bd896f271d0983f609735df8809cccc}{Especie::kmer}}();}
+\DoxyCodeLine{27 \}}
 
 \end{DoxyCode}
 
@@ -129,32 +129,32 @@ S\textquotesingle{}ha calculat els k-\/meros i s\textquotesingle{}han guardat.
 \end{DoxyPostcond}
 
 
-Definició a la línia 94 del fitxer Especie.\+cc.
+Definició a la línia 99 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{94                    \{}
-\DoxyCodeLine{95   \textcolor{comment}{// Inv: El recorregut que fa aquest bucle for mai}}
-\DoxyCodeLine{96   \textcolor{comment}{// farà més iteracions que el tamany del gen -\/ k + 1.}}
-\DoxyCodeLine{97   \textcolor{comment}{// A cada iteració es crea un string auxiliar on s'aniran actualitzan els caracters un per un.}}
-\DoxyCodeLine{98   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}.size() -\/ \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} + 1; ++i) \{}
-\DoxyCodeLine{99     \textcolor{keywordtype}{string} aux;}
-\DoxyCodeLine{100   \textcolor{comment}{// Inv: El recorregut que fa aquest segon bucle mai superarà}}
-\DoxyCodeLine{101   \textcolor{comment}{// les k iteracions. Hem igualat la j a la i, per anar avançant cada}}
-\DoxyCodeLine{102   \textcolor{comment}{// cop una posició i el bucle farà menys de k\_num + i iteracions.}}
-\DoxyCodeLine{103     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} + i; ++j) \{ }
-\DoxyCodeLine{104       aux += \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}[j];}
-\DoxyCodeLine{105     \}}
-\DoxyCodeLine{106     \textcolor{comment}{// En el mapa de k-\/meros busquem el kmero que acabem de crear}}
-\DoxyCodeLine{107     \textcolor{comment}{// en la anterior interació. Si aquest no existia s'afegeix al mapa.}}
-\DoxyCodeLine{108     \textcolor{comment}{// La clau del mapa és el kmer generat i el valor que se l'assigna és el número}}
-\DoxyCodeLine{109     \textcolor{comment}{// de vegades que es repeteix, al ser el primer cop, es posa un 1. En cas que el }}
-\DoxyCodeLine{110     \textcolor{comment}{// kmer ja existis anteriorment, es busca la clau i s'incrementa en 1 el valor.}}
-\DoxyCodeLine{111     map<string,int>::const\_iterator it = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.find(aux);}
-\DoxyCodeLine{112     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end()) \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.insert(make\_pair(aux, 1));}
-\DoxyCodeLine{113     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}[aux] = it-\/> second +1;}
-\DoxyCodeLine{114   \}}
-\DoxyCodeLine{115 \} }
+\DoxyCodeLine{99                    \{}
+\DoxyCodeLine{100   \textcolor{comment}{// Inv: El recorregut que fa aquest bucle for mai}}
+\DoxyCodeLine{101   \textcolor{comment}{// farà més iteracions que el tamany del gen -\/ k + 1.}}
+\DoxyCodeLine{102   \textcolor{comment}{// A cada iteració es crea un string auxiliar on s'aniran actualitzan els caracters un per un.}}
+\DoxyCodeLine{103   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}.size() -\/ \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} + 1; ++i) \{}
+\DoxyCodeLine{104     \textcolor{keywordtype}{string} aux;}
+\DoxyCodeLine{105   \textcolor{comment}{// Inv: El recorregut que fa aquest segon bucle mai superarà}}
+\DoxyCodeLine{106   \textcolor{comment}{// les k iteracions. Hem igualat la j a la i, per anar avançant cada}}
+\DoxyCodeLine{107   \textcolor{comment}{// cop una posició i el bucle farà menys de k\_num + i iteracions.}}
+\DoxyCodeLine{108     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} + i; ++j) \{ }
+\DoxyCodeLine{109       aux += \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}}[j];}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111     \textcolor{comment}{// En el mapa de k-\/meros busquem el kmero que acabem de crear}}
+\DoxyCodeLine{112     \textcolor{comment}{// en la anterior interació. Si aquest no existia s'afegeix al mapa.}}
+\DoxyCodeLine{113     \textcolor{comment}{// La clau del mapa és el kmer generat i el valor que se l'assigna és el número}}
+\DoxyCodeLine{114     \textcolor{comment}{// de vegades que es repeteix, al ser el primer cop, es posa un 1. En cas que el }}
+\DoxyCodeLine{115     \textcolor{comment}{// kmer ja existis anteriorment, es busca la clau i s'incrementa en 1 el valor.}}
+\DoxyCodeLine{116     map<string,int>::const\_iterator it = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.find(aux);}
+\DoxyCodeLine{117     \textcolor{keywordflow}{if} (it == \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end()) \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.insert(make\_pair(aux, 1));}
+\DoxyCodeLine{118     \textcolor{keywordflow}{else} \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}[aux] = it-\/> second +1;}
+\DoxyCodeLine{119   \}}
+\DoxyCodeLine{120 \} }
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a1d513b21daca76fa150dd1d62c590093}\label{class_especie_a1d513b21daca76fa150dd1d62c590093}} 
@@ -175,13 +175,13 @@ S\textquotesingle{}ha establert la k per calcular els kmeros.
 \end{DoxyPostcond}
 
 
-Definició a la línia 24 del fitxer Especie.\+cc.
+Definició a la línia 30 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{24                                              \{}
-\DoxyCodeLine{25   \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} = k\_dato;}
-\DoxyCodeLine{26 \}}
+\DoxyCodeLine{30                                              \{}
+\DoxyCodeLine{31   \mbox{\hyperlink{class_especie_a8cea60787f2ca85fd94a2d96f853f93f}{Especie::k\_num}} = k\_dato;}
+\DoxyCodeLine{32 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a850af2b59a21e2d801c59d76ba5c1a98}\label{class_especie_a850af2b59a21e2d801c59d76ba5c1a98}} 
@@ -205,13 +205,13 @@ string
 \end{DoxyReturn}
 
 
-Definició a la línia 33 del fitxer Especie.\+cc.
+Definició a la línia 38 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{33                                    \{}
-\DoxyCodeLine{34   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}};}
-\DoxyCodeLine{35 \}}
+\DoxyCodeLine{38                                    \{}
+\DoxyCodeLine{39   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}};}
+\DoxyCodeLine{40 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_a2037b4bf2d55d8c6ffb90811ad1c4a1b}\label{class_especie_a2037b4bf2d55d8c6ffb90811ad1c4a1b}} 
@@ -235,51 +235,51 @@ double. Distancia entre especies
 \end{DoxyReturn}
 
 
-Definició a la línia 37 del fitxer Especie.\+cc.
+Definició a la línia 42 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{37                                                   \{}
-\DoxyCodeLine{38   \textcolor{comment}{// Invariant: Situem dos iterador constants al inici dels dos maps de k\_meros}}
-\DoxyCodeLine{39   \textcolor{comment}{// Unio i Intersecció és la cuantitat de elements que compleixen la }}
-\DoxyCodeLine{40   \textcolor{comment}{// condició de que siguin unió o intersecció.}}
-\DoxyCodeLine{41   \textcolor{comment}{// Els elements visitats tenen la clau més petita que els altres.}}
-\DoxyCodeLine{42   \textcolor{comment}{// El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora.}}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44   map<string,int>::const\_iterator i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.begin(), k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
-\DoxyCodeLine{45   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
-\DoxyCodeLine{46   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ \textcolor{comment}{// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.}}
-\DoxyCodeLine{47     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
-\DoxyCodeLine{48       interseccio += min(i-\/>second,k-\/>second);}
-\DoxyCodeLine{49       unio +=  max(i-\/>second, k-\/>second);}
-\DoxyCodeLine{50       ++i;}
-\DoxyCodeLine{51       ++k;      }
-\DoxyCodeLine{52     \}}
-\DoxyCodeLine{53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i-\/>first < k-\/>first) \{}
-\DoxyCodeLine{54       unio += i-\/>second;}
+\DoxyCodeLine{42                                                   \{}
+\DoxyCodeLine{43   \textcolor{comment}{// Invariant: Situem dos iterador constants al inici dels dos maps de k\_meros}}
+\DoxyCodeLine{44   \textcolor{comment}{// Unio i Intersecció és la cuantitat de elements que compleixen la }}
+\DoxyCodeLine{45   \textcolor{comment}{// condició de que siguin unió o intersecció.}}
+\DoxyCodeLine{46   \textcolor{comment}{// Els elements visitats tenen la clau més petita que els altres.}}
+\DoxyCodeLine{47   \textcolor{comment}{// El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora.}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   map<string,int>::const\_iterator i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.begin(), k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
+\DoxyCodeLine{50   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
+\DoxyCodeLine{51   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ \textcolor{comment}{// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
+\DoxyCodeLine{53       interseccio += min(i-\/>second,k-\/>second);}
+\DoxyCodeLine{54       unio +=  max(i-\/>second, k-\/>second);}
 \DoxyCodeLine{55       ++i;}
-\DoxyCodeLine{56     \}}
-\DoxyCodeLine{57     \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{58       unio += k-\/>second;}
-\DoxyCodeLine{59       ++k;}
-\DoxyCodeLine{60     \}}
-\DoxyCodeLine{61   \}}
-\DoxyCodeLine{62   \textcolor{comment}{// Si el iterador i, el del primer mapa de k-\/meros no ha acabat el recorregut}}
-\DoxyCodeLine{63   \textcolor{comment}{// entra en aquest bucle.}}
-\DoxyCodeLine{64   \textcolor{comment}{// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.}}
-\DoxyCodeLine{65   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end()) \{}
-\DoxyCodeLine{66     unio += i-\/>second;}
-\DoxyCodeLine{67     ++i;}
-\DoxyCodeLine{68   \} }
-\DoxyCodeLine{69   \textcolor{comment}{// Si el iterador k, el del segon mapa de k-\/meros no ha acabat el recorregut}}
-\DoxyCodeLine{70   \textcolor{comment}{// entra en aquest bucle.}}
-\DoxyCodeLine{71   \textcolor{comment}{// Inv: Els elements de k estan ordenats segons la clau en ordre ascendent.}}
-\DoxyCodeLine{72   \textcolor{keywordflow}{while} (k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ }
-\DoxyCodeLine{73     unio += k-\/>second;}
-\DoxyCodeLine{74     ++k;}
-\DoxyCodeLine{75   \}}
-\DoxyCodeLine{76   \textcolor{keywordflow}{return} (((1-\/(interseccio/unio))*100));  }
-\DoxyCodeLine{77 \}}
+\DoxyCodeLine{56       ++k;      }
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (i-\/>first < k-\/>first) \{}
+\DoxyCodeLine{59       unio += i-\/>second;}
+\DoxyCodeLine{60       ++i;}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{63       unio += k-\/>second;}
+\DoxyCodeLine{64       ++k;}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66   \}}
+\DoxyCodeLine{67   \textcolor{comment}{// Si el iterador i, el del primer mapa de k-\/meros no ha acabat el recorregut}}
+\DoxyCodeLine{68   \textcolor{comment}{// entra en aquest bucle.}}
+\DoxyCodeLine{69   \textcolor{comment}{// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.}}
+\DoxyCodeLine{70   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end()) \{}
+\DoxyCodeLine{71     unio += i-\/>second;}
+\DoxyCodeLine{72     ++i;}
+\DoxyCodeLine{73   \} }
+\DoxyCodeLine{74   \textcolor{comment}{// Si el iterador k, el del segon mapa de k-\/meros no ha acabat el recorregut}}
+\DoxyCodeLine{75   \textcolor{comment}{// entra en aquest bucle.}}
+\DoxyCodeLine{76   \textcolor{comment}{// Inv: Els elements de k estan ordenats segons la clau en ordre ascendent.}}
+\DoxyCodeLine{77   \textcolor{keywordflow}{while} (k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ }
+\DoxyCodeLine{78     unio += k-\/>second;}
+\DoxyCodeLine{79     ++k;}
+\DoxyCodeLine{80   \}}
+\DoxyCodeLine{81   \textcolor{keywordflow}{return} (((1-\/(interseccio/unio))*100));  }
+\DoxyCodeLine{82 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_especie_ae24802ae0746b2560a48eea40f64760e}\label{class_especie_ae24802ae0746b2560a48eea40f64760e}} 
@@ -300,13 +300,13 @@ S\textquotesingle{}han escrit els atributs del parametre implicit al canal estan
 \end{DoxyPostcond}
 
 
-Definició a la línia 86 del fitxer Especie.\+cc.
+Definició a la línia 91 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{86                              \{}
-\DoxyCodeLine{87   cout << \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} << endl;}
-\DoxyCodeLine{88 \}}
+\DoxyCodeLine{91                              \{}
+\DoxyCodeLine{92   cout << \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} << endl;}
+\DoxyCodeLine{93 \}}
 
 \end{DoxyCode}
 

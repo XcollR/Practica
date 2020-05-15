@@ -1,4 +1,4 @@
-.TH "Especie" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.TH "Especie" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -93,13 +93,13 @@ El resultat es una especie sense identificador, gen i kmeros\&.
 .PP
 
 .PP
-Definició a la línia 12 del fitxer Especie\&.cc\&.
+Definició a la línia 18 del fitxer Especie\&.cc\&.
 .PP
 .nf
-12                  {
-13   Especie::gen = ' ';
-14   Especie::k_meros = map<string, int> ();
-15 }
+18                  {
+19   Especie::gen = ' ';
+20   Especie::k_meros = map<string, int> ();
+21 }
 .fi
 .SS "Especie::Especie (const string & gen1)"
 
@@ -118,13 +118,13 @@ El resultat es una especie amb identificador, gen i kmeros\&.
 .PP
 
 .PP
-Definició a la línia 18 del fitxer Especie\&.cc\&.
+Definició a la línia 24 del fitxer Especie\&.cc\&.
 .PP
 .nf
-18                                    {
-19   Especie::gen = gen1;
-20   Especie::kmer();
-21 }
+24                                    {
+25   Especie::gen = gen1;
+26   Especie::kmer();
+27 }
 .fi
 .SH "Documentació de les Funcions Membre"
 .PP 
@@ -145,31 +145,31 @@ S'ha calculat els k-meros i s'han guardat\&.
 .PP
 
 .PP
-Definició a la línia 94 del fitxer Especie\&.cc\&.
+Definició a la línia 99 del fitxer Especie\&.cc\&.
 .PP
 .nf
-94                    {
-95   // Inv: El recorregut que fa aquest bucle for mai
-96   // farà més iteracions que el tamany del gen - k + 1\&.
-97   // A cada iteració es crea un string auxiliar on s'aniran actualitzan els caracters un per un\&.
-98   for (int i = 0; i < gen\&.size() - Especie::k_num + 1; ++i) {
-99     string aux;
-100   // Inv: El recorregut que fa aquest segon bucle mai superarà
-101   // les k iteracions\&. Hem igualat la j a la i, per anar avançant cada
-102   // cop una posició i el bucle farà menys de k_num + i iteracions\&.
-103     for (int j = i; j < Especie::k_num + i; ++j) { 
-104       aux += gen[j];
-105     }
-106     // En el mapa de k-meros busquem el kmero que acabem de crear
-107     // en la anterior interació\&. Si aquest no existia s'afegeix al mapa\&.
-108     // La clau del mapa és el kmer generat i el valor que se l'assigna és el número
-109     // de vegades que es repeteix, al ser el primer cop, es posa un 1\&. En cas que el 
-110     // kmer ja existis anteriorment, es busca la clau i s'incrementa en 1 el valor\&.
-111     map<string,int>::const_iterator it = Especie::k_meros\&.find(aux);
-112     if (it == Especie::k_meros\&.end()) Especie::k_meros\&.insert(make_pair(aux, 1));
-113     else Especie::k_meros[aux] = it-> second +1;
-114   }
-115 } 
+99                    {
+100   // Inv: El recorregut que fa aquest bucle for mai
+101   // farà més iteracions que el tamany del gen - k + 1\&.
+102   // A cada iteració es crea un string auxiliar on s'aniran actualitzan els caracters un per un\&.
+103   for (int i = 0; i < gen\&.size() - Especie::k_num + 1; ++i) {
+104     string aux;
+105   // Inv: El recorregut que fa aquest segon bucle mai superarà
+106   // les k iteracions\&. Hem igualat la j a la i, per anar avançant cada
+107   // cop una posició i el bucle farà menys de k_num + i iteracions\&.
+108     for (int j = i; j < Especie::k_num + i; ++j) { 
+109       aux += gen[j];
+110     }
+111     // En el mapa de k-meros busquem el kmero que acabem de crear
+112     // en la anterior interació\&. Si aquest no existia s'afegeix al mapa\&.
+113     // La clau del mapa és el kmer generat i el valor que se l'assigna és el número
+114     // de vegades que es repeteix, al ser el primer cop, es posa un 1\&. En cas que el 
+115     // kmer ja existis anteriorment, es busca la clau i s'incrementa en 1 el valor\&.
+116     map<string,int>::const_iterator it = Especie::k_meros\&.find(aux);
+117     if (it == Especie::k_meros\&.end()) Especie::k_meros\&.insert(make_pair(aux, 1));
+118     else Especie::k_meros[aux] = it-> second +1;
+119   }
+120 } 
 .fi
 .SS "void Especie::set_parametro (const int & k_dato)\fC [static]\fP"
 
@@ -188,12 +188,12 @@ S'ha establert la k per calcular els kmeros\&.
 .PP
 
 .PP
-Definició a la línia 24 del fitxer Especie\&.cc\&.
+Definició a la línia 30 del fitxer Especie\&.cc\&.
 .PP
 .nf
-24                                              {
-25   Especie::k_num = k_dato;
-26 }
+30                                              {
+31   Especie::k_num = k_dato;
+32 }
 .fi
 .SS "string Especie::consultar_gen () const"
 
@@ -217,12 +217,12 @@ string
 .PP
 
 .PP
-Definició a la línia 33 del fitxer Especie\&.cc\&.
+Definició a la línia 38 del fitxer Especie\&.cc\&.
 .PP
 .nf
-33                                    {
-34   return Especie::gen;
-35 }
+38                                    {
+39   return Especie::gen;
+40 }
 .fi
 .SS "double Especie::distancia (const \fBEspecie\fP & esp) const"
 
@@ -246,50 +246,50 @@ double\&. Distancia entre especies
 .PP
 
 .PP
-Definició a la línia 37 del fitxer Especie\&.cc\&.
+Definició a la línia 42 del fitxer Especie\&.cc\&.
 .PP
 .nf
-37                                                   {
-38   // Invariant: Situem dos iterador constants al inici dels dos maps de k_meros
-39   // Unio i Intersecció és la cuantitat de elements que compleixen la 
-40   // condició de que siguin unió o intersecció\&.
-41   // Els elements visitats tenen la clau més petita que els altres\&.
-42   // El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora\&.
-43 
-44   map<string,int>::const_iterator i = Especie::k_meros\&.begin(), k = esp\&.k_meros\&.begin();
-45   double unio = 0, interseccio = 0;
-46   while (i != Especie::k_meros\&.end() and k != esp\&.k_meros\&.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros\&.
-47     if (i->first == k->first) {
-48       interseccio += min(i->second,k->second);
-49       unio +=  max(i->second, k->second);
-50       ++i;
-51       ++k;      
-52     }
-53     else if (i->first < k->first) {
-54       unio += i->second;
+42                                                   {
+43   // Invariant: Situem dos iterador constants al inici dels dos maps de k_meros
+44   // Unio i Intersecció és la cuantitat de elements que compleixen la 
+45   // condició de que siguin unió o intersecció\&.
+46   // Els elements visitats tenen la clau més petita que els altres\&.
+47   // El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora\&.
+48 
+49   map<string,int>::const_iterator i = Especie::k_meros\&.begin(), k = esp\&.k_meros\&.begin();
+50   double unio = 0, interseccio = 0;
+51   while (i != Especie::k_meros\&.end() and k != esp\&.k_meros\&.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros\&.
+52     if (i->first == k->first) {
+53       interseccio += min(i->second,k->second);
+54       unio +=  max(i->second, k->second);
 55       ++i;
-56     }
-57     else {
-58       unio += k->second;
-59       ++k;
-60     }
-61   }
-62   // Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut
-63   // entra en aquest bucle\&.
-64   // Inv: Els elements de i estan ordenats segons la clau en ordre ascendent\&.
-65   while (i != Especie::k_meros\&.end()) {
-66     unio += i->second;
-67     ++i;
-68   } 
-69   // Si el iterador k, el del segon mapa de k-meros no ha acabat el recorregut
-70   // entra en aquest bucle\&.
-71   // Inv: Els elements de k estan ordenats segons la clau en ordre ascendent\&.
-72   while (k != esp\&.k_meros\&.end()) { 
-73     unio += k->second;
-74     ++k;
-75   }
-76   return (((1-(interseccio/unio))*100));  
-77 }
+56       ++k;      
+57     }
+58     else if (i->first < k->first) {
+59       unio += i->second;
+60       ++i;
+61     }
+62     else {
+63       unio += k->second;
+64       ++k;
+65     }
+66   }
+67   // Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut
+68   // entra en aquest bucle\&.
+69   // Inv: Els elements de i estan ordenats segons la clau en ordre ascendent\&.
+70   while (i != Especie::k_meros\&.end()) {
+71     unio += i->second;
+72     ++i;
+73   } 
+74   // Si el iterador k, el del segon mapa de k-meros no ha acabat el recorregut
+75   // entra en aquest bucle\&.
+76   // Inv: Els elements de k estan ordenats segons la clau en ordre ascendent\&.
+77   while (k != esp\&.k_meros\&.end()) { 
+78     unio += k->second;
+79     ++k;
+80   }
+81   return (((1-(interseccio/unio))*100));  
+82 }
 .fi
 .SS "void Especie::escriure () const"
 
@@ -308,12 +308,12 @@ S'han escrit els atributs del parametre implicit al canal estandard de sortida\&
 .PP
 
 .PP
-Definició a la línia 86 del fitxer Especie\&.cc\&.
+Definició a la línia 91 del fitxer Especie\&.cc\&.
 .PP
 .nf
-86                              {
-87   cout << Especie::gen << endl;
-88 }
+91                              {
+92   cout << Especie::gen << endl;
+93 }
 .fi
 .SH "Documentació de les Dades Membre"
 .PP 
@@ -338,4 +338,4 @@ Definició a la línia 37 del fitxer Especie\&.hh\&.
 
 .SH "Autor"
 .PP 
-Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. Xavier Coll Ribas a partir del codi font\&.

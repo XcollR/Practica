@@ -1,4 +1,4 @@
-.TH "Cluster" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.TH "Cluster" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -70,18 +70,18 @@ El resultat és un cluster de la especie demanada\&.
 .PP
 
 .PP
-Definició a la línia 10 del fitxer Cluster\&.cc\&.
+Definició a la línia 16 del fitxer Cluster\&.cc\&.
 .PP
 .nf
-10                                 {
-11     //Es crea un pair on hi ha l'identificador del cluster i
-12     //la distancia respecte els seus fills\&. Al ser un cluster sense fills, la distancia es 0\&.
-13     pair<string, double> clust;
-14     clust\&.first = id;
-15     clust\&.second = 0;
-16     //Es crea l'arbol binari de cluster\&.
-17     cluster = BinTree<pair<string, double>> (clust);
-18 }
+16                                 {
+17     //Es crea un pair on hi ha l'identificador del cluster i
+18     //la distancia respecte els seus fills\&. Al ser un cluster sense fills, la distancia es 0\&.
+19     pair<string, double> clust;
+20     clust\&.first = id;
+21     clust\&.second = 0;
+22     //Es crea l'arbol binari de cluster\&.
+23     cluster = BinTree<pair<string, double>> (clust);
+24 }
 .fi
 .SS "Cluster::Cluster (const \fBCluster\fP clus1, const \fBCluster\fP Clus2, const double & dist)"
 
@@ -105,20 +105,20 @@ El resultat és un cluster amb la fusió dels dos altres\&.
 .PP
 
 .PP
-Definició a la línia 20 del fitxer Cluster\&.cc\&.
+Definició a la línia 26 del fitxer Cluster\&.cc\&.
 .PP
 .nf
-20                                                                              {
-21     //Es fusionen dos clusters en un\&. El identificador del pair és el
-22     //resultat de fusionar els dos id's\&.
-23     //El double dist és la distancia entre els dos clusters\&.
-24     pair<string, double> clust;
-25     clust\&.first = clus1\&.cluster\&.value()\&.first + clus2\&.cluster\&.value()\&.first;
-26     clust\&.second = dist/2; //dist/2 ja que la formula ho demana així\&.
-27     //Es crea un arbre amb node principal el pair acabat de crear, node esquerra el 
-28     //arbre del primer cluster i node dret el arbre del segon cluster\&.
-29     cluster = BinTree<pair<string,double>> (clust,clus1\&.cluster,clus2\&.cluster);
-30 }
+26                                                                              {
+27     //Es fusionen dos clusters en un\&. El identificador del pair és el
+28     //resultat de fusionar els dos id's\&.
+29     //El double dist és la distancia entre els dos clusters\&.
+30     pair<string, double> clust;
+31     clust\&.first = clus1\&.cluster\&.value()\&.first + clus2\&.cluster\&.value()\&.first;
+32     clust\&.second = dist/2; //dist/2 ja que la formula ho demana així\&.
+33     //Es crea un arbre amb node principal el pair acabat de crear, node esquerra el 
+34     //arbre del primer cluster i node dret el arbre del segon cluster\&.
+35     cluster = BinTree<pair<string,double>> (clust,clus1\&.cluster,clus2\&.cluster);
+36 }
 .fi
 .SH "Documentació de les Funcions Membre"
 .PP 
@@ -144,25 +144,25 @@ S'ha escrit l'arbre binàri amb les condicions indicades abans\&.
 .PP
 
 .PP
-Definició a la línia 47 del fitxer Cluster\&.cc\&.
+Definició a la línia 54 del fitxer Cluster\&.cc\&.
 .PP
 .nf
-47                                                                       {
-48     //Escriptura del arbre binari\&. Si aquest té els nodes 
-49     //dret i esquerre buit, es a dir, són fulles de l'arbre,
-50     //no escriu la distancia respecte als fills\&.
-51       if (not a\&.empty()) {
-52         if (not a\&.left()\&.empty() and not a\&.right()\&.empty()) {
-53     cout <<"["<< "(" << a\&.value()\&.first << ", " << a\&.value()\&.second<< ") ";
-54         }
-55         else {
-56             cout <<"["<< a\&.value()\&.first;
-57         }
-58     inm_escriure(a\&.left());
-59     inm_escriure(a\&.right());
-60         cout << "]";
-61   }
-62 }
+54                                                                       {
+55     //Escriptura del arbre binari\&. Si aquest té els nodes 
+56     //dret i esquerre buit, es a dir, són fulles de l'arbre,
+57     //no escriu la distancia respecte als fills\&.
+58       if (not a\&.empty()) {
+59         if (not a\&.left()\&.empty() and not a\&.right()\&.empty()) {
+60     cout <<"["<< "(" << a\&.value()\&.first << ", " << a\&.value()\&.second<< ") ";
+61         }
+62         else {
+63             cout <<"["<< a\&.value()\&.first;
+64         }
+65     inm_escriure(a\&.left());
+66     inm_escriure(a\&.right());
+67         cout << "]";
+68   }
+69 }
 .fi
 .SS "void Cluster::escriure () const"
 
@@ -181,14 +181,14 @@ S'ha escrit l'arbre binàri\&.
 .PP
 
 .PP
-Definició a la línia 39 del fitxer Cluster\&.cc\&.
+Definició a la línia 46 del fitxer Cluster\&.cc\&.
 .PP
 .nf
-39                              {
-40     //Entra el arbre del paràmetre implícit a la funció recursiva\&.
-41     inm_escriure(Cluster::cluster);
-42     cout << endl;
-43 }
+46                              {
+47     //Entra el arbre del paràmetre implícit a la funció recursiva\&.
+48     inm_escriure(Cluster::cluster);
+49     cout << endl;
+50 }
 .fi
 .SH "Documentació de les Dades Membre"
 .PP 
@@ -201,4 +201,4 @@ Definició a la línia 31 del fitxer Cluster\&.hh\&.
 
 .SH "Autor"
 .PP 
-Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. Xavier Coll Ribas a partir del codi font\&.
