@@ -1,6 +1,12 @@
 /** @file Especie.cc
  * 	@brief Còdig de la classe Especie.
  */
+
+
+//	INVARIANT: UNA ESPÈCIE TINDRÀ UN GEN SEMPRE DE LONGITUD >= K
+//  		   LA K > 0. UNA ESPECIE SEMPRE TINDRÀ CALCULATS ELS KMEROS.
+
+
 #include "Especie.hh"
 
 

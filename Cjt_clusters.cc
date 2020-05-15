@@ -2,6 +2,10 @@
  * 	@brief Còdig de la classe Cjt_clusters.
 */
 
+// INVARIANT: EL MAPA DE CONJUNT DE CLUSTERS SEMPRE ESTÀ ORDENAT ALFABÈTICAMENT I NO TÉ TAMANY MÀXIM.
+//            LA TAULA DE DISTANCIES DE CLUSTERS ESTÀ ORDENADA ALFABÈTICAMENT
+
+
 #include "Cjt_clusters.hh"
 
 

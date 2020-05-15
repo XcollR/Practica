@@ -2,6 +2,12 @@
  * 	@brief Còdig de la classe Cluster.
  */
 
+// INVARIANT:  ELS CLUSTERS SÓN ARBRES BINARIS DE PAIRS. ELS FILLS DELS
+//             DELS ARBRES BINARIS ESTÀN ORDENATS ALFABÈTICAMENT, L'ARBRE DRET ÉS 
+//             EL MÉS PETIT LEXICOGRÀFICAMENT I L'ESQUERRE L'ALTRE. 
+//             LA DISTANCIA MAI POT SER < 0.
+
+
 #include "Cluster.hh"
 
 
@@ -35,6 +41,7 @@ Cluster::Cluster(const Cluster clus1, const Cluster clus2, const double& dist) {
 // Consultores
 
 //Lectura i escriptura
+
 
 void Cluster::escriure() const {
     //Entra el arbre del paràmetre implícit a la funció recursiva.
