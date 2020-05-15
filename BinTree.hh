@@ -33,6 +33,7 @@ template <typename T> class BinTree {
     //   - default destructor is good. Θ(n) where n is the number of nodes in the tree.
     //   - std::swap() already works by default.
 
+
 public:
 
     // Constructs an empty tree. Θ(1).

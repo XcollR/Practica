@@ -12,6 +12,7 @@ using namespace std;
 
 
 /** @brief El main del programa */
+
 int main() {
 	int k; // k del kmer;
 	cin >> k;

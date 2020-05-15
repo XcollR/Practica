@@ -89,7 +89,6 @@ void Especie::escriure() const {
 
 	
 
-
 // Mètodes privats
 
 void Especie::kmer() {
@@ -114,6 +113,7 @@ void Especie::kmer() {
 		else Especie::k_meros[aux] = it-> second +1;
 	}
 } 
+
 
 
 

@@ -43,6 +43,7 @@ private:
 */
 	void kmer(); 
 	
+	
 public: 
 	
 	// Constructores
