@@ -66,7 +66,8 @@ public:
 	
 	// Consultores
 
-	
+	// Modificadores
+
 	// Lectura i Escriptura
 		
 /**

@@ -59,16 +59,19 @@ El resultat és un cluster de la especie demanada.
 \end{DoxyParams}
 
 
-Definició a la línia 7 del fitxer Cluster.\+cc.
+Definició a la línia 10 del fitxer Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{7                                 \{}
-\DoxyCodeLine{8     pair<string, double> clust;}
-\DoxyCodeLine{9     clust.first = id;}
-\DoxyCodeLine{10     clust.second = 0;}
-\DoxyCodeLine{11     \mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}} = BinTree<pair<string, double>> (clust);}
-\DoxyCodeLine{12 \}}
+\DoxyCodeLine{10                                 \{}
+\DoxyCodeLine{11     \textcolor{comment}{//Es crea un pair on hi ha l'identificador del cluster i}}
+\DoxyCodeLine{12     \textcolor{comment}{//la distancia respecte els seus fills. Al ser un cluster sense fills, la distancia es 0.}}
+\DoxyCodeLine{13     pair<string, double> clust;}
+\DoxyCodeLine{14     clust.first = id;}
+\DoxyCodeLine{15     clust.second = 0;}
+\DoxyCodeLine{16     \textcolor{comment}{//Es crea l'arbol binari de cluster.}}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}} = BinTree<pair<string, double>> (clust);}
+\DoxyCodeLine{18 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cluster_aaf336dfa4bfb02c0fd71395615636fb4}\label{class_cluster_aaf336dfa4bfb02c0fd71395615636fb4}} 
@@ -94,16 +97,21 @@ El resultat és un cluster amb la fusió dels dos altres.
 \end{DoxyParams}
 
 
-Definició a la línia 13 del fitxer Cluster.\+cc.
+Definició a la línia 20 del fitxer Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{13                                                                              \{}
-\DoxyCodeLine{14     pair<string, double> clust;}
-\DoxyCodeLine{15     clust.first = clus1.\mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}}.value().first + clus2.cluster.value().first;}
-\DoxyCodeLine{16     clust.second = dist/2;}
-\DoxyCodeLine{17     \mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}} = BinTree<pair<string,double>> (clust,clus1.\mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}},clus2.cluster);}
-\DoxyCodeLine{18 \}}
+\DoxyCodeLine{20                                                                              \{}
+\DoxyCodeLine{21     \textcolor{comment}{//Es fusionen dos clusters en un. El identificador del pair és el}}
+\DoxyCodeLine{22     \textcolor{comment}{//resultat de fusionar els dos id's.}}
+\DoxyCodeLine{23     \textcolor{comment}{//El double dist és la distancia entre els dos clusters.}}
+\DoxyCodeLine{24     pair<string, double> clust;}
+\DoxyCodeLine{25     clust.first = clus1.\mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}}.value().first + clus2.cluster.value().first;}
+\DoxyCodeLine{26     clust.second = dist/2; \textcolor{comment}{//dist/2 ja que la formula ho demana així.}}
+\DoxyCodeLine{27     \textcolor{comment}{//Es crea un arbre amb node principal el pair acabat de crear, node esquerra el }}
+\DoxyCodeLine{28     \textcolor{comment}{//arbre del primer cluster i node dret el arbre del segon cluster.}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}} = BinTree<pair<string,double>> (clust,clus1.\mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}},clus2.cluster);}
+\DoxyCodeLine{30 \}}
 
 \end{DoxyCode}
 
@@ -132,23 +140,26 @@ S\textquotesingle{}ha escrit l\textquotesingle{}arbre binàri amb les condicions
 \end{DoxyParams}
 
 
-Definició a la línia 25 del fitxer Cluster.\+cc.
+Definició a la línia 47 del fitxer Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{25                                                                       \{}
-\DoxyCodeLine{26       \textcolor{keywordflow}{if} (not a.empty()) \{}
-\DoxyCodeLine{27         \textcolor{keywordflow}{if} (not a.left().empty() and not a.right().empty()) \{}
-\DoxyCodeLine{28     cout <<\textcolor{stringliteral}{"["}<< \textcolor{stringliteral}{"("} << a.value().first << \textcolor{stringliteral}{", "} << a.value().second<< \textcolor{stringliteral}{") "};}
-\DoxyCodeLine{29         \}}
-\DoxyCodeLine{30         \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{31             cout <<\textcolor{stringliteral}{"["}<< a.value().first;}
-\DoxyCodeLine{32         \}}
-\DoxyCodeLine{33     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(a.left());}
-\DoxyCodeLine{34     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(a.right());}
-\DoxyCodeLine{35         cout << \textcolor{stringliteral}{"]"};}
-\DoxyCodeLine{36   \}}
-\DoxyCodeLine{37 \}}
+\DoxyCodeLine{47                                                                       \{}
+\DoxyCodeLine{48     \textcolor{comment}{//Escriptura del arbre binari. Si aquest té els nodes }}
+\DoxyCodeLine{49     \textcolor{comment}{//dret i esquerre buit, es a dir, són fulles de l'arbre,}}
+\DoxyCodeLine{50     \textcolor{comment}{//no escriu la distancia respecte als fills.}}
+\DoxyCodeLine{51       \textcolor{keywordflow}{if} (not a.empty()) \{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{if} (not a.left().empty() and not a.right().empty()) \{}
+\DoxyCodeLine{53     cout <<\textcolor{stringliteral}{"["}<< \textcolor{stringliteral}{"("} << a.value().first << \textcolor{stringliteral}{", "} << a.value().second<< \textcolor{stringliteral}{") "};}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{56             cout <<\textcolor{stringliteral}{"["}<< a.value().first;}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(a.left());}
+\DoxyCodeLine{59     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(a.right());}
+\DoxyCodeLine{60         cout << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{61   \}}
+\DoxyCodeLine{62 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cluster_aae67c144fc543eace946dc8a651b5b7a}\label{class_cluster_aae67c144fc543eace946dc8a651b5b7a}} 
@@ -169,14 +180,15 @@ S\textquotesingle{}ha escrit l\textquotesingle{}arbre binàri.
 \end{DoxyPostcond}
 
 
-Definició a la línia 20 del fitxer Cluster.\+cc.
+Definició a la línia 39 del fitxer Cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{20                              \{}
-\DoxyCodeLine{21     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(\mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{cluster}});}
-\DoxyCodeLine{22     cout << endl;}
-\DoxyCodeLine{23 \}}
+\DoxyCodeLine{39                              \{}
+\DoxyCodeLine{40     \textcolor{comment}{//Entra el arbre del paràmetre implícit a la funció recursiva.}}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_cluster_a1856b0f1ca9243208451c965313af753}{inm\_escriure}}(\mbox{\hyperlink{class_cluster_a34b4dbc09bb7d69a7f2fb8ce390d6174}{Cluster::cluster}});}
+\DoxyCodeLine{42     cout << endl;}
+\DoxyCodeLine{43 \}}
 
 \end{DoxyCode}
 

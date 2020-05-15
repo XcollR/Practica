@@ -62,7 +62,7 @@ public:
 	\post El resultat es una especie amb identificador, gen i kmeros.
 	
 */
-	Especie(string gen1);
+	Especie(const string& gen1);
 
 /**
  * 	@brief Introdueix el paràmetre k com a static per calcular els k-meros.

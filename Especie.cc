@@ -15,7 +15,7 @@ Especie::Especie() {
 }
 
 
-Especie::Especie(string gen1) {
+Especie::Especie(const string& gen1) {
 	Especie::gen = gen1;
 	Especie::kmer();
 }
@@ -43,7 +43,7 @@ double Especie::distancia(const Especie& esp) const {
 
 	map<string,int>::const_iterator i = Especie::k_meros.begin(), k = esp.k_meros.begin();
 	double unio = 0, interseccio = 0;
-	while (i != k_meros.end() and k != esp.k_meros.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.
+	while (i != Especie::k_meros.end() and k != esp.k_meros.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.
 		if (i->first == k->first) {
 			interseccio += min(i->second,k->second);
 			unio +=  max(i->second, k->second);
@@ -62,7 +62,7 @@ double Especie::distancia(const Especie& esp) const {
 	// Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut
 	// entra en aquest bucle.
 	// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.
-	while (i != k_meros.end()) {
+	while (i != Especie::k_meros.end()) {
 		unio += i->second;
 		++i;
 	} 

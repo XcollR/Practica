@@ -7,9 +7,10 @@
 
 // Constructores
 
+
+Cjt_especies::Cjt_especies() {
 // Mètode constructor d'especie. Posem el mapa d'especies i el nested map de la taula
 // de distàncies com a dos mapes buits.
-Cjt_especies::Cjt_especies() {
 	Cjt_especies::cjt_especies = map<string, Especie> ();
 	Cjt_especies::taula_distancies = map<string,map<string,double>>();
 }
@@ -18,12 +19,13 @@ Cjt_especies::Cjt_especies() {
 
 // Modificadores
 
+
+void Cjt_especies::crea_especie(const string& id,const string& gen) {
 // Entren dos paràmetres explícits. El primer paràmetre és la clau
 // del mapa. El valor d'aquesta clau serà una especie la qual es genera
 // amb la constructora d'especie mitjançant un gen. A més, aquesta especie
 // s'introdueix a la taula de distancies mitjançant el mètode afegeix
 // especie tabla dist.
-void Cjt_especies::crea_especie(string id,string gen) {
 			Especie e(gen);
 			Cjt_especies::cjt_especies.insert(make_pair(id,e));
 			afegeix_especie_tabla_dist(id);
@@ -32,28 +34,32 @@ void Cjt_especies::crea_especie(string id,string gen) {
 // Consultores
 
 
+
+void Cjt_especies::elimina_especie(const string& id) {
 // S'elimina la espècie indicada pel paràmetre explícit.
 // Es busca la espècie mitjaçant un iterador del mapa d'especies
 // i s'elimina la espècie indicada.
 // Observació: Aquesta funció no comprova si existeix una espècie 
 // o no, per tant, s'ha de fer compravació prèvia amb la funció
 // Cjt_especie::existe_especie(id).
-void Cjt_especies::elimina_especie(string id) {
 		map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies.find(id);
 		Cjt_especies::cjt_especies.erase(it);
 		Cjt_especies::elimina_especie_tabla_dist(id);     
 }
 
+
+bool Cjt_especies::existeix_especie(const string& id)  const{
 // Es consulta si existeix la espècie dins el map d'especies.
 // Es busca la especie mitjançant un iterador. En el cas que
 // l'iterador apuntes al final de mapa, la especie no existeix 
 // i es retorna false, en cas contrari retorna true.
-bool Cjt_especies::existeix_especie(string id)  const{
 	map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies.find(id);
 	if (it != Cjt_especies::cjt_especies.end()) return true;
 	return false;
 }
 
+
+double Cjt_especies::calcular_distancia(const string& id, const string& id2) const {
 // Retorna la distància entre dues especies.
 // Es fan comprovación abans de consultar-les. En el cas
 // que no existeixin les dues espècies es retorna un -1.
@@ -67,10 +73,8 @@ bool Cjt_especies::existeix_especie(string id)  const{
 //		primeres. Per tant, amb dos iteradors mirem si apuntent al final,
 //		En el cas que passés, cambien d'ordre els iteradors i aquests
 //		accedeixen a la posició on hi ha la distància demanada.
-//Observació: Aquesta funció no calcula les distàncies, sinó consulta
-//el mapa de distàncies.
-
-double Cjt_especies::calcular_distancia(const string& id, const string& id2) const {
+// Observació: Aquesta funció no calcula les distàncies, sinó consulta
+// el mapa de distàncies.	
 	if (not Cjt_especies::existeix_especie(id) and not Cjt_especies::existeix_especie(id2)) return -1; 
 	else if (not Cjt_especies::existeix_especie(id)) return -2;
 	else if (not Cjt_especies::existeix_especie(id2)) return -3;
@@ -87,45 +91,50 @@ double Cjt_especies::calcular_distancia(const string& id, const string& id2) con
 }
 
 
+
+void Cjt_especies::obtener_gen(const string& id) const {
 // Es consulta el gen d'una especie mitjançant una 
 // funció de la classe Especie i un iterador.
 // Observació: S'ha de comprovar prèviament que aquesta especie existeix.
-void Cjt_especies::obtener_gen(string id) const {
 	map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies.find(id);
 	cout << it->second.consultar_gen() << endl;
 	
 }
 
+
+bool Cjt_especies::final() {
 // Es fa comprovacions si l'iterador de l'àmbit
 // privat apunta al final del conjunt d'especies.
 // Retorna cert si apunta al final, en cas contrari
 // retorna fals.
-bool Cjt_especies::final() {
 	return it == Cjt_especies::cjt_especies.end();
 
 }
 
+
+void Cjt_especies::inicio() {
 // Es posiciona l'iterador de l'ambit
 // privat apuntant a la primera posició 
 // del mapa d'especies.
-void Cjt_especies::inicio() {
 	it = Cjt_especies::cjt_especies.begin();
 }
 
+
+void Cjt_especies::actual(string& act) {
 // Es modifica el string del paràmetre 
 // explícit i se li adjudica el string
 // al qual apunta el iterador.
-void Cjt_especies::actual(string& act) {
 	act = it->first;
 }
 
+
+
+void Cjt_especies::avanza() {
 // Es posiciona l'iterador de l'ambit
 // privat apuntant a una posició més endavant 
 // de la qua apuntava l'iterador abans.
 // Observació: S'avançarà l'iterador sempre
 // i quan l'iterador no estigui apuntant al final.
-
-void Cjt_especies::avanza() {
 	if (not final()){
 				++Cjt_especies::it;
 

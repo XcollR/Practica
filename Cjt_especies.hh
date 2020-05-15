@@ -81,7 +81,7 @@ public:
 	\post S'ha creat una espècie.
 */
 	
-	void crea_especie(string id, string gen);
+	void crea_especie(const string& id,const string& gen);
 
 
 
@@ -91,7 +91,7 @@ public:
  * 	@param string id
  */
  
-	void elimina_especie(string id);	
+	void elimina_especie(const string& id);	
 
 	
 	// Consultores
@@ -105,7 +105,7 @@ public:
  * 	\return bool
  */
   
-	bool existeix_especie(string id) const;	
+	bool existeix_especie(const string& id) const;	
 
 /** @brief Consulta la distàncie entre dues espècies.
  * 	\pre Les dues espècies existeixen al conjunt.
@@ -127,7 +127,7 @@ public:
    \param string
    \return string
   */
-	void obtener_gen(string id) const;
+	void obtener_gen(const string& id) const;
 	
 	
 	/** @brief Consulta si l'iterador del mapa del conjunt d'especies apunta al final d'ell o no.
