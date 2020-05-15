@@ -1,7 +1,7 @@
 var class_especie =
 [
     [ "Especie", "class_especie.html#a272c2488719cc9874b2f174906675b3d", null ],
-    [ "Especie", "class_especie.html#a9cd047acfec0dbd335b5801b0ade53d3", null ],
+    [ "Especie", "class_especie.html#a07bc78385f51aff88a16e24575a6756f", null ],
     [ "kmer", "class_especie.html#a2bd896f271d0983f609735df8809cccc", null ],
     [ "consultar_gen", "class_especie.html#a850af2b59a21e2d801c59d76ba5c1a98", null ],
     [ "distancia", "class_especie.html#a2037b4bf2d55d8c6ffb90811ad1c4a1b", null ],

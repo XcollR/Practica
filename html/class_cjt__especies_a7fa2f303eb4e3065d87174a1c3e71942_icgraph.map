@@ -1,0 +1,8 @@
+<map id="Cjt_especies::existeix_especie" name="Cjt_especies::existeix_especie">
+<area shape="rect" id="node1" title="Consulta si existeix la espècie indicada." alt="" coords="915,83,1073,124"/>
+<area shape="rect" id="node2" href="$class_cjt__especies.html#aa4191c64a5008de2272e0e3489aeb778" title="Consulta la distàncie entre dues espècies." alt="" coords="708,40,867,82"/>
+<area shape="rect" id="node3" href="$program_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="El main del programa." alt="" coords="5,44,60,70"/>
+<area shape="rect" id="node4" href="$class_cjt__clusters.html#a8298bacd14980c99c9558c72702174e8" title="Imprimeix el cluster indicat." alt="" coords="524,40,660,82"/>
+<area shape="rect" id="node5" href="$class_cjt__clusters.html#ac309c781b06d06ec9a2b4bc839c01f40" title="Inicialitza els clusters del conjunt." alt="" coords="313,40,476,82"/>
+<area shape="rect" id="node6" href="$class_cjt__clusters.html#a8a92eefe19f7eafc403690a30d87b99e" title="Imprimeix l&#39;arbre filogenètic." alt="" coords="108,66,265,107"/>
+</map>

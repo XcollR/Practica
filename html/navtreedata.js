@@ -25,20 +25,20 @@
 var NAVTREE =
 [
   [ "Creació d'un arbre filogenètic.", "index.html", [
-    [ "Clases", "annotated.html", [
-      [ "Lista de clases", "annotated.html", "annotated_dup" ],
-      [ "Miembros de las clases", "functions.html", [
-        [ "Todo", "functions.html", null ],
-        [ "Funciones", "functions_func.html", null ],
+    [ "<b>Descripció de la pràctica</b>", "index.html", null ],
+    [ "Classes", "annotated.html", [
+      [ "Llista de Classes", "annotated.html", "annotated_dup" ],
+      [ "Membres de Classes", "functions.html", [
+        [ "Tot", "functions.html", null ],
+        [ "Funcions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
-    [ "Archivos", "files.html", [
-      [ "Lista de archivos", "files.html", "files_dup" ],
-      [ "Miembros de los ficheros", "globals.html", [
-        [ "Todo", "globals.html", null ],
-        [ "Funciones", "globals_func.html", null ],
-        [ "defines", "globals_defs.html", null ]
+    [ "Fitxers", "files.html", [
+      [ "Llista dels Fitxers", "files.html", "files_dup" ],
+      [ "Membres de Fitxers", "globals.html", [
+        [ "Tot", "globals.html", null ],
+        [ "Funcions", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]
@@ -49,5 +49,5 @@ var NAVTREEINDEX =
 "_cjt__clusters_8cc.html"
 ];
 
-var SYNCONMSG = 'click en deshabilitar sincronización';
-var SYNCOFFMSG = 'click en habilitar sincronización';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

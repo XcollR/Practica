@@ -1,0 +1,4 @@
+<map id="Especie::kmer" name="Especie::kmer">
+<area shape="rect" id="node1" title="Calcula els kmeros d&#39;una espècie a partir del seu gen." alt="" coords="181,5,293,32"/>
+<area shape="rect" id="node2" href="$class_especie.html#a07bc78385f51aff88a16e24575a6756f" title="Crea una especie amb el gen i l&#39;identificador indicat." alt="" coords="5,5,133,32"/>
+</map>

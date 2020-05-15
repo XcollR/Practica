@@ -10,7 +10,7 @@ Representa el conjunt de característiques y operacions de les especies.
 \item 
 \mbox{\hyperlink{class_especie_a272c2488719cc9874b2f174906675b3d}{Especie}} ()
 \begin{DoxyCompactList}\small\item\em Crea una especie sense identificador ni gen. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_especie_a9cd047acfec0dbd335b5801b0ade53d3}{Especie}} (string gen1)
+\mbox{\hyperlink{class_especie_a07bc78385f51aff88a16e24575a6756f}{Especie}} (const string \&gen1)
 \begin{DoxyCompactList}\small\item\em Crea una especie amb el gen i l\textquotesingle{}identificador indicat. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_especie_a850af2b59a21e2d801c59d76ba5c1a98}{consultar\+\_\+gen}} () const
 \begin{DoxyCompactList}\small\item\em Retorna el gen de la espècie. \end{DoxyCompactList}\item 
@@ -80,11 +80,11 @@ Definició a la línia 12 del fitxer Especie.\+cc.
 \DoxyCodeLine{15 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_especie_a9cd047acfec0dbd335b5801b0ade53d3}\label{class_especie_a9cd047acfec0dbd335b5801b0ade53d3}} 
+\mbox{\Hypertarget{class_especie_a07bc78385f51aff88a16e24575a6756f}\label{class_especie_a07bc78385f51aff88a16e24575a6756f}} 
 \index{Especie@{Especie}!Especie@{Especie}}
 \index{Especie@{Especie}!Especie@{Especie}}
 \doxysubsubsection{\texorpdfstring{Especie()}{Especie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Especie\+::\+Especie (\begin{DoxyParamCaption}\item[{string}]{gen1 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Especie\+::\+Especie (\begin{DoxyParamCaption}\item[{const string \&}]{gen1 }\end{DoxyParamCaption})}
 
 
 
@@ -102,7 +102,7 @@ Definició a la línia 18 del fitxer Especie.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{18                             \{}
+\DoxyCodeLine{18                                    \{}
 \DoxyCodeLine{19   \mbox{\hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{Especie::gen}} = gen1;}
 \DoxyCodeLine{20   \mbox{\hyperlink{class_especie_a2bd896f271d0983f609735df8809cccc}{Especie::kmer}}();}
 \DoxyCodeLine{21 \}}
@@ -248,7 +248,7 @@ Definició a la línia 37 del fitxer Especie.\+cc.
 \DoxyCodeLine{43 }
 \DoxyCodeLine{44   map<string,int>::const\_iterator i = \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.begin(), k = esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.begin();}
 \DoxyCodeLine{45   \textcolor{keywordtype}{double} unio = 0, interseccio = 0;}
-\DoxyCodeLine{46   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ \textcolor{comment}{// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.}}
+\DoxyCodeLine{46   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end() and k != esp.\mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{ \textcolor{comment}{// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.}}
 \DoxyCodeLine{47     \textcolor{keywordflow}{if} (i-\/>first == k-\/>first) \{}
 \DoxyCodeLine{48       interseccio += min(i-\/>second,k-\/>second);}
 \DoxyCodeLine{49       unio +=  max(i-\/>second, k-\/>second);}
@@ -267,7 +267,7 @@ Definició a la línia 37 del fitxer Especie.\+cc.
 \DoxyCodeLine{62   \textcolor{comment}{// Si el iterador i, el del primer mapa de k-\/meros no ha acabat el recorregut}}
 \DoxyCodeLine{63   \textcolor{comment}{// entra en aquest bucle.}}
 \DoxyCodeLine{64   \textcolor{comment}{// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.}}
-\DoxyCodeLine{65   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{k\_meros}}.end()) \{}
+\DoxyCodeLine{65   \textcolor{keywordflow}{while} (i != \mbox{\hyperlink{class_especie_a0c42a37fe5502ebbe9e91e364c90bd3e}{Especie::k\_meros}}.end()) \{}
 \DoxyCodeLine{66     unio += i-\/>second;}
 \DoxyCodeLine{67     ++i;}
 \DoxyCodeLine{68   \} }

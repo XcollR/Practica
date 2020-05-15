@@ -38,7 +38,7 @@ PROJECT_NAME           = "Creació d'un arbre filogenètic."
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = 14/05/2020
+PROJECT_NUMBER         = 15/05/2020
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -2235,7 +2235,6 @@ EXTERNAL_PAGES         = YES
 #---------------------------------------------------------------------------
 # Configuration options related to the dot tool
 #---------------------------------------------------------------------------
-
 
 # If the CLASS_DIAGRAMS tag is set to YES, doxygen will generate a class diagram
 # (in HTML and LaTeX) for classes with base or super classes. Setting the tag to

@@ -10,15 +10,15 @@ Representa un conjunt d\textquotesingle{}espècies ordenades alfabèticament.
 \item 
 \mbox{\hyperlink{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}{Cjt\+\_\+especies}} ()
 \begin{DoxyCompactList}\small\item\em Crea un conjunt d\textquotesingle{}espècies buit. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}{crea\+\_\+especie}} (string id, string gen)
+void \mbox{\hyperlink{class_cjt__especies_a6413c062ece1d559a050bac7a6d02fc9}{crea\+\_\+especie}} (const string \&id, const string \&gen)
 \begin{DoxyCompactList}\small\item\em Crea una espècie i la introdueix al conjunt. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_cjt__especies_a869c218f09aa589d21f497196bb79e67}{elimina\+\_\+especie}} (string id)
+void \mbox{\hyperlink{class_cjt__especies_a51059c15bd4c38ff5f21dbb532befa11}{elimina\+\_\+especie}} (const string \&id)
 \begin{DoxyCompactList}\small\item\em Elimina la espècie indicada del conjunt d\textquotesingle{}espècies. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\+\_\+especie}} (string id) const
+bool \mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{existeix\+\_\+especie}} (const string \&id) const
 \begin{DoxyCompactList}\small\item\em Consulta si existeix la espècie indicada. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\+\_\+distancia}} (const string \&id, const string \&id2) const
 \begin{DoxyCompactList}\small\item\em Consulta la distàncie entre dues espècies. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_cjt__especies_a3a1dc5f705c2271ee9c1dfd14ac6822d}{obtener\+\_\+gen}} (string id) const
+void \mbox{\hyperlink{class_cjt__especies_a57ed04e290bf802050d19ca1956c2663}{obtener\+\_\+gen}} (const string \&id) const
 \begin{DoxyCompactList}\small\item\em Consulta el gen de la espècie demanada. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_cjt__especies_a44c59750dd9223ea12f954247fd11504}{final}} ()
 \begin{DoxyCompactList}\small\item\em Consulta si l\textquotesingle{}iterador del mapa del conjunt d\textquotesingle{}especies apunta al final d\textquotesingle{}ell o no. \end{DoxyCompactList}\item 
@@ -80,14 +80,16 @@ El resultat és un conjunt d\textquotesingle{}especies buit.
 \end{DoxyPostcond}
 
 
-Definició a la línia 12 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 11 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{12                            \{}
-\DoxyCodeLine{13   \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}} = map<string, Especie> ();}
-\DoxyCodeLine{14   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}} = map<string,map<string,double>>();}
-\DoxyCodeLine{15 \}}
+\DoxyCodeLine{11                            \{}
+\DoxyCodeLine{12 \textcolor{comment}{// Mètode constructor d'especie. Posem el mapa d'especies i el nested map de la taula}}
+\DoxyCodeLine{13 \textcolor{comment}{// de distàncies com a dos mapes buits.}}
+\DoxyCodeLine{14   \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}} = map<string, Especie> ();}
+\DoxyCodeLine{15   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}} = map<string,map<string,double>>();}
+\DoxyCodeLine{16 \}}
 
 \end{DoxyCode}
 
@@ -111,22 +113,22 @@ S\textquotesingle{}ha actualitzat la taula.
 \end{DoxyPostcond}
 
 
-Definició a la línia 187 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 196 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{187                                                               \{}
-\DoxyCodeLine{188   \textcolor{comment}{//Es posiciona un iterador apuntant a la posició de l'id demanat.}}
-\DoxyCodeLine{189   map<string,map<string,double>>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{190   \textcolor{comment}{//Es posiciona un iterador apuntant a la primera posició del mapa de distancies.}}
-\DoxyCodeLine{191   \textcolor{comment}{//Inv: Farà tantes iteracions fins que l'iterador sigui igual al primer que hem buscat. Així ens}}
-\DoxyCodeLine{192   \textcolor{comment}{//estalviem bucles innecessaris. Aquest bucle elimina la especie demanada del map interior.}}
-\DoxyCodeLine{193   \textcolor{keywordflow}{for} (map<\textcolor{keywordtype}{string},map<string,double>>::iterator it2 = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.begin(); it2 != \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}; ++it2) \{}
-\DoxyCodeLine{194       it2-\/>second.erase(it2-\/>second.find(\textcolor{keywordtype}{id}));}
-\DoxyCodeLine{195     \}}
-\DoxyCodeLine{196   \textcolor{comment}{//Eliminem la especie del mapa gran de la taula de distancies.}}
-\DoxyCodeLine{197   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.erase(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}});}
-\DoxyCodeLine{198 \}}
+\DoxyCodeLine{196                                                               \{}
+\DoxyCodeLine{197   \textcolor{comment}{//Es posiciona un iterador apuntant a la posició de l'id demanat.}}
+\DoxyCodeLine{198   map<string,map<string,double>>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{199   \textcolor{comment}{//Es posiciona un iterador apuntant a la primera posició del mapa de distancies.}}
+\DoxyCodeLine{200   \textcolor{comment}{//Inv: Farà tantes iteracions fins que l'iterador sigui igual al primer que hem buscat. Així ens}}
+\DoxyCodeLine{201   \textcolor{comment}{//estalviem bucles innecessaris. Aquest bucle elimina la especie demanada del map interior.}}
+\DoxyCodeLine{202   \textcolor{keywordflow}{for} (map<\textcolor{keywordtype}{string},map<string,double>>::iterator it2 = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.begin(); it2 != \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}; ++it2) \{}
+\DoxyCodeLine{203       it2-\/>second.erase(it2-\/>second.find(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{204     \}}
+\DoxyCodeLine{205   \textcolor{comment}{//Eliminem la especie del mapa gran de la taula de distancies.}}
+\DoxyCodeLine{206   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.erase(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}});}
+\DoxyCodeLine{207 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_a90a082e134d49bc8cee834b4ff5d0e8b}\label{class_cjt__especies_a90a082e134d49bc8cee834b4ff5d0e8b}} 
@@ -147,44 +149,44 @@ S\textquotesingle{}ha actualitzat la taula.
 \end{DoxyPostcond}
 
 
-Definició a la línia 202 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 211 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{202                                                               \{}
-\DoxyCodeLine{203   \textcolor{comment}{//Es posiciona un iterador apuntant a la taula d'especies, a la posició on esta el id demanat.}}
-\DoxyCodeLine{204   map<string,Especie>::const\_iterator esp = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{205   \textcolor{comment}{//Es crea un map auxiliar on s'aniran ficant les distancies.}}
-\DoxyCodeLine{206   map<string, double> aux;}
-\DoxyCodeLine{207   \textcolor{comment}{//Inv: Recorregut del mapa, de principi a final. }}
-\DoxyCodeLine{208   \textcolor{keywordflow}{for} (map<string,Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.begin(); \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end(); ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}) \{}
-\DoxyCodeLine{209     map<string,map<string,double>>::iterator itt = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first);}
-\DoxyCodeLine{210     \textcolor{comment}{//Calcula la distancia entre dues especies, la que entra pel parametre explícit}}
-\DoxyCodeLine{211     \textcolor{comment}{//i la que apunta el iterador.}}
-\DoxyCodeLine{212     \textcolor{keywordtype}{double} x = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.distancia(esp-\/>second);}
-\DoxyCodeLine{213     \textcolor{comment}{//If per fer les operacions si el identificador està a la part baixa}}
-\DoxyCodeLine{214     \textcolor{comment}{// i per tant només es fica una distancia al map interior.}}
-\DoxyCodeLine{215     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} > \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first) \{}
-\DoxyCodeLine{216       itt-\/>second.insert(make\_pair(\textcolor{keywordtype}{id}, x));}
-\DoxyCodeLine{217     \}}
-\DoxyCodeLine{218     \textcolor{comment}{//If per fer les operacions si l'identificador està a la part alta i s'ha}}
-\DoxyCodeLine{219     \textcolor{comment}{//de crear un nou map amb totes les altres especies.}}
-\DoxyCodeLine{220     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (id < it-\/>first) \{}
-\DoxyCodeLine{221       aux.insert(make\_pair(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first, x));}
-\DoxyCodeLine{222     \}}
-\DoxyCodeLine{223       }
-\DoxyCodeLine{224   \}}
-\DoxyCodeLine{225   \textcolor{comment}{//Finalment insertem el mapa a la taula de distancies.}}
-\DoxyCodeLine{226   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.insert(make\_pair(\textcolor{keywordtype}{id}, aux));}
-\DoxyCodeLine{227 }
-\DoxyCodeLine{228 \}}
+\DoxyCodeLine{211                                                               \{}
+\DoxyCodeLine{212   \textcolor{comment}{//Es posiciona un iterador apuntant a la taula d'especies, a la posició on esta el id demanat.}}
+\DoxyCodeLine{213   map<string,Especie>::const\_iterator esp = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{214   \textcolor{comment}{//Es crea un map auxiliar on s'aniran ficant les distancies.}}
+\DoxyCodeLine{215   map<string, double> aux;}
+\DoxyCodeLine{216   \textcolor{comment}{//Inv: Recorregut del mapa, de principi a final. }}
+\DoxyCodeLine{217   \textcolor{keywordflow}{for} (map<string,Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.begin(); \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end(); ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}) \{}
+\DoxyCodeLine{218     map<string,map<string,double>>::iterator itt = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first);}
+\DoxyCodeLine{219     \textcolor{comment}{//Calcula la distancia entre dues especies, la que entra pel parametre explícit}}
+\DoxyCodeLine{220     \textcolor{comment}{//i la que apunta el iterador.}}
+\DoxyCodeLine{221     \textcolor{keywordtype}{double} x = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.distancia(esp-\/>second);}
+\DoxyCodeLine{222     \textcolor{comment}{//If per fer les operacions si el identificador està a la part baixa}}
+\DoxyCodeLine{223     \textcolor{comment}{// i per tant només es fica una distancia al map interior.}}
+\DoxyCodeLine{224     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} > \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first) \{}
+\DoxyCodeLine{225       itt-\/>second.insert(make\_pair(\textcolor{keywordtype}{id}, x));}
+\DoxyCodeLine{226     \}}
+\DoxyCodeLine{227     \textcolor{comment}{//If per fer les operacions si l'identificador està a la part alta i s'ha}}
+\DoxyCodeLine{228     \textcolor{comment}{//de crear un nou map amb totes les altres especies.}}
+\DoxyCodeLine{229     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (id < it-\/>first) \{}
+\DoxyCodeLine{230       aux.insert(make\_pair(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first, x));}
+\DoxyCodeLine{231     \}}
+\DoxyCodeLine{232       }
+\DoxyCodeLine{233   \}}
+\DoxyCodeLine{234   \textcolor{comment}{//Finalment insertem el mapa a la taula de distancies.}}
+\DoxyCodeLine{235   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.insert(make\_pair(\textcolor{keywordtype}{id}, aux));}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}\label{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}} 
+\mbox{\Hypertarget{class_cjt__especies_a6413c062ece1d559a050bac7a6d02fc9}\label{class_cjt__especies_a6413c062ece1d559a050bac7a6d02fc9}} 
 \index{Cjt\_especies@{Cjt\_especies}!crea\_especie@{crea\_especie}}
 \index{crea\_especie@{crea\_especie}!Cjt\_especies@{Cjt\_especies}}
 \doxysubsubsection{\texorpdfstring{crea\_especie()}{crea\_especie()}}
-{\footnotesize\ttfamily void Cjt\+\_\+especies\+::crea\+\_\+especie (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{gen }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::crea\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id,  }\item[{const string \&}]{gen }\end{DoxyParamCaption})}
 
 
 
@@ -198,22 +200,27 @@ S\textquotesingle{}ha creat una espècie.
 \end{DoxyPostcond}
 
 
-Definició a la línia 26 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 23 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{26                                                     \{}
-\DoxyCodeLine{27       \mbox{\hyperlink{class_especie}{Especie}} e(gen);}
-\DoxyCodeLine{28       \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.insert(make\_pair(\textcolor{keywordtype}{id},e));}
-\DoxyCodeLine{29       \mbox{\hyperlink{class_cjt__especies_a90a082e134d49bc8cee834b4ff5d0e8b}{afegeix\_especie\_tabla\_dist}}(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{30 \}}
+\DoxyCodeLine{23                                                                   \{}
+\DoxyCodeLine{24 \textcolor{comment}{// Entren dos paràmetres explícits. El primer paràmetre és la clau}}
+\DoxyCodeLine{25 \textcolor{comment}{// del mapa. El valor d'aquesta clau serà una especie la qual es genera}}
+\DoxyCodeLine{26 \textcolor{comment}{// amb la constructora d'especie mitjançant un gen. A més, aquesta especie}}
+\DoxyCodeLine{27 \textcolor{comment}{// s'introdueix a la taula de distancies mitjançant el mètode afegeix}}
+\DoxyCodeLine{28 \textcolor{comment}{// especie tabla dist.}}
+\DoxyCodeLine{29       \mbox{\hyperlink{class_especie}{Especie}} e(gen);}
+\DoxyCodeLine{30       \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.insert(make\_pair(\textcolor{keywordtype}{id},e));}
+\DoxyCodeLine{31       \mbox{\hyperlink{class_cjt__especies_a90a082e134d49bc8cee834b4ff5d0e8b}{afegeix\_especie\_tabla\_dist}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{32 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_cjt__especies_a869c218f09aa589d21f497196bb79e67}\label{class_cjt__especies_a869c218f09aa589d21f497196bb79e67}} 
+\mbox{\Hypertarget{class_cjt__especies_a51059c15bd4c38ff5f21dbb532befa11}\label{class_cjt__especies_a51059c15bd4c38ff5f21dbb532befa11}} 
 \index{Cjt\_especies@{Cjt\_especies}!elimina\_especie@{elimina\_especie}}
 \index{elimina\_especie@{elimina\_especie}!Cjt\_especies@{Cjt\_especies}}
 \doxysubsubsection{\texorpdfstring{elimina\_especie()}{elimina\_especie()}}
-{\footnotesize\ttfamily void Cjt\+\_\+especies\+::elimina\+\_\+especie (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::elimina\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})}
 
 
 
@@ -232,22 +239,28 @@ La espècie s\textquotesingle{}ha eliminat del paràmetre implícit.
 \end{DoxyParams}
 
 
-Definició a la línia 41 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 38 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{41                                             \{}
-\DoxyCodeLine{42     map<string, Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{43     \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.erase(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}});}
-\DoxyCodeLine{44     \mbox{\hyperlink{class_cjt__especies_aa9f562fc745558783a3634c38df07ad5}{Cjt\_especies::elimina\_especie\_tabla\_dist}}(\textcolor{keywordtype}{id});     }
-\DoxyCodeLine{45 \}}
+\DoxyCodeLine{38                                                    \{}
+\DoxyCodeLine{39 \textcolor{comment}{// S'elimina la espècie indicada pel paràmetre explícit.}}
+\DoxyCodeLine{40 \textcolor{comment}{// Es busca la espècie mitjaçant un iterador del mapa d'especies}}
+\DoxyCodeLine{41 \textcolor{comment}{// i s'elimina la espècie indicada.}}
+\DoxyCodeLine{42 \textcolor{comment}{// Observació: Aquesta funció no comprova si existeix una espècie }}
+\DoxyCodeLine{43 \textcolor{comment}{// o no, per tant, s'ha de fer compravació prèvia amb la funció}}
+\DoxyCodeLine{44 \textcolor{comment}{// Cjt\_especie::existe\_especie(id).}}
+\DoxyCodeLine{45     map<string, Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.erase(\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}});}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_cjt__especies_aa9f562fc745558783a3634c38df07ad5}{Cjt\_especies::elimina\_especie\_tabla\_dist}}(\textcolor{keywordtype}{id});     }
+\DoxyCodeLine{48 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}\label{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}} 
+\mbox{\Hypertarget{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}\label{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}} 
 \index{Cjt\_especies@{Cjt\_especies}!existeix\_especie@{existeix\_especie}}
 \index{existeix\_especie@{existeix\_especie}!Cjt\_especies@{Cjt\_especies}}
 \doxysubsubsection{\texorpdfstring{existeix\_especie()}{existeix\_especie()}}
-{\footnotesize\ttfamily bool Cjt\+\_\+especies\+::existeix\+\_\+especie (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Cjt\+\_\+especies\+::existeix\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
 
 
 
@@ -273,11 +286,15 @@ Definició a la línia 51 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{51                                                    \{}
-\DoxyCodeLine{52   map<string, Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{53   \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{54   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{55 \}}
+\DoxyCodeLine{51                                                           \{}
+\DoxyCodeLine{52 \textcolor{comment}{// Es consulta si existeix la espècie dins el map d'especies.}}
+\DoxyCodeLine{53 \textcolor{comment}{// Es busca la especie mitjançant un iterador. En el cas que}}
+\DoxyCodeLine{54 \textcolor{comment}{// l'iterador apuntes al final de mapa, la especie no existeix }}
+\DoxyCodeLine{55 \textcolor{comment}{// i es retorna false, en cas contrari retorna true.}}
+\DoxyCodeLine{56   map<string, Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{57   \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{58   \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{59 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}\label{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}} 
@@ -308,32 +325,47 @@ double
 \end{DoxyReturn}
 
 
-Definició a la línia 73 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 62 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{73                                                                                  \{}
-\DoxyCodeLine{74   \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{Cjt\_especies::existeix\_especie}}(\textcolor{keywordtype}{id}) and not \mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{Cjt\_especies::existeix\_especie}}(id2)) \textcolor{keywordflow}{return} -\/1; }
-\DoxyCodeLine{75   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{Cjt\_especies::existeix\_especie}}(\textcolor{keywordtype}{id})) \textcolor{keywordflow}{return} -\/2;}
-\DoxyCodeLine{76   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{Cjt\_especies::existeix\_especie}}(id2)) \textcolor{keywordflow}{return} -\/3;}
-\DoxyCodeLine{77   \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{78       map<string,map<string,double>>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{79       map<string,double>::const\_iterator it2 = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.find(id2);}
-\DoxyCodeLine{80       \textcolor{keywordflow}{if} (it2 == \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.end()) \{}
-\DoxyCodeLine{81         \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(id2);}
-\DoxyCodeLine{82         it2 = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{83         \textcolor{keywordflow}{return} it2-\/>second;}
-\DoxyCodeLine{84       \}}
-\DoxyCodeLine{85       \textcolor{keywordflow}{return} it2-\/>second;}
-\DoxyCodeLine{86     \}}
-\DoxyCodeLine{87 \}}
+\DoxyCodeLine{62                                                                                  \{}
+\DoxyCodeLine{63 \textcolor{comment}{// Retorna la distància entre dues especies.}}
+\DoxyCodeLine{64 \textcolor{comment}{// Es fan comprovación abans de consultar-\/les. En el cas}}
+\DoxyCodeLine{65 \textcolor{comment}{// que no existeixin les dues espècies es retorna un -\/1.}}
+\DoxyCodeLine{66 \textcolor{comment}{// Si no existeix només la primera espècie retorna un -\/2.}}
+\DoxyCodeLine{67 \textcolor{comment}{// Si no existeix només la segona espècie retorna un -\/3.}}
+\DoxyCodeLine{68 \textcolor{comment}{// En cas que les dues especies existeixin, és fan unes comprovacions:}}
+\DoxyCodeLine{69 \textcolor{comment}{//    Com el map només calcula les distàncies necessaries ja que }}
+\DoxyCodeLine{70 \textcolor{comment}{//    Distancia (a,b) = Distancia (b,a), el map ordena les distancies}}
+\DoxyCodeLine{71 \textcolor{comment}{//    per ordre alfabètic amb la seva clau. Per tant hem de tenir en }}
+\DoxyCodeLine{72 \textcolor{comment}{//    compte que si es consulta distancia c a. No podem consultar de }}
+\DoxyCodeLine{73 \textcolor{comment}{//    primeres. Per tant, amb dos iteradors mirem si apuntent al final,}}
+\DoxyCodeLine{74 \textcolor{comment}{//    En el cas que passés, cambien d'ordre els iteradors i aquests}}
+\DoxyCodeLine{75 \textcolor{comment}{//    accedeixen a la posició on hi ha la distància demanada.}}
+\DoxyCodeLine{76 \textcolor{comment}{// Observació: Aquesta funció no calcula les distàncies, sinó consulta}}
+\DoxyCodeLine{77 \textcolor{comment}{// el mapa de distàncies. }}
+\DoxyCodeLine{78   \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{Cjt\_especies::existeix\_especie}}(\textcolor{keywordtype}{id}) and not \mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{Cjt\_especies::existeix\_especie}}(id2)) \textcolor{keywordflow}{return} -\/1; }
+\DoxyCodeLine{79   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{Cjt\_especies::existeix\_especie}}(\textcolor{keywordtype}{id})) \textcolor{keywordflow}{return} -\/2;}
+\DoxyCodeLine{80   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not \mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{Cjt\_especies::existeix\_especie}}(id2)) \textcolor{keywordflow}{return} -\/3;}
+\DoxyCodeLine{81   \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{82       map<string,map<string,double>>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{83       map<string,double>::const\_iterator it2 = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.find(id2);}
+\DoxyCodeLine{84       \textcolor{keywordflow}{if} (it2 == \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.end()) \{}
+\DoxyCodeLine{85         \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.find(id2);}
+\DoxyCodeLine{86         it2 = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{87         \textcolor{keywordflow}{return} it2-\/>second;}
+\DoxyCodeLine{88       \}}
+\DoxyCodeLine{89       \textcolor{keywordflow}{return} it2-\/>second;}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_cjt__especies_a3a1dc5f705c2271ee9c1dfd14ac6822d}\label{class_cjt__especies_a3a1dc5f705c2271ee9c1dfd14ac6822d}} 
+\mbox{\Hypertarget{class_cjt__especies_a57ed04e290bf802050d19ca1956c2663}\label{class_cjt__especies_a57ed04e290bf802050d19ca1956c2663}} 
 \index{Cjt\_especies@{Cjt\_especies}!obtener\_gen@{obtener\_gen}}
 \index{obtener\_gen@{obtener\_gen}!Cjt\_especies@{Cjt\_especies}}
 \doxysubsubsection{\texorpdfstring{obtener\_gen()}{obtener\_gen()}}
-{\footnotesize\ttfamily void Cjt\+\_\+especies\+::obtener\+\_\+gen (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::obtener\+\_\+gen (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
 
 
 
@@ -355,15 +387,18 @@ string
 \end{DoxyReturn}
 
 
-Definició a la línia 93 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 95 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{93                                               \{}
-\DoxyCodeLine{94   map<string, Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{95   cout << \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.consultar\_gen() << endl;}
-\DoxyCodeLine{96   }
-\DoxyCodeLine{97 \}}
+\DoxyCodeLine{95                                                      \{}
+\DoxyCodeLine{96 \textcolor{comment}{// Es consulta el gen d'una especie mitjançant una }}
+\DoxyCodeLine{97 \textcolor{comment}{// funció de la classe Especie i un iterador.}}
+\DoxyCodeLine{98 \textcolor{comment}{// Observació: S'ha de comprovar prèviament que aquesta especie existeix.}}
+\DoxyCodeLine{99   map<string, Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{100   cout << \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.consultar\_gen() << endl;}
+\DoxyCodeLine{101   }
+\DoxyCodeLine{102 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_a44c59750dd9223ea12f954247fd11504}\label{class_cjt__especies_a44c59750dd9223ea12f954247fd11504}} 
@@ -384,14 +419,18 @@ El booleà retorna cert si apunta al final del mapa.
 \end{DoxyPostcond}
 
 
-Definició a la línia 103 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 105 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{103                          \{}
-\DoxyCodeLine{104   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} == \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end();}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106 \}}
+\DoxyCodeLine{105                          \{}
+\DoxyCodeLine{106 \textcolor{comment}{// Es fa comprovacions si l'iterador de l'àmbit}}
+\DoxyCodeLine{107 \textcolor{comment}{// privat apunta al final del conjunt d'especies.}}
+\DoxyCodeLine{108 \textcolor{comment}{// Retorna cert si apunta al final, en cas contrari}}
+\DoxyCodeLine{109 \textcolor{comment}{// retorna fals.}}
+\DoxyCodeLine{110   \textcolor{keywordflow}{return} \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} == \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end();}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_aedcfb0e423c5c02653c8a5d362cfa784}\label{class_cjt__especies_aedcfb0e423c5c02653c8a5d362cfa784}} 
@@ -412,13 +451,16 @@ El iterador apunta al primer element del mapa.
 \end{DoxyPostcond}
 
 
-Definició a la línia 111 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 115 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{111                           \{}
-\DoxyCodeLine{112   \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.begin();}
-\DoxyCodeLine{113 \}}
+\DoxyCodeLine{115                           \{}
+\DoxyCodeLine{116 \textcolor{comment}{// Es posiciona l'iterador de l'ambit}}
+\DoxyCodeLine{117 \textcolor{comment}{// privat apuntant a la primera posició }}
+\DoxyCodeLine{118 \textcolor{comment}{// del mapa d'especies.}}
+\DoxyCodeLine{119   \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.begin();}
+\DoxyCodeLine{120 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_a2cd05fceb53ec9604eb4dcb6abea1c4d}\label{class_cjt__especies_a2cd05fceb53ec9604eb4dcb6abea1c4d}} 
@@ -439,13 +481,16 @@ El paràmetre explícit passa a tenir la informació del element apuntat pel ite
 \end{DoxyPostcond}
 
 
-Definició a la línia 118 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 123 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{118                                      \{}
-\DoxyCodeLine{119   act = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first;}
-\DoxyCodeLine{120 \}}
+\DoxyCodeLine{123                                      \{}
+\DoxyCodeLine{124 \textcolor{comment}{// Es modifica el string del paràmetre }}
+\DoxyCodeLine{125 \textcolor{comment}{// explícit i se li adjudica el string}}
+\DoxyCodeLine{126 \textcolor{comment}{// al qual apunta el iterador.}}
+\DoxyCodeLine{127   act = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first;}
+\DoxyCodeLine{128 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_acc3beaf9ea5a96f33296f5cc15b8b5a2}\label{class_cjt__especies_acc3beaf9ea5a96f33296f5cc15b8b5a2}} 
@@ -466,16 +511,21 @@ El iterador del mapa d\textquotesingle{}especies apunta una posició endavant.
 \end{DoxyPostcond}
 
 
-Definició a la línia 128 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 132 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{128                           \{}
-\DoxyCodeLine{129   \textcolor{keywordflow}{if} (not \textcolor{keyword}{final}())\{}
-\DoxyCodeLine{130         ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{Cjt\_especies::it}};}
-\DoxyCodeLine{131 }
-\DoxyCodeLine{132   \}}
-\DoxyCodeLine{133 \}}
+\DoxyCodeLine{132                           \{}
+\DoxyCodeLine{133 \textcolor{comment}{// Es posiciona l'iterador de l'ambit}}
+\DoxyCodeLine{134 \textcolor{comment}{// privat apuntant a una posició més endavant }}
+\DoxyCodeLine{135 \textcolor{comment}{// de la qua apuntava l'iterador abans.}}
+\DoxyCodeLine{136 \textcolor{comment}{// Observació: S'avançarà l'iterador sempre}}
+\DoxyCodeLine{137 \textcolor{comment}{// i quan l'iterador no estigui apuntant al final.}}
+\DoxyCodeLine{138   \textcolor{keywordflow}{if} (not \textcolor{keyword}{final}())\{}
+\DoxyCodeLine{139         ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{Cjt\_especies::it}};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141   \}}
+\DoxyCodeLine{142 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_a1f554d3f098484c20372c43b844752db}\label{class_cjt__especies_a1f554d3f098484c20372c43b844752db}} 
@@ -496,27 +546,27 @@ El paràmetre implícit conté un conjunt d\textquotesingle{}especies llegits pe
 \end{DoxyPostcond}
 
 
-Definició a la línia 139 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 148 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{139                                     \{}
-\DoxyCodeLine{140   \textcolor{comment}{//La condició de si es llegeix un nou conjunt}}
-\DoxyCodeLine{141   \textcolor{comment}{//d'especies es que es descarta el contingut previ.}}
-\DoxyCodeLine{142   \textcolor{comment}{//Per tant fem clear dels dos mapes.}}
-\DoxyCodeLine{143   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.clear();}
-\DoxyCodeLine{144   \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.clear();}
-\DoxyCodeLine{145   \textcolor{comment}{//int que indica el nombre d'especies que es volen afegir.}}
-\DoxyCodeLine{146   \textcolor{keywordtype}{int} n;}
-\DoxyCodeLine{147   cin >> n;}
-\DoxyCodeLine{148   \textcolor{comment}{//Inv: el bucle for mai farà més de n iteracions. }}
-\DoxyCodeLine{149   \textcolor{comment}{//A cada iteració farà una crida a la funció crea especie.}}
-\DoxyCodeLine{150   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
-\DoxyCodeLine{151     \textcolor{keywordtype}{string} id, gen;}
-\DoxyCodeLine{152     cin >> \textcolor{keywordtype}{id} >> gen;}
-\DoxyCodeLine{153     \mbox{\hyperlink{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}{Cjt\_especies::crea\_especie}}(\textcolor{keywordtype}{id},gen);}
-\DoxyCodeLine{154   \}}
-\DoxyCodeLine{155 \}}
+\DoxyCodeLine{148                                     \{}
+\DoxyCodeLine{149   \textcolor{comment}{//La condició de si es llegeix un nou conjunt}}
+\DoxyCodeLine{150   \textcolor{comment}{//d'especies es que es descarta el contingut previ.}}
+\DoxyCodeLine{151   \textcolor{comment}{//Per tant fem clear dels dos mapes.}}
+\DoxyCodeLine{152   \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.clear();}
+\DoxyCodeLine{153   \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.clear();}
+\DoxyCodeLine{154   \textcolor{comment}{//int que indica el nombre d'especies que es volen afegir.}}
+\DoxyCodeLine{155   \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{156   cin >> n;}
+\DoxyCodeLine{157   \textcolor{comment}{//Inv: el bucle for mai farà més de n iteracions. }}
+\DoxyCodeLine{158   \textcolor{comment}{//A cada iteració farà una crida a la funció crea especie.}}
+\DoxyCodeLine{159   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{160     \textcolor{keywordtype}{string} id, gen;}
+\DoxyCodeLine{161     cin >> \textcolor{keywordtype}{id} >> gen;}
+\DoxyCodeLine{162     \mbox{\hyperlink{class_cjt__especies_a6413c062ece1d559a050bac7a6d02fc9}{Cjt\_especies::crea\_especie}}(\textcolor{keywordtype}{id},gen);}
+\DoxyCodeLine{163   \}}
+\DoxyCodeLine{164 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}\label{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}} 
@@ -537,19 +587,19 @@ S\textquotesingle{}ha escrit pel canal estàndar de sortida les espècies del pa
 \end{DoxyPostcond}
 
 
-Definició a la línia 158 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 167 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{158                                               \{}
-\DoxyCodeLine{159   \textcolor{comment}{//Inv: És situa un iterador apuntant a la primera posició del}}
-\DoxyCodeLine{160   \textcolor{comment}{//mapa d'especies. Avançarà una iteració fins que el punter apunti al final.}}
-\DoxyCodeLine{161   \textcolor{comment}{//A cada iteració s'impreix una especie.}}
-\DoxyCodeLine{162   \textcolor{keywordflow}{for} (map<string,Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.begin(); \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end(); ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}) \{}
-\DoxyCodeLine{163     cout << \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first << \textcolor{stringliteral}{" "};}
-\DoxyCodeLine{164     \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.escriure();}
-\DoxyCodeLine{165   \}}
-\DoxyCodeLine{166 \}}
+\DoxyCodeLine{167                                               \{}
+\DoxyCodeLine{168   \textcolor{comment}{//Inv: És situa un iterador apuntant a la primera posició del}}
+\DoxyCodeLine{169   \textcolor{comment}{//mapa d'especies. Avançarà una iteració fins que el punter apunti al final.}}
+\DoxyCodeLine{170   \textcolor{comment}{//A cada iteració s'impreix una especie.}}
+\DoxyCodeLine{171   \textcolor{keywordflow}{for} (map<string,Especie>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.begin(); \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a89de09003e9a86f62766d89ed22d599f}{Cjt\_especies::cjt\_especies}}.end(); ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}) \{}
+\DoxyCodeLine{172     cout << \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{173     \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.escriure();}
+\DoxyCodeLine{174   \}}
+\DoxyCodeLine{175 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}\label{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}} 
@@ -570,25 +620,25 @@ S\textquotesingle{}ha imprès la taula de distàncies.
 \end{DoxyPostcond}
 
 
-Definició a la línia 169 del fitxer Cjt\+\_\+especies.\+cc.
+Definició a la línia 178 del fitxer Cjt\+\_\+especies.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{169                                           \{}
-\DoxyCodeLine{170   \textcolor{comment}{//Inv: És situa un iterador apuntant a la primera posició del}}
-\DoxyCodeLine{171   \textcolor{comment}{//mapa de distancies. Avançarà una posició fins que el punter apunti al final.}}
-\DoxyCodeLine{172   \textcolor{comment}{//A cada iteració s'impreix un identificador de especie i s'executa un segon bucle.}}
-\DoxyCodeLine{173   \textcolor{keywordflow}{for}(map<\textcolor{keywordtype}{string},map<string,double>>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.begin(); \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.end(); ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}) \{}
-\DoxyCodeLine{174     cout << \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first << \textcolor{stringliteral}{":"};}
-\DoxyCodeLine{175     \textcolor{comment}{//Inv: És situa un iterador apuntant a la primera posició del}}
-\DoxyCodeLine{176     \textcolor{comment}{//map interior del map de distancies d'especies. Avançarà una posició fins que el punter apunti al final.}}
-\DoxyCodeLine{177     \textcolor{comment}{//A cada iteració s'impreix un identificador d'especie del map interior i la distancia respecte les dues especies.}}
-\DoxyCodeLine{178     \textcolor{keywordflow}{for} (map<string,double>::const\_iterator it2 = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.begin(); it2 != \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.end(); ++it2) \{}
-\DoxyCodeLine{179         cout << \textcolor{stringliteral}{" "} << it2-\/>first << \textcolor{stringliteral}{" ("} << it2-\/>second << \textcolor{stringliteral}{")"}; }
-\DoxyCodeLine{180     \}}
-\DoxyCodeLine{181     cout << endl;}
-\DoxyCodeLine{182   \}}
-\DoxyCodeLine{183 \}}
+\DoxyCodeLine{178                                           \{}
+\DoxyCodeLine{179   \textcolor{comment}{//Inv: És situa un iterador apuntant a la primera posició del}}
+\DoxyCodeLine{180   \textcolor{comment}{//mapa de distancies. Avançarà una posició fins que el punter apunti al final.}}
+\DoxyCodeLine{181   \textcolor{comment}{//A cada iteració s'impreix un identificador de especie i s'executa un segon bucle.}}
+\DoxyCodeLine{182   \textcolor{keywordflow}{for}(map<\textcolor{keywordtype}{string},map<string,double>>::const\_iterator \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} = \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.begin(); \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}} != \mbox{\hyperlink{class_cjt__especies_a11b8753b208b06eac1585faafa8d7bae}{Cjt\_especies::taula\_distancies}}.end(); ++\mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}) \{}
+\DoxyCodeLine{183     cout << \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>first << \textcolor{stringliteral}{":"};}
+\DoxyCodeLine{184     \textcolor{comment}{//Inv: És situa un iterador apuntant a la primera posició del}}
+\DoxyCodeLine{185     \textcolor{comment}{//map interior del map de distancies d'especies. Avançarà una posició fins que el punter apunti al final.}}
+\DoxyCodeLine{186     \textcolor{comment}{//A cada iteració s'impreix un identificador d'especie del map interior i la distancia respecte les dues especies.}}
+\DoxyCodeLine{187     \textcolor{keywordflow}{for} (map<string,double>::const\_iterator it2 = \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.begin(); it2 != \mbox{\hyperlink{class_cjt__especies_a52fed7408be24ac0dc3462b24ddb06a0}{it}}-\/>second.end(); ++it2) \{}
+\DoxyCodeLine{188         cout << \textcolor{stringliteral}{" "} << it2-\/>first << \textcolor{stringliteral}{" ("} << it2-\/>second << \textcolor{stringliteral}{")"}; }
+\DoxyCodeLine{189     \}}
+\DoxyCodeLine{190     cout << endl;}
+\DoxyCodeLine{191   \}}
+\DoxyCodeLine{192 \}}
 
 \end{DoxyCode}
 

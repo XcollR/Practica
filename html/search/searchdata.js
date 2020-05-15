@@ -4,8 +4,7 @@ var indexSectionsWithContent =
   1: "ce",
   2: "cep",
   3: "acdefiklmost",
-  4: "cgikmt",
-  5: "c"
+  4: "cgikmt"
 };
 
 var indexSectionNames =
@@ -14,8 +13,7 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables",
-  5: "defines"
+  4: "variables"
 };
 
 var indexSectionLabels =
@@ -24,7 +22,6 @@ var indexSectionLabels =
   1: "Classes",
   2: "Fitxers",
   3: "Funcions",
-  4: "Variables",
-  5: "Definicions"
+  4: "Variables"
 };
 

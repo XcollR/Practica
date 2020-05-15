@@ -65,9 +65,9 @@ Definició a la línia 16 del fitxer program.\+cc.
 \DoxyCodeLine{34     \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"crea\_especie"}) \{}
 \DoxyCodeLine{35       cin >> \textcolor{keywordtype}{id} >> gen; \textcolor{comment}{// El identificador de la especie amb el seu gen.}}
 \DoxyCodeLine{36       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" "} << gen << endl;}
-\DoxyCodeLine{37       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" ya existe."} << endl; \textcolor{comment}{// En cas que la especie ja existeixi dins el conjunt salta un missatge d'error.}}
+\DoxyCodeLine{37       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" ya existe."} << endl; \textcolor{comment}{// En cas que la especie ja existeixi dins el conjunt salta un missatge d'error.}}
 \DoxyCodeLine{38       \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{39       conjunt.\mbox{\hyperlink{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}{crea\_especie}}(\textcolor{keywordtype}{id},gen);}
+\DoxyCodeLine{39       conjunt.\mbox{\hyperlink{class_cjt__especies_a6413c062ece1d559a050bac7a6d02fc9}{crea\_especie}}(\textcolor{keywordtype}{id},gen);}
 \DoxyCodeLine{40       \}}
 \DoxyCodeLine{41       cout << endl;}
 \DoxyCodeLine{42     \}}
@@ -75,7 +75,7 @@ Definició a la línia 16 del fitxer program.\+cc.
 \DoxyCodeLine{44     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"obtener\_gen"}) \{}
 \DoxyCodeLine{45       cin >> id; \textcolor{comment}{// El identificador de la especie que es vol consultar el gen.}}
 \DoxyCodeLine{46       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
-\DoxyCodeLine{47       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) conjunt.\mbox{\hyperlink{class_cjt__especies_a3a1dc5f705c2271ee9c1dfd14ac6822d}{obtener\_gen}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{47       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{existeix\_especie}}(\textcolor{keywordtype}{id})) conjunt.\mbox{\hyperlink{class_cjt__especies_a57ed04e290bf802050d19ca1956c2663}{obtener\_gen}}(\textcolor{keywordtype}{id});}
 \DoxyCodeLine{48       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl; \textcolor{comment}{// En cas que la especie no existeix dins el conjunt, salta un missatge d'error.}}
 \DoxyCodeLine{49       cout << endl;}
 \DoxyCodeLine{50 }
@@ -95,14 +95,14 @@ Definició a la línia 16 del fitxer program.\+cc.
 \DoxyCodeLine{64     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"elimina\_especie"}) \{}
 \DoxyCodeLine{65       cin >> id; \textcolor{comment}{// El identificador de la especie la qual es vol eliminar.}}
 \DoxyCodeLine{66       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
-\DoxyCodeLine{67       \textcolor{keywordflow}{if} (not conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl; \textcolor{comment}{// Si la especie no existeix dins el conjunt, salta un missatge d'error.}}
-\DoxyCodeLine{68       \textcolor{keywordflow}{else} conjunt.\mbox{\hyperlink{class_cjt__especies_a869c218f09aa589d21f497196bb79e67}{elimina\_especie}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{67       \textcolor{keywordflow}{if} (not conjunt.\mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl; \textcolor{comment}{// Si la especie no existeix dins el conjunt, salta un missatge d'error.}}
+\DoxyCodeLine{68       \textcolor{keywordflow}{else} conjunt.\mbox{\hyperlink{class_cjt__especies_a51059c15bd4c38ff5f21dbb532befa11}{elimina\_especie}}(\textcolor{keywordtype}{id});}
 \DoxyCodeLine{69       cout << endl;}
 \DoxyCodeLine{70     \}}
 \DoxyCodeLine{71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"existe\_especie"}) \{}
 \DoxyCodeLine{72       cin >> id; \textcolor{comment}{// El identificador de la especie la qual es vol consultar si existeix.}}
 \DoxyCodeLine{73       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} <<endl;}
-\DoxyCodeLine{74       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"SI"} << endl;}
+\DoxyCodeLine{74       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"SI"} << endl;}
 \DoxyCodeLine{75       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"NO"} << endl;}
 \DoxyCodeLine{76       cout << endl;}
 \DoxyCodeLine{77     \}}

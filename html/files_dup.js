@@ -1,7 +1,9 @@
 var files_dup =
 [
     [ "Cjt_clusters.cc", "_cjt__clusters_8cc.html", null ],
-    [ "Cjt_clusters.hh", "_cjt__clusters_8hh.html", "_cjt__clusters_8hh" ],
+    [ "Cjt_clusters.hh", "_cjt__clusters_8hh.html", [
+      [ "Cjt_clusters", "class_cjt__clusters.html", "class_cjt__clusters" ]
+    ] ],
     [ "Cjt_especies.cc", "_cjt__especies_8cc.html", null ],
     [ "Cjt_especies.hh", "_cjt__especies_8hh.html", [
       [ "Cjt_especies", "class_cjt__especies.html", "class_cjt__especies" ]

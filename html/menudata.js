@@ -59,5 +59,4 @@ var menudata={children:[
 {text:"Llista dels Fitxers",url:"files.html"},
 {text:"Membres de Fitxers",url:"globals.html",children:[
 {text:"Tot",url:"globals.html"},
-{text:"Funcions",url:"globals_func.html"},
-{text:"Definicions",url:"globals_defs.html"}]}]}]}
+{text:"Funcions",url:"globals_func.html"}]}]}]}

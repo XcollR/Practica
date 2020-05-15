@@ -1,0 +1,5 @@
+<map id="Cjt_clusters::tabla_dist_clust" name="Cjt_clusters::tabla_dist_clust">
+<area shape="rect" id="node1" title="Imprimeix el cluster indicat." alt="" coords="5,5,141,47"/>
+<area shape="rect" id="node2" href="$class_cjt__especies.html#aa4191c64a5008de2272e0e3489aeb778" title="Consulta la distàncie entre dues espècies." alt="" coords="189,5,348,47"/>
+<area shape="rect" id="node3" href="$class_cjt__especies.html#a7fa2f303eb4e3065d87174a1c3e71942" title="Consulta si existeix la espècie indicada." alt="" coords="396,5,555,47"/>
+</map>

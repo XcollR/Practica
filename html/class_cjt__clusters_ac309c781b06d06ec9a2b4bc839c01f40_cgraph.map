@@ -1,0 +1,11 @@
+<map id="Cjt_clusters::inicialitza_clusters" name="Cjt_clusters::inicialitza_clusters">
+<area shape="rect" id="node1" title="Inicialitza els clusters del conjunt." alt="" coords="5,129,168,170"/>
+<area shape="rect" id="node2" href="$class_cjt__especies.html#a2cd05fceb53ec9604eb4dcb6abea1c4d" title="El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual." alt="" coords="220,5,369,32"/>
+<area shape="rect" id="node3" href="$class_cjt__especies.html#acc3beaf9ea5a96f33296f5cc15b8b5a2" title="Avança la posició del iterador en una posició;." alt="" coords="217,56,373,83"/>
+<area shape="rect" id="node4" href="$class_cjt__especies.html#a44c59750dd9223ea12f954247fd11504" title="Consulta si l&#39;iterador del mapa del conjunt d&#39;especies apunta al final d&#39;ell o no." alt="" coords="227,107,363,133"/>
+<area shape="rect" id="node5" href="$class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327" title="Imprimeix la taula de distàncies entre clusters." alt="" coords="216,158,373,199"/>
+<area shape="rect" id="node6" href="$class_cjt__especies.html#aedcfb0e423c5c02653c8a5d362cfa784" title="Posiciona l&#39;iterador del mapa del conjunt d&#39;especies apuntant al primer element." alt="" coords="223,224,366,251"/>
+<area shape="rect" id="node7" href="$class_cjt__clusters.html#a8298bacd14980c99c9558c72702174e8" title="Imprimeix el cluster indicat." alt="" coords="227,275,363,317"/>
+<area shape="rect" id="node8" href="$class_cjt__especies.html#aa4191c64a5008de2272e0e3489aeb778" title="Consulta la distàncie entre dues espècies." alt="" coords="421,275,580,317"/>
+<area shape="rect" id="node9" href="$class_cjt__especies.html#a7fa2f303eb4e3065d87174a1c3e71942" title="Consulta si existeix la espècie indicada." alt="" coords="628,275,787,317"/>
+</map>

@@ -1,4 +1,4 @@
-.TH "Especie" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic." \" -*- nroff -*-
+.TH "Especie" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .br
 .RI "Crea una especie sense identificador ni gen\&. "
 .ti -1c
-.RI "\fBEspecie\fP (string gen1)"
+.RI "\fBEspecie\fP (const string &gen1)"
 .br
 .RI "Crea una especie amb el gen i l'identificador indicat\&. "
 .ti -1c
@@ -101,7 +101,7 @@ Definició a la línia 12 del fitxer Especie\&.cc\&.
 14   Especie::k_meros = map<string, int> ();
 15 }
 .fi
-.SS "Especie::Especie (string gen1)"
+.SS "Especie::Especie (const string & gen1)"
 
 .PP
 Crea una especie amb el gen i l'identificador indicat\&. 
@@ -121,7 +121,7 @@ El resultat es una especie amb identificador, gen i kmeros\&.
 Definició a la línia 18 del fitxer Especie\&.cc\&.
 .PP
 .nf
-18                             {
+18                                    {
 19   Especie::gen = gen1;
 20   Especie::kmer();
 21 }
@@ -258,7 +258,7 @@ Definició a la línia 37 del fitxer Especie\&.cc\&.
 43 
 44   map<string,int>::const_iterator i = Especie::k_meros\&.begin(), k = esp\&.k_meros\&.begin();
 45   double unio = 0, interseccio = 0;
-46   while (i != k_meros\&.end() and k != esp\&.k_meros\&.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros\&.
+46   while (i != Especie::k_meros\&.end() and k != esp\&.k_meros\&.end()) { // Bucle While general per comparar i anar fent la interseccio/unió dels kmeros\&.
 47     if (i->first == k->first) {
 48       interseccio += min(i->second,k->second);
 49       unio +=  max(i->second, k->second);
@@ -277,7 +277,7 @@ Definició a la línia 37 del fitxer Especie\&.cc\&.
 62   // Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut
 63   // entra en aquest bucle\&.
 64   // Inv: Els elements de i estan ordenats segons la clau en ordre ascendent\&.
-65   while (i != k_meros\&.end()) {
+65   while (i != Especie::k_meros\&.end()) {
 66     unio += i->second;
 67     ++i;
 68   } 
@@ -338,4 +338,4 @@ Definició a la línia 37 del fitxer Especie\&.hh\&.
 
 .SH "Autor"
 .PP 
-Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. a partir del codi font\&.
+Generat automàticament per Doxygen per a Creació d'un arbre filogenètic\&. Xavier Coll Ribas a partir del codi font\&.
