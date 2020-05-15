@@ -40,110 +40,125 @@ El main del programa.
 
 
 
-Definició a la línia 15 del fitxer program.\+cc.
+Definició a la línia 16 del fitxer program.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{15            \{}
-\DoxyCodeLine{16   \textcolor{keywordtype}{int} k; \textcolor{comment}{// k del kmer;}}
-\DoxyCodeLine{17   cin >> k;}
-\DoxyCodeLine{18   }
-\DoxyCodeLine{19   \mbox{\hyperlink{class_cjt__especies}{Cjt\_especies}} conjunt;}
-\DoxyCodeLine{20   \mbox{\hyperlink{class_cjt__clusters}{Cjt\_clusters}} cjt\_clusters;}
-\DoxyCodeLine{21   \mbox{\hyperlink{class_especie}{Especie}} especie;}
-\DoxyCodeLine{22   especie.\mbox{\hyperlink{class_especie_a1d513b21daca76fa150dd1d62c590093}{set\_parametro}}(k);}
-\DoxyCodeLine{23   }
-\DoxyCodeLine{24   \textcolor{keywordtype}{string} opcio;}
-\DoxyCodeLine{25   cin >> opcio;}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27   \textcolor{keywordflow}{while} (opcio != \textcolor{stringliteral}{"fin"}) \{}
-\DoxyCodeLine{28     \textcolor{keywordtype}{string} id, id2, gen;}
-\DoxyCodeLine{29   }
-\DoxyCodeLine{30     \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"crea\_especie"}) \{}
-\DoxyCodeLine{31       cin >> \textcolor{keywordtype}{id} >> gen;}
-\DoxyCodeLine{32       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" "} << gen << endl;}
-\DoxyCodeLine{33       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" ya existe."} << endl;}
-\DoxyCodeLine{34       \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{35       conjunt.\mbox{\hyperlink{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}{crea\_especie}}(\textcolor{keywordtype}{id},gen);}
-\DoxyCodeLine{36       \}}
-\DoxyCodeLine{37       cout << endl;}
-\DoxyCodeLine{38     \}}
-\DoxyCodeLine{39     }
-\DoxyCodeLine{40     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"obtener\_gen"}) \{}
-\DoxyCodeLine{41       cin >> id;}
-\DoxyCodeLine{42       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
-\DoxyCodeLine{43       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) conjunt.\mbox{\hyperlink{class_cjt__especies_a3a1dc5f705c2271ee9c1dfd14ac6822d}{obtener\_gen}}(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{44       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl;}
-\DoxyCodeLine{45       cout << endl;}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     \}}
-\DoxyCodeLine{48     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"distancia"}) \{}
-\DoxyCodeLine{49       cin >> \textcolor{keywordtype}{id} >> id2;}
-\DoxyCodeLine{50       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" "} << id2 << endl;}
-\DoxyCodeLine{51       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) == -\/1)   cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" y la especie "} << id2 << \textcolor{stringliteral}{" no existen."} << endl;}
-\DoxyCodeLine{52       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) == -\/2)  cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl;}
-\DoxyCodeLine{53       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) == -\/3)  cout << \textcolor{stringliteral}{"ERROR: La especie "} << id2 << \textcolor{stringliteral}{" no existe."} << endl;}
-\DoxyCodeLine{54       \textcolor{keywordflow}{else} cout << conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) << endl;}
-\DoxyCodeLine{55       }
-\DoxyCodeLine{56       cout << endl;}
-\DoxyCodeLine{57     \}}
-\DoxyCodeLine{58     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"elimina\_especie"}) \{}
-\DoxyCodeLine{59       cin >> id;}
-\DoxyCodeLine{60       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
-\DoxyCodeLine{61       \textcolor{keywordflow}{if} (not conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl;}
-\DoxyCodeLine{62       \textcolor{keywordflow}{else} conjunt.\mbox{\hyperlink{class_cjt__especies_a869c218f09aa589d21f497196bb79e67}{elimina\_especie}}(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{63       cout << endl;}
-\DoxyCodeLine{64     \}}
-\DoxyCodeLine{65     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"existe\_especie"}) \{}
-\DoxyCodeLine{66       cin >> id;}
-\DoxyCodeLine{67       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} <<endl;}
-\DoxyCodeLine{68       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"SI"} << endl;}
-\DoxyCodeLine{69       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"NO"} << endl;}
-\DoxyCodeLine{70       cout << endl;}
-\DoxyCodeLine{71     \}}
-\DoxyCodeLine{72     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"lee\_cjt\_especies"}) \{}
-\DoxyCodeLine{73       cout << \textcolor{stringliteral}{"\# "} << opcio <<  endl;}
-\DoxyCodeLine{74       conjunt.\mbox{\hyperlink{class_cjt__especies_a1f554d3f098484c20372c43b844752db}{lee\_cjt\_especies}}();}
-\DoxyCodeLine{75       cout << endl;}
-\DoxyCodeLine{76     \}}
-\DoxyCodeLine{77     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"imprime\_cjt\_especies"}) \{}
-\DoxyCodeLine{78       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
-\DoxyCodeLine{79       conjunt.\mbox{\hyperlink{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}{imprime\_cjt\_especies}}();}
-\DoxyCodeLine{80     cout << endl;}
-\DoxyCodeLine{81     \}}
-\DoxyCodeLine{82     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"tabla\_distancias"}) \{}
-\DoxyCodeLine{83       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
-\DoxyCodeLine{84       conjunt.\mbox{\hyperlink{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}{tabla\_distancias}}();}
-\DoxyCodeLine{85       cout << endl;}
-\DoxyCodeLine{86     \}}
-\DoxyCodeLine{87     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"inicializa\_clusters"}) \{}
-\DoxyCodeLine{88       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
-\DoxyCodeLine{89       \textcolor{keywordtype}{bool} a = \textcolor{keyword}{true};}
-\DoxyCodeLine{90       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_ac309c781b06d06ec9a2b4bc839c01f40}{inicialitza\_clusters}}(conjunt, a);}
-\DoxyCodeLine{91       cout << endl;}
-\DoxyCodeLine{92     \}}
-\DoxyCodeLine{93     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"ejecuta\_paso\_wpgma"}) \{}
+\DoxyCodeLine{16            \{}
+\DoxyCodeLine{17   \textcolor{comment}{// int k > 0}}
+\DoxyCodeLine{18   \textcolor{keywordtype}{int} k; }
+\DoxyCodeLine{19   cin >> k;}
+\DoxyCodeLine{20   }
+\DoxyCodeLine{21   \mbox{\hyperlink{class_cjt__especies}{Cjt\_especies}} conjunt; \textcolor{comment}{// Iniciem un conjunt d'especies buit.}}
+\DoxyCodeLine{22   \mbox{\hyperlink{class_cjt__clusters}{Cjt\_clusters}} cjt\_clusters; \textcolor{comment}{// Iniciem un conjunt de clusters buit.}}
+\DoxyCodeLine{23   \mbox{\hyperlink{class_especie}{Especie}} especie; \textcolor{comment}{// Iniciem una espècie buida. Només la farem servir per introduir el paràmetre k.}}
+\DoxyCodeLine{24   especie.\mbox{\hyperlink{class_especie_a1d513b21daca76fa150dd1d62c590093}{set\_parametro}}(k);}
+\DoxyCodeLine{25   }
+\DoxyCodeLine{26   \textcolor{keywordtype}{string} opcio; \textcolor{comment}{// String per anar escollint les opcions del programa.}}
+\DoxyCodeLine{27   cin >> opcio;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{comment}{// El programa acaba quan la string opcio == fin.}}
+\DoxyCodeLine{30   \textcolor{keywordflow}{while} (opcio != \textcolor{stringliteral}{"fin"}) \{}
+\DoxyCodeLine{31     \textcolor{keywordtype}{string} id, id2, gen; \textcolor{comment}{// Declarem aquests string que són els que necessitarem }}
+\DoxyCodeLine{32                \textcolor{comment}{// majoritariament al nostre programa.}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"crea\_especie"}) \{}
+\DoxyCodeLine{35       cin >> \textcolor{keywordtype}{id} >> gen; \textcolor{comment}{// El identificador de la especie amb el seu gen.}}
+\DoxyCodeLine{36       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" "} << gen << endl;}
+\DoxyCodeLine{37       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" ya existe."} << endl; \textcolor{comment}{// En cas que la especie ja existeixi dins el conjunt salta un missatge d'error.}}
+\DoxyCodeLine{38       \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{39       conjunt.\mbox{\hyperlink{class_cjt__especies_a96c09a2e9fb27a4bf48aba20dfa86bd8}{crea\_especie}}(\textcolor{keywordtype}{id},gen);}
+\DoxyCodeLine{40       \}}
+\DoxyCodeLine{41       cout << endl;}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{44     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"obtener\_gen"}) \{}
+\DoxyCodeLine{45       cin >> id; \textcolor{comment}{// El identificador de la especie que es vol consultar el gen.}}
+\DoxyCodeLine{46       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
+\DoxyCodeLine{47       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) conjunt.\mbox{\hyperlink{class_cjt__especies_a3a1dc5f705c2271ee9c1dfd14ac6822d}{obtener\_gen}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{48       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl; \textcolor{comment}{// En cas que la especie no existeix dins el conjunt, salta un missatge d'error.}}
+\DoxyCodeLine{49       cout << endl;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"distancia"}) \{}
+\DoxyCodeLine{53       cin >> \textcolor{keywordtype}{id} >> id2; \textcolor{comment}{// Els dos identificadors de les especies les quals es vol consultar la distància.}}
+\DoxyCodeLine{54       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" "} << id2 << endl;}
+\DoxyCodeLine{55       \textcolor{comment}{// Depenent el que ens retorni la funció calcular distància, tindrà un }}
+\DoxyCodeLine{56       \textcolor{comment}{// significat diferent. Consultar la documentació per més detalls.}}
+\DoxyCodeLine{57       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) == -\/1)   cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" y la especie "} << id2 << \textcolor{stringliteral}{" no existen."} << endl;}
+\DoxyCodeLine{58       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) == -\/2)  cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl;}
+\DoxyCodeLine{59       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) == -\/3)  cout << \textcolor{stringliteral}{"ERROR: La especie "} << id2 << \textcolor{stringliteral}{" no existe."} << endl;}
+\DoxyCodeLine{60       \textcolor{keywordflow}{else} cout << conjunt.\mbox{\hyperlink{class_cjt__especies_aa4191c64a5008de2272e0e3489aeb778}{calcular\_distancia}}(\textcolor{keywordtype}{id},id2) << endl;}
+\DoxyCodeLine{61       }
+\DoxyCodeLine{62       cout << endl;}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"elimina\_especie"}) \{}
+\DoxyCodeLine{65       cin >> id; \textcolor{comment}{// El identificador de la especie la qual es vol eliminar.}}
+\DoxyCodeLine{66       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
+\DoxyCodeLine{67       \textcolor{keywordflow}{if} (not conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"ERROR: La especie "} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{" no existe."} << endl; \textcolor{comment}{// Si la especie no existeix dins el conjunt, salta un missatge d'error.}}
+\DoxyCodeLine{68       \textcolor{keywordflow}{else} conjunt.\mbox{\hyperlink{class_cjt__especies_a869c218f09aa589d21f497196bb79e67}{elimina\_especie}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{69       cout << endl;}
+\DoxyCodeLine{70     \}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"existe\_especie"}) \{}
+\DoxyCodeLine{72       cin >> id; \textcolor{comment}{// El identificador de la especie la qual es vol consultar si existeix.}}
+\DoxyCodeLine{73       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} <<endl;}
+\DoxyCodeLine{74       \textcolor{keywordflow}{if} (conjunt.\mbox{\hyperlink{class_cjt__especies_a86bd41f60448306f12ec55e6fc054659}{existeix\_especie}}(\textcolor{keywordtype}{id})) cout << \textcolor{stringliteral}{"SI"} << endl;}
+\DoxyCodeLine{75       \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"NO"} << endl;}
+\DoxyCodeLine{76       cout << endl;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"lee\_cjt\_especies"}) \{}
+\DoxyCodeLine{79       \textcolor{comment}{// Funció que llegeix les especies que hi haurà al conjunt.}}
+\DoxyCodeLine{80       cout << \textcolor{stringliteral}{"\# "} << opcio <<  endl;}
+\DoxyCodeLine{81       conjunt.\mbox{\hyperlink{class_cjt__especies_a1f554d3f098484c20372c43b844752db}{lee\_cjt\_especies}}();}
+\DoxyCodeLine{82       cout << endl;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"imprime\_cjt\_especies"}) \{}
+\DoxyCodeLine{85       \textcolor{comment}{// Funció que imprimeix les especies que hi ha al conjunt.}}
+\DoxyCodeLine{86       \textcolor{comment}{// En cas de no haver cap especie, no dona cap missatge d'error.}}
+\DoxyCodeLine{87       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
+\DoxyCodeLine{88       conjunt.\mbox{\hyperlink{class_cjt__especies_aba7f0f935b6e0b8eb38337ad8675fead}{imprime\_cjt\_especies}}();}
+\DoxyCodeLine{89       cout << endl;}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"tabla\_distancias"}) \{}
+\DoxyCodeLine{92       \textcolor{comment}{// Funció que imprimeix la taula de distancies entre les especies que hi ha al conjunt.}}
+\DoxyCodeLine{93       \textcolor{comment}{// En cas de no haver cap especie, no dona cap missatge d'error.}}
 \DoxyCodeLine{94       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
-\DoxyCodeLine{95       \textcolor{keywordtype}{bool} a = \textcolor{keyword}{true};}
-\DoxyCodeLine{96       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_a1804b08a854e11aefae84298c16bf9c8}{ejecuta\_paso\_wpgma}}(a);}
-\DoxyCodeLine{97       cout << endl;}
-\DoxyCodeLine{98     \}}
-\DoxyCodeLine{99     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"imprime\_cluster"}) \{}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101       cin >> id;}
-\DoxyCodeLine{102       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
-\DoxyCodeLine{103       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_aeead6f73476c1d0a814403b801141741}{imprime\_cluster}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{95       conjunt.\mbox{\hyperlink{class_cjt__especies_a653d6b120928015ad38a5dc30ebeec8e}{tabla\_distancias}}();}
+\DoxyCodeLine{96       cout << endl;}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"inicializa\_clusters"}) \{}
+\DoxyCodeLine{99       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
+\DoxyCodeLine{100       \textcolor{comment}{// Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem}}
+\DoxyCodeLine{101       \textcolor{comment}{// la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters.}}
+\DoxyCodeLine{102       \textcolor{keywordtype}{bool} a = \textcolor{keyword}{true};}
+\DoxyCodeLine{103       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_ac309c781b06d06ec9a2b4bc839c01f40}{inicialitza\_clusters}}(conjunt, a);}
 \DoxyCodeLine{104       cout << endl;}
 \DoxyCodeLine{105     \}}
-\DoxyCodeLine{106     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"imprime\_arbol\_filogenetico"}) \{}
+\DoxyCodeLine{106     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"ejecuta\_paso\_wpgma"}) \{}
 \DoxyCodeLine{107       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
-\DoxyCodeLine{108       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_a8a92eefe19f7eafc403690a30d87b99e}{imprime\_arbol\_filogenetico}}(conjunt);}
-\DoxyCodeLine{109       cout << endl;}
-\DoxyCodeLine{110       }
-\DoxyCodeLine{111     \}}
-\DoxyCodeLine{112   cin >> opcio;}
-\DoxyCodeLine{113   \}}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{115 \}}
+\DoxyCodeLine{108       \textcolor{comment}{// Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem}}
+\DoxyCodeLine{109       \textcolor{comment}{// la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters.}}
+\DoxyCodeLine{110       \textcolor{keywordtype}{bool} a = \textcolor{keyword}{true};}
+\DoxyCodeLine{111       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_a1804b08a854e11aefae84298c16bf9c8}{ejecuta\_paso\_wpgma}}(a);}
+\DoxyCodeLine{112       cout << endl;}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{114     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"imprime\_cluster"}) \{}
+\DoxyCodeLine{115       cin >> id; \textcolor{comment}{// El identificador del cluster el qual es vol imprimir.}}
+\DoxyCodeLine{116       cout << \textcolor{stringliteral}{"\# "} << opcio << \textcolor{stringliteral}{" "} << \textcolor{keywordtype}{id} << endl;}
+\DoxyCodeLine{117       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_aeead6f73476c1d0a814403b801141741}{imprime\_cluster}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{118       cout << endl;}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (opcio == \textcolor{stringliteral}{"imprime\_arbol\_filogenetico"}) \{}
+\DoxyCodeLine{121       \textcolor{comment}{// Donat un conjunt de especies, s'imprimeix }}
+\DoxyCodeLine{122       \textcolor{comment}{// l'arbre filogenètic resultant.}}
+\DoxyCodeLine{123       cout << \textcolor{stringliteral}{"\# "} << opcio << endl;}
+\DoxyCodeLine{124       cjt\_clusters.\mbox{\hyperlink{class_cjt__clusters_a8a92eefe19f7eafc403690a30d87b99e}{imprime\_arbol\_filogenetico}}(conjunt);}
+\DoxyCodeLine{125       cout << endl;}
+\DoxyCodeLine{126       }
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128   cin >> opcio;}
+\DoxyCodeLine{129   \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \}}
 
 \end{DoxyCode}

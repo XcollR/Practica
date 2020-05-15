@@ -129,30 +129,8 @@ public:
   */
 	void obtener_gen(string id) const;
 	
-	// Lectura i Escriptura
-
-/** @brief Escriu una taula de les distàncies entre espècies.
- * 	\pre Cert.
- * 	\post S'ha imprès la taula de distàncies.
- */
-
-	void tabla_distancias()const;
 	
-/** @brief Lectura d'un conjunt d'espècies.
- 	\pre Estan preparats al canal estandar d'entrada
-	 un enter i les dades dels elements que llegirem.
-	\post El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar.	
- */
-	void lee_cjt_especies();
-	
-/** @brief Escriptura del conjunt d'espècies.
-  	\pre Cert.
-	\post S'ha escrit pel canal estàndar de sortida les espècies
-	del paràmetre implícit.
-*/
-	void imprime_cjt_especies() const;
-	
-/** @brief Consulta si l'iterador del mapa del conjunt d'especies apunta al final d'ell o no.
+	/** @brief Consulta si l'iterador del mapa del conjunt d'especies apunta al final d'ell o no.
  * 	\pre Cert.
  * 	\post El booleà retorna cert si apunta al final del mapa.
  */
@@ -180,10 +158,33 @@ void actual(string& act);
 void avanza();
 	
 
+	// Lectura i Escriptura
+
+
+/** @brief Lectura d'un conjunt d'espècies.
+ 	\pre Estan preparats al canal estandar d'entrada
+	 un enter i les dades dels elements que llegirem.
+	\post El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar.	
+ */
+	void lee_cjt_especies();
+	
+/** @brief Escriptura del conjunt d'espècies.
+  	\pre Cert.
+	\post S'ha escrit pel canal estàndar de sortida les espècies
+	del paràmetre implícit.
+*/
+	void imprime_cjt_especies() const;
+
+/** @brief Escriu una taula de les distàncies entre espècies.
+ * 	\pre Cert.
+ * 	\post S'ha imprès la taula de distàncies.
+ */
+
+	void tabla_distancias()const;
+	
+
+
 };
-
-
-
 
 #endif
 

@@ -173,8 +173,8 @@ Atributs Privats Estàtics</h2></td></tr>
 
 <p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00012">12</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                 {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a> = <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a> = map&lt;string, int&gt; ();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a> = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a> = map&lt;string, int&gt; ();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -201,8 +201,8 @@ Atributs Privats Estàtics</h2></td></tr>
 
 <p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00018">18</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                            {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a> = gen1;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="class_especie.html#a2bd896f271d0983f609735df8809cccc">kmer</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a> = gen1;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <a class="code" href="class_especie.html#a2bd896f271d0983f609735df8809cccc">Especie::kmer</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -235,29 +235,29 @@ Atributs Privats Estàtics</h2></td></tr>
 <dl class="section pre"><dt>Precondició</dt><dd>El paràmetre implícit és un string amb longitud &gt;= k. </dd></dl>
 <dl class="section post"><dt>Postcondició</dt><dd>S'ha calculat els k-meros i s'han guardat. </dd></dl>
 
-<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00028">28</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                   {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">// Inv: El recorregut que fa aquest bucle for mai</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">// farà més iteracions que el tamany del gen - k + 1.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// A cada iteració es crea un string auxiliar on s&#39;aniran actualitzan els caracters un per un.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>.size() - <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">k_num</a> + 1; ++i) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">string</span> aux;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Inv: El recorregut que fa aquest segon bucle mai superarà</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// les k iteracions. Hem igualat la j a la i, per anar avançant cada</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// cop una posició i el bucle farà menys de k_num + i iteracions.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">k_num</a> + i; ++j) { </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      aux += <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>[j];</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// En el mapa de k-meros busquem el kmero que acabem de crear</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// en la anterior interació. Si aquest no existia s&#39;afegeix al mapa.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// La clau del mapa és el kmer generat i el valor que se l&#39;assigna és el número</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// de vegades que es repeteix, al ser el primer cop, es posa un 1. En cas que el </span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// kmer ja existis anteriorment, es busca la clau i s&#39;incrementa en 1 el valor.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    map&lt;string,int&gt;::const_iterator it = <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.find(aux);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (it == <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.insert(make_pair(aux, 1));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>[aux] = it-&gt; second +1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} </div>
+<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00094">94</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                   {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// Inv: El recorregut que fa aquest bucle for mai</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="comment">// farà més iteracions que el tamany del gen - k + 1.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// A cada iteració es crea un string auxiliar on s&#39;aniran actualitzan els caracters un per un.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>.size() - <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">Especie::k_num</a> + 1; ++i) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">string</span> aux;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Inv: El recorregut que fa aquest segon bucle mai superarà</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="comment">// les k iteracions. Hem igualat la j a la i, per anar avançant cada</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// cop una posició i el bucle farà menys de k_num + i iteracions.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i; j &lt; <a class="code" href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">Especie::k_num</a> + i; ++j) { </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      aux += <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>[j];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// En el mapa de k-meros busquem el kmero que acabem de crear</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// en la anterior interació. Si aquest no existia s&#39;afegeix al mapa.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// La clau del mapa és el kmer generat i el valor que se l&#39;assigna és el número</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// de vegades que es repeteix, al ser el primer cop, es posa un 1. En cas que el </span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// kmer ja existis anteriorment, es busca la clau i s&#39;incrementa en 1 el valor.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    map&lt;string,int&gt;::const_iterator it = <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a>.find(aux);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (it == <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a>.end()) <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a>.insert(make_pair(aux, 1));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">else</span> <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a>[aux] = it-&gt; second +1;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;} </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -316,10 +316,10 @@ Atributs Privats Estàtics</h2></td></tr>
 <dl class="section post"><dt>Postcondició</dt><dd>El resultat es el gen del parametre implicit. </dd></dl>
 <dl class="section return"><dt>Retorna</dt><dd>string </dd></dl>
 
-<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00055">55</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                   {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00033">33</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                   {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -344,48 +344,48 @@ Atributs Privats Estàtics</h2></td></tr>
 <dl class="section post"><dt>Postcondició</dt><dd>El resultat és la distancia entre les dues espècies. </dd></dl>
 <dl class="section return"><dt>Retorna</dt><dd>double. Distancia entre especies </dd></dl>
 
-<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00059">59</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                  {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">// Invariant: Situem dos iterador constants al inici dels dos maps de k_meros</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// Unio i Intersecció és la cuantitat de elements que compleixen la </span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// condició de que siguin unió o intersecció.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Els elements visitats tenen la clau més petita que els altres.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  map&lt;string,int&gt;::const_iterator i = <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.begin(), k = esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.begin();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">double</span> unio = 0, interseccio = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">while</span> (i != <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end() and k != esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) { <span class="comment">// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (i-&gt;first == k-&gt;first) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      interseccio += min(i-&gt;second,k-&gt;second);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      unio +=  max(i-&gt;second, k-&gt;second);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      ++i;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      ++k;      </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-&gt;first &lt; k-&gt;first) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      unio += i-&gt;second;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      ++i;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      unio += k-&gt;second;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      ++k;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// entra en aquest bucle.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">while</span> (i != <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    unio += i-&gt;second;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ++i;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  } </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">// Si el iterador k, el del segon mapa de k-meros no ha acabat el recorregut</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// entra en aquest bucle.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Inv: Els elements de k estan ordenats segons la clau en ordre ascendent.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">while</span> (k != esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) { </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    unio += k-&gt;second;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ++k;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> (((1-(interseccio/unio))*100));  </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00037">37</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                  {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Invariant: Situem dos iterador constants al inici dels dos maps de k_meros</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// Unio i Intersecció és la cuantitat de elements que compleixen la </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// condició de que siguin unió o intersecció.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Els elements visitats tenen la clau més petita que els altres.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// El bucle acaba quan un dels dos iteradors apunta al final, mai poden acabar els dos alhora.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  map&lt;string,int&gt;::const_iterator i = <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a>.begin(), k = esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.begin();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">double</span> unio = 0, interseccio = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">while</span> (i != <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end() and k != esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) { <span class="comment">// Bucle While general per comparar i anar fent la interseccio/unió dels kmeros.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (i-&gt;first == k-&gt;first) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      interseccio += min(i-&gt;second,k-&gt;second);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      unio +=  max(i-&gt;second, k-&gt;second);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      ++i;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      ++k;      </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i-&gt;first &lt; k-&gt;first) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      unio += i-&gt;second;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      ++i;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      unio += k-&gt;second;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      ++k;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Si el iterador i, el del primer mapa de k-meros no ha acabat el recorregut</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// entra en aquest bucle.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">// Inv: Els elements de i estan ordenats segons la clau en ordre ascendent.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">while</span> (i != <a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    unio += i-&gt;second;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ++i;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  } </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// Si el iterador k, el del segon mapa de k-meros no ha acabat el recorregut</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// entra en aquest bucle.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Inv: Els elements de k estan ordenats segons la clau en ordre ascendent.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">while</span> (k != esp.<a class="code" href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">k_meros</a>.end()) { </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    unio += k-&gt;second;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ++k;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> (((1-(interseccio/unio))*100));  </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -408,10 +408,10 @@ Atributs Privats Estàtics</h2></td></tr>
 <dl class="section pre"><dt>Precondició</dt><dd>Cert </dd></dl>
 <dl class="section post"><dt>Postcondició</dt><dd>S'han escrit els atributs del parametre implicit al canal estandard de sortida. </dd></dl>
 
-<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00108">108</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                             {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  cout &lt;&lt; <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<p class="definition">Definició a la línia <a class="el" href="_especie_8cc_source.html#l00086">86</a> del fitxer <a class="el" href="_especie_8cc_source.html">Especie.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                             {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  cout &lt;&lt; <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -502,7 +502,7 @@ Atributs Privats Estàtics</h2></td></tr>
 <div class="ttc" id="aclass_especie_html_a8cea60787f2ca85fd94a2d96f853f93f"><div class="ttname"><a href="class_especie.html#a8cea60787f2ca85fd94a2d96f853f93f">Especie::k_num</a></div><div class="ttdeci">static int k_num</div><div class="ttdoc">Tamany que indica el tamany dels paquets per separar el gen de la especie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00034">Especie.hh:34</a></div></div>
 <div class="ttc" id="aclass_especie_html_ac35bb565f7346cd6317b3a8c849456d1"><div class="ttname"><a href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a></div><div class="ttdeci">string gen</div><div class="ttdoc">És el gen de la espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00031">Especie.hh:31</a></div></div>
 <div class="ttc" id="aclass_especie_html_a0c42a37fe5502ebbe9e91e364c90bd3e"><div class="ttname"><a href="class_especie.html#a0c42a37fe5502ebbe9e91e364c90bd3e">Especie::k_meros</a></div><div class="ttdeci">map&lt; string, int &gt; k_meros</div><div class="ttdoc">Map on guardem els k-meros de la especie.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00037">Especie.hh:37</a></div></div>
-<div class="ttc" id="aclass_especie_html_a2bd896f271d0983f609735df8809cccc"><div class="ttname"><a href="class_especie.html#a2bd896f271d0983f609735df8809cccc">Especie::kmer</a></div><div class="ttdeci">void kmer()</div><div class="ttdoc">Calcula els kmeros d'una espècie a partir del seu gen.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00028">Especie.cc:28</a></div></div>
+<div class="ttc" id="aclass_especie_html_a2bd896f271d0983f609735df8809cccc"><div class="ttname"><a href="class_especie.html#a2bd896f271d0983f609735df8809cccc">Especie::kmer</a></div><div class="ttdeci">void kmer()</div><div class="ttdoc">Calcula els kmeros d'una espècie a partir del seu gen.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8cc_source.html#l00094">Especie.cc:94</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generat per &#160;<a href="http://www.doxygen.org/index.html">

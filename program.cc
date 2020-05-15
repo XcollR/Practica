@@ -14,7 +14,8 @@ using namespace std;
 /** @brief El main del programa */
 
 int main() {
-	int k; // k del kmer;
+	// int k > 0
+	int k; 
 	cin >> k;
 	
 	Cjt_especies conjunt; // Iniciem un conjunt d'especies buit.
