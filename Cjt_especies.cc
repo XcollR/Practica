@@ -197,6 +197,7 @@ void Cjt_especies::tabla_distancias() const {
 
 // Mètodes privats
 
+
 void Cjt_especies::elimina_especie_tabla_dist(const string& id) {
 	//Es posiciona un iterador apuntant a la posició de l'id demanat.
 	map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies.find(id);

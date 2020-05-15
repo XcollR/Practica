@@ -146,6 +146,15 @@ public:
 
 	// Modificadores
 
+/** @brief Inicialitza els clusters del conjunt.
+ * 	\pre Existeix un conjunt d'especies.
+ * 	\post Els clusters s'han inicialitzat.
+ *  \param Cjt_especies Entra un conjunt d'especies per referència.
+ * 	\param Bool El booleà té una gran importància, si bool = true imprimirà
+ * 	la taula de distàncies entre clusters, en cas que bool = fals, la funció no imprimirà res.
+ */
+	void inicialitza_clusters(Cjt_especies& conjunt, const bool ve_de_func);
+
 
 /** @brief Fusiona els clusters que estan a menor distància
  * 	\pre Cert.	
@@ -165,14 +174,6 @@ public:
  */
 	void imprime_cluster(string id) const;
 	
-/** @brief Inicialitza els clusters del conjunt.
- * 	\pre Existeix un conjunt d'especies.
- * 	\post Els clusters s'han inicialitzat.
- *  \param Cjt_especies Entra un conjunt d'especies per referència.
- * 	\param Bool El booleà té una gran importància, si bool = true imprimirà
- * 	la taula de distàncies entre clusters, en cas que bool = fals, la funció no imprimirà res.
- */
-	void inicialitza_clusters(Cjt_especies& conjunt, const bool ve_de_func);
 
 /**	@brief Imprimeix la taula de distàncies entre clusters.
  * 	\pre Cert.
