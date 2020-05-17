@@ -20,6 +20,10 @@ using namespace std;
 	distancies respecte als seus fills.
 	També l'opció de crear un cluster a partir de la fusió
 	de dos altres.
+
+	\invariant Els clusters contenen una única espècie o bé estàn formats
+	per altres clusters. Així mateix, un cluster és assimilable a un
+	arbre binari on té espècies a les fulles. 
 */
 
 class Cluster {
@@ -50,7 +54,7 @@ public:
  * 	@brief Crea un cluster a partir d'una espècie. 
  *	\pre Cert.
 	\post El resultat és un cluster de la especie demanada.
-	\param String. Un identificador pel cluster.
+	\param String. Un identificador del cluster.
 */	
 	
 	Cluster(const string& id);
@@ -71,9 +75,9 @@ public:
 	// Lectura i Escriptura
 		
 /**
- * 	@brief Escriu l'arbre binari del cluster del parametre implícit. 
+ * 	@brief Escriu el cluster que entra pel paràmetre implícit. 
  *	\pre Cert.
-	\post S'ha escrit l'arbre binàri.
+	\post S'ha escrit el cluster.
 */	
 		
 	void escriure() const;

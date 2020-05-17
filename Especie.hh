@@ -21,6 +21,10 @@ using namespace std;
 	dues especies, consultar el gen, i escriure el gen.
 	Donat que hem d'establir un paramètre k, tenim la necessitat
 	de crear una constructora d'especie buida per poder introduir la k.
+
+	\invariant Una espècie sempre tindrà el gen de longitud >= k.
+	La k serà sempre de longitud > 0.
+
 */
 
 class Especie {
@@ -30,7 +34,7 @@ private:
 	/** @brief És el gen de la espècie. */
 	string gen; 
 
-  	/** @brief Tamany que indica el tamany dels paquets per separar el gen de la especie. */
+  	/** @brief Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros). */
 	static int k_num; 
 
   	/** @brief Map on guardem els k-meros de la especie. */
@@ -78,17 +82,17 @@ public:
 
 /** 
  * 	@brief Retorna el gen de la espècie.
- * 	\pre El parametre implicit te gen.
-	\post El resultat es el gen del parametre implicit.
+ * 	\pre El parametre implícit té gen.
+	\post El resultat és el gen del paràmetre implícit.
 	\return string
 */
 	string consultar_gen() const;
 
 /** 
- * 	@brief Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció.
+ * 	@brief Retorna un double amb la distància entre la especie del paràmetre implícit i la que ha entrat al paràmetre explícit.
  * 	\pre Les dues espècies existeixen.
-	\post El resultat és la distancia entre les dues espècies.
-	\return double. Distancia entre especies
+	\post El resultat és la distància entre les dues espècies.
+	\return double. Distancia genètica entre les dues especies.
 */	
 
 	double distancia(const Especie& esp) const;
@@ -98,7 +102,7 @@ public:
 	
 /** @brief Escriu la espècie del paràmetre implícit.
  * 	\pre Cert
-	\post S'han escrit els atributs del parametre implicit al canal estandard de sortida.
+	\post S'han escrit els atributs del parametre implícit al canal estandard de sortida.
 */
 
 	void escriure() const;

@@ -91,82 +91,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 </div><!--header-->
 <div class="contents">
 <a href="_cluster_8cc.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// INVARIANT:  ELS CLUSTERS SÓN ARBRES BINARIS DE PAIRS. ELS FILLS DELS</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//             DELS ARBRES BINARIS ESTÀN ORDENATS ALFABÈTICAMENT, L&#39;ARBRE DRET ÉS </span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//             EL MÉS PETIT LEXICOGRÀFICAMENT I L&#39;ESQUERRE L&#39;ALTRE. </span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//             LA DISTANCIA MAI POT SER &lt; 0.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="comment">//invariant Els clusters contenen una única espècie o bé estàn formats</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="comment">//per altres clusters. Així mateix, un cluster és assimilable a un</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <span class="comment">//arbre binari on té espècies a les fulles. </span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cluster_8hh.html">Cluster.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_cluster_8hh.html">Cluster.hh</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Constructores</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">   16</a></span>&#160;<a class="code" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">Cluster::Cluster</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>){</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//Es crea un pair on hi ha l&#39;identificador del cluster i</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//la distancia respecte els seus fills. Al ser un cluster sense fills, la distancia es 0.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    pair&lt;string, double&gt; clust;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    clust.first = id;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    clust.second = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//Es crea l&#39;arbol binari de cluster.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a> = BinTree&lt;pair&lt;string, double&gt;&gt; (clust);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_cluster.html#aaf336dfa4bfb02c0fd71395615636fb4">   26</a></span>&#160;<a class="code" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">Cluster::Cluster</a>(<span class="keyword">const</span> <a class="code" href="class_cluster.html">Cluster</a> clus1, <span class="keyword">const</span> <a class="code" href="class_cluster.html">Cluster</a> clus2, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; dist) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//Es fusionen dos clusters en un. El identificador del pair és el</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//resultat de fusionar els dos id&#39;s.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//El double dist és la distancia entre els dos clusters.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    pair&lt;string, double&gt; clust;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    clust.first = clus1.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value().first + clus2.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value().first;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    clust.second = dist/2; <span class="comment">//dist/2 ja que la formula ho demana així.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//Es crea un arbre amb node principal el pair acabat de crear, node esquerra el </span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//arbre del primer cluster i node dret el arbre del segon cluster.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a> = BinTree&lt;pair&lt;string,double&gt;&gt; (clust,clus1.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>,clus2.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Constructores</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">   15</a></span>&#160;<a class="code" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">Cluster::Cluster</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">//Es crea un pair on hi ha l&#39;identificador del cluster i</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//la distancia respecte els seus fills. Al ser un cluster sense fills, la distancia es 0.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    pair&lt;string, double&gt; clust;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    clust.first = id;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    clust.second = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//Es crea l&#39;arbol binari de cluster.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a> = BinTree&lt;pair&lt;string, double&gt;&gt; (clust);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_cluster.html#aaf336dfa4bfb02c0fd71395615636fb4">   25</a></span>&#160;<a class="code" href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">Cluster::Cluster</a>(<span class="keyword">const</span> <a class="code" href="class_cluster.html">Cluster</a> clus1, <span class="keyword">const</span> <a class="code" href="class_cluster.html">Cluster</a> clus2, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; dist) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//Es fusionen dos clusters en un. El identificador del pair és el</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//resultat de fusionar els dos id&#39;s.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//El double dist és la distancia entre els dos clusters.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    pair&lt;string, double&gt; clust;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    clust.first = clus1.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value().first + clus2.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>.value().first;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    clust.second = dist/2; <span class="comment">//dist/2 ja que la formula ho demana així.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//Es crea un arbre amb node principal el pair acabat de crear, node esquerra el </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//arbre del primer cluster i node dret el arbre del segon cluster.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a> = BinTree&lt;pair&lt;string,double&gt;&gt; (clust,clus1.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>,clus2.<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// Modificadores</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Consultores</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//Lectura i escriptura</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// Modificadores</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Consultores</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//Lectura i escriptura</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">Cluster::escriure</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//Entra el arbre del paràmetre implícit a la funció recursiva.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    cout &lt;&lt; endl;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Mètodes privats</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Cluster::inm_escriure</a>(<span class="keyword">const</span> BinTree&lt;pair&lt;string,double&gt;&gt;&amp; a)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//Escriptura del arbre binari. Si aquest té els nodes </span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//dret i esquerre buit, es a dir, són fulles de l&#39;arbre,</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//no escriu la distancia respecte als fills.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">if</span> (not a.empty()) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (not a.left().empty() and not a.right().empty()) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;[&quot;</span>&lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; a.value().first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; a.value().second&lt;&lt; <span class="stringliteral">&quot;) &quot;</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            cout &lt;&lt;<span class="stringliteral">&quot;[&quot;</span>&lt;&lt; a.value().first;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(a.left());</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(a.right());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">Cluster::escriure</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//Entra el arbre del paràmetre implícit a la funció recursiva.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Mètodes privats</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Cluster::inm_escriure</a>(<span class="keyword">const</span> BinTree&lt;pair&lt;string,double&gt;&gt;&amp; a)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//Escriptura del arbre binari. Si aquest té els nodes </span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//dret i esquerre buit, es a dir, són fulles de l&#39;arbre,</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//no escriu la distancia respecte als fills.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">if</span> (not a.empty()) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (not a.left().empty() and not a.right().empty()) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;[&quot;</span>&lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; a.value().first &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; a.value().second&lt;&lt; <span class="stringliteral">&quot;) &quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            cout &lt;&lt;<span class="stringliteral">&quot;[&quot;</span>&lt;&lt; a.value().first;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(a.left());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(a.right());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="a_cluster_8hh_html"><div class="ttname"><a href="_cluster_8hh.html">Cluster.hh</a></div><div class="ttdoc">Especificació de la classe Cluster.</div></div>
-<div class="ttc" id="aclass_cluster_html_a4702942c6848ae6fbb7de215b49797d5"><div class="ttname"><a href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">Cluster::Cluster</a></div><div class="ttdeci">Cluster(const string &amp;id)</div><div class="ttdoc">Crea un cluster a partir d'una espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00016">Cluster.cc:16</a></div></div>
-<div class="ttc" id="aclass_cluster_html_aae67c144fc543eace946dc8a651b5b7a"><div class="ttname"><a href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">Cluster::escriure</a></div><div class="ttdeci">void escriure() const</div><div class="ttdoc">Escriu l'arbre binari del cluster del parametre implícit.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00046">Cluster.cc:46</a></div></div>
-<div class="ttc" id="aclass_cluster_html_a34b4dbc09bb7d69a7f2fb8ce390d6174"><div class="ttname"><a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; pair&lt; string, double &gt; &gt; cluster</div><div class="ttdoc">Arbre binari format per pairs.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00031">Cluster.hh:31</a></div></div>
-<div class="ttc" id="aclass_cluster_html"><div class="ttname"><a href="class_cluster.html">Cluster</a></div><div class="ttdoc">Representa un cluster d'un arbre binari.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00025">Cluster.hh:25</a></div></div>
-<div class="ttc" id="aclass_cluster_html_a1856b0f1ca9243208451c965313af753"><div class="ttname"><a href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Cluster::inm_escriure</a></div><div class="ttdeci">void inm_escriure(const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a) const</div><div class="ttdoc">Funció recursiva cridada per la funcio escriure() per tal de poder fer la escriptura recursiva de l'a...</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00054">Cluster.cc:54</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a4702942c6848ae6fbb7de215b49797d5"><div class="ttname"><a href="class_cluster.html#a4702942c6848ae6fbb7de215b49797d5">Cluster::Cluster</a></div><div class="ttdeci">Cluster(const string &amp;id)</div><div class="ttdoc">Crea un cluster a partir d'una espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00015">Cluster.cc:15</a></div></div>
+<div class="ttc" id="aclass_cluster_html_aae67c144fc543eace946dc8a651b5b7a"><div class="ttname"><a href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">Cluster::escriure</a></div><div class="ttdeci">void escriure() const</div><div class="ttdoc">Escriu el cluster que entra pel paràmetre implícit.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00045">Cluster.cc:45</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a34b4dbc09bb7d69a7f2fb8ce390d6174"><div class="ttname"><a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; pair&lt; string, double &gt; &gt; cluster</div><div class="ttdoc">Arbre binari format per pairs.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00035">Cluster.hh:35</a></div></div>
+<div class="ttc" id="aclass_cluster_html"><div class="ttname"><a href="class_cluster.html">Cluster</a></div><div class="ttdoc">Representa un cluster d'un arbre binari.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00029">Cluster.hh:29</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a1856b0f1ca9243208451c965313af753"><div class="ttname"><a href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Cluster::inm_escriure</a></div><div class="ttdeci">void inm_escriure(const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a) const</div><div class="ttdoc">Funció recursiva cridada per la funcio escriure() per tal de poder fer la escriptura recursiva de l'a...</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00053">Cluster.cc:53</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generat per &#160;<a href="http://www.doxygen.org/index.html">

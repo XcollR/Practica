@@ -4,9 +4,10 @@
 
 #include "Cjt_especies.hh"
 
-//	INVARIANT: EL MAPA DE CJT_ESPECIES SEMPRE SERÀ UN MAPA ORDENAT ALFABÈTICAMENT, NO TÉ TAMANY MÀXIM NI TAMANY MÍNIM.
-//			   LA TAULA DE DISTÀNCIES ÉS UN MAP NESTED ORDENATS ALFABÈTICAMENT, TAMPOC TÉ TAMANY MÀXIM.
-//			   QUAN ES LLEGEIX UN CONJUNT D'ESPECIES, N > 0.
+    //invariant El conjunt d'especies sempre estarà ordenat alfabèticament,
+    //no té mida màxima ni mida mínima. La taula de distàncies sempre s'imprimirà en ordre
+    //alfabètic. Quan es llegeix un conjunt d'especies, es declarà la mida amb una,
+    //una variable n >= 0.
 
 
 // Constructores

@@ -1,4 +1,4 @@
-.TH "Especie" 3 "Dv Mai 15 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "Especie" 3 "Dg Mai 17 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,7 +25,7 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .ti -1c
 .RI "double \fBdistancia\fP (const \fBEspecie\fP &esp) const"
 .br
-.RI "Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció\&. "
+.RI "Retorna un double amb la distància entre la especie del paràmetre implícit i la que ha entrat al paràmetre explícit\&. "
 .ti -1c
 .RI "void \fBescriure\fP () const"
 .br
@@ -65,15 +65,22 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .ti -1c
 .RI "static int \fBk_num\fP"
 .br
-.RI "Tamany que indica el tamany dels paquets per separar el gen de la especie\&. "
+.RI "Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros)\&. "
 .in -1c
 .SH "Descripció Detallada"
 .PP 
 Representa el conjunt de característiques y operacions de les especies\&. 
 
-Ofereix la posibilitat de calcular la distancie entre dues especies, consultar el gen, i escriure el gen\&. Donat que hem d'establir un paramètre k, tenim la necessitat de crear una constructora d'especie buida per poder introduir la k\&. 
+Ofereix la posibilitat de calcular la distancie entre dues especies, consultar el gen, i escriure el gen\&. Donat que hem d'establir un paramètre k, tenim la necessitat de crear una constructora d'especie buida per poder introduir la k\&.
 .PP
-Definició a la línia 26 del fitxer Especie\&.hh\&.
+\fBInvariant\fP
+.RS 4
+Una espècie sempre tindrà el gen de longitud >= k\&. La k serà sempre de longitud > 0\&. 
+.RE
+.PP
+
+.PP
+Definició a la línia 30 del fitxer Especie\&.hh\&.
 .SH "Documentació del Constructor i el Destructor"
 .PP 
 .SS "Especie::Especie ()"
@@ -202,12 +209,12 @@ Retorna el gen de la espècie\&.
 .PP
 \fBPrecondició\fP
 .RS 4
-El parametre implicit te gen\&. 
+El parametre implícit té gen\&. 
 .RE
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat es el gen del parametre implicit\&. 
+El resultat és el gen del paràmetre implícit\&. 
 .RE
 .PP
 \fBRetorna\fP
@@ -227,7 +234,7 @@ Definició a la línia 38 del fitxer Especie\&.cc\&.
 .SS "double Especie::distancia (const \fBEspecie\fP & esp) const"
 
 .PP
-Retorna un double amb la distancia entre la espècie del paràmetre implícit i la que ha entrat per la funció\&. 
+Retorna un double amb la distància entre la especie del paràmetre implícit i la que ha entrat al paràmetre explícit\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -236,12 +243,12 @@ Les dues espècies existeixen\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat és la distancia entre les dues espècies\&. 
+El resultat és la distància entre les dues espècies\&. 
 .RE
 .PP
 \fBRetorna\fP
 .RS 4
-double\&. Distancia entre especies 
+double\&. Distancia genètica entre les dues especies\&. 
 .RE
 .PP
 
@@ -303,7 +310,7 @@ Cert
 .PP
 \fBPostcondició\fP
 .RS 4
-S'han escrit els atributs del parametre implicit al canal estandard de sortida\&. 
+S'han escrit els atributs del parametre implícit al canal estandard de sortida\&. 
 .RE
 .PP
 
@@ -322,19 +329,19 @@ Definició a la línia 91 del fitxer Especie\&.cc\&.
 .PP
 És el gen de la espècie\&. 
 .PP
-Definició a la línia 31 del fitxer Especie\&.hh\&.
+Definició a la línia 35 del fitxer Especie\&.hh\&.
 .SS "int Especie::k_num\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Tamany que indica el tamany dels paquets per separar el gen de la especie\&. 
+Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros)\&. 
 .PP
-Definició a la línia 34 del fitxer Especie\&.hh\&.
+Definició a la línia 38 del fitxer Especie\&.hh\&.
 .SS "map<string, int> Especie::k_meros\fC [private]\fP"
 
 .PP
 Map on guardem els k-meros de la especie\&. 
 .PP
-Definició a la línia 37 del fitxer Especie\&.hh\&.
+Definició a la línia 41 del fitxer Especie\&.hh\&.
 
 .SH "Autor"
 .PP 

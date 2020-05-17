@@ -50,6 +50,7 @@
 /** @file Cjt_clusters.hh
 	@author Xavier Coll Ribas
 	@brief Especificació de la classe Cjt_clusters.
+
 */
 
 #ifndef CJT_CLUSTERS_HH
@@ -72,6 +73,11 @@ using namespace std;
  * 	També ofereix una taula de distancies entre clusters. Els clusters
  * 	es generen mitjançant la sincronització amb un conjunt d'especies 
  * 	i es compleix amb la funció inicializa_clusters.
+ * 
+ * 	\invariant El conjunt de clusters sempre estarà ordenat
+	alfabèticament i aquest no té mida màxima ni mínima. La taula
+	de distàncies entre clusters també està ordenada alfabèticament
+	amb els identificadors dels clusters.
  */
 
 class Cjt_clusters {
@@ -91,8 +97,7 @@ private:
  * 	\post S'ha passat totes les distancies entre especies al conjunt de clusters.
  * 	\param Cjt_especies Entra un objecte del tipus conjunt especies.
  */	
-	void tabla_dist_clust(const Cjt_especies& conjunt); // funcion para calcular las distancias entre clusters
-
+	void tabla_dist_clust(const Cjt_especies& conjunt); 
 
 
 /** @brief Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies.
@@ -102,8 +107,8 @@ private:
 	void afegeix_especie_clusters(const pair<string,string>& dist);
 
 /** @brief Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies.
- * 	\pre La especie a eliminar existeix.	
- * 	\post S'ha eliminat la especie del mapa de clusters i la taula de distancies.
+ * 	\pre El cluster a eliminar existeix.	
+ * 	\post S'ha eliminat el cluster del conjunt de clusters i de la taula de distancies.
  */
 
 	void elimina_especie_clusters(const string& id);
@@ -148,7 +153,8 @@ public:
 
 /** @brief Inicialitza els clusters del conjunt.
  * 	\pre Existeix un conjunt d'especies.
- * 	\post Els clusters s'han inicialitzat.
+ * 	\post Els clusters s'han inicialitzat i estan dins del conjunt de clusters
+ * 	ordenats alfabèticament.
  *  \param Cjt_especies Entra un conjunt d'especies per referència.
  * 	\param Bool El booleà té una gran importància, si bool = true imprimirà
  * 	la taula de distàncies entre clusters, en cas que bool = fals, la funció no imprimirà res.
@@ -181,9 +187,9 @@ public:
  */		
 	void imprime_tabla_distancias() const;
 	
-/** @brief Imprimeix l'arbre filogenètic.
+/** @brief Imprimeix l'arbre filogenètic dels clusters resultants.
  * 	\pre Cert.
- * 	\post S'ha imprès l'arbre filogenètic pel canal standart de sortida.
+ * 	\post S'ha imprès l'arbre filogenètic de clusters pel canal standart de sortida.
  */
 	void imprime_arbol_filogenetico(Cjt_especies& conjunt);
 

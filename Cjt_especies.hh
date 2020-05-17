@@ -22,6 +22,11 @@ using namespace std;
  * 	i modificar el conjunt, ja sigui creant noves especies o eliminant. Es pot 
  * 	consultar el gen d'una especie i si una especie existeix.També
  * 	inclou la possibilitat d'imprimir una taula de distancies entre especies.
+ * 
+ * 	\invariant El conjunt d'especies sempre estarà ordenat alfabèticament,
+ * 	no té mida màxima ni mida mínima. La taula de distàncies sempre s'imprimirà en ordre
+ * 	alfabètic. Quan es llegeix un conjunt d'especies, es declarà la mida amb una,
+ * 	una variable n >= 0.
  */
  
 class Cjt_especies {
@@ -50,7 +55,7 @@ private:
 	\pre La espècie la qual es vol afegir existeix no existeix dins la taula de distàncies.
 	\post S'ha actualitzat la taula.
 */
-	void afegeix_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'afegeix un element.
+	void afegeix_especie_tabla_dist(const string& id); 
 	
 /**
  * 	@brief Iterator. Iterador del mapa d'especies.
@@ -67,7 +72,7 @@ public:
 /**
  * 	@brief Crea un conjunt d'espècies buit. 
  *	\pre Cert.
-	\post El resultat és un conjunt d'especies buit.
+	\post El resultat és un conjunt d'especies buit i ordenat alfabèticament.
 */
 	
 	Cjt_especies();
@@ -78,16 +83,16 @@ public:
 /**	
  * 	@brief Crea una espècie i la introdueix al conjunt.
 	\pre No existeix cap espècie amb el mateix identificador.
-	\post S'ha creat una espècie.
+	\post S'ha creat una espècie i s'ha introduit al conjunt d'especies. Aquest es manté ordenat.
 */
 	
 	void crea_especie(const string& id,const string& gen);
 
 
 
-/** @brief Elimina la espècie indicada del conjunt d'espècies.
+/** @brief Elimina la espècie indicada del conjunt d'espècies del paràmetre implícit.
  * 	\pre Cert.
- * 	\post La espècie s'ha eliminat del paràmetre implícit.
+ * 	\post La especie s'ha eliminat del conjunt d'especies.
  * 	@param string id
  */
  
@@ -98,7 +103,7 @@ public:
 	
 
 	
-/**	@brief Consulta si existeix la espècie indicada.
+/**	@brief Consulta si existeix la espècie indicada al conjunt d'especies.
  * 	\pre El id és un string vàlid.
  * 	\post El resultat indica si existèix la espècie dins el conjunt d'espècies.
  * 	\param string id
@@ -118,10 +123,10 @@ public:
  * 	\param string id2
  * 	\return double
  */	
-	double calcular_distancia(const string& id, const string& id2) const; //funció per calcular la distancia entre dues espècies
+	double calcular_distancia(const string& id, const string& id2) const;
 
 /** 
- * @brief Consulta el gen de la espècie demanada
+ * @brief Consulta el gen de la espècie demanada.
  * \pre La espècie existeix al conjunt d'espècies.
    \post S'ha mostrat el gen de la espècie.
    \param string
@@ -130,29 +135,30 @@ public:
 	void obtener_gen(const string& id) const;
 	
 	
-	/** @brief Consulta si l'iterador del mapa del conjunt d'especies apunta al final d'ell o no.
+	/** @brief Consulta si és el final del conjunt d'especies del paràmetre implícit.
  * 	\pre Cert.
- * 	\post El booleà retorna cert si apunta al final del mapa.
+ * 	\post S'ha indicat si és el final del conjunt.
+ * 	\return bool cert si apunta al final del mapa, en cas contrari, fals.
  */
 
 bool final();
 
-/** @brief Posiciona l'iterador del mapa del conjunt d'especies apuntant al primer element.
+/** @brief Apuntem al primer element del conjunt d'especies del paràmetre implícit.
  * 	\pre Cert.
- * 	\post El iterador apunta al primer element del mapa.
+ * 	\post S'ha apuntat al primer element del conjunt.
  */
 void inicio();
 
-/** @brief El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual.
+/** @brief El paràmetre explícit passa a tenir la informació del element apuntat en aquell moment.
  * 	\pre Cert.
- * 	\post El paràmetre explícit passa a tenir la informació del element apuntat pel iterador actual
+ * 	\post El paràmetre explícit passa a tenir la informació del element apuntat en aquell moment.
  * 
  */
 void actual(string& act);
 
-/** @brief Avança la posició del iterador en una posició;
+/** @brief S'avança una especie del conjunt.
  * 	\pre Cert.
- * 	\post El iterador del mapa d'especies apunta una posició endavant.
+ * 	\post Si no estem al final del conjunt, avancem una especie.
  * 
  */
 void avanza();

@@ -19,8 +19,8 @@ Especie.o: Especie.cc Especie.hh
 	g++ -c Especie.cc $(OPCIONS)
 	
 	
-practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc 
-	tar -cvf practica.tar Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc
+practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc html.zip
+	tar -cvf practica.tar Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc html.zip
 	
 clean: 
 	rm -f *.o *.gch *.exe *.txt

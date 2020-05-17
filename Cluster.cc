@@ -2,10 +2,9 @@
  * 	@brief Còdig de la classe Cluster.
  */
 
-// INVARIANT:  ELS CLUSTERS SÓN ARBRES BINARIS DE PAIRS. ELS FILLS DELS
-//             DELS ARBRES BINARIS ESTÀN ORDENATS ALFABÈTICAMENT, L'ARBRE DRET ÉS 
-//             EL MÉS PETIT LEXICOGRÀFICAMENT I L'ESQUERRE L'ALTRE. 
-//             LA DISTANCIA MAI POT SER < 0.
+	//invariant Els clusters contenen una única espècie o bé estàn formats
+	//per altres clusters. Així mateix, un cluster és assimilable a un
+	//arbre binari on té espècies a les fulles. 
 
 
 #include "Cluster.hh"
