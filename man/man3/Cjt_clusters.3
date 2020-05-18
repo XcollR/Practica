@@ -1,4 +1,4 @@
-.TH "Cjt_clusters" 3 "Dg Mai 17 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "Cjt_clusters" 3 "Dl Mai 18 2020" "Version 18/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -79,12 +79,12 @@ Ofereix la possibilitat d'ajuntar clusters per tal d'anar creant l'arbre filogen
 .PP
 \fBInvariant\fP
 .RS 4
-El conjunt de clusters sempre estarà ordenat alfabèticament i aquest no té mida màxima ni mínima\&. La taula de distàncies entre clusters també està ordenada alfabèticament amb els identificadors dels clusters\&. 
+El conjunt de clusters tindrà un identificador que serà el mateix que el d'una especie i sempre estarà ordenat alfabèticament, aquest no té mida màxima ni mínima\&. La taula de distànciesentre clusters té els mateixos identificadors que els d'especie i també està ordenada alfabèticament\&. 
 .RE
 .PP
 
 .PP
-Definició a la línia 83 del fitxer Cjt_clusters\&.hh\&.
+Definició a la línia 36 del fitxer Cjt_clusters\&.hh\&.
 .SH "Documentació del Constructor i el Destructor"
 .PP 
 .SS "Cjt_clusters::Cjt_clusters ()"
@@ -521,13 +521,13 @@ Definició a la línia 126 del fitxer Cjt_clusters\&.cc\&.
 .PP
 Mapa on es guarden els clusters resultants\&. La clau es un string i la dada un \fBCluster\fP\&. 
 .PP
-Definició a la línia 89 del fitxer Cjt_clusters\&.hh\&.
+Definició a la línia 42 del fitxer Cjt_clusters\&.hh\&.
 .SS "map<string, map<string, double> > Cjt_clusters::tabla_distancias_cluster\fC [private]\fP"
 
 .PP
 Nested map on es guarden les distancies entre clusters\&. És un nested map\&. 
 .PP
-Definició a la línia 93 del fitxer Cjt_clusters\&.hh\&.
+Definició a la línia 46 del fitxer Cjt_clusters\&.hh\&.
 
 .SH "Autor"
 .PP 

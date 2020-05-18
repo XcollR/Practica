@@ -23,8 +23,9 @@ using namespace std;
  * 	consultar el gen d'una especie i si una especie existeix.També
  * 	inclou la possibilitat d'imprimir una taula de distancies entre especies.
  * 
- * 	\invariant El conjunt d'especies sempre estarà ordenat alfabèticament,
- * 	no té mida màxima ni mida mínima. La taula de distàncies sempre s'imprimirà en ordre
+ * 	\invariant El conjunt d'especies sempre estarà ordenat alfabèticament per un identificador d'especie,
+ * 	no té mida màxima ni mida mínima. La taula de distàncies també 
+ * 	tindrà el mateix identificador que la espècie i sempre s'imprimirà en ordre
  * 	alfabètic. Quan es llegeix un conjunt d'especies, es declarà la mida amb una,
  * 	una variable n >= 0.
  */

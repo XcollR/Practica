@@ -1,51 +1,3 @@
-/**
- *  @mainpage <b>Descripció de la pràctica</b>
- *  <b>Què és un arbre filogenètic?</b>
- * 
- * 	En la biologia evolutiva, antropologia, lingüística i moltes altres disciplines científiques un
- *  dels problemes principals que s'aborden és la construcció d'arbres filogenètics, diagrames
- *  que representen de manera esquemàtica les relacions evolutives entre un conjunt de N
- *  entitats (en biologia evolutiva se sol parlar d'espècies, tot i que sovint no es tracti
- *  d'espècies sinó de famílies o ordres). L'arbre filogenètic es construeix en base 
- *  a les similituds i diferències en les característiques físiques o genètiques de les N entitats.
- *  En un arbre filogenètic arrelat cada node amb descendents representa l'ancestre
- *  comú més recent dels seus descendents, i és usual que la longitud de les arestes / branques de l'
- *  arbre sigui proporcional a el temps transcorregut entre les entitats representades. els nodes
- *  interns són entitats hipotètiques, ja que no poden ser directament observades, només les N
- *  entitats de les fulles de l'arbre són les que coneixem.
- *  La construcció de l'arbre filogenètic que millor explica les dades observades, optimitzant
- *  un cert criteri, és un problema computacionalment difícil, en el sentit que el cost
- *  dels càlculs necessaris creix exponencialment amb N. A més molts altres problemes
- *  compliquen l'obtenció d'arbres filogenètics que reflecteixin la història evolutiva amb precisió:
- *  dades sobre les entitats inexactes, hibridacions, evolució convergent,. . .
- *  Per aquesta raó s'han desenvolupat nombrosos mètodes aproximats que generen arbres
- *  filogenètics de manera eficient i que s'aproximen molt bé a l'arbre òptim en la majoria
- *  de casos, però no sempre. En aquesta pràctica el nostre objectiu serà construir un programa i
- *  els mòduls necessaris per a construir l'arbre filogenètic per a un conjunt de N espècies
- *  utilitzant un d'aquests mètodes aproximats: el mètode conegut com WPGMA (Weighted
- *  pair group with arithmetic mean).
- *  
- * 	Aquest document hi trobarem les diverses classes
- *  utilitzades per poder executar bé el program.cc. Hi tenim
- *  4 classes:
- * 
- *      -Especie: Representa una especie amb el seu gen.
- * 
- *      -Cjt_especies: Representa un conjunt d'especies, amb identificador i especie.
- * 
- *      -Cluster: Representa un cluster d'un arbre binari.
- * 
- *      -Cjt_clusters: Representa un conjunt de clusters amb identificador.
- * 
- *  Amb aquestes classes podrem crear un conjunt d'especies, i fer diverses operacions amb elles, ja
- *  sigui eliminar especies, consultar distàncies, imprimir una taula de distàncies entre especies...
- *  Amb la classe Cjt_cluster i cluster, podrem anar creant un arbre binari on aquest serà el resultat
- *  d'aplicar l'algorisme WPGMA.
- * 
- *  <b>La descripció del programa principal d'aquesta pràctica és la següent</b>:
- *  Donat un conjunt d'especies, hem programat un conjunt de funcions per anar modificant el
- *  conjunt i anar creant l'arbre filogenetic.
- */
 
 /** @file Cjt_clusters.hh
 	@author Xavier Coll Ribas
@@ -74,10 +26,11 @@ using namespace std;
  * 	es generen mitjançant la sincronització amb un conjunt d'especies 
  * 	i es compleix amb la funció inicializa_clusters.
  * 
- * 	\invariant El conjunt de clusters sempre estarà ordenat
-	alfabèticament i aquest no té mida màxima ni mínima. La taula
-	de distàncies entre clusters també està ordenada alfabèticament
-	amb els identificadors dels clusters.
+ * 	\invariant El conjunt de clusters tindrà un identificador
+ * 	que serà el mateix que el d'una especie i sempre estarà ordenat
+	alfabèticament, aquest no té mida màxima ni mínima. La taula
+	de distànciesentre clusters té els mateixos identificadors que 
+	els d'especie i també està ordenada alfabèticament.
  */
 
 class Cjt_clusters {

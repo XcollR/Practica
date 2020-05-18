@@ -1,4 +1,4 @@
-.TH "Cjt_especies" 3 "Dg Mai 17 2020" "Version 15/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "Cjt_especies" 3 "Dl Mai 18 2020" "Version 18/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -99,12 +99,12 @@ Ofereix la possibilitat de calcular distàncies entre diferents especies i modif
 .PP
 \fBInvariant\fP
 .RS 4
-El conjunt d'especies sempre estarà ordenat alfabèticament, no té mida màxima ni mida mínima\&. La taula de distàncies sempre s'imprimirà en ordre alfabètic\&. Quan es llegeix un conjunt d'especies, es declarà la mida amb una, una variable n >= 0\&. 
+El conjunt d'especies sempre estarà ordenat alfabèticament per un identificador d'especie, no té mida màxima ni mida mínima\&. La taula de distàncies també tindrà el mateix identificador que la espècie i sempre s'imprimirà en ordre alfabètic\&. Quan es llegeix un conjunt d'especies, es declarà la mida amb una, una variable n >= 0\&. 
 .RE
 .PP
 
 .PP
-Definició a la línia 32 del fitxer Cjt_especies\&.hh\&.
+Definició a la línia 33 del fitxer Cjt_especies\&.hh\&.
 .SH "Documentació del Constructor i el Destructor"
 .PP 
 .SS "Cjt_especies::Cjt_especies ()"
@@ -658,19 +658,19 @@ Definició a la línia 183 del fitxer Cjt_especies\&.cc\&.
 .PP
 Mapa on guardem les espècies del conjunt d'espècies\&. 
 .PP
-Definició a la línia 40 del fitxer Cjt_especies\&.hh\&.
+Definició a la línia 41 del fitxer Cjt_especies\&.hh\&.
 .SS "map<string, map<string,double> > Cjt_especies::taula_distancies\fC [private]\fP"
 
 .PP
 Nested map\&. Mapa on guardem les distancies entre les espècies\&. 
 .PP
-Definició a la línia 44 del fitxer Cjt_especies\&.hh\&.
+Definició a la línia 45 del fitxer Cjt_especies\&.hh\&.
 .SS "map<string, \fBEspecie\fP>::const_iterator Cjt_especies::it\fC [private]\fP"
 
 .PP
 Iterator\&. Iterador del mapa d'especies\&. 
 .PP
-Definició a la línia 63 del fitxer Cjt_especies\&.hh\&.
+Definició a la línia 64 del fitxer Cjt_especies\&.hh\&.
 
 .SH "Autor"
 .PP 
