@@ -1,4 +1,4 @@
-.TH "Cjt_especies" 3 "Dl Mai 18 2020" "Version 18/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "Cjt_especies" 3 "Dt Mai 19 2020" "Version v6.3 19/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -81,11 +81,11 @@ Cjt_especies \- Representa un conjunt d'espècies ordenades alfabèticament\&.
 .ti -1c
 .RI "map< string, \fBEspecie\fP > \fBcjt_especies\fP"
 .br
-.RI "Mapa on guardem les espècies del conjunt d'espècies\&. "
+.RI "Estructura de dades on guardem les espècies del conjunt d'espècies\&. "
 .ti -1c
 .RI "map< string, map< string, double > > \fBtaula_distancies\fP"
 .br
-.RI "Nested map\&. Mapa on guardem les distancies entre les espècies\&. "
+.RI "Estructura de dades on guardem les distancies entre les espècies\&. "
 .ti -1c
 .RI "map< string, \fBEspecie\fP >::const_iterator \fBit\fP"
 .br
@@ -444,7 +444,7 @@ S'ha indicat si és el final del conjunt\&.
 .PP
 \fBRetorna\fP
 .RS 4
-bool cert si apunta al final del mapa, en cas contrari, fals\&. 
+bool cert si apunta al final del conjunt, en cas contrari, fals\&. 
 .RE
 .PP
 
@@ -656,13 +656,13 @@ Definició a la línia 183 del fitxer Cjt_especies\&.cc\&.
 .SS "map<string,\fBEspecie\fP> Cjt_especies::cjt_especies\fC [private]\fP"
 
 .PP
-Mapa on guardem les espècies del conjunt d'espècies\&. 
+Estructura de dades on guardem les espècies del conjunt d'espècies\&. 
 .PP
 Definició a la línia 41 del fitxer Cjt_especies\&.hh\&.
 .SS "map<string, map<string,double> > Cjt_especies::taula_distancies\fC [private]\fP"
 
 .PP
-Nested map\&. Mapa on guardem les distancies entre les espècies\&. 
+Estructura de dades on guardem les distancies entre les espècies\&. 
 .PP
 Definició a la línia 45 del fitxer Cjt_especies\&.hh\&.
 .SS "map<string, \fBEspecie\fP>::const_iterator Cjt_especies::it\fC [private]\fP"

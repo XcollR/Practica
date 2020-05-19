@@ -123,7 +123,7 @@ void Cjt_clusters::imprime_tabla_distancias() const {
 }
 
 
-void Cjt_clusters::imprime_arbol_filogenetico(Cjt_especies& conjunt) {
+void Cjt_clusters::imprime_arbol_filogenetico(Cjt_especies& conjunt)  {
     //el bool serveix per imprimir cada cop que executem el pas wpgma.
     //fem un bucle fins que només quedi un element al mapa de clusters
     bool fals = false;

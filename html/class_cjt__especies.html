@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Creació d&#39;un arbre filogenètic. Xavier Coll Ribas
-   &#160;<span id="projectnumber">18/05/2020</span>
+   &#160;<span id="projectnumber">v6.3 19/05/2020</span>
    </div>
   </td>
  </tr>
@@ -153,10 +153,10 @@ Mètodes Privats</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributs Privats</h2></td></tr>
 <tr class="memitem:a89de09003e9a86f62766d89ed22d599f"><td class="memItemLeft" align="right" valign="top">map&lt; string, <a class="el" href="class_especie.html">Especie</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f">cjt_especies</a></td></tr>
-<tr class="memdesc:a89de09003e9a86f62766d89ed22d599f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapa on guardem les espècies del conjunt d'espècies.  <a href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f">Més...</a><br /></td></tr>
+<tr class="memdesc:a89de09003e9a86f62766d89ed22d599f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura de dades on guardem les espècies del conjunt d'espècies.  <a href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f">Més...</a><br /></td></tr>
 <tr class="separator:a89de09003e9a86f62766d89ed22d599f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b8753b208b06eac1585faafa8d7bae"><td class="memItemLeft" align="right" valign="top">map&lt; string, map&lt; string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae">taula_distancies</a></td></tr>
-<tr class="memdesc:a11b8753b208b06eac1585faafa8d7bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nested map. Mapa on guardem les distancies entre les espècies.  <a href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae">Més...</a><br /></td></tr>
+<tr class="memdesc:a11b8753b208b06eac1585faafa8d7bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura de dades on guardem les distancies entre les espècies.  <a href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae">Més...</a><br /></td></tr>
 <tr class="separator:a11b8753b208b06eac1585faafa8d7bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52fed7408be24ac0dc3462b24ddb06a0"><td class="memItemLeft" align="right" valign="top">map&lt; string, <a class="el" href="class_especie.html">Especie</a> &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0">it</a></td></tr>
 <tr class="memdesc:a52fed7408be24ac0dc3462b24ddb06a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator. Iterador del mapa d'especies.  <a href="class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0">Més...</a><br /></td></tr>
@@ -556,7 +556,7 @@ Atributs Privats</h2></td></tr>
 <p>Consulta si és el final del conjunt d'especies del paràmetre implícit. </p>
 <dl class="section pre"><dt>Precondició</dt><dd>Cert. </dd></dl>
 <dl class="section post"><dt>Postcondició</dt><dd>S'ha indicat si és el final del conjunt. </dd></dl>
-<dl class="section return"><dt>Retorna</dt><dd>bool cert si apunta al final del mapa, en cas contrari, fals. </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool cert si apunta al final del conjunt, en cas contrari, fals. </dd></dl>
 
 <p class="definition">Definició a la línia <a class="el" href="_cjt__especies_8cc_source.html#l00110">110</a> del fitxer <a class="el" href="_cjt__especies_8cc_source.html">Cjt_especies.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                         {</div>
@@ -794,7 +794,7 @@ Atributs Privats</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Mapa on guardem les espècies del conjunt d'espècies. </p>
+<p>Estructura de dades on guardem les espècies del conjunt d'espècies. </p>
 
 <p class="definition">Definició a la línia <a class="el" href="_cjt__especies_8hh_source.html#l00041">41</a> del fitxer <a class="el" href="_cjt__especies_8hh_source.html">Cjt_especies.hh</a>.</p>
 
@@ -820,7 +820,7 @@ Atributs Privats</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Nested map. Mapa on guardem les distancies entre les espècies. </p>
+<p>Estructura de dades on guardem les distancies entre les espècies. </p>
 
 <p class="definition">Definició a la línia <a class="el" href="_cjt__especies_8hh_source.html#l00045">45</a> del fitxer <a class="el" href="_cjt__especies_8hh_source.html">Cjt_especies.hh</a>.</p>
 
@@ -859,12 +859,12 @@ Atributs Privats</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aclass_cjt__especies_html_a90a082e134d49bc8cee834b4ff5d0e8b"><div class="ttname"><a href="class_cjt__especies.html#a90a082e134d49bc8cee834b4ff5d0e8b">Cjt_especies::afegeix_especie_tabla_dist</a></div><div class="ttdeci">void afegeix_especie_tabla_dist(const string &amp;id)</div><div class="ttdoc">Actualitza la taula de distàncies si s'afegeix una espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8cc_source.html#l00218">Cjt_especies.cc:218</a></div></div>
 <div class="ttc" id="aclass_especie_html"><div class="ttname"><a href="class_especie.html">Especie</a></div><div class="ttdoc">Representa el conjunt de característiques y operacions de les especies.</div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00030">Especie.hh:30</a></div></div>
-<div class="ttc" id="aclass_cjt__especies_html_a89de09003e9a86f62766d89ed22d599f"><div class="ttname"><a href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f">Cjt_especies::cjt_especies</a></div><div class="ttdeci">map&lt; string, Especie &gt; cjt_especies</div><div class="ttdoc">Mapa on guardem les espècies del conjunt d'espècies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00041">Cjt_especies.hh:41</a></div></div>
+<div class="ttc" id="aclass_cjt__especies_html_a89de09003e9a86f62766d89ed22d599f"><div class="ttname"><a href="class_cjt__especies.html#a89de09003e9a86f62766d89ed22d599f">Cjt_especies::cjt_especies</a></div><div class="ttdeci">map&lt; string, Especie &gt; cjt_especies</div><div class="ttdoc">Estructura de dades on guardem les espècies del conjunt d'espècies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00041">Cjt_especies.hh:41</a></div></div>
 <div class="ttc" id="aclass_cjt__especies_html_a7fa2f303eb4e3065d87174a1c3e71942"><div class="ttname"><a href="class_cjt__especies.html#a7fa2f303eb4e3065d87174a1c3e71942">Cjt_especies::existeix_especie</a></div><div class="ttdeci">bool existeix_especie(const string &amp;id) const</div><div class="ttdoc">Consulta si existeix la espècie indicada al conjunt d'especies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8cc_source.html#l00056">Cjt_especies.cc:56</a></div></div>
 <div class="ttc" id="aclass_cjt__especies_html_a6413c062ece1d559a050bac7a6d02fc9"><div class="ttname"><a href="class_cjt__especies.html#a6413c062ece1d559a050bac7a6d02fc9">Cjt_especies::crea_especie</a></div><div class="ttdeci">void crea_especie(const string &amp;id, const string &amp;gen)</div><div class="ttdoc">Crea una espècie i la introdueix al conjunt.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8cc_source.html#l00028">Cjt_especies.cc:28</a></div></div>
 <div class="ttc" id="aclass_cjt__especies_html_a52fed7408be24ac0dc3462b24ddb06a0"><div class="ttname"><a href="class_cjt__especies.html#a52fed7408be24ac0dc3462b24ddb06a0">Cjt_especies::it</a></div><div class="ttdeci">map&lt; string, Especie &gt;::const_iterator it</div><div class="ttdoc">Iterator. Iterador del mapa d'especies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00064">Cjt_especies.hh:64</a></div></div>
 <div class="ttc" id="aclass_cjt__especies_html_aa9f562fc745558783a3634c38df07ad5"><div class="ttname"><a href="class_cjt__especies.html#aa9f562fc745558783a3634c38df07ad5">Cjt_especies::elimina_especie_tabla_dist</a></div><div class="ttdeci">void elimina_especie_tabla_dist(const string &amp;id)</div><div class="ttdoc">Actualitza la taula de distàncies si s'elimina una espècie.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8cc_source.html#l00203">Cjt_especies.cc:203</a></div></div>
-<div class="ttc" id="aclass_cjt__especies_html_a11b8753b208b06eac1585faafa8d7bae"><div class="ttname"><a href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae">Cjt_especies::taula_distancies</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; taula_distancies</div><div class="ttdoc">Nested map. Mapa on guardem les distancies entre les espècies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00045">Cjt_especies.hh:45</a></div></div>
+<div class="ttc" id="aclass_cjt__especies_html_a11b8753b208b06eac1585faafa8d7bae"><div class="ttname"><a href="class_cjt__especies.html#a11b8753b208b06eac1585faafa8d7bae">Cjt_especies::taula_distancies</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; taula_distancies</div><div class="ttdoc">Estructura de dades on guardem les distancies entre les espècies.</div><div class="ttdef"><b>Definition:</b> <a href="_cjt__especies_8hh_source.html#l00045">Cjt_especies.hh:45</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generat per &#160;<a href="http://www.doxygen.org/index.html">

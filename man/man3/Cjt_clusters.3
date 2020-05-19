@@ -1,4 +1,4 @@
-.TH "Cjt_clusters" 3 "Dl Mai 18 2020" "Version 18/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "Cjt_clusters" 3 "Dt Mai 19 2020" "Version v6.3 19/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,7 +21,7 @@ Cjt_clusters \- Representa un conjunt de clusters\&.
 .ti -1c
 .RI "pair< string, string > \fBmin_dist\fP () const"
 .br
-.RI "Calcula la distancia mínima entre Clusters\&. "
+.RI "Calcula la distància mínima entre Clusters\&. "
 .ti -1c
 .RI "void \fBinicialitza_clusters\fP (\fBCjt_especies\fP &conjunt, const bool ve_de_func)"
 .br
@@ -49,15 +49,15 @@ Cjt_clusters \- Representa un conjunt de clusters\&.
 .ti -1c
 .RI "void \fBtabla_dist_clust\fP (const \fBCjt_especies\fP &conjunt)"
 .br
-.RI "Imprimeix el cluster indicat\&. "
+.RI "Passa les distàncies entre espècies a la taula de distàncies entre clusters\&. "
 .ti -1c
 .RI "void \fBafegeix_especie_clusters\fP (const pair< string, string > &dist)"
 .br
-.RI "Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies\&. "
+.RI "Afegeix la fusió dels dos clusters al conjunt de clusters i a la taula de distàncies\&. "
 .ti -1c
 .RI "void \fBelimina_especie_clusters\fP (const string &id)"
 .br
-.RI "Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies\&. "
+.RI "Elimina la especie indicada del conjunt de clusters i de la taula de distàncies\&. "
 .in -1c
 .SS "Atributs Privats"
 
@@ -65,11 +65,11 @@ Cjt_clusters \- Representa un conjunt de clusters\&.
 .ti -1c
 .RI "map< string, \fBCluster\fP > \fBmap_clusters\fP"
 .br
-.RI "Mapa on es guarden els clusters resultants\&. La clau es un string i la dada un \fBCluster\fP\&. "
+.RI "Estructura de dades on es guarden els clusters resultants\&. Conté un identificador i un \fBCluster\fP\&. "
 .ti -1c
 .RI "map< string, map< string, double > > \fBtabla_distancias_cluster\fP"
 .br
-.RI "Nested map on es guarden les distancies entre clusters\&. És un nested map\&. "
+.RI "Estructura de dades on guardem les distancies entre clusters\&. "
 .in -1c
 .SH "Descripció Detallada"
 .PP 
@@ -118,7 +118,7 @@ Definició a la línia 19 del fitxer Cjt_clusters\&.cc\&.
 .SS "void Cjt_clusters::tabla_dist_clust (const \fBCjt_especies\fP & conjunt)\fC [private]\fP"
 
 .PP
-Imprimeix el cluster indicat\&. 
+Passa les distàncies entre espècies a la taula de distàncies entre clusters\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -158,7 +158,7 @@ Definició a la línia 146 del fitxer Cjt_clusters\&.cc\&.
 .SS "void Cjt_clusters::afegeix_especie_clusters (const pair< string, string > & dist)\fC [private]\fP"
 
 .PP
-Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies\&. 
+Afegeix la fusió dels dos clusters al conjunt de clusters i a la taula de distàncies\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -201,7 +201,7 @@ Definició a la línia 162 del fitxer Cjt_clusters\&.cc\&.
 .SS "void Cjt_clusters::elimina_especie_clusters (const string & id)\fC [private]\fP"
 
 .PP
-Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies\&. 
+Elimina la especie indicada del conjunt de clusters i de la taula de distàncies\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -278,7 +278,7 @@ Definició a la línia 29 del fitxer Cjt_clusters\&.cc\&.
 .SS "pair< string, string > Cjt_clusters::min_dist () const"
 
 .PP
-Calcula la distancia mínima entre Clusters\&. 
+Calcula la distància mínima entre Clusters\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -287,7 +287,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-S'ha calculat la distancia entre dos clusters\&. 
+S'ha calculat la distancia mínima entre els clusters del conjunt\&. 
 .RE
 .PP
 \fBRetorna\fP
@@ -497,7 +497,7 @@ S'ha imprès l'arbre filogenètic de clusters pel canal standart de sortida\&.
 Definició a la línia 126 del fitxer Cjt_clusters\&.cc\&.
 .PP
 .nf
-126                                                                    {
+126                                                                     {
 127     //el bool serveix per imprimir cada cop que executem el pas wpgma\&.
 128     //fem un bucle fins que només quedi un element al mapa de clusters
 129     bool fals = false;
@@ -519,13 +519,13 @@ Definició a la línia 126 del fitxer Cjt_clusters\&.cc\&.
 .SS "map<string, \fBCluster\fP> Cjt_clusters::map_clusters\fC [private]\fP"
 
 .PP
-Mapa on es guarden els clusters resultants\&. La clau es un string i la dada un \fBCluster\fP\&. 
+Estructura de dades on es guarden els clusters resultants\&. Conté un identificador i un \fBCluster\fP\&. 
 .PP
 Definició a la línia 42 del fitxer Cjt_clusters\&.hh\&.
 .SS "map<string, map<string, double> > Cjt_clusters::tabla_distancias_cluster\fC [private]\fP"
 
 .PP
-Nested map on es guarden les distancies entre clusters\&. És un nested map\&. 
+Estructura de dades on guardem les distancies entre clusters\&. 
 .PP
 Definició a la línia 46 del fitxer Cjt_clusters\&.hh\&.
 

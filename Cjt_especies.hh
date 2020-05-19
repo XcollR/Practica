@@ -36,11 +36,11 @@ private:
 
 	
 /** 
- * 	@brief Mapa on guardem les espècies del conjunt d'espècies.
+ * 	@brief Estructura de dades on guardem les espècies del conjunt d'espècies.
 */
 	map<string,Especie> cjt_especies; 
 /** 
- * 	@brief Nested map. Mapa on guardem les distancies entre les espècies.
+ * 	@brief Estructura de dades on guardem les distancies entre les espècies.
 */			
 	map<string, map<string,double> > taula_distancies; 
 
@@ -139,7 +139,7 @@ public:
 	/** @brief Consulta si és el final del conjunt d'especies del paràmetre implícit.
  * 	\pre Cert.
  * 	\post S'ha indicat si és el final del conjunt.
- * 	\return bool cert si apunta al final del mapa, en cas contrari, fals.
+ * 	\return bool cert si apunta al final del conjunt, en cas contrari, fals.
  */
 
 bool final();

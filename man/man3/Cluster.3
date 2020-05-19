@@ -1,4 +1,4 @@
-.TH "Cluster" 3 "Dl Mai 18 2020" "Version 18/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "Cluster" 3 "Dt Mai 19 2020" "Version v6.3 19/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,13 +23,13 @@ Cluster \- Representa un cluster d'un arbre binari\&.
 .br
 .RI "Escriu el cluster que entra pel paràmetre implícit\&. "
 .in -1c
-.SS "Mètodes Privats"
+.SS "Mètodes Privats Estàtics"
 
 .in +1c
 .ti -1c
-.RI "void \fBinm_escriure\fP (const BinTree< pair< string, double >> &a) const"
+.RI "static void \fBinm_escriure\fP (const BinTree< pair< string, double >> &a)"
 .br
-.RI "Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva de l'arbre del cluster\&. "
+.RI "Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva d'un cluster\&. "
 .in -1c
 .SS "Atributs Privats"
 
@@ -37,7 +37,9 @@ Cluster \- Representa un cluster d'un arbre binari\&.
 .ti -1c
 .RI "BinTree< pair< string, double > > \fBcluster\fP"
 .br
-.RI "Arbre binari format per pairs\&. "
+.RI "Estructura de dades d'un \fBCluster\fP\&. 
+.br
+ "
 .in -1c
 .SH "Descripció Detallada"
 .PP 
@@ -129,19 +131,19 @@ Definició a la línia 25 del fitxer Cluster\&.cc\&.
 .fi
 .SH "Documentació de les Funcions Membre"
 .PP 
-.SS "void Cluster::inm_escriure (const BinTree< pair< string, double >> & a) const\fC [private]\fP"
+.SS "void Cluster::inm_escriure (const BinTree< pair< string, double >> & a)\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva de l'arbre del cluster\&. 
+Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva d'un cluster\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
-L'arbre el qual es vol escriure no té el node principal buit\&. Aquesta funció escriura fins que és trobi un node buit\&. En cas que els nodes esquerre i dreta siguin buits, no escriurà la distancià respecte als seus fills degut a no en té\&. 
+Cert\&. 
 .RE
 .PP
 \fBPostcondició\fP
 .RS 4
-S'ha escrit l'arbre binàri amb les condicions indicades abans\&. 
+Escriu en preordre tal com indicat a la pràctica\&. 
 .RE
 .PP
 \fBParàmetres\fP
@@ -154,7 +156,7 @@ S'ha escrit l'arbre binàri amb les condicions indicades abans\&.
 Definició a la línia 53 del fitxer Cluster\&.cc\&.
 .PP
 .nf
-53                                                                       {
+53                                                                  {
 54     //Escriptura del arbre binari\&. Si aquest té els nodes 
 55     //dret i esquerre buit, es a dir, són fulles de l'arbre,
 56     //no escriu la distancia respecte als fills\&.
@@ -202,7 +204,9 @@ Definició a la línia 45 del fitxer Cluster\&.cc\&.
 .SS "BinTree< pair<string, double> > Cluster::cluster\fC [private]\fP"
 
 .PP
-Arbre binari format per pairs\&. 
+Estructura de dades d'un \fBCluster\fP\&. 
+.br
+ 
 .PP
 Definició a la línia 35 del fitxer Cluster\&.hh\&.
 

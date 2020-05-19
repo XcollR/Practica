@@ -37,7 +37,7 @@ private:
   	/** @brief Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros). */
 	static int k_num; 
 
-  	/** @brief Map on guardem els k-meros de la especie. */
+  	/** @brief Estructura de dades on guardem els k-meros de la especie. */
 	map<string, int> k_meros; 
 	
 /**

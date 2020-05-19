@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Creació d&#39;un arbre filogenètic. Xavier Coll Ribas
-   &#160;<span id="projectnumber">18/05/2020</span>
+   &#160;<span id="projectnumber">v6.3 19/05/2020</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Mètodes públics</a> &#124;
-<a href="#pri-methods">Mètodes Privats</a> &#124;
+<a href="#pri-static-methods">Mètodes Privats Estàtics</a> &#124;
 <a href="#pri-attribs">Atributs Privats</a> &#124;
 <a href="class_cluster-members.html">Llista de tots els membres</a>  </div>
   <div class="headertitle">
@@ -111,16 +111,17 @@ Mètodes públics</h2></td></tr>
 <tr class="memdesc:aae67c144fc543eace946dc8a651b5b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escriu el cluster que entra pel paràmetre implícit.  <a href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a">Més...</a><br /></td></tr>
 <tr class="separator:aae67c144fc543eace946dc8a651b5b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Mètodes Privats</h2></td></tr>
-<tr class="memitem:a1856b0f1ca9243208451c965313af753"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a> (const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a) const</td></tr>
-<tr class="memdesc:a1856b0f1ca9243208451c965313af753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funció recursiva cridada per la funcio <a class="el" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a" title="Escriu el cluster que entra pel paràmetre implícit.">escriure()</a> per tal de poder fer la escriptura recursiva de l'arbre del cluster.  <a href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Més...</a><br /></td></tr>
-<tr class="separator:a1856b0f1ca9243208451c965313af753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Mètodes Privats Estàtics</h2></td></tr>
+<tr class="memitem:a9893d8d0bb1bdfc929b4d584b931e695"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695">inm_escriure</a> (const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a)</td></tr>
+<tr class="memdesc:a9893d8d0bb1bdfc929b4d584b931e695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funció recursiva cridada per la funcio <a class="el" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a" title="Escriu el cluster que entra pel paràmetre implícit.">escriure()</a> per tal de poder fer la escriptura recursiva d'un cluster.  <a href="class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695">Més...</a><br /></td></tr>
+<tr class="separator:a9893d8d0bb1bdfc929b4d584b931e695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributs Privats</h2></td></tr>
 <tr class="memitem:a34b4dbc09bb7d69a7f2fb8ce390d6174"><td class="memItemLeft" align="right" valign="top">BinTree&lt; pair&lt; string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">cluster</a></td></tr>
-<tr class="memdesc:a34b4dbc09bb7d69a7f2fb8ce390d6174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arbre binari format per pairs.  <a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Més...</a><br /></td></tr>
+<tr class="memdesc:a34b4dbc09bb7d69a7f2fb8ce390d6174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura de dades d'un <a class="el" href="class_cluster.html" title="Representa un cluster d&#39;un arbre binari.">Cluster</a>. <br  />
+  <a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Més...</a><br /></td></tr>
 <tr class="separator:a34b4dbc09bb7d69a7f2fb8ce390d6174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripció Detallada</h2>
@@ -227,8 +228,8 @@ Atributs Privats</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentació de les Funcions Membre</h2>
-<a id="a1856b0f1ca9243208451c965313af753"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1856b0f1ca9243208451c965313af753">&#9670;&nbsp;</a></span>inm_escriure()</h2>
+<a id="a9893d8d0bb1bdfc929b4d584b931e695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9893d8d0bb1bdfc929b4d584b931e695">&#9670;&nbsp;</a></span>inm_escriure()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,19 +242,19 @@ Atributs Privats</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Funció recursiva cridada per la funcio <a class="el" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a" title="Escriu el cluster que entra pel paràmetre implícit.">escriure()</a> per tal de poder fer la escriptura recursiva de l'arbre del cluster. </p>
-<dl class="section pre"><dt>Precondició</dt><dd>L'arbre el qual es vol escriure no té el node principal buit. Aquesta funció escriura fins que és trobi un node buit. En cas que els nodes esquerre i dreta siguin buits, no escriurà la distancià respecte als seus fills degut a no en té. </dd></dl>
-<dl class="section post"><dt>Postcondició</dt><dd>S'ha escrit l'arbre binàri amb les condicions indicades abans. </dd></dl>
+<p>Funció recursiva cridada per la funcio <a class="el" href="class_cluster.html#aae67c144fc543eace946dc8a651b5b7a" title="Escriu el cluster que entra pel paràmetre implícit.">escriure()</a> per tal de poder fer la escriptura recursiva d'un cluster. </p>
+<dl class="section pre"><dt>Precondició</dt><dd>Cert. </dd></dl>
+<dl class="section post"><dt>Postcondició</dt><dd>Escriu en preordre tal com indicat a la pràctica. </dd></dl>
 <dl class="params"><dt>Paràmetres</dt><dd>
   <table class="params">
     <tr><td class="paramname">BinTree.</td><td>Arbre binàri del cluster. </td></tr>
@@ -262,7 +263,7 @@ Atributs Privats</h2></td></tr>
 </dl>
 
 <p class="definition">Definició a la línia <a class="el" href="_cluster_8cc_source.html#l00053">53</a> del fitxer <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                      {</div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                 {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//Escriptura del arbre binari. Si aquest té els nodes </span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//dret i esquerre buit, es a dir, són fulles de l&#39;arbre,</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//no escriu la distancia respecte als fills.</span></div>
@@ -273,8 +274,8 @@ Atributs Privats</h2></td></tr>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            cout &lt;&lt;<span class="stringliteral">&quot;[&quot;</span>&lt;&lt; a.value().first;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(a.left());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(a.right());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695">inm_escriure</a>(a.left());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695">inm_escriure</a>(a.right());</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
@@ -303,7 +304,7 @@ Atributs Privats</h2></td></tr>
 <p class="definition">Definició a la línia <a class="el" href="_cluster_8cc_source.html#l00045">45</a> del fitxer <a class="el" href="_cluster_8cc_source.html">Cluster.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                             {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//Entra el arbre del paràmetre implícit a la funció recursiva.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_cluster.html#a1856b0f1ca9243208451c965313af753">inm_escriure</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695">inm_escriure</a>(<a class="code" href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    cout &lt;&lt; endl;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment -->
@@ -330,7 +331,8 @@ Atributs Privats</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Arbre binari format per pairs. </p>
+<p>Estructura de dades d'un <a class="el" href="class_cluster.html" title="Representa un cluster d&#39;un arbre binari.">Cluster</a>. <br  />
+ </p>
 
 <p class="definition">Definició a la línia <a class="el" href="_cluster_8hh_source.html#l00035">35</a> del fitxer <a class="el" href="_cluster_8hh_source.html">Cluster.hh</a>.</p>
 
@@ -341,8 +343,8 @@ Atributs Privats</h2></td></tr>
 <li><a class="el" href="_cluster_8cc_source.html">Cluster.cc</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclass_cluster_html_a34b4dbc09bb7d69a7f2fb8ce390d6174"><div class="ttname"><a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; pair&lt; string, double &gt; &gt; cluster</div><div class="ttdoc">Arbre binari format per pairs.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00035">Cluster.hh:35</a></div></div>
-<div class="ttc" id="aclass_cluster_html_a1856b0f1ca9243208451c965313af753"><div class="ttname"><a href="class_cluster.html#a1856b0f1ca9243208451c965313af753">Cluster::inm_escriure</a></div><div class="ttdeci">void inm_escriure(const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a) const</div><div class="ttdoc">Funció recursiva cridada per la funcio escriure() per tal de poder fer la escriptura recursiva de l'a...</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00053">Cluster.cc:53</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a34b4dbc09bb7d69a7f2fb8ce390d6174"><div class="ttname"><a href="class_cluster.html#a34b4dbc09bb7d69a7f2fb8ce390d6174">Cluster::cluster</a></div><div class="ttdeci">BinTree&lt; pair&lt; string, double &gt; &gt; cluster</div><div class="ttdoc">Estructura de dades d'un Cluster.</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8hh_source.html#l00035">Cluster.hh:35</a></div></div>
+<div class="ttc" id="aclass_cluster_html_a9893d8d0bb1bdfc929b4d584b931e695"><div class="ttname"><a href="class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695">Cluster::inm_escriure</a></div><div class="ttdeci">static void inm_escriure(const BinTree&lt; pair&lt; string, double &gt;&gt; &amp;a)</div><div class="ttdoc">Funció recursiva cridada per la funcio escriure() per tal de poder fer la escriptura recursiva d'un c...</div><div class="ttdef"><b>Definition:</b> <a href="_cluster_8cc_source.html#l00053">Cluster.cc:53</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generat per &#160;<a href="http://www.doxygen.org/index.html">

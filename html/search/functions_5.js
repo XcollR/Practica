@@ -6,5 +6,5 @@ var searchData=
   ['imprime_5ftabla_5fdistancias_87',['imprime_tabla_distancias',['../class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327',1,'Cjt_clusters']]],
   ['inicialitza_5fclusters_88',['inicialitza_clusters',['../class_cjt__clusters.html#ac309c781b06d06ec9a2b4bc839c01f40',1,'Cjt_clusters']]],
   ['inicio_89',['inicio',['../class_cjt__especies.html#aedcfb0e423c5c02653c8a5d362cfa784',1,'Cjt_especies']]],
-  ['inm_5fescriure_90',['inm_escriure',['../class_cluster.html#a1856b0f1ca9243208451c965313af753',1,'Cluster']]]
+  ['inm_5fescriure_90',['inm_escriure',['../class_cluster.html#a9893d8d0bb1bdfc929b4d584b931e695',1,'Cluster']]]
 ];

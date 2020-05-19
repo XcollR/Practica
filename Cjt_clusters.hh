@@ -37,15 +37,15 @@ class Cjt_clusters {
 
 private: 
 /**	
- * 	@brief Mapa on es guarden els clusters resultants. La clau es un string i la dada un Cluster
+ * 	@brief Estructura de dades on es guarden els clusters resultants. Conté un identificador i un Cluster.
 */
 	map<string, Cluster> map_clusters;
 /**	
- * 	@brief Nested map on es guarden les distancies entre clusters. És un nested map.
+ * 	@brief Estructura de dades on guardem les distancies entre clusters.
 */	
 	map<string, map<string, double> > tabla_distancias_cluster; 
 
-/**	@brief Imprimeix el cluster indicat.
+/**	@brief Passa les distàncies entre espècies a la taula de distàncies entre clusters.
  * 	\pre Cert.
  * 	\post S'ha passat totes les distancies entre especies al conjunt de clusters.
  * 	\param Cjt_especies Entra un objecte del tipus conjunt especies.
@@ -53,13 +53,13 @@ private:
 	void tabla_dist_clust(const Cjt_especies& conjunt); 
 
 
-/** @brief Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies.
+/** @brief Afegeix la fusió dels dos clusters al conjunt de clusters i a la taula de distàncies.
  * 	\pre El pair no és buit.	
  * 	\post S'ha fusionat els clusters.
  */
 	void afegeix_especie_clusters(const pair<string,string>& dist);
 
-/** @brief Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies.
+/** @brief Elimina la especie indicada del conjunt de clusters i de la taula de distàncies.
  * 	\pre El cluster a eliminar existeix.	
  * 	\post S'ha eliminat el cluster del conjunt de clusters i de la taula de distancies.
  */
@@ -93,9 +93,9 @@ public:
 	double dist_clust(const string& id, const string& id2) const;
 
 
-/**	@brief Calcula la distancia mínima entre Clusters.
+/**	@brief Calcula la distància mínima entre Clusters.
  * 	\pre Cert.
- * 	\post S'ha calculat la distancia entre dos clusters.
+ * 	\post S'ha calculat la distancia mínima entre els clusters del conjunt.
  * 	\return Retorna un pair. Els dos elements són de tipu string, retorna els
  * 	identificadors de clusters a menor distancia.
  */	

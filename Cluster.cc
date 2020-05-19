@@ -50,7 +50,7 @@ void Cluster::escriure() const {
 
 // Mètodes privats
 
-void Cluster::inm_escriure(const BinTree<pair<string,double>>& a) const {
+void Cluster::inm_escriure(const BinTree<pair<string,double>>& a)  {
     //Escriptura del arbre binari. Si aquest té els nodes 
     //dret i esquerre buit, es a dir, són fulles de l'arbre,
     //no escriu la distancia respecte als fills.

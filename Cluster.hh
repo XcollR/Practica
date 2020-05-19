@@ -31,18 +31,16 @@ class Cluster {
 private:
 
 
-/** @brief Arbre binari format per pairs */
+/** @brief Estructura de dades d'un Cluster.  */
 	BinTree< pair<string, double> > cluster; 
 
 /** @brief Funció recursiva cridada per la funcio escriure() per tal de 
- * 	poder fer la escriptura recursiva de l'arbre del cluster.
- * 	\pre L'arbre el qual es vol escriure no té el node principal buit. Aquesta funció escriura
- * 	fins que és trobi un node buit. En cas que els nodes esquerre i dreta siguin buits, no escriurà la
- * 	distancià respecte als seus fills degut a no en té.
- * 	\post S'ha escrit l'arbre binàri amb les condicions indicades abans.
+ * 	poder fer la escriptura recursiva d'un cluster.
+ * 	\pre Cert.
+ * 	\post Escriu en preordre tal com indicat a la pràctica.
  * 	\param BinTree. Arbre binàri del cluster.
  */
-  	void inm_escriure(const BinTree<pair<string,double>>& a) const;
+  	static void inm_escriure(const BinTree<pair<string,double>>& a);
 
 
 public:
