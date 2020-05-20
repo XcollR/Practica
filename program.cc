@@ -68,7 +68,7 @@
  *		Les n espècies donades tenen identificadors diferents entre si. 
  *		Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.
  *	
- *	-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
+ *		-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
  *		Si el conjunt és buit, no imprimeix cap informació.
  *
  *		-<b>tabla_distancias</b>: Imprimeix la taula de distàncies entre cada parell d'espècies de el conjunt d'espècies. 
@@ -94,6 +94,7 @@
  *		a continuació aplicar l'algoritme. El conjunt de clústers final és el que queda després
  *		d'aplicar l'algoritme.
  *		Si el nou conjunt de clústers és buit, només s'ha d'escriure un missatge d'error.
+ 
  *		-<b>fin</b>: finalitza l'execució de el programa
  * 		
  */
