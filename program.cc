@@ -171,9 +171,9 @@ int main() {
 			cout << "# " << opcio << " " << id << " " << id2 << endl;
 			// Depenent el que ens retorni la funció calcular distància, tindrà un 
 			// significat diferent. Consultar la documentació per més detalls.
-			if (conjunt.calcular_distancia(id,id2) == -1) 	cout << "ERROR: La espècie " << id << " y la espècie " << id2 << " no existen." << endl;
-			else if (conjunt.calcular_distancia(id,id2) == -2) 	cout << "ERROR: La espècie " << id << " no existe." << endl;
-			else if (conjunt.calcular_distancia(id,id2) == -3)	cout << "ERROR: La espècie " << id2 << " no existe." << endl;
+			if (conjunt.calcular_distancia(id,id2) == -1) 	cout << "ERROR: La especie " << id << " y la especie " << id2 << " no existen." << endl;
+			else if (conjunt.calcular_distancia(id,id2) == -2) 	cout << "ERROR: La especie " << id << " no existe." << endl;
+			else if (conjunt.calcular_distancia(id,id2) == -3)	cout << "ERROR: La especie " << id2 << " no existe." << endl;
 			else cout << conjunt.calcular_distancia(id,id2) << endl;
 			
 			cout << endl;
