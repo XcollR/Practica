@@ -1,6 +1,10 @@
 /**
  *  @mainpage <b>Descripció de la pràctica</b>
+ * 	\section intro_sec Introducció
+ * 
  *  <b>Què és un arbre filogenètic?</b>
+ * 
+ * 	[Extret de l'enunciat de la pràctica del web de PRO2]
  * 
  * 	En la biologia evolutiva, antropologia, lingüística i moltes altres disciplines científiques un
  *  dels problemes principals que s'aborden és la construcció d'arbres filogenètics, diagrames
@@ -17,7 +21,7 @@
  *  un cert criteri, és un problema computacionalment difícil, en el sentit que el cost
  *  dels càlculs necessaris creix exponencialment amb N. A més molts altres problemes
  *  compliquen l'obtenció d'arbres filogenètics que reflecteixin la història evolutiva amb precisió:
- *  dades sobre les entitats inexactes, hibridacions, evolució convergent,
+ *  dades sobre les entitats inexactes, hibridacions, evolució convergent.
  *  Per aquesta raó s'han desenvolupat nombrosos mètodes aproximats que generen arbres
  *  filogenètics de manera eficient i que s'aproximen molt bé a l'arbre òptim en la majoria
  *  de casos, però no sempre. En aquesta pràctica el nostre objectiu serà construir un programa i
@@ -29,26 +33,26 @@
  *  utilitzades per poder executar bé el program.cc. Hi tenim
  *  4 classes:
  * 
- *      -Especie: Representa una especie amb el seu gen.
+ *     -<b> Especie </b>: Representa una espècie amb el seu gen.
  * 
- *      -Cjt_especies: Representa un conjunt d'especies, amb identificador i especie.
+ *     -<b> Cjt_especies </b>: Representa un conjunt d'espècies, amb identificador i espècie.
  * 
- *      -Cluster: Representa un cluster d'un arbre binari.
+ *     -<b> Cluster </b>: Representa un cluster d'un arbre binari.
  * 
- *      -Cjt_clusters: Representa un conjunt de clusters amb identificador.
+ *     -<b> Cjt_clusters </b>: Representa un conjunt de clusters amb identificador.
  * 
- *  Amb aquestes classes podrem crear un conjunt d'especies, i fer diverses operacions amb elles, ja
- *  sigui eliminar especies, consultar distàncies, imprimir una taula de distàncies entre especies...
+ *  Amb aquestes classes podrem crear un conjunt d'espècies, i fer diverses operacions amb elles, ja
+ *  sigui eliminar espècies, consultar distàncies, imprimir una taula de distàncies entre espècies...
  *  Amb la classe Cjt_cluster i cluster, podrem anar creant un arbre binari on aquest serà el resultat
  *  d'aplicar l'algorisme WPGMA.
  * 
- *  <b>La descripció del programa principal d'aquesta pràctica</b>:
- *  Donat un conjunt d'especies, hem programat un conjunt de funcions per anar modificant el
+ *  \section seg_part Descripció
+ *  Donat un conjunt d'espècies, hem programat un conjunt de funcions per anar modificant el
  *  conjunt i anar creant l'arbre filogenetic.
  * 	Les operacions del programa principal són:
  * 
- * 		-<b>crea_especie</b>: Crea una espècie amb identificador i gen. Si la espècie ja existeix salta un
- * 		missatge d'error. En cas contrari, la introdueix dins el conjunt d'especies.
+ * 		-<b>crea_espècie</b>: Crea una espècie amb identificador i gen. Si la espècie ja existeix salta un
+ * 		missatge d'error. En cas contrari, la introdueix dins el conjunt d'espècies.
  * 		
  * 		-<b>obtener_gen</b>: Donat un identificador d'espècie, imprimeix el gen associat a l'espècie.
  * 		Escriu un missatge d'error si no hi ha una espècie amb l'identificador donat.
@@ -57,18 +61,18 @@
  * 		espècies. Es escriu un missatge d'error si alguna de les dues espècies els identificadors
  * 		es donen no existeixen
  *	
- *		-<b>elimina_especie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. 
+ *		-<b>elimina_espècie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. 
  *		Escriu un missatge d'error si l'espècie amb l'identificador donat no existeix.
  *	
- *		-<b>existe_especie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si
+ *		-<b>existe_espècie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si
  * 		aquesta espècie existeix (és a dir, és part del conjunt d'espècies).
  *
- *		-<b>lee_cjt_especies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit
+ *		-<b>lee_cjt_espècies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit
  * 		una seqüència de n espècies (parells identificador-gen). 
  *		Les n espècies donades tenen identificadors diferents entre si. 
  *		Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.
  *	
- *		-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
+ *		-<b>imprime_cjt_espècies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
  *		Si el conjunt és buit, no imprimeix cap informació.
  *
  *		-<b>tabla_distancias</b>: Imprimeix la taula de distàncies entre cada parell d'espècies de el conjunt d'espècies. 
@@ -94,8 +98,20 @@
  *		a continuació aplicar l'algoritme. El conjunt de clústers final és el que queda després
  *		d'aplicar l'algoritme.
  *		Si el nou conjunt de clústers és buit, només s'ha d'escriure un missatge d'error.
- 
+
  *		-<b>fin</b>: finalitza l'execució de el programa
+
+	\section terc_part Dades Bàsiques
+
+		<b>Autor</b>: Xavier Coll Ribas (Grup 32).
+
+		<b>Professora de laboratori</b>: Josefina Sierra Santibáñez.
+
+		<b>Data d'inici del projecte</b>: 06/04/2020
+
+		<b>Data entrega del programa</b>: 20/04/2020
+
+
  * 		
  */
 
@@ -119,7 +135,7 @@ int main() {
 	int k; 
 	cin >> k;
 	
-	Cjt_especies conjunt; // Iniciem un conjunt d'especies buit.
+	Cjt_especies conjunt; // Iniciem un conjunt d'espècies buit.
 	Cjt_clusters cjt_clusters; // Iniciem un conjunt de clusters buit.
 	Especie especie; // Iniciem una espècie buida. Només la farem servir per introduir el paràmetre k.
 	especie.set_parametro(k);
@@ -133,9 +149,9 @@ int main() {
 							 // majoritariament al nostre programa.
 
 		if (opcio == "crea_especie") {
-			cin >> id >> gen; // El identificador de la especie amb el seu gen.
+			cin >> id >> gen; // El identificador de la espècie amb el seu gen.
 			cout << "# " << opcio << " " << id << " " << gen << endl;
-			if (conjunt.existeix_especie(id)) cout << "ERROR: La especie " << id << " ya existe." << endl; // En cas que la especie ja existeixi dins el conjunt salta un missatge d'error.
+			if (conjunt.existeix_especie(id)) cout << "ERROR: La especie " << id << " ya existe." << endl; // En cas que la espècie ja existeixi dins el conjunt salta un missatge d'error.
 			else {
 			conjunt.crea_especie(id,gen);
 			}
@@ -143,55 +159,55 @@ int main() {
 		}
 		
 		else if (opcio == "obtener_gen") {
-			cin >> id; // El identificador de la especie que es vol consultar el gen.
+			cin >> id; // El identificador de la espècie que es vol consultar el gen.
 			cout << "# " << opcio << " " << id << endl;
 			if (conjunt.existeix_especie(id)) conjunt.obtener_gen(id);
-			else cout << "ERROR: La especie " << id << " no existe." << endl; // En cas que la especie no existeix dins el conjunt, salta un missatge d'error.
+			else cout << "ERROR: La especie " << id << " no existe." << endl; // En cas que la espècie no existeix dins el conjunt, salta un missatge d'error.
 			cout << endl;
 
 		}
 		else if (opcio == "distancia") {
-			cin >> id >> id2; // Els dos identificadors de les especies les quals es vol consultar la distància.
+			cin >> id >> id2; // Els dos identificadors de les espècies les quals es vol consultar la distància.
 			cout << "# " << opcio << " " << id << " " << id2 << endl;
 			// Depenent el que ens retorni la funció calcular distància, tindrà un 
 			// significat diferent. Consultar la documentació per més detalls.
-			if (conjunt.calcular_distancia(id,id2) == -1) 	cout << "ERROR: La especie " << id << " y la especie " << id2 << " no existen." << endl;
-			else if (conjunt.calcular_distancia(id,id2) == -2) 	cout << "ERROR: La especie " << id << " no existe." << endl;
-			else if (conjunt.calcular_distancia(id,id2) == -3)	cout << "ERROR: La especie " << id2 << " no existe." << endl;
+			if (conjunt.calcular_distancia(id,id2) == -1) 	cout << "ERROR: La espècie " << id << " y la espècie " << id2 << " no existen." << endl;
+			else if (conjunt.calcular_distancia(id,id2) == -2) 	cout << "ERROR: La espècie " << id << " no existe." << endl;
+			else if (conjunt.calcular_distancia(id,id2) == -3)	cout << "ERROR: La espècie " << id2 << " no existe." << endl;
 			else cout << conjunt.calcular_distancia(id,id2) << endl;
 			
 			cout << endl;
 		}
 		else if (opcio == "elimina_especie") {
-			cin >> id; // El identificador de la especie la qual es vol eliminar.
+			cin >> id; // El identificador de la espècie la qual es vol eliminar.
 			cout << "# " << opcio << " " << id << endl;
-			if (not conjunt.existeix_especie(id)) cout << "ERROR: La especie " << id << " no existe." << endl; // Si la especie no existeix dins el conjunt, salta un missatge d'error.
+			if (not conjunt.existeix_especie(id)) cout << "ERROR: La especie " << id << " no existe." << endl; // Si la espècie no existeix dins el conjunt, salta un missatge d'error.
 			else conjunt.elimina_especie(id);
 			cout << endl;
 		}
 		else if (opcio == "existe_especie") {
-			cin >> id; // El identificador de la especie la qual es vol consultar si existeix.
+			cin >> id; // El identificador de la espècie la qual es vol consultar si existeix.
 			cout << "# " << opcio << " " << id <<endl;
 			if (conjunt.existeix_especie(id)) cout << "SI" << endl;
 			else cout << "NO" << endl;
 			cout << endl;
 		}
 		else if (opcio == "lee_cjt_especies") {
-			// Funció que llegeix les especies que hi haurà al conjunt.
+			// Funció que llegeix les espècies que hi haurà al conjunt.
 			cout << "# " << opcio <<  endl;
 			conjunt.lee_cjt_especies();
 			cout << endl;
 		}
 		else if (opcio == "imprime_cjt_especies") {
-			// Funció que imprimeix les especies que hi ha al conjunt.
-			// En cas de no haver cap especie, no dona cap missatge d'error.
+			// Funció que imprimeix les espècies que hi ha al conjunt.
+			// En cas de no haver cap espècie, no dona cap missatge d'error.
 			cout << "# " << opcio << endl;
 			conjunt.imprime_cjt_especies();
 			cout << endl;
 		}
 		else if (opcio == "tabla_distancias") {
-			// Funció que imprimeix la taula de distancies entre les especies que hi ha al conjunt.
-			// En cas de no haver cap especie, no dona cap missatge d'error.
+			// Funció que imprimeix la taula de distancies entre les espècies que hi ha al conjunt.
+			// En cas de no haver cap espècie, no dona cap missatge d'error.
 			cout << "# " << opcio << endl;
 			conjunt.tabla_distancias();
 			cout << endl;
@@ -219,7 +235,7 @@ int main() {
 			cout << endl;
 		}
 		else if (opcio == "imprime_arbol_filogenetico") {
-			// Donat un conjunt de especies, s'imprimeix 
+			// Donat un conjunt de espècies, s'imprimeix 
 			// l'arbre filogenètic resultant.
 			cout << "# " << opcio << endl;
 			cjt_clusters.imprime_arbol_filogenetico(conjunt);
