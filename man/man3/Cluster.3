@@ -2,7 +2,7 @@
 .ad l
 .nh
 .SH NAME
-Cluster \- Representa un cluster d'un arbre binari\&.  
+Cluster \- Representa un clúster d'un arbre binari\&.  
 
 .SH SYNOPSIS
 .br
@@ -13,15 +13,15 @@ Cluster \- Representa un cluster d'un arbre binari\&.
 .ti -1c
 .RI "\fBCluster\fP (const string &id)"
 .br
-.RI "Crea un cluster a partir d'una espècie\&. "
+.RI "Crea un clúster a partir d'una espècie\&. "
 .ti -1c
 .RI "\fBCluster\fP (const \fBCluster\fP clus1, const \fBCluster\fP Clus2, const double &dist)"
 .br
-.RI "Crea un cluster a partir de la fusió de dos altres\&. "
+.RI "Crea un clúster a partir de la fusió de dos altres\&. "
 .ti -1c
 .RI "void \fBescriure\fP () const"
 .br
-.RI "Escriu el cluster que entra pel paràmetre implícit\&. "
+.RI "Escriu el clúster que entra pel paràmetre implícit\&. "
 .in -1c
 .SS "Mètodes Privats Estàtics"
 
@@ -29,7 +29,7 @@ Cluster \- Representa un cluster d'un arbre binari\&.
 .ti -1c
 .RI "static void \fBinm_escriure\fP (const BinTree< pair< string, double >> &a)"
 .br
-.RI "Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva d'un cluster\&. "
+.RI "Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva d'un clúster\&. "
 .in -1c
 .SS "Atributs Privats"
 
@@ -37,19 +37,19 @@ Cluster \- Representa un cluster d'un arbre binari\&.
 .ti -1c
 .RI "BinTree< pair< string, double > > \fBcluster\fP"
 .br
-.RI "Estructura de dades d'un \fBCluster\fP\&. 
+.RI "Estructura de dades d'un clúster\&. 
 .br
  "
 .in -1c
 .SH "Descripció Detallada"
 .PP 
-Representa un cluster d'un arbre binari\&. 
+Representa un clúster d'un arbre binari\&. 
 
-Ofereix les opcions d'imprimir l'arbre del cluster amb les distancies respecte als seus fills\&. També l'opció de crear un cluster a partir de la fusió de dos altres\&.
+Ofereix les opcions d'imprimir l'arbre del clúster amb les distancies respecte als seus fills\&. També l'opció de crear un clúster a partir de la fusió de dos altres\&.
 .PP
 \fBInvariant\fP
 .RS 4
-Els clusters contenen una única espècie o bé estàn formats per altres clusters\&. Així mateix, un cluster és assimilable a un arbre binari on té espècies a les fulles\&. 
+Els clústers contenen una única espècie o bé estàn formats per altres clústers\&. Així mateix, un clúster és assimilable a un arbre binari on té espècies a les fulles\&. 
 .RE
 .PP
 
@@ -60,7 +60,7 @@ Definició a la línia 29 del fitxer Cluster\&.hh\&.
 .SS "Cluster::Cluster (const string & id)"
 
 .PP
-Crea un cluster a partir d'una espècie\&. 
+Crea un clúster a partir d'una espècie\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -69,12 +69,12 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat és un cluster de la especie demanada\&. 
+El resultat és un clúster de la espècie demanada\&. 
 .RE
 .PP
 \fBParàmetres\fP
 .RS 4
-\fIString\&.\fP Un identificador del cluster\&. 
+\fIString\&.\fP Un identificador del clúster\&. 
 .RE
 .PP
 
@@ -83,33 +83,33 @@ Definició a la línia 15 del fitxer Cluster\&.cc\&.
 .PP
 .nf
 15                                 {
-16     //Es crea un pair on hi ha l'identificador del cluster i
-17     //la distancia respecte els seus fills\&. Al ser un cluster sense fills, la distancia es 0\&.
+16     //Es crea un pair on hi ha l'identificador del clúster i
+17     //la distancia respecte els seus fills\&. Al ser un clúster sense fills, la distancia es 0\&.
 18     pair<string, double> clust;
 19     clust\&.first = id;
 20     clust\&.second = 0;
-21     //Es crea l'arbol binari de cluster\&.
+21     //Es crea l'arbol binari de clúster\&.
 22     cluster = BinTree<pair<string, double>> (clust);
 23 }
 .fi
 .SS "Cluster::Cluster (const \fBCluster\fP clus1, const \fBCluster\fP Clus2, const double & dist)"
 
 .PP
-Crea un cluster a partir de la fusió de dos altres\&. 
+Crea un clúster a partir de la fusió de dos altres\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
-Els dos clusters existeixen i no són buits\&. 
+Els dos clústers existeixen i no són buits\&. 
 .RE
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat és un cluster amb la fusió dels dos altres\&. 
+El resultat és un clúster amb la fusió dels dos altres\&. 
 .RE
 .PP
 \fBParàmetres\fP
 .RS 4
-\fICluster\&.\fP Dos objectes de tipus \fBCluster\fP\&. 
+\fICluster\&.\fP Dos objectes de tipus clúster\&. 
 .RE
 .PP
 
@@ -118,14 +118,14 @@ Definició a la línia 25 del fitxer Cluster\&.cc\&.
 .PP
 .nf
 25                                                                              {
-26     //Es fusionen dos clusters en un\&. El identificador del pair és el
+26     //Es fusionen dos clústers en un\&. El identificador del pair és el
 27     //resultat de fusionar els dos id's\&.
-28     //El double dist és la distancia entre els dos clusters\&.
+28     //El double dist és la distancia entre els dos clústers\&.
 29     pair<string, double> clust;
 30     clust\&.first = clus1\&.cluster\&.value()\&.first + clus2\&.cluster\&.value()\&.first;
 31     clust\&.second = dist/2; //dist/2 ja que la formula ho demana així\&.
 32     //Es crea un arbre amb node principal el pair acabat de crear, node esquerra el 
-33     //arbre del primer cluster i node dret el arbre del segon cluster\&.
+33     //arbre del primer clúster i node dret el arbre del segon clúster\&.
 34     cluster = BinTree<pair<string,double>> (clust,clus1\&.cluster,clus2\&.cluster);
 35 }
 .fi
@@ -134,7 +134,7 @@ Definició a la línia 25 del fitxer Cluster\&.cc\&.
 .SS "void Cluster::inm_escriure (const BinTree< pair< string, double >> & a)\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva d'un cluster\&. 
+Funció recursiva cridada per la funcio \fBescriure()\fP per tal de poder fer la escriptura recursiva d'un clúster\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -148,7 +148,7 @@ Escriu a en preordre tal com indicat a la pràctica\&.
 .PP
 \fBParàmetres\fP
 .RS 4
-\fIBinTree\&.\fP Arbre binàri del cluster\&. 
+\fIBinTree\&.\fP Arbre binàri del clúster\&. 
 .RE
 .PP
 
@@ -176,7 +176,7 @@ Definició a la línia 53 del fitxer Cluster\&.cc\&.
 .SS "void Cluster::escriure () const"
 
 .PP
-Escriu el cluster que entra pel paràmetre implícit\&. 
+Escriu el clúster que entra pel paràmetre implícit\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -185,7 +185,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-S'ha escrit el cluster\&. 
+S'ha escrit el clúster\&. 
 .RE
 .PP
 
@@ -204,7 +204,7 @@ Definició a la línia 45 del fitxer Cluster\&.cc\&.
 .SS "BinTree< pair<string, double> > Cluster::cluster\fC [private]\fP"
 
 .PP
-Estructura de dades d'un \fBCluster\fP\&. 
+Estructura de dades d'un clúster\&. 
 .br
  
 .PP

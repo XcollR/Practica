@@ -124,7 +124,7 @@ Definició a la línia 133 del fitxer program\&.cc\&.
 215     else if (opcio == "inicializa_clusters") {
 216       cout << "# " << opcio << endl;
 217       // Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
-218       // la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters\&.
+218       // la funció inicialitza clústers ens imprimeixi la taula de distancies entre clústers\&.
 219       bool a = true;
 220       cjt_clusters\&.inicialitza_clusters(conjunt, a);
 221       cout << endl;
@@ -132,13 +132,13 @@ Definició a la línia 133 del fitxer program\&.cc\&.
 223     else if (opcio == "ejecuta_paso_wpgma") {
 224       cout << "# " << opcio << endl;
 225       // Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
-226       // la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters\&.
+226       // la funció inicialitza clústers ens imprimeixi la taula de distancies entre clusters\&.
 227       bool a = true;
 228       cjt_clusters\&.ejecuta_paso_wpgma(a);
 229       cout << endl;
 230     }
 231     else if (opcio == "imprime_cluster") {
-232       cin >> id; // El identificador del cluster el qual es vol imprimir\&.
+232       cin >> id; // El identificador del clúster el qual es vol imprimir\&.
 233       cout << "# " << opcio << " " << id << endl;
 234       cjt_clusters\&.imprime_cluster(id);
 235       cout << endl;

@@ -1,66 +1,34 @@
 3
 lee_cjt_especies
-20
+5
 d    GCTCCTGTCCGTTTCAGCCG
 e    TACACCATTAACCGGTGGGG
 a    AAAAGATGACCAGCGTAATG
 b    GCAACCTTTGTGGGCGCAGT
 c    ACGATTTGCGTAAGCTATGT
-eee  AGTAGTAGTAGTGATGATGA
-okas GAGATATATAGATATGATGA
-aaa  ATGATGCCGCGCATATATTA
-orio GATGATGGAGAGATTATAGA
-Roger TACACCATTAACCGGTGTGT
-Pere TACACCATTAACCGGTGAAGT
-Pol AGAGATGATGATGATGATGA
-ASD AGTAGTAGATGATTATATATAGGA
-FAT GATAGTATGATGAGAGAGAGTAGTATA
-TETE GATAGTAGTAGTAGGAGAGAACCCCC
-TATATATA AGAGAGAGAGATATATATATATA
-CAT GCAGTAGATGCGCGATCGATGCTAGCTTATATA
-PIPO GCAGTAGGAGAGAGGAGATGCTAGCTTATATA
-PEPITO GATGATGATGGAGAGACCGCGCGCGCGCAA
-PAPAPAP CGCGCGCATATATGCGCGCGCGCGCGCGCGC
 
 imprime_cjt_especies
-
-distancia a c
-distancia x c
-distancia a x
-distancia x y
-distancia c a
-distancia PEPITO PAPAPAP
-distancia Pol Pere
-
-obtener_gen c
-obtener_gen x
-obtener_gen Pol
-
 tabla_distancias
+
+imprime_arbol_filogenetico
 
 crea_especie f    GAAAAAAAAAAAAAAAAAAAAA
-crea_especie f    TCGATACCAGAGAAACTGTT
 crea_especie g    AAAAAAAAAAAAAAAAAAAAAA
-crea_especie h    AAAAAAAAAAAAAAAAAAAAAG
 
 imprime_cjt_especies
 tabla_distancias
-
-elimina_especie h
-elimina_especie h
-
-existe_especie f
-existe_especie h
-
-imprime_cjt_especies
-tabla_distancias
-
 
 imprime_arbol_filogenetico
 
 elimina_especie nuevo1
+crea_especie nuevo1 TTTAAACCCGGG
 
 inicializa_clusters
+
+elimina_especie a
+
+imprime_cjt_especies
+tabla_distancias
 
 ejecuta_paso_wpgma
 
@@ -71,6 +39,29 @@ ejecuta_paso_wpgma
 imprime_cluster ac
 
 imprime_cluster eg
+
+imprime_cluster enuevo1
+
+ejecuta_paso_wpgma
+
+ejecuta_paso_wpgma
+
+imprime_cluster ac
+
+crea_especie nuevo2 AATCTGGCTCTGAATAAGACCCAGTATCAAGCCTTACCA
+
+ejecuta_paso_wpgma
+
+ejecuta_paso_wpgma
+
+imprime_cluster ac
+
+inicializa_clusters
+
+crea_especie nuevo2 AAA
+
+imprime_arbol_filogenetico
+
 
 lee_cjt_especies
 

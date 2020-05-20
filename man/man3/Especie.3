@@ -2,7 +2,7 @@
 .ad l
 .nh
 .SH NAME
-Especie \- Representa el conjunt de característiques y operacions de les especies\&.  
+Especie \- Representa el conjunt de característiques y operacions de les espècies\&.  
 
 .SH SYNOPSIS
 .br
@@ -13,11 +13,11 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .ti -1c
 .RI "\fBEspecie\fP ()"
 .br
-.RI "Crea una especie sense identificador ni gen\&. "
+.RI "Crea una espècie sense identificador ni gen\&. "
 .ti -1c
 .RI "\fBEspecie\fP (const string &gen1)"
 .br
-.RI "Crea una especie amb el gen i l'identificador indicat\&. "
+.RI "Crea una espècie amb el gen i l'identificador indicat\&. "
 .ti -1c
 .RI "string \fBconsultar_gen\fP () const"
 .br
@@ -25,7 +25,7 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .ti -1c
 .RI "double \fBdistancia\fP (const \fBEspecie\fP &esp) const"
 .br
-.RI "Retorna un double amb la distància entre la especie del paràmetre implícit i la que ha entrat al paràmetre explícit\&. "
+.RI "Retorna un double amb la distància entre la espècie del paràmetre implícit i la que ha entrat al paràmetre explícit\&. "
 .ti -1c
 .RI "void \fBescriure\fP () const"
 .br
@@ -57,7 +57,7 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .ti -1c
 .RI "map< string, int > \fBk_meros\fP"
 .br
-.RI "Estructura de dades on guardem els k-meros de la especie\&. "
+.RI "Estructura de dades on guardem els k-meros de la espècie\&. "
 .in -1c
 .SS "Atributs Privats Estàtics"
 
@@ -65,13 +65,13 @@ Especie \- Representa el conjunt de característiques y operacions de les especi
 .ti -1c
 .RI "static int \fBk_num\fP"
 .br
-.RI "Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros)\&. "
+.RI "Tamany que indica el tamany dels paquets per separar el gen de la espècie (kmeros)\&. "
 .in -1c
 .SH "Descripció Detallada"
 .PP 
-Representa el conjunt de característiques y operacions de les especies\&. 
+Representa el conjunt de característiques y operacions de les espècies\&. 
 
-Ofereix la posibilitat de calcular la distància entre dues especies, consultar el gen, i escriure el gen\&. Donat que hem d'establir un paràmetre k, tenim la necessitat de crear una constructora d'especie buida per poder introduir la k\&.
+Ofereix la posibilitat de calcular la distància entre dues espècies, consultar el gen, i escriure el gen\&. Donat que hem d'establir un paràmetre k, tenim la necessitat de crear una constructora d'espècie buida per poder introduir la k\&.
 .PP
 \fBInvariant\fP
 .RS 4
@@ -86,7 +86,7 @@ Definició a la línia 30 del fitxer Especie\&.hh\&.
 .SS "Especie::Especie ()"
 
 .PP
-Crea una especie sense identificador ni gen\&. 
+Crea una espècie sense identificador ni gen\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -95,7 +95,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat es una especie sense identificador, gen i kmeros\&. 
+El resultat es una espècie sense identificador, gen i kmeros\&. 
 .RE
 .PP
 
@@ -111,7 +111,7 @@ Definició a la línia 18 del fitxer Especie\&.cc\&.
 .SS "Especie::Especie (const string & gen1)"
 
 .PP
-Crea una especie amb el gen i l'identificador indicat\&. 
+Crea una espècie amb el gen i l'identificador indicat\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -120,7 +120,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat es una especie amb identificador, gen i kmeros\&. 
+El resultat es una espècie amb identificador, gen i kmeros\&. 
 .RE
 .PP
 
@@ -234,7 +234,7 @@ Definició a la línia 38 del fitxer Especie\&.cc\&.
 .SS "double Especie::distancia (const \fBEspecie\fP & esp) const"
 
 .PP
-Retorna un double amb la distància entre la especie del paràmetre implícit i la que ha entrat al paràmetre explícit\&. 
+Retorna un double amb la distància entre la espècie del paràmetre implícit i la que ha entrat al paràmetre explícit\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -248,7 +248,7 @@ El resultat és la distància entre les dues espècies\&.
 .PP
 \fBRetorna\fP
 .RS 4
-double\&. Distancia genètica entre les dues especies\&. 
+double\&. Distancia genètica entre les dues espècies\&. 
 .RE
 .PP
 
@@ -333,13 +333,13 @@ Definició a la línia 35 del fitxer Especie\&.hh\&.
 .SS "int Especie::k_num\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros)\&. 
+Tamany que indica el tamany dels paquets per separar el gen de la espècie (kmeros)\&. 
 .PP
 Definició a la línia 38 del fitxer Especie\&.hh\&.
 .SS "map<string, int> Especie::k_meros\fC [private]\fP"
 
 .PP
-Estructura de dades on guardem els k-meros de la especie\&. 
+Estructura de dades on guardem els k-meros de la espècie\&. 
 .PP
 Definició a la línia 41 del fitxer Especie\&.hh\&.
 

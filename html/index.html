@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Creació d&#39;un arbre filogenètic. Xavier Coll Ribas: &lt;b&gt;Descripció de la pràctica&lt;/b&gt;</title>
+<title>Creació d&#39;un arbre filogenètic. Xavier Coll Ribas: &lt;b&gt;Creació d&#39;un arbre filogenètic: Documentació&lt;/b&gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><b>Descripció de la pràctica</b> </div>  </div>
+<div class="title"><b>Creació d'un arbre filogenètic: Documentació</b> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
@@ -90,21 +90,21 @@ Introducció</h1>
 <p>[Extret de l'enunciat de la pràctica del web de PRO2]</p>
 <p>En la biologia evolutiva, antropologia, lingüística i moltes altres disciplines científiques un dels problemes principals que s'aborden és la construcció d'arbres filogenètics, diagrames que representen de manera esquemàtica les relacions evolutives entre un conjunt de N entitats (en biologia evolutiva se sol parlar d'espècies, tot i que sovint no es tracti d'espècies sinó de famílies o ordres). L'arbre filogenètic es construeix en base a les similituds i diferències en les característiques físiques o genètiques de les N entitats. En un arbre filogenètic arrelat cada node amb descendents representa l'ancestre comú més recent dels seus descendents, i és usual que la longitud de les arestes / branques de l' arbre sigui proporcional a el temps transcorregut entre les entitats representades. els nodes interns són entitats hipotètiques, ja que no poden ser directament observades, només les N entitats de les fulles de l'arbre són les que coneixem. La construcció de l'arbre filogenètic que millor explica les dades observades, optimitzant un cert criteri, és un problema computacionalment difícil, en el sentit que el cost dels càlculs necessaris creix exponencialment amb N. A més molts altres problemes compliquen l'obtenció d'arbres filogenètics que reflecteixin la història evolutiva amb precisió: dades sobre les entitats inexactes, hibridacions, evolució convergent. Per aquesta raó s'han desenvolupat nombrosos mètodes aproximats que generen arbres filogenètics de manera eficient i que s'aproximen molt bé a l'arbre òptim en la majoria de casos, però no sempre. En aquesta pràctica el nostre objectiu serà construir un programa i els mòduls necessaris per a construir l'arbre filogenètic per a un conjunt de N espècies utilitzant un d'aquests mètodes aproximats: el mètode conegut com WPGMA (Weighted pair group with arithmetic mean).</p>
 <p>Aquest document hi trobarem les diverses classes utilitzades per poder executar bé el <a class="el" href="program_8cc.html" title="El main del programa.">program.cc</a>. Hi tenim 4 classes:</p>
-<p>-<b> <a class="el" href="class_especie.html" title="Representa el conjunt de característiques y operacions de les especies.">Especie</a> </b>: Representa una espècie amb el seu gen.</p>
+<p>-<b> <a class="el" href="class_especie.html" title="Representa el conjunt de característiques y operacions de les espècies.">Especie</a> </b>: Representa una espècie amb el seu gen.</p>
 <p>-<b> <a class="el" href="class_cjt__especies.html" title="Representa un conjunt d&#39;espècies ordenades alfabèticament.">Cjt_especies</a> </b>: Representa un conjunt d'espècies, amb identificador i espècie.</p>
-<p>-<b> <a class="el" href="class_cluster.html" title="Representa un cluster d&#39;un arbre binari.">Cluster</a> </b>: Representa un cluster d'un arbre binari.</p>
-<p>-<b> <a class="el" href="class_cjt__clusters.html" title="Representa un conjunt de clusters.">Cjt_clusters</a> </b>: Representa un conjunt de clusters amb identificador.</p>
+<p>-<b> <a class="el" href="class_cluster.html" title="Representa un clúster d&#39;un arbre binari.">Cluster</a> </b>: Representa un cluster d'un arbre binari.</p>
+<p>-<b> <a class="el" href="class_cjt__clusters.html" title="Representa un conjunt de clústers.">Cjt_clusters</a> </b>: Representa un conjunt de clusters amb identificador.</p>
 <p>Amb aquestes classes podrem crear un conjunt d'espècies, i fer diverses operacions amb elles, ja sigui eliminar espècies, consultar distàncies, imprimir una taula de distàncies entre espècies... Amb la classe Cjt_cluster i cluster, podrem anar creant un arbre binari on aquest serà el resultat d'aplicar l'algorisme WPGMA.</p>
 <h1><a class="anchor" id="seg_part"></a>
 Descripció</h1>
 <p>Donat un conjunt d'espècies, hem programat un conjunt de funcions per anar modificant el conjunt i anar creant l'arbre filogenetic. Les operacions del programa principal són:</p>
-<p>-<b>crea_espècie</b>: Crea una espècie amb identificador i gen. Si la espècie ja existeix salta un missatge d'error. En cas contrari, la introdueix dins el conjunt d'espècies.</p>
+<p>-<b>crea_especie</b>: Crea una espècie amb identificador i gen. Si la espècie ja existeix salta un missatge d'error. En cas contrari, la introdueix dins el conjunt d'espècies.</p>
 <p>-<b>obtener_gen</b>: Donat un identificador d'espècie, imprimeix el gen associat a l'espècie. Escriu un missatge d'error si no hi ha una espècie amb l'identificador donat.</p>
 <p>-<b>distancia</b>: Donats dos identificadors d'espècies, imprimeix la distància entre les dues espècies. Es escriu un missatge d'error si alguna de les dues espècies els identificadors es donen no existeixen</p>
-<p>-<b>elimina_espècie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. Escriu un missatge d'error si l'espècie amb l'identificador donat no existeix.</p>
-<p>-<b>existe_espècie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si aquesta espècie existeix (és a dir, és part del conjunt d'espècies).</p>
-<p>-<b>lee_cjt_espècies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit una seqüència de n espècies (parells identificador-gen). Les n espècies donades tenen identificadors diferents entre si. Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.</p>
-<p>-<b>imprime_cjt_espècies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies. Si el conjunt és buit, no imprimeix cap informació.</p>
+<p>-<b>elimina_especie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. Escriu un missatge d'error si l'espècie amb l'identificador donat no existeix.</p>
+<p>-<b>existe_especie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si aquesta espècie existeix (és a dir, és part del conjunt d'espècies).</p>
+<p>-<b>lee_cjt_especies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit una seqüència de n espècies (parells identificador-gen). Les n espècies donades tenen identificadors diferents entre si. Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.</p>
+<p>-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies. Si el conjunt és buit, no imprimeix cap informació.</p>
 <p>-<b>tabla_distancias</b>: Imprimeix la taula de distàncies entre cada parell d'espècies de el conjunt d'espècies. Si el conjunt és buit, no imprimeix cap informació.</p>
 <p>-<b>inicializa_clusters</b>: Inicialitza el conjunt de clústers amb el conjunt d'espècies en l'estat en què estigui en aquest moment, i imprimeix la taula de distàncies entre clústers. Si el conjunt és buit, no imprimeix cap informació.</p>
 <p>-<b>ejecuta_paso_wpgma</b>: executa un pas de l'algoritme WPGMA (fusiona els dos clústers a menor distància en un de nou) i imprimeix la taula de distàncies entre clústers resultant. En cas que el nombre de clústers del conjunt sigui menor o igual que un, només s'ha d'imprimir un missatge d'error.</p>

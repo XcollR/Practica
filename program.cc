@@ -1,5 +1,5 @@
 /**
- *  @mainpage <b>Descripció de la pràctica</b>
+ *  @mainpage <b>Creació d'un arbre filogenètic: Documentació</b>
  * 	\section intro_sec Introducció
  * 
  *  <b>Què és un arbre filogenètic?</b>
@@ -51,7 +51,7 @@
  *  conjunt i anar creant l'arbre filogenetic.
  * 	Les operacions del programa principal són:
  * 
- * 		-<b>crea_espècie</b>: Crea una espècie amb identificador i gen. Si la espècie ja existeix salta un
+ * 		-<b>crea_especie</b>: Crea una espècie amb identificador i gen. Si la espècie ja existeix salta un
  * 		missatge d'error. En cas contrari, la introdueix dins el conjunt d'espècies.
  * 		
  * 		-<b>obtener_gen</b>: Donat un identificador d'espècie, imprimeix el gen associat a l'espècie.
@@ -61,18 +61,18 @@
  * 		espècies. Es escriu un missatge d'error si alguna de les dues espècies els identificadors
  * 		es donen no existeixen
  *	
- *		-<b>elimina_espècie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. 
+ *		-<b>elimina_especie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. 
  *		Escriu un missatge d'error si l'espècie amb l'identificador donat no existeix.
  *	
- *		-<b>existe_espècie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si
+ *		-<b>existe_especie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si
  * 		aquesta espècie existeix (és a dir, és part del conjunt d'espècies).
  *
- *		-<b>lee_cjt_espècies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit
+ *		-<b>lee_cjt_especies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit
  * 		una seqüència de n espècies (parells identificador-gen). 
  *		Les n espècies donades tenen identificadors diferents entre si. 
  *		Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.
  *	
- *		-<b>imprime_cjt_espècies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
+ *		-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
  *		Si el conjunt és buit, no imprimeix cap informació.
  *
  *		-<b>tabla_distancias</b>: Imprimeix la taula de distàncies entre cada parell d'espècies de el conjunt d'espècies. 
@@ -215,7 +215,7 @@ int main() {
 		else if (opcio == "inicializa_clusters") {
 			cout << "# " << opcio << endl;
 			// Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
-			// la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters.
+			// la funció inicialitza clústers ens imprimeixi la taula de distancies entre clústers.
 			bool a = true;
 			cjt_clusters.inicialitza_clusters(conjunt, a);
 			cout << endl;
@@ -223,13 +223,13 @@ int main() {
 		else if (opcio == "ejecuta_paso_wpgma") {
 			cout << "# " << opcio << endl;
 			// Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
-			// la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters.
+			// la funció inicialitza clústers ens imprimeixi la taula de distancies entre clusters.
 			bool a = true;
 			cjt_clusters.ejecuta_paso_wpgma(a);
 			cout << endl;
 		}
 		else if (opcio == "imprime_cluster") {
-			cin >> id; // El identificador del cluster el qual es vol imprimir.
+			cin >> id; // El identificador del clúster el qual es vol imprimir.
 			cout << "# " << opcio << " " << id << endl;
 			cjt_clusters.imprime_cluster(id);
 			cout << endl;

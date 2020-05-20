@@ -2,8 +2,8 @@
  * 	@brief Còdig de la classe Cluster.
  */
 
-	//invariant Els clusters contenen una única espècie o bé estàn formats
-	//per altres clusters. Així mateix, un cluster és assimilable a un
+	//invariant Els clústers contenen una única espècie o bé estàn formats
+	//per altres clústers. Així mateix, un clúster és assimilable a un
 	//arbre binari on té espècies a les fulles. 
 
 
@@ -13,24 +13,24 @@
 // Constructores
 
 Cluster::Cluster(const string& id){
-    //Es crea un pair on hi ha l'identificador del cluster i
-    //la distancia respecte els seus fills. Al ser un cluster sense fills, la distancia es 0.
+    //Es crea un pair on hi ha l'identificador del clúster i
+    //la distancia respecte els seus fills. Al ser un clúster sense fills, la distancia es 0.
     pair<string, double> clust;
     clust.first = id;
     clust.second = 0;
-    //Es crea l'arbol binari de cluster.
+    //Es crea l'arbol binari de clúster.
     cluster = BinTree<pair<string, double>> (clust);
 }
 
 Cluster::Cluster(const Cluster clus1, const Cluster clus2, const double& dist) {
-    //Es fusionen dos clusters en un. El identificador del pair és el
+    //Es fusionen dos clústers en un. El identificador del pair és el
     //resultat de fusionar els dos id's.
-    //El double dist és la distancia entre els dos clusters.
+    //El double dist és la distancia entre els dos clústers.
     pair<string, double> clust;
     clust.first = clus1.cluster.value().first + clus2.cluster.value().first;
     clust.second = dist/2; //dist/2 ja que la formula ho demana així.
     //Es crea un arbre amb node principal el pair acabat de crear, node esquerra el 
-    //arbre del primer cluster i node dret el arbre del segon cluster.
+    //arbre del primer clúster i node dret el arbre del segon clúster.
     cluster = BinTree<pair<string,double>> (clust,clus1.cluster,clus2.cluster);
 }
 

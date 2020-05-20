@@ -15,12 +15,12 @@ using namespace std;
 
 /** @class Especie 
     @brief Representa el conjunt de característiques
-	y operacions de les especies.
+	y operacions de les espècies.
 
 	Ofereix la posibilitat de calcular la distància entre
-	dues especies, consultar el gen, i escriure el gen.
+	dues espècies, consultar el gen, i escriure el gen.
 	Donat que hem d'establir un paràmetre k, tenim la necessitat
-	de crear una constructora d'especie buida per poder introduir la k.
+	de crear una constructora d'espècie buida per poder introduir la k.
 
 	\invariant Una espècie sempre tindrà el gen de longitud >= k.
 	La k serà sempre de longitud > 0.
@@ -34,10 +34,10 @@ private:
 	/** @brief És el gen de la espècie. */
 	string gen; 
 
-  	/** @brief Tamany que indica el tamany dels paquets per separar el gen de la especie (kmeros). */
+  	/** @brief Tamany que indica el tamany dels paquets per separar el gen de la espècie (kmeros). */
 	static int k_num; 
 
-  	/** @brief Estructura de dades on guardem els k-meros de la especie. */
+  	/** @brief Estructura de dades on guardem els k-meros de la espècie. */
 	map<string, int> k_meros; 
 	
 /**
@@ -53,16 +53,16 @@ public:
 	// Constructores
 		
 /**
- * 	@brief Crea una especie sense identificador ni gen.
+ * 	@brief Crea una espècie sense identificador ni gen.
  *  \pre Cert.
-	\post El resultat es una especie sense identificador, gen i kmeros.
+	\post El resultat es una espècie sense identificador, gen i kmeros.
 	
 */
 	Especie();
 /**
- * 	@brief Crea una especie amb el gen i l'identificador indicat.
+ * 	@brief Crea una espècie amb el gen i l'identificador indicat.
  * 	\pre Cert.
-	\post El resultat es una especie amb identificador, gen i kmeros.
+	\post El resultat es una espècie amb identificador, gen i kmeros.
 	
 */
 	Especie(const string& gen1);
@@ -88,10 +88,10 @@ public:
 	string consultar_gen() const;
 
 /** 
- * 	@brief Retorna un double amb la distància entre la especie del paràmetre implícit i la que ha entrat al paràmetre explícit.
+ * 	@brief Retorna un double amb la distància entre la espècie del paràmetre implícit i la que ha entrat al paràmetre explícit.
  * 	\pre Les dues espècies existeixen.
 	\post El resultat és la distància entre les dues espècies.
-	\return double. Distancia genètica entre les dues especies.
+	\return double. Distancia genètica entre les dues espècies.
 */	
 
 	double distancia(const Especie& esp) const;

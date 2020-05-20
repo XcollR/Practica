@@ -18,15 +18,15 @@ using namespace std;
 /** @class Cjt_especies
  *  @brief Representa un conjunt d'espècies ordenades alfabèticament.
  * 
- * 	Ofereix la possibilitat de calcular distàncies entre diferents especies
- * 	i modificar el conjunt, ja sigui creant noves especies o eliminant. Es pot 
- * 	consultar el gen d'una especie i si una especie existeix.També
- * 	inclou la possibilitat d'imprimir una taula de distancies entre especies.
+ * 	Ofereix la possibilitat de calcular distàncies entre diferents espècies
+ * 	i modificar el conjunt, ja sigui creant noves espècies o eliminant. Es pot 
+ * 	consultar el gen d'una espècie i si una espècie existeix.També
+ * 	inclou la possibilitat d'imprimir una taula de distancies entre espècies.
  * 
- * 	\invariant El conjunt d'especies sempre estarà ordenat alfabèticament per un identificador d'especie,
+ * 	\invariant El conjunt d'espècies sempre estarà ordenat alfabèticament per un identificador d'espècie,
  * 	no té mida màxima ni mida mínima. La taula de distàncies també 
  * 	tindrà el mateix identificador que la espècie i sempre s'imprimirà en ordre
- * 	alfabètic. Quan es llegeix un conjunt d'especies, es declarà la mida amb una,
+ * 	alfabètic. Quan es llegeix un conjunt d'espècies, es declarà la mida amb una,
  * 	una variable n >= 0.
  */
  
@@ -59,7 +59,7 @@ private:
 	void afegeix_especie_tabla_dist(const string& id); 
 	
 /**
- * 	@brief Iterator. Iterador del mapa d'especies.
+ * 	@brief Iterator. Iterador del mapa d'espècies.
 */
 	map<string, Especie>::const_iterator it;
 
@@ -73,7 +73,7 @@ public:
 /**
  * 	@brief Crea un conjunt d'espècies buit. 
  *	\pre Cert.
-	\post El resultat és un conjunt d'especies buit i ordenat alfabèticament.
+	\post El resultat és un conjunt d'espècies buit i ordenat alfabèticament.
 */
 	
 	Cjt_especies();
@@ -84,7 +84,7 @@ public:
 /**	
  * 	@brief Crea una espècie i la introdueix al conjunt.
 	\pre No existeix cap espècie amb el mateix identificador.
-	\post S'ha creat una espècie i s'ha introduit al conjunt d'especies. Aquest es manté ordenat.
+	\post S'ha creat una espècie i s'ha introduit al conjunt d'espècies. Aquest es manté ordenat.
 */
 	
 	void crea_especie(const string& id,const string& gen);
@@ -93,7 +93,7 @@ public:
 
 /** @brief Elimina la espècie indicada del conjunt d'espècies del paràmetre implícit.
  * 	\pre Cert.
- * 	\post La especie s'ha eliminat del conjunt d'especies.
+ * 	\post La espècie s'ha eliminat del conjunt d'espècies.
  * 	@param string id
  */
  
@@ -104,7 +104,7 @@ public:
 	
 
 	
-/**	@brief Consulta si existeix la espècie indicada al conjunt d'especies.
+/**	@brief Consulta si existeix la espècie indicada al conjunt d'espècies.
  * 	\pre El id és un string vàlid.
  * 	\post El resultat indica si existèix la espècie dins el conjunt d'espècies.
  * 	\param string id
@@ -116,9 +116,9 @@ public:
 /** @brief Consulta la distàncie entre dues espècies.
  * 	\pre Les dues espècies existeixen al conjunt.
  * 	\post Et retorna la distància entre dues espècies.
- * 	Excepcions: Si retorna -1 vol dir que les dues espècies no existèixen dins el conjunt d'especies.
- *				Si retorna -2 vol dir que la espècie id no existeix dins el conjunt d'especies.
-  *				Si retorna -3 vol dir que la espècie id2 no existeix dins el conjunt d'especies.
+ * 	Excepcions: Si retorna -1 vol dir que les dues espècies no existèixen dins el conjunt d'espècies.
+ *				Si retorna -2 vol dir que la espècie id no existeix dins el conjunt d'espècies.
+  *				Si retorna -3 vol dir que la espècie id2 no existeix dins el conjunt d'espècies.
 
  * 	\param string id1
  * 	\param string id2
@@ -136,7 +136,7 @@ public:
 	void obtener_gen(const string& id) const;
 	
 	
-	/** @brief Consulta si és el final del conjunt d'especies del paràmetre implícit.
+	/** @brief Consulta si és el final del conjunt d'espècies del paràmetre implícit.
  * 	\pre Cert.
  * 	\post S'ha indicat si és el final del conjunt.
  * 	\return bool cert si apunta al final del conjunt, en cas contrari, fals.
@@ -144,7 +144,7 @@ public:
 
 bool final();
 
-/** @brief Apuntem al primer element del conjunt d'especies del paràmetre implícit.
+/** @brief Apuntem al primer element del conjunt d'espècies del paràmetre implícit.
  * 	\pre Cert.
  * 	\post S'ha apuntat al primer element del conjunt.
  */
@@ -157,9 +157,9 @@ void inicio();
  */
 void actual(string& act);
 
-/** @brief S'avança una especie del conjunt.
+/** @brief S'avança una espècie del conjunt.
  * 	\pre Cert.
- * 	\post Si no estem al final del conjunt, avancem una especie.
+ * 	\post Si no estem al final del conjunt, avancem una espècie.
  * 
  */
 void avanza();
@@ -171,7 +171,7 @@ void avanza();
 /** @brief Lectura d'un conjunt d'espècies.
  	\pre Estan preparats al canal estandar d'entrada
 	 un enter i les dades dels elements que llegirem.
-	\post El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar.	
+	\post El paràmetre implícit conté un conjunt d'espècies llegits pel canal estàndar.	
  */
 	void lee_cjt_especies();
 	

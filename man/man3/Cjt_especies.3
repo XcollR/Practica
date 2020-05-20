@@ -25,7 +25,7 @@ Cjt_especies \- Representa un conjunt d'espècies ordenades alfabèticament\&.
 .ti -1c
 .RI "bool \fBexisteix_especie\fP (const string &id) const"
 .br
-.RI "Consulta si existeix la espècie indicada al conjunt d'especies\&. "
+.RI "Consulta si existeix la espècie indicada al conjunt d'espècies\&. "
 .ti -1c
 .RI "double \fBcalcular_distancia\fP (const string &id, const string &id2) const"
 .br
@@ -37,11 +37,11 @@ Cjt_especies \- Representa un conjunt d'espècies ordenades alfabèticament\&.
 .ti -1c
 .RI "bool \fBfinal\fP ()"
 .br
-.RI "Consulta si és el final del conjunt d'especies del paràmetre implícit\&. "
+.RI "Consulta si és el final del conjunt d'espècies del paràmetre implícit\&. "
 .ti -1c
 .RI "void \fBinicio\fP ()"
 .br
-.RI "Apuntem al primer element del conjunt d'especies del paràmetre implícit\&. "
+.RI "Apuntem al primer element del conjunt d'espècies del paràmetre implícit\&. "
 .ti -1c
 .RI "void \fBactual\fP (string &act)"
 .br
@@ -49,7 +49,7 @@ Cjt_especies \- Representa un conjunt d'espècies ordenades alfabèticament\&.
 .ti -1c
 .RI "void \fBavanza\fP ()"
 .br
-.RI "S'avança una especie del conjunt\&. "
+.RI "S'avança una espècie del conjunt\&. "
 .ti -1c
 .RI "void \fBlee_cjt_especies\fP ()"
 .br
@@ -89,17 +89,17 @@ Cjt_especies \- Representa un conjunt d'espècies ordenades alfabèticament\&.
 .ti -1c
 .RI "map< string, \fBEspecie\fP >::const_iterator \fBit\fP"
 .br
-.RI "Iterator\&. Iterador del mapa d'especies\&. "
+.RI "Iterator\&. Iterador del mapa d'espècies\&. "
 .in -1c
 .SH "Descripció Detallada"
 .PP 
 Representa un conjunt d'espècies ordenades alfabèticament\&. 
 
-Ofereix la possibilitat de calcular distàncies entre diferents especies i modificar el conjunt, ja sigui creant noves especies o eliminant\&. Es pot consultar el gen d'una especie i si una especie existeix\&.També inclou la possibilitat d'imprimir una taula de distancies entre especies\&.
+Ofereix la possibilitat de calcular distàncies entre diferents espècies i modificar el conjunt, ja sigui creant noves espècies o eliminant\&. Es pot consultar el gen d'una espècie i si una espècie existeix\&.També inclou la possibilitat d'imprimir una taula de distancies entre espècies\&.
 .PP
 \fBInvariant\fP
 .RS 4
-El conjunt d'especies sempre estarà ordenat alfabèticament per un identificador d'especie, no té mida màxima ni mida mínima\&. La taula de distàncies també tindrà el mateix identificador que la espècie i sempre s'imprimirà en ordre alfabètic\&. Quan es llegeix un conjunt d'especies, es declarà la mida amb una, una variable n >= 0\&. 
+El conjunt d'espècies sempre estarà ordenat alfabèticament per un identificador d'espècie, no té mida màxima ni mida mínima\&. La taula de distàncies també tindrà el mateix identificador que la espècie i sempre s'imprimirà en ordre alfabètic\&. Quan es llegeix un conjunt d'espècies, es declarà la mida amb una, una variable n >= 0\&. 
 .RE
 .PP
 
@@ -119,7 +119,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-El resultat és un conjunt d'especies buit i ordenat alfabèticament\&. 
+El resultat és un conjunt d'espècies buit i ordenat alfabèticament\&. 
 .RE
 .PP
 
@@ -128,7 +128,7 @@ Definició a la línia 16 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
 16                            {
-17 // Mètode constructor d'especie\&. Posem el mapa d'especies i el nested map de la taula
+17 // Mètode constructor d'espècie\&. Posem el mapa d'espècies i el nested map de la taula
 18 // de distàncies com a dos mapes buits\&.
 19   Cjt_especies::cjt_especies = map<string, Especie> ();
 20   Cjt_especies::taula_distancies = map<string,map<string,double>>();
@@ -161,11 +161,11 @@ Definició a la línia 203 del fitxer Cjt_especies\&.cc\&.
 205   map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.find(id);
 206   //Es posiciona un iterador apuntant a la primera posició del mapa de distancies\&.
 207   //Inv: Farà tantes iteracions fins que l'iterador sigui igual al primer que hem buscat\&. Així ens
-208   //estalviem bucles innecessaris\&. Aquest bucle elimina la especie demanada del map interior\&.
+208   //estalviem bucles innecessaris\&. Aquest bucle elimina la espèci demanada del map interior\&.
 209   for (map<string,map<string,double>>::iterator it2 = Cjt_especies::taula_distancies\&.begin(); it2 != it; ++it2) {
 210       it2->second\&.erase(it2->second\&.find(id));
 211     }
-212   //Eliminem la especie del mapa gran de la taula de distancies\&.
+212   //Eliminem la espèci del mapa gran de la taula de distancies\&.
 213   Cjt_especies::taula_distancies\&.erase(it);
 214 }
 .fi
@@ -190,14 +190,14 @@ Definició a la línia 218 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
 218                                                               {
-219   //Es posiciona un iterador apuntant a la taula d'especies, a la posició on esta el id demanat\&.
+219   //Es posiciona un iterador apuntant a la taula d'espècis, a la posició on esta el id demanat\&.
 220   map<string,Especie>::const_iterator esp = Cjt_especies::cjt_especies\&.find(id);
 221   //Es crea un map auxiliar on s'aniran ficant les distancies\&.
 222   map<string, double> aux;
 223   //Inv: Recorregut del mapa, de principi a final\&. 
 224   for (map<string,Especie>::const_iterator it = Cjt_especies::cjt_especies\&.begin(); it != Cjt_especies::cjt_especies\&.end(); ++it) {
 225     map<string,map<string,double>>::iterator itt = Cjt_especies::taula_distancies\&.find(it->first);
-226     //Calcula la distancia entre dues especies, la que entra pel parametre explícit
+226     //Calcula la distancia entre dues espècis, la que entra pel parametre explícit
 227     //i la que apunta el iterador\&.
 228     double x = it->second\&.distancia(esp->second);
 229     //If per fer les operacions si el identificador està a la part baixa
@@ -206,7 +206,7 @@ Definició a la línia 218 del fitxer Cjt_especies\&.cc\&.
 232       itt->second\&.insert(make_pair(id, x));
 233     }
 234     //If per fer les operacions si l'identificador està a la part alta i s'ha
-235     //de crear un nou map amb totes les altres especies\&.
+235     //de crear un nou map amb totes les altres espècis\&.
 236     else if (id < it->first) {
 237       aux\&.insert(make_pair(it->first, x));
 238     }
@@ -229,7 +229,7 @@ No existeix cap espècie amb el mateix identificador\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-S'ha creat una espècie i s'ha introduit al conjunt d'especies\&. Aquest es manté ordenat\&. 
+S'ha creat una espècie i s'ha introduit al conjunt d'espècies\&. Aquest es manté ordenat\&. 
 .RE
 .PP
 
@@ -239,10 +239,10 @@ Definició a la línia 28 del fitxer Cjt_especies\&.cc\&.
 .nf
 28                                                                   {
 29 // Entren dos paràmetres explícits\&. El primer paràmetre és la clau
-30 // del mapa\&. El valor d'aquesta clau serà una especie la qual es genera
-31 // amb la constructora d'especie mitjançant un gen\&. A més, aquesta especie
+30 // del mapa\&. El valor d'aquesta clau serà una espècie la qual es genera
+31 // amb la constructora d'espècie mitjançant un gen\&. A més, aquesta espècie
 32 // s'introdueix a la taula de distancies mitjançant el mètode afegeix
-33 // especie tabla dist\&.
+33 // espècie tabla dist\&.
 34       Especie e(gen);
 35       Cjt_especies::cjt_especies\&.insert(make_pair(id,e));
 36       afegeix_especie_tabla_dist(id);
@@ -260,7 +260,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-La especie s'ha eliminat del conjunt d'especies\&. 
+La espècie s'ha eliminat del conjunt d'espècies\&. 
 .RE
 .PP
 \fBParàmetres\fP
@@ -275,11 +275,11 @@ Definició a la línia 43 del fitxer Cjt_especies\&.cc\&.
 .nf
 43                                                    {
 44 // S'elimina la espècie indicada pel paràmetre explícit\&.
-45 // Es busca la espècie mitjaçant un iterador del mapa d'especies
+45 // Es busca la espècie mitjaçant un iterador del mapa d'espècies
 46 // i s'elimina la espècie indicada\&.
 47 // Observació: Aquesta funció no comprova si existeix una espècie 
 48 // o no, per tant, s'ha de fer compravació prèvia amb la funció
-49 // Cjt_especie::existe_especie(id)\&.
+49 // Cjt_espècie::existe_espècie(id)\&.
 50     map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
 51     Cjt_especies::cjt_especies\&.erase(it);
 52     Cjt_especies::elimina_especie_tabla_dist(id);     
@@ -288,7 +288,7 @@ Definició a la línia 43 del fitxer Cjt_especies\&.cc\&.
 .SS "bool Cjt_especies::existeix_especie (const string & id) const"
 
 .PP
-Consulta si existeix la espècie indicada al conjunt d'especies\&. 
+Consulta si existeix la espècie indicada al conjunt d'espècies\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -316,9 +316,9 @@ Definició a la línia 56 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
 56                                                           {
-57 // Es consulta si existeix la espècie dins el map d'especies\&.
-58 // Es busca la especie mitjançant un iterador\&. En el cas que
-59 // l'iterador apuntes al final de mapa, la especie no existeix 
+57 // Es consulta si existeix la espècie dins el map d'espècies\&.
+58 // Es busca la espècie mitjançant un iterador\&. En el cas que
+59 // l'iterador apuntes al final de mapa, la espècie no existeix 
 60 // i es retorna false, en cas contrari retorna true\&.
 61   map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
 62   if (it != Cjt_especies::cjt_especies\&.end()) return true;
@@ -337,7 +337,7 @@ Les dues espècies existeixen al conjunt\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-Et retorna la distància entre dues espècies\&. Excepcions: Si retorna -1 vol dir que les dues espècies no existèixen dins el conjunt d'especies\&. Si retorna -2 vol dir que la espècie id no existeix dins el conjunt d'especies\&. Si retorna -3 vol dir que la espècie id2 no existeix dins el conjunt d'especies\&.
+Et retorna la distància entre dues espècies\&. Excepcions: Si retorna -1 vol dir que les dues espècies no existèixen dins el conjunt d'espècies\&. Si retorna -2 vol dir que la espècie id no existeix dins el conjunt d'espècies\&. Si retorna -3 vol dir que la espècie id2 no existeix dins el conjunt d'espècies\&.
 .RE
 .PP
 \fBParàmetres\fP
@@ -358,12 +358,12 @@ Definició a la línia 67 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
 67                                                                                  {
-68 // Retorna la distància entre dues especies\&.
+68 // Retorna la distància entre dues espècies\&.
 69 // Es fan comprovación abans de consultar-les\&. En el cas
 70 // que no existeixin les dues espècies es retorna un -1\&.
 71 // Si no existeix només la primera espècie retorna un -2\&.
 72 // Si no existeix només la segona espècie retorna un -3\&.
-73 // En cas que les dues especies existeixin, és fan unes comprovacions:
+73 // En cas que les dues espècies existeixin, és fan unes comprovacions:
 74 //    Com el map només calcula les distàncies necessaries ja que 
 75 //    Distancia (a,b) = Distancia (b,a), el map ordena les distancies
 76 //    per ordre alfabètic amb la seva clau\&. Per tant hem de tenir en 
@@ -419,9 +419,9 @@ Definició a la línia 100 del fitxer Cjt_especies\&.cc\&.
 .PP
 .nf
 100                                                      {
-101 // Es consulta el gen d'una especie mitjançant una 
-102 // funció de la classe Especie i un iterador\&.
-103 // Observació: S'ha de comprovar prèviament que aquesta especie existeix\&.
+101 // Es consulta el gen d'una espècie mitjançant una 
+102 // funció de la classe espècie i un iterador\&.
+103 // Observació: S'ha de comprovar prèviament que aquesta espècie existeix\&.
 104   map<string, Especie>::const_iterator it = Cjt_especies::cjt_especies\&.find(id);
 105   cout << it->second\&.consultar_gen() << endl;
 106   
@@ -430,7 +430,7 @@ Definició a la línia 100 del fitxer Cjt_especies\&.cc\&.
 .SS "bool Cjt_especies::final ()"
 
 .PP
-Consulta si és el final del conjunt d'especies del paràmetre implícit\&. 
+Consulta si és el final del conjunt d'espècies del paràmetre implícit\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -454,7 +454,7 @@ Definició a la línia 110 del fitxer Cjt_especies\&.cc\&.
 .nf
 110                          {
 111 // Es fa comprovacions si l'iterador de l'àmbit
-112 // privat apunta al final del conjunt d'especies\&.
+112 // privat apunta al final del conjunt d'espècies\&.
 113 // Retorna cert si apunta al final, en cas contrari
 114 // retorna fals\&.
 115   return it == Cjt_especies::cjt_especies\&.end();
@@ -464,7 +464,7 @@ Definició a la línia 110 del fitxer Cjt_especies\&.cc\&.
 .SS "void Cjt_especies::inicio ()"
 
 .PP
-Apuntem al primer element del conjunt d'especies del paràmetre implícit\&. 
+Apuntem al primer element del conjunt d'espècies del paràmetre implícit\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -484,7 +484,7 @@ Definició a la línia 120 del fitxer Cjt_especies\&.cc\&.
 120                           {
 121 // Es posiciona l'iterador de l'ambit
 122 // privat apuntant a la primera posició 
-123 // del mapa d'especies\&.
+123 // del mapa d'espècies\&.
 124   it = Cjt_especies::cjt_especies\&.begin();
 125 }
 .fi
@@ -518,7 +518,7 @@ Definició a la línia 128 del fitxer Cjt_especies\&.cc\&.
 .SS "void Cjt_especies::avanza ()"
 
 .PP
-S'avança una especie del conjunt\&. 
+S'avança una espècie del conjunt\&. 
 .PP
 \fBPrecondició\fP
 .RS 4
@@ -527,7 +527,7 @@ Cert\&.
 .PP
 \fBPostcondició\fP
 .RS 4
-Si no estem al final del conjunt, avancem una especie\&. 
+Si no estem al final del conjunt, avancem una espècie\&. 
 .RE
 .PP
 
@@ -559,7 +559,7 @@ Estan preparats al canal estandar d'entrada un enter i les dades dels elements q
 .PP
 \fBPostcondició\fP
 .RS 4
-El paràmetre implícit conté un conjunt d'especies llegits pel canal estàndar\&. 
+El paràmetre implícit conté un conjunt d'espècies llegits pel canal estàndar\&. 
 .RE
 .PP
 
@@ -569,15 +569,15 @@ Definició a la línia 153 del fitxer Cjt_especies\&.cc\&.
 .nf
 153                                     {
 154   //La condició de si es llegeix un nou conjunt
-155   //d'especies es que es descarta el contingut previ\&.
+155   //d'espècies es que es descarta el contingut previ\&.
 156   //Per tant fem clear dels dos mapes\&.
 157   Cjt_especies::taula_distancies\&.clear();
 158   Cjt_especies::cjt_especies\&.clear();
-159   //int que indica el nombre d'especies que es volen afegir\&.
+159   //int que indica el nombre d'espècies que es volen afegir\&.
 160   int n;
 161   cin >> n;
 162   //Inv: el bucle for mai farà més de n iteracions\&. 
-163   //A cada iteració farà una crida a la funció crea especie\&.
+163   //A cada iteració farà una crida a la funció crea espècie\&.
 164   for (int i = 0; i < n; ++i) {
 165     string id, gen;
 166     cin >> id >> gen;
@@ -607,8 +607,8 @@ Definició a la línia 172 del fitxer Cjt_especies\&.cc\&.
 .nf
 172                                               {
 173   //Inv: És situa un iterador apuntant a la primera posició del
-174   //mapa d'especies\&. Avançarà una iteració fins que el punter apunti al final\&.
-175   //A cada iteració s'impreix una especie\&.
+174   //mapa d'espècies\&. Avançarà una iteració fins que el punter apunti al final\&.
+175   //A cada iteració s'impreix una espècie\&.
 176   for (map<string,Especie>::const_iterator it = Cjt_especies::cjt_especies\&.begin(); it != Cjt_especies::cjt_especies\&.end(); ++it) {
 177     cout << it->first << " ";
 178     it->second\&.escriure();
@@ -638,12 +638,12 @@ Definició a la línia 183 del fitxer Cjt_especies\&.cc\&.
 183                                           {
 184   //Inv: És situa un iterador apuntant a la primera posició del
 185   //mapa de distancies\&. Avançarà una posició fins que el punter apunti al final\&.
-186   //A cada iteració s'impreix un identificador de especie i s'executa un segon bucle\&.
+186   //A cada iteració s'impreix un identificador de espèci i s'executa un segon bucle\&.
 187   for(map<string,map<string,double>>::const_iterator it = Cjt_especies::taula_distancies\&.begin(); it != Cjt_especies::taula_distancies\&.end(); ++it) {
 188     cout << it->first << ":";
 189     //Inv: És situa un iterador apuntant a la primera posició del
-190     //map interior del map de distancies d'especies\&. Avançarà una posició fins que el punter apunti al final\&.
-191     //A cada iteració s'impreix un identificador d'especie del map interior i la distancia respecte les dues especies\&.
+190     //map interior del map de distancies d'espècis\&. Avançarà una posició fins que el punter apunti al final\&.
+191     //A cada iteració s'impreix un identificador d'espèci del map interior i la distancia respecte les dues espècis\&.
 192     for (map<string,double>::const_iterator it2 = it->second\&.begin(); it2 != it->second\&.end(); ++it2) {
 193         cout << " " << it2->first << " (" << it2->second << ")"; 
 194     }
@@ -668,7 +668,7 @@ Definició a la línia 45 del fitxer Cjt_especies\&.hh\&.
 .SS "map<string, \fBEspecie\fP>::const_iterator Cjt_especies::it\fC [private]\fP"
 
 .PP
-Iterator\&. Iterador del mapa d'especies\&. 
+Iterator\&. Iterador del mapa d'espècies\&. 
 .PP
 Definició a la línia 64 del fitxer Cjt_especies\&.hh\&.
 
