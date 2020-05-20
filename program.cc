@@ -51,51 +51,50 @@
  * 		missatge d'error. En cas contrari, la introdueix dins el conjunt d'especies.
  * 		
  * 		-<b>obtener_gen</b>: Donat un identificador d'espècie, imprimeix el gen associat a l'espècie.
-		Escriu un missatge d'error si no hi ha una espècie amb l'identificador donat.
-
-		-<b>distancia</b>: Donats dos identificadors d'espècies, imprimeix la distància entre les dues
-		espècies. Es escriu un missatge d'error si alguna de les dues espècies els identificadors
-		es donen no existeixen
-
-		-<b>elimina_especie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. 
-		Escriu un missatge d'error si l'espècie amb l'identificador donat no existeix.
-
-		-<b>existe_especie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si
-		aquesta espècie existeix (és a dir, és part del conjunt d'espècies).
-
-		-<b>lee_cjt_especies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit
-		una seqüència de n espècies (parells identificador-gen). 
-		Les n espècies donades tenen identificadors diferents entre si. 
-		Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.
-
-		-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
-		Si el conjunt és buit, no imprimeix cap informació.
-
-		-<b>tabla_distancias</b>: Imprimeix la taula de distàncies entre cada parell d'espècies de el conjunt d'espècies. 
-		Si el conjunt és buit, no imprimeix cap informació.
-
-		-<b>inicializa_clusters</b>: Inicialitza el conjunt de clústers amb el conjunt d'espècies en
-		l'estat en què estigui en aquest moment, i imprimeix la taula de distàncies entre clústers.
-		Si el conjunt és buit, no imprimeix cap informació.
-
-		-<b>ejecuta_paso_wpgma</b>: executa un pas de l'algoritme WPGMA (fusiona els dos clústers a
-		menor distància en un de nou) i imprimeix la taula de distàncies entre clústers resultant.
-		En cas que el nombre de clústers del conjunt sigui menor o igual que un, només
-		s'ha d'imprimir un missatge d'error.
-
-		-<b>imprime_cluster</b>: donat un identificador α, 
-		imprimeix el clúster amb l'identificador donat, o un error si no hi ha un clúster amb aquest identificador
-		en el conjunt de clústers.
-
-		-<b>imprime_arbol_filogenetico</b>: imprimeix l'arbre filogenètic per al conjunt d'espècies	
-		actual; dit arbre és el clúster que agrupa totes les espècies, resultant d'aplicar
-		l'algoritme WPGMA. El contingut del conjunt de clústers previ es descarta i es
-		reinicialitza amb el conjunt d'espècies en l'estat en què estigui en aquest moment, per
-		a continuació aplicar l'algoritme. El conjunt de clústers final és el que queda després
-		d'aplicar l'algoritme.
-		Si el nou conjunt de clústers és buit, només s'ha d'escriure un missatge d'error.
-
-		-<b>fin</b>: finalitza l'execució de el programa
+ * 		Escriu un missatge d'error si no hi ha una espècie amb l'identificador donat.
+ *
+ *		-<b>distancia</b>: Donats dos identificadors d'espècies, imprimeix la distància entre les dues
+ * 		espècies. Es escriu un missatge d'error si alguna de les dues espècies els identificadors
+ * 		es donen no existeixen
+ *	
+ *		-<b>elimina_especie</b>: Atès l'identificador d'una espècie, l'elimina del conjunt d'espècies. 
+ *		Escriu un missatge d'error si l'espècie amb l'identificador donat no existeix.
+ *	
+ *		-<b>existe_especie</b>: Atès l'identificador d'una espècie, imprimeix una indicació de si
+ * 		aquesta espècie existeix (és a dir, és part del conjunt d'espècies).
+ *
+ *		-<b>lee_cjt_especies</b>: Llegeix de canal estàndard d'entrada un enter n ≥ 0 i tot seguit
+ * 		una seqüència de n espècies (parells identificador-gen). 
+ *		Les n espècies donades tenen identificadors diferents entre si. 
+ *		Els continguts previs del conjunt d'espècies es descarten. les espècies deixen d'existir- i les n espècies llegides s'agreguen a el conjunt d'espècies.
+ *	
+ *	-<b>imprime_cjt_especies</b>: Imprimeix al canal estàndard de sortida el conjunt d'espècies.
+ *		Si el conjunt és buit, no imprimeix cap informació.
+ *
+ *		-<b>tabla_distancias</b>: Imprimeix la taula de distàncies entre cada parell d'espècies de el conjunt d'espècies. 
+ *		Si el conjunt és buit, no imprimeix cap informació.
+ *
+ *		-<b>inicializa_clusters</b>: Inicialitza el conjunt de clústers amb el conjunt d'espècies en
+ *		l'estat en què estigui en aquest moment, i imprimeix la taula de distàncies entre clústers.
+ *		Si el conjunt és buit, no imprimeix cap informació.
+ *
+ *		-<b>ejecuta_paso_wpgma</b>: executa un pas de l'algoritme WPGMA (fusiona els dos clústers a
+ *		menor distància en un de nou) i imprimeix la taula de distàncies entre clústers resultant.
+ *		En cas que el nombre de clústers del conjunt sigui menor o igual que un, només
+ *		s'ha d'imprimir un missatge d'error.
+ *
+ *		-<b>imprime_cluster</b>: donat un identificador α, 
+ *		imprimeix el clúster amb l'identificador donat, o un error si no hi ha un clúster amb aquest identificador
+ *		en el conjunt de clústers.
+ *
+ *		-<b>imprime_arbol_filogenetico</b>: imprimeix l'arbre filogenètic per al conjunt d'espècies	
+ *		actual; dit arbre és el clúster que agrupa totes les espècies, resultant d'aplicar
+ *		l'algoritme WPGMA. El contingut del conjunt de clústers previ es descarta i es
+ *		reinicialitza amb el conjunt d'espècies en l'estat en què estigui en aquest moment, per
+ *		a continuació aplicar l'algoritme. El conjunt de clústers final és el que queda després
+ *		d'aplicar l'algoritme.
+ *		Si el nou conjunt de clústers és buit, només s'ha d'escriure un missatge d'error.
+ *		-<b>fin</b>: finalitza l'execució de el programa
  * 		
  */
 
