@@ -116,8 +116,8 @@ public:
 
 
 /** @brief Fusiona els clusters que estan a menor distància
- * 	\pre Cert.	
- * 	\post S'ha fusionat els clusters. 
+ * 	\pre La mida del conjunt de clusters és més gran que 1.	
+ * 	\post S'ha fusionat els clusters i s'ha actualitzat la taula de distàncies.
  * 	\param bool. Si el bool = true, s'imprimeix la taula de 
  * 	distancies entre clusters resultant. 
  */

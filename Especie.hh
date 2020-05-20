@@ -17,9 +17,9 @@ using namespace std;
     @brief Representa el conjunt de característiques
 	y operacions de les especies.
 
-	Ofereix la posibilitat de calcular la distancie entre
+	Ofereix la posibilitat de calcular la distància entre
 	dues especies, consultar el gen, i escriure el gen.
-	Donat que hem d'establir un paramètre k, tenim la necessitat
+	Donat que hem d'establir un paràmetre k, tenim la necessitat
 	de crear una constructora d'especie buida per poder introduir la k.
 
 	\invariant Una espècie sempre tindrà el gen de longitud >= k.
@@ -58,7 +58,6 @@ public:
 	\post El resultat es una especie sense identificador, gen i kmeros.
 	
 */
-
 	Especie();
 /**
  * 	@brief Crea una especie amb el gen i l'identificador indicat.

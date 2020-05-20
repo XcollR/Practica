@@ -49,7 +49,7 @@ private:
 	\pre La espècie la qual es vol eliminar existeix dins la taula de distàncies.
 	\post S'ha actualitzat la taula.
 */
-	void elimina_especie_tabla_dist(const string& id); // Recalcular taula distancies si s'elimina un element.
+	void elimina_especie_tabla_dist(const string& id); 
 
 /**	
  * 	@brief Actualitza la taula de distàncies si s'afegeix una espècie.

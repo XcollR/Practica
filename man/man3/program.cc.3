@@ -1,4 +1,4 @@
-.TH "program.cc" 3 "Dt Mai 19 2020" "Version v6.3 19/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
+.TH "program.cc" 3 "Dc Mai 20 2020" "Version v6.3 19/05/2020" "Creació d'un arbre filogenètic. Xavier Coll Ribas" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -36,125 +36,125 @@ Definició al fitxer \fBprogram\&.cc\fP\&.
 .PP
 El main del programa\&. 
 .PP
-Definició a la línia 65 del fitxer program\&.cc\&.
+Definició a la línia 117 del fitxer program\&.cc\&.
 .PP
 .nf
-65            {
-66   // int k > 0
-67   int k; 
-68   cin >> k;
-69   
-70   Cjt_especies conjunt; // Iniciem un conjunt d'especies buit\&.
-71   Cjt_clusters cjt_clusters; // Iniciem un conjunt de clusters buit\&.
-72   Especie especie; // Iniciem una espècie buida\&. Només la farem servir per introduir el paràmetre k\&.
-73   especie\&.set_parametro(k);
-74   
-75   string opcio; // String per anar escollint les opcions del programa\&.
-76   cin >> opcio;
-77 
-78   // El programa acaba quan la string opcio == fin\&.
-79   while (opcio != "fin") {
-80     string id, id2, gen; // Declarem aquests string que són els que necessitarem 
-81                // majoritariament al nostre programa\&.
-82 
-83     if (opcio == "crea_especie") {
-84       cin >> id >> gen; // El identificador de la especie amb el seu gen\&.
-85       cout << "# " << opcio << " " << id << " " << gen << endl;
-86       if (conjunt\&.existeix_especie(id)) cout << "ERROR: La especie " << id << " ya existe\&." << endl; // En cas que la especie ja existeixi dins el conjunt salta un missatge d'error\&.
-87       else {
-88       conjunt\&.crea_especie(id,gen);
-89       }
-90       cout << endl;
-91     }
-92     
-93     else if (opcio == "obtener_gen") {
-94       cin >> id; // El identificador de la especie que es vol consultar el gen\&.
-95       cout << "# " << opcio << " " << id << endl;
-96       if (conjunt\&.existeix_especie(id)) conjunt\&.obtener_gen(id);
-97       else cout << "ERROR: La especie " << id << " no existe\&." << endl; // En cas que la especie no existeix dins el conjunt, salta un missatge d'error\&.
-98       cout << endl;
-99 
-100     }
-101     else if (opcio == "distancia") {
-102       cin >> id >> id2; // Els dos identificadors de les especies les quals es vol consultar la distància\&.
-103       cout << "# " << opcio << " " << id << " " << id2 << endl;
-104       // Depenent el que ens retorni la funció calcular distància, tindrà un 
-105       // significat diferent\&. Consultar la documentació per més detalls\&.
-106       if (conjunt\&.calcular_distancia(id,id2) == -1)  cout << "ERROR: La especie " << id << " y la especie " << id2 << " no existen\&." << endl;
-107       else if (conjunt\&.calcular_distancia(id,id2) == -2)   cout << "ERROR: La especie " << id << " no existe\&." << endl;
-108       else if (conjunt\&.calcular_distancia(id,id2) == -3) cout << "ERROR: La especie " << id2 << " no existe\&." << endl;
-109       else cout << conjunt\&.calcular_distancia(id,id2) << endl;
-110       
-111       cout << endl;
-112     }
-113     else if (opcio == "elimina_especie") {
-114       cin >> id; // El identificador de la especie la qual es vol eliminar\&.
-115       cout << "# " << opcio << " " << id << endl;
-116       if (not conjunt\&.existeix_especie(id)) cout << "ERROR: La especie " << id << " no existe\&." << endl; // Si la especie no existeix dins el conjunt, salta un missatge d'error\&.
-117       else conjunt\&.elimina_especie(id);
-118       cout << endl;
-119     }
-120     else if (opcio == "existe_especie") {
-121       cin >> id; // El identificador de la especie la qual es vol consultar si existeix\&.
-122       cout << "# " << opcio << " " << id <<endl;
-123       if (conjunt\&.existeix_especie(id)) cout << "SI" << endl;
-124       else cout << "NO" << endl;
-125       cout << endl;
-126     }
-127     else if (opcio == "lee_cjt_especies") {
-128       // Funció que llegeix les especies que hi haurà al conjunt\&.
-129       cout << "# " << opcio <<  endl;
-130       conjunt\&.lee_cjt_especies();
-131       cout << endl;
-132     }
-133     else if (opcio == "imprime_cjt_especies") {
-134       // Funció que imprimeix les especies que hi ha al conjunt\&.
-135       // En cas de no haver cap especie, no dona cap missatge d'error\&.
-136       cout << "# " << opcio << endl;
-137       conjunt\&.imprime_cjt_especies();
-138       cout << endl;
-139     }
-140     else if (opcio == "tabla_distancias") {
-141       // Funció que imprimeix la taula de distancies entre les especies que hi ha al conjunt\&.
-142       // En cas de no haver cap especie, no dona cap missatge d'error\&.
-143       cout << "# " << opcio << endl;
-144       conjunt\&.tabla_distancias();
-145       cout << endl;
-146     }
-147     else if (opcio == "inicializa_clusters") {
-148       cout << "# " << opcio << endl;
-149       // Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
-150       // la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters\&.
-151       bool a = true;
-152       cjt_clusters\&.inicialitza_clusters(conjunt, a);
-153       cout << endl;
-154     }
-155     else if (opcio == "ejecuta_paso_wpgma") {
-156       cout << "# " << opcio << endl;
-157       // Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
-158       // la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters\&.
-159       bool a = true;
-160       cjt_clusters\&.ejecuta_paso_wpgma(a);
-161       cout << endl;
-162     }
-163     else if (opcio == "imprime_cluster") {
-164       cin >> id; // El identificador del cluster el qual es vol imprimir\&.
-165       cout << "# " << opcio << " " << id << endl;
-166       cjt_clusters\&.imprime_cluster(id);
-167       cout << endl;
-168     }
-169     else if (opcio == "imprime_arbol_filogenetico") {
-170       // Donat un conjunt de especies, s'imprimeix 
-171       // l'arbre filogenètic resultant\&.
-172       cout << "# " << opcio << endl;
-173       cjt_clusters\&.imprime_arbol_filogenetico(conjunt);
-174       cout << endl;
-175       
-176     }
-177   cin >> opcio;
-178   }
-179 
-180 }
+117            {
+118   // int k > 0
+119   int k; 
+120   cin >> k;
+121   
+122   Cjt_especies conjunt; // Iniciem un conjunt d'especies buit\&.
+123   Cjt_clusters cjt_clusters; // Iniciem un conjunt de clusters buit\&.
+124   Especie especie; // Iniciem una espècie buida\&. Només la farem servir per introduir el paràmetre k\&.
+125   especie\&.set_parametro(k);
+126   
+127   string opcio; // String per anar escollint les opcions del programa\&.
+128   cin >> opcio;
+129 
+130   // El programa acaba quan la string opcio == fin\&.
+131   while (opcio != "fin") {
+132     string id, id2, gen; // Declarem aquests string que són els que necessitarem 
+133                // majoritariament al nostre programa\&.
+134 
+135     if (opcio == "crea_especie") {
+136       cin >> id >> gen; // El identificador de la especie amb el seu gen\&.
+137       cout << "# " << opcio << " " << id << " " << gen << endl;
+138       if (conjunt\&.existeix_especie(id)) cout << "ERROR: La especie " << id << " ya existe\&." << endl; // En cas que la especie ja existeixi dins el conjunt salta un missatge d'error\&.
+139       else {
+140       conjunt\&.crea_especie(id,gen);
+141       }
+142       cout << endl;
+143     }
+144     
+145     else if (opcio == "obtener_gen") {
+146       cin >> id; // El identificador de la especie que es vol consultar el gen\&.
+147       cout << "# " << opcio << " " << id << endl;
+148       if (conjunt\&.existeix_especie(id)) conjunt\&.obtener_gen(id);
+149       else cout << "ERROR: La especie " << id << " no existe\&." << endl; // En cas que la especie no existeix dins el conjunt, salta un missatge d'error\&.
+150       cout << endl;
+151 
+152     }
+153     else if (opcio == "distancia") {
+154       cin >> id >> id2; // Els dos identificadors de les especies les quals es vol consultar la distància\&.
+155       cout << "# " << opcio << " " << id << " " << id2 << endl;
+156       // Depenent el que ens retorni la funció calcular distància, tindrà un 
+157       // significat diferent\&. Consultar la documentació per més detalls\&.
+158       if (conjunt\&.calcular_distancia(id,id2) == -1)  cout << "ERROR: La especie " << id << " y la especie " << id2 << " no existen\&." << endl;
+159       else if (conjunt\&.calcular_distancia(id,id2) == -2)   cout << "ERROR: La especie " << id << " no existe\&." << endl;
+160       else if (conjunt\&.calcular_distancia(id,id2) == -3) cout << "ERROR: La especie " << id2 << " no existe\&." << endl;
+161       else cout << conjunt\&.calcular_distancia(id,id2) << endl;
+162       
+163       cout << endl;
+164     }
+165     else if (opcio == "elimina_especie") {
+166       cin >> id; // El identificador de la especie la qual es vol eliminar\&.
+167       cout << "# " << opcio << " " << id << endl;
+168       if (not conjunt\&.existeix_especie(id)) cout << "ERROR: La especie " << id << " no existe\&." << endl; // Si la especie no existeix dins el conjunt, salta un missatge d'error\&.
+169       else conjunt\&.elimina_especie(id);
+170       cout << endl;
+171     }
+172     else if (opcio == "existe_especie") {
+173       cin >> id; // El identificador de la especie la qual es vol consultar si existeix\&.
+174       cout << "# " << opcio << " " << id <<endl;
+175       if (conjunt\&.existeix_especie(id)) cout << "SI" << endl;
+176       else cout << "NO" << endl;
+177       cout << endl;
+178     }
+179     else if (opcio == "lee_cjt_especies") {
+180       // Funció que llegeix les especies que hi haurà al conjunt\&.
+181       cout << "# " << opcio <<  endl;
+182       conjunt\&.lee_cjt_especies();
+183       cout << endl;
+184     }
+185     else if (opcio == "imprime_cjt_especies") {
+186       // Funció que imprimeix les especies que hi ha al conjunt\&.
+187       // En cas de no haver cap especie, no dona cap missatge d'error\&.
+188       cout << "# " << opcio << endl;
+189       conjunt\&.imprime_cjt_especies();
+190       cout << endl;
+191     }
+192     else if (opcio == "tabla_distancias") {
+193       // Funció que imprimeix la taula de distancies entre les especies que hi ha al conjunt\&.
+194       // En cas de no haver cap especie, no dona cap missatge d'error\&.
+195       cout << "# " << opcio << endl;
+196       conjunt\&.tabla_distancias();
+197       cout << endl;
+198     }
+199     else if (opcio == "inicializa_clusters") {
+200       cout << "# " << opcio << endl;
+201       // Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
+202       // la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters\&.
+203       bool a = true;
+204       cjt_clusters\&.inicialitza_clusters(conjunt, a);
+205       cout << endl;
+206     }
+207     else if (opcio == "ejecuta_paso_wpgma") {
+208       cout << "# " << opcio << endl;
+209       // Declarem el booleà a = true, ja que així ens assegurem que cada vegada que cridem
+210       // la funció inicialitza clusters ens imprimeixi la taula de distancies entre clusters\&.
+211       bool a = true;
+212       cjt_clusters\&.ejecuta_paso_wpgma(a);
+213       cout << endl;
+214     }
+215     else if (opcio == "imprime_cluster") {
+216       cin >> id; // El identificador del cluster el qual es vol imprimir\&.
+217       cout << "# " << opcio << " " << id << endl;
+218       cjt_clusters\&.imprime_cluster(id);
+219       cout << endl;
+220     }
+221     else if (opcio == "imprime_arbol_filogenetico") {
+222       // Donat un conjunt de especies, s'imprimeix 
+223       // l'arbre filogenètic resultant\&.
+224       cout << "# " << opcio << endl;
+225       cjt_clusters\&.imprime_arbol_filogenetico(conjunt);
+226       cout << endl;
+227       
+228     }
+229   cin >> opcio;
+230   }
+231 
+232 }
 .fi
 .SH "Autor"
 .PP 

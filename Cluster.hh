@@ -37,7 +37,7 @@ private:
 /** @brief Funció recursiva cridada per la funcio escriure() per tal de 
  * 	poder fer la escriptura recursiva d'un cluster.
  * 	\pre Cert.
- * 	\post Escriu en preordre tal com indicat a la pràctica.
+ * 	\post Escriu a en preordre tal com indicat a la pràctica.
  * 	\param BinTree. Arbre binàri del cluster.
  */
   	static void inm_escriure(const BinTree<pair<string,double>>& a);
