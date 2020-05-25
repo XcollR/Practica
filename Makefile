@@ -23,4 +23,4 @@ practica.tar: Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Clu
 	tar -cvf practica.tar Makefile Cjt_especies.hh Cjt_especies.cc Especie.hh Especie.cc Cluster.cc Cluster.hh Cjt_clusters.hh Cjt_clusters.cc program.cc html.zip
 	
 clean: 
-	rm -f *.o *.gch *.exe *.txt
+	del -f *.o *.gch *.exe *.txt

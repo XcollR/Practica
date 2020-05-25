@@ -1,5 +1,0 @@
-<map id="Cjt_especies::lee_cjt_especies" name="Cjt_especies::lee_cjt_especies">
-<area shape="rect" id="node1" title="Lectura d&#39;un conjunt d&#39;espècies." alt="" coords="5,5,156,47"/>
-<area shape="rect" id="node2" href="$class_cjt__especies.html#a6413c062ece1d559a050bac7a6d02fc9" title="Crea una espècie i la introdueix al conjunt." alt="" coords="204,5,343,47"/>
-<area shape="rect" id="node3" href="$class_cjt__especies.html#a90a082e134d49bc8cee834b4ff5d0e8b" title="Actualitza la taula de distàncies si s&#39;afegeix una espècie." alt="" coords="391,5,547,47"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="Cjt_clusters::afegeix_especie_clusters" name="Cjt_clusters::afegeix_especie_clusters">
-<area shape="rect" id="node1" title="Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies." alt="" coords="512,35,663,76"/>
-<area shape="rect" id="node2" href="$class_cjt__clusters.html#a1804b08a854e11aefae84298c16bf9c8" title="Fusiona els clusters que estan a menor distància." alt="" coords="313,35,464,76"/>
-<area shape="rect" id="node3" href="$class_cjt__clusters.html#a8a92eefe19f7eafc403690a30d87b99e" title="Imprimeix l&#39;arbre filogenètic." alt="" coords="108,5,265,47"/>
-<area shape="rect" id="node4" href="$program_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="El main del programa." alt="" coords="5,42,60,69"/>
-</map>

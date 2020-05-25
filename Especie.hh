@@ -14,8 +14,7 @@ using namespace std;
 
 
 /** @class Especie 
-    @brief Representa el conjunt de característiques
-	y operacions de les espècies.
+    @brief Representa una espècie.
 
 	Ofereix la posibilitat de calcular la distància entre
 	dues espècies, consultar el gen, i escriure el gen.

@@ -14,7 +14,7 @@
 using namespace std;
 
 /** @class Cluster
-    @brief Representa un clúster d'un arbre binari
+    @brief Representa un clúster.	
 
 	Ofereix les opcions d'imprimir l'arbre del clúster amb les
 	distancies respecte als seus fills.

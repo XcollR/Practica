@@ -1,8 +1,0 @@
-<map id="Cjt_clusters::ejecuta_paso_wpgma" name="Cjt_clusters::ejecuta_paso_wpgma">
-<area shape="rect" id="node1" title="Fusiona els clusters que estan a menor distància." alt="" coords="5,104,156,145"/>
-<area shape="rect" id="node2" href="$class_cjt__clusters.html#aa032b0cd8fc22d549d986739b7e10b31" title="Afegeix la fusió dels dos clusters al mapa de clusters i a la taula de distancies." alt="" coords="208,5,359,47"/>
-<area shape="rect" id="node4" href="$class_cjt__clusters.html#ae81267c7b82d60b212c02f9ff040eca5" title="Elimina la especie indicada del conjunt del mapa de clusters i de la taula de distàncies." alt="" coords="208,71,359,112"/>
-<area shape="rect" id="node5" href="$class_cjt__clusters.html#a73d9140aa2af9e2a189396cadbc8c327" title="Imprimeix la taula de distàncies entre clusters." alt="" coords="205,136,362,177"/>
-<area shape="rect" id="node6" href="$class_cjt__clusters.html#ae3cbe4679bcb64bb3308ad1d68cd1b24" title="Calcula la distancia mínima entre Clusters." alt="" coords="204,202,363,229"/>
-<area shape="rect" id="node3" href="$class_cjt__clusters.html#a85f675adbd2142e12825c9bf84c53521" title="Busca la distància entre els clusters demanats." alt="" coords="411,5,537,47"/>
-</map>

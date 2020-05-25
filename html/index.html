@@ -90,9 +90,9 @@ Introducció</h1>
 <p>[Extret de l'enunciat de la pràctica del web de PRO2]</p>
 <p>En la biologia evolutiva, antropologia, lingüística i moltes altres disciplines científiques un dels problemes principals que s'aborden és la construcció d'arbres filogenètics, diagrames que representen de manera esquemàtica les relacions evolutives entre un conjunt de N entitats (en biologia evolutiva se sol parlar d'espècies, tot i que sovint no es tracti d'espècies sinó de famílies o ordres). L'arbre filogenètic es construeix en base a les similituds i diferències en les característiques físiques o genètiques de les N entitats. En un arbre filogenètic arrelat cada node amb descendents representa l'ancestre comú més recent dels seus descendents, i és usual que la longitud de les arestes / branques de l' arbre sigui proporcional a el temps transcorregut entre les entitats representades. els nodes interns són entitats hipotètiques, ja que no poden ser directament observades, només les N entitats de les fulles de l'arbre són les que coneixem. La construcció de l'arbre filogenètic que millor explica les dades observades, optimitzant un cert criteri, és un problema computacionalment difícil, en el sentit que el cost dels càlculs necessaris creix exponencialment amb N. A més molts altres problemes compliquen l'obtenció d'arbres filogenètics que reflecteixin la història evolutiva amb precisió: dades sobre les entitats inexactes, hibridacions, evolució convergent. Per aquesta raó s'han desenvolupat nombrosos mètodes aproximats que generen arbres filogenètics de manera eficient i que s'aproximen molt bé a l'arbre òptim en la majoria de casos, però no sempre. En aquesta pràctica el nostre objectiu serà construir un programa i els mòduls necessaris per a construir l'arbre filogenètic per a un conjunt de N espècies utilitzant un d'aquests mètodes aproximats: el mètode conegut com WPGMA (Weighted pair group with arithmetic mean).</p>
 <p>Aquest document hi trobarem les diverses classes utilitzades per poder executar bé el <a class="el" href="program_8cc.html" title="El main del programa.">program.cc</a>. Hi tenim 4 classes:</p>
-<p>-<b> <a class="el" href="class_especie.html" title="Representa el conjunt de característiques y operacions de les espècies.">Especie</a> </b>: Representa una espècie amb el seu gen.</p>
+<p>-<b> <a class="el" href="class_especie.html" title="Representa una espècie.">Especie</a> </b>: Representa una espècie amb el seu gen.</p>
 <p>-<b> <a class="el" href="class_cjt__especies.html" title="Representa un conjunt d&#39;espècies ordenades alfabèticament.">Cjt_especies</a> </b>: Representa un conjunt d'espècies, amb identificador i espècie.</p>
-<p>-<b> <a class="el" href="class_cluster.html" title="Representa un clúster d&#39;un arbre binari.">Cluster</a> </b>: Representa un cluster d'un arbre binari.</p>
+<p>-<b> <a class="el" href="class_cluster.html" title="Representa un clúster.">Cluster</a> </b>: Representa un cluster d'un arbre binari.</p>
 <p>-<b> <a class="el" href="class_cjt__clusters.html" title="Representa un conjunt de clústers.">Cjt_clusters</a> </b>: Representa un conjunt de clusters amb identificador.</p>
 <p>Amb aquestes classes podrem crear un conjunt d'espècies, i fer diverses operacions amb elles, ja sigui eliminar espècies, consultar distàncies, imprimir una taula de distàncies entre espècies... Amb la classe Cjt_cluster i cluster, podrem anar creant un arbre binari on aquest serà el resultat d'aplicar l'algorisme WPGMA.</p>
 <h1><a class="anchor" id="seg_part"></a>
@@ -110,13 +110,13 @@ Descripció</h1>
 <p>-<b>ejecuta_paso_wpgma</b>: executa un pas de l'algoritme WPGMA (fusiona els dos clústers a menor distància en un de nou) i imprimeix la taula de distàncies entre clústers resultant. En cas que el nombre de clústers del conjunt sigui menor o igual que un, només s'ha d'imprimir un missatge d'error.</p>
 <p>-<b>imprime_cluster</b>: donat un identificador α, imprimeix el clúster amb l'identificador donat, o un error si no hi ha un clúster amb aquest identificador en el conjunt de clústers.</p>
 <p>-<b>imprime_arbol_filogenetico</b>: imprimeix l'arbre filogenètic per al conjunt d'espècies actual; dit arbre és el clúster que agrupa totes les espècies, resultant d'aplicar l'algoritme WPGMA. El contingut del conjunt de clústers previ es descarta i es reinicialitza amb el conjunt d'espècies en l'estat en què estigui en aquest moment, per a continuació aplicar l'algoritme. El conjunt de clústers final és el que queda després d'aplicar l'algoritme. Si el nou conjunt de clústers és buit, només s'ha d'escriure un missatge d'error.</p>
-<p>-<b>fin</b>: finalitza l'execució de el programa</p>
+<p>-<b>fin</b>: finalitza l'execució de el programa.</p>
 <h1><a class="anchor" id="terc_part"></a>
 Dades Bàsiques</h1>
 <p><b>Autor</b>: Xavier Coll Ribas (Grup 32).</p>
 <p><b>Professora de laboratori</b>: Josefina Sierra Santibáñez.</p>
 <p><b>Data d'inici del projecte</b>: 06/04/2020</p>
-<p><b>Data entrega del programa</b>: 20/04/2020 </p>
+<p><b>Data entrega del programa</b>: 20/05/2020 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

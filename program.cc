@@ -99,7 +99,7 @@
  *		d'aplicar l'algoritme.
  *		Si el nou conjunt de clústers és buit, només s'ha d'escriure un missatge d'error.
 
- *		-<b>fin</b>: finalitza l'execució de el programa
+ *		-<b>fin</b>: finalitza l'execució de el programa.
 
 	\section terc_part Dades Bàsiques
 
@@ -109,7 +109,7 @@
 
 		<b>Data d'inici del projecte</b>: 06/04/2020
 
-		<b>Data entrega del programa</b>: 20/04/2020
+		<b>Data entrega del programa</b>: 20/05/2020
 
 
  * 		
